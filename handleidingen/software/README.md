@@ -1,4 +1,4 @@
-# Installatie van de nodige software
+# Installatie en configuratie van de nodige software
 
 Er is gebruik gemaakt van Letex en JabRef voor het maken van de verschillende bachelorproef onderdelen. 
 
