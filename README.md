@@ -14,7 +14,8 @@ Dit is de GitHub repository voor de bachelorproef dat ik heb gemaakt in mijn laa
 | :---     | :---                          | :---                                |
 | Bontinck Lennert | <https://github.com/pikawika> | [lennert.bontinck.y9785@student.hogent.be](mailto:lennert.bontinck.y9785@student.hogent.be) |
 
+## Voorstel
 
 ## Handleidingen
 
-> - [Coming soon](#)
+> - [Handleidingen rond voorstel](#)
