@@ -1,0 +1,61 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{Salomon2006}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=ebc74a2ebd9e08d90a51be1e7d3b5647}{%
+           family={Salomon},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{ebc74a2ebd9e08d90a51be1e7d3b5647}
+      \strng{fullhash}{ebc74a2ebd9e08d90a51be1e7d3b5647}
+      \strng{bibnamehash}{ebc74a2ebd9e08d90a51be1e7d3b5647}
+      \strng{authorbibnamehash}{ebc74a2ebd9e08d90a51be1e7d3b5647}
+      \strng{authornamehash}{ebc74a2ebd9e08d90a51be1e7d3b5647}
+      \strng{authorfullhash}{ebc74a2ebd9e08d90a51be1e7d3b5647}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{isbn}{978-1846286025}
+      \field{title}{Data Compression: The Complete Reference}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://www.amazon.com/Data-Compression-Reference-David-Salomon/dp/1846286026?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&tag=chimbori05-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=1846286026
+      \endverb
+      \verb{url}
+      \verb https://www.amazon.com/Data-Compression-Reference-David-Salomon/dp/1846286026?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&tag=chimbori05-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=1846286026
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
