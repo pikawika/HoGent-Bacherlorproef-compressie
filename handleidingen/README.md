@@ -7,8 +7,11 @@ Er is per onderdeel handleidingen voorzien, onder andere hoe u het Latex bestand
 ## Inhoudsopgave
 
 > - [Handliedingen voor deel: voorstel](#handliedingen-voor-deel-voorstel)
+> - [Handliedingen voor installatie en configuratie software](#handliedingen-voor-installatie-en-configuratie-software)
 
-## Handliedingen voor installatie en configartie software
+
+
+## Handliedingen voor installatie en configuratie software
 
 > - [Installatie en configuratie van de nodige software](software/)
 
