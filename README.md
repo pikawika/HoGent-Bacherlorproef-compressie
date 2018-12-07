@@ -18,4 +18,6 @@ Dit is de GitHub repository voor de bachelorproef dat ik heb gemaakt in mijn laa
 
 ## Handleidingen
 
-> - [Handleidingen rond voorstel](#)
+U vindt alle handleidingen onder
+
+> [Handleidingen](handleidingen/)
