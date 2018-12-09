@@ -6,4 +6,4 @@ Daarom is hier steeds een PDF voorzien voor elk deel. Deze worden geupdate na el
 
 ## Beschikbare PDFs
 
-> - Coming soon!
+> - [Bachelorproef voorstel](bontinck_lennert_voorstel.pdf)
