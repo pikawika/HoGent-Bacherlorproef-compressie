@@ -5,6 +5,8 @@ Dit is de GitHub repository voor de bachelorproef dat ik heb gemaakt in mijn laa
 ## Inhoudsopgave
 
 > - [Auteur](#auteur)
+> - [Voorstel](#voorstel)
+> - [PDFs](#pdfs)
 > - [Handleidingen](#handleidingen)
 
 
