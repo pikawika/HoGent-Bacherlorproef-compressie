@@ -6,7 +6,7 @@ In deze handlieding vind u hoe u de latex broncode van het voorstel omzet naar e
 
 Voor het compileren en bekijken van de Latex bronbestanden en de JabRef bibliografische databank heb je de juiste software nodig. Een handleiding vind u onder:
 
-> [Handleiding te installeren software](../Software/)
+> [Handleiding te installeren software](../software/)
 
 ## Command line instructies
 
