@@ -7,6 +7,7 @@ Dankzij deze schets kan dus vroegtijdig bijgestuurd worden en kan de uitwerking 
 ## Inhoudsopgave
 
 > - [Auteur](#auteur)
+> - [PDFs](#pdfs)
 
 
 ## Auteur
@@ -15,8 +16,9 @@ Dankzij deze schets kan dus vroegtijdig bijgestuurd worden en kan de uitwerking 
 | :---     | :---                          | :---                                |
 | Bontinck Lennert | <https://github.com/pikawika> | [lennert.bontinck.y9785@student.hogent.be](mailto:lennert.bontinck.y9785@student.hogent.be) |
 
-## Inleiding
+## PDFs
 
-> Coming soon
+Indien u niet zelf de Latex bestanden wenst te compileren zijn er reeds gecompileerde PDF bestanden voorzien onder
+> [PDFs](PDFs/)
 
-
+Deze worden bij het voltooien van een feature geupdate naar de laatste versie.
