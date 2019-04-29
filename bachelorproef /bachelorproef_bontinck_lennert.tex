@@ -4,16 +4,10 @@
 %===============================================================================
 \documentclass{bachproef-tin}
 \usepackage{hogent-thesis-titlepage} % Titelpagina conform aan HOGENT huisstijl
-\usepackage{glossaries} % Aangerade tool voor het maken van een woordenlijst (termen)
+
+\usepackage[nonumberlist]{glossaries}
+\renewcommand{\glossarysection}[2][]{} % Fix voor glossary met HoGent Theme
 \makeglossaries
-
-\newglossaryentry{test}
-{
-	name={test entry},
-	description={test beschrijving.}
-}
-
-\glsaddall
 
 %%---------- Documenteigenschappen ---------------------------------------------
 % De titel van het rapport/bachelorproef
@@ -79,6 +73,7 @@
 % te verspreiden!
 
 \input{inleiding}
+\input{termen}
 \input{standvanzaken}
 \input{methodologie}
 
@@ -95,7 +90,6 @@
 %%=============================================================================
 %% Bijlagen
 %%=============================================================================
-\printglossary
 \appendix
 \renewcommand{\chaptername}{Appendix}
 
