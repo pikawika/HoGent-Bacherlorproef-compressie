@@ -13,11 +13,12 @@ Voor het compileren en bekijken van de Latex bronbestanden en de JabRef bibliogr
 1. Clone de repository naar uw toestel.
 2. Open de terminal van uw toestel.
 3. Navigeer naar de net geclonede github repo.
-4. Navigeer naar: **voorstel/**
-5. Run het volgende commando: **latexmk -pdf "bontinck\_lennert\_voorstel"**
-6. Run het volgende commando: **biber "bontinck\_lennert\_voorstel"**
-7. Run het volgende commando: **latexmk -pdf "bontinck\_lennert\_voorstel"**
-8. U vindt de gegenereede pdf onder: **voorstel/bontinck\_lennert\_voorstel.pdf**
+4. Navigeer naar: **bachelorproef/**
+5. Run het volgende commando: **latexmk -pdf "bachelorproef\_bontinck\_lennert"**
+6. Run het volgende commando: **makeglossaries -pdf "bachelorproef\_bontinck\_lennert"**
+7. Run het volgende commando: **biber "bachelorproef\_bontinck\_lennert"**
+8. Run het volgende commando: **latexmk -pdf "bachelorproef\_bontinck\_lennert"**
+9. U vindt de gegenereede pdf onder: **bachelorproef/bachelorproef\_bontinck\_lennert.pdf**
 
 
 ## Toch net niet duidelijk genoeg?
