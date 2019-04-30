@@ -12,6 +12,8 @@ Voor het compileren en bekijken van de Latex bronbestanden en de JabRef bibliogr
 
 **HOTFIX:** theme opgelegd door HoGent bevat een fout. Deze fout kan impact hebben vanaf stap 1 en/of na stap 6 en mogelijks bij eldere stappen. indien je errors krijgt bij compilen kan je best na elke stap volgende controleren: Ga naar de file bachelorproef_bontinck_lennert.gls en verwijder de regel   \setcounter{page}{df}
 
+Indien u een mac gebruiker bent kan u het generate.sh script gebruiken! Anders kan u volgend stappenplan gebruiken.
+
 1. Clone de repository naar uw toestel.
 2. Open de terminal van uw toestel.
 3. Navigeer naar de net geclonede github repo.
