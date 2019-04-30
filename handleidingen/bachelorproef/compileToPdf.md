@@ -22,7 +22,8 @@ Indien u een mac gebruiker bent kan u het generate.sh script gebruiken! Anders k
 6. Run het volgende commando: **makeglossaries -pdf "bachelorproef\_bontinck\_lennert"**
 7. Run het volgende commando: **biber "bachelorproef\_bontinck\_lennert"**
 8. Run het volgende commando: **latexmk -pdf "bachelorproef\_bontinck\_lennert"**
-9. U vindt de gegenereede pdf onder: **bachelorproef/bachelorproef\_bontinck\_lennert.pdf**
+
+Na het runnen van het script of het uitvoeren van bovenstaande stappen kan u de pdf met alle bronnen via textstudio compilen!
 
 
 ## Toch net niet duidelijk genoeg?

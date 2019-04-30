@@ -7,6 +7,7 @@ rm -rf ./bachelorproef_bontinck_lennert2.gls
 cp -R ./bachelorproef_bontinck_lennert.gls ./bachelorproef_bontinck_lennert2.gls
 rm -rf ./bachelorproef_bontinck_lennert.gls
 grep -v "setcounter{page}{df}" ./bachelorproef_bontinck_lennert2.gls > ./bachelorproef_bontinck_lennert.gls
+latexmk -pdf "bachelorproef_bontinck_lennert"
 biber "bachelorproef_bontinck_lennert"
 latexmk -pdf "bachelorproef_bontinck_lennert"
 read -p "Done!"
