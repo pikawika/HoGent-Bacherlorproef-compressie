@@ -3,14 +3,15 @@
 % Meer info op https://github.com/HoGentTIN/bachproef-latex-sjabloon
 %===============================================================================
 \documentclass{bachproef-tin}
-\usepackage{hogent-thesis-titlepage} % Titelpagina conform aan HOGENT huisstijl
+\usepackage{hogent-thesis-titlepage}
 
+ % Glossary en fix voor glossary met HoGent Theme
 \usepackage[nonumberlist]{glossaries}
-\renewcommand{\glossarysection}[2][]{} % Fix voor glossary met HoGent Theme
+\renewcommand{\glossarysection}[2][]{}
 \makeglossaries
 \input{termen-declaration}
 
-%%---------- Documenteigenschappen ---------------------------------------------
+%%---------- Documenteigenschappen ----------
 % De titel van het rapport/bachelorproef
 \title{Je kijkt er naar, maar ziet het niet: datacompressie	principes - JPEG en PNG - H.264/AVC en H.264/SVC}
 
@@ -38,40 +39,34 @@
 %  - tweede zit  = 3e examenperiode => 3
 \examenperiode{2}
 
-%===============================================================================
+%==================
 % Inhoud document
-%===============================================================================
+%==================
 
 \begin{document}
 
-%---------- Taalselectie -------------------------------------------------------
+%---------- Taalselectie ----------
 % Als je je bachelorproef in het Engels schrijft, haal dan onderstaande regel
 % uit commentaar. Let op: de tekst op de voorkaft blijft in het Nederlands, en
 % dat is ook de bedoeling!
 
 %\selectlanguage{english}
 
-%---------- Titelblad ----------------------------------------------------------
+%---------- Titelblad ----------
 \inserttitlepage
 
-%---------- Samenvatting, voorwoord --------------------------------------------
+%---------- Samenvatting, voorwoord ----------
 \usechapterimagefalse
 \input{voorwoord}
 \input{samenvatting}
 
-%---------- Inhoudstafel -------------------------------------------------------
+%---------- Inhoudstafel ----------
 \pagestyle{empty} % Geen hoofding
 \tableofcontents  % Voeg de inhoudstafel toe
 \cleardoublepage  % Zorg dat volgende hoofstuk op een oneven pagina begint
 \pagestyle{fancy} % Zet hoofding opnieuw aan
 
-%---------- Kern ---------------------------------------------------------------
-
-% De eerste hoofdstukken van een bachelorproef zijn meestal een inleiding op
-% het onderwerp, literatuurstudie en verantwoording methodologie.
-% Aarzel niet om een meer beschrijvende titel aan deze hoofstukken te geven of
-% om bijvoorbeeld de inleiding en/of stand van zaken over meerdere hoofdstukken
-% te verspreiden!
+%---------- Kern ----------
 
 \input{inleiding}
 %deel 1
@@ -90,23 +85,15 @@
 \input{uitdagingen}
 \input{conclusie}
 
-% Voeg hier je eigen hoofdstukken toe die de ``corpus'' van je bachelorproef
-% vormen. De structuur en titels hangen af van je eigen onderzoek. Je kan bv.
-% elke fase in je onderzoek in een apart hoofdstuk bespreken.
 
-%\input{...}
-%\input{...}
-%...
-
-
-
-%%=============================================================================
+%==================
 %% Bijlagen
-%%=============================================================================
+%==================
+
 \appendix
 \renewcommand{\chaptername}{Appendix}
 
-%%---------- Onderzoeksvoorstel -----------------------------------------------
+%%---------- Onderzoeksvoorstel ----------
 
 \chapter{Onderzoeksvoorstel}
 
@@ -115,11 +102,11 @@ Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat 
 % Verwijzing naar het bestand met de inhoud van het onderzoeksvoorstel
 \input{../voorstel/voorstel-inhoud}
 
-%%---------- Andere bijlagen --------------------------------------------------
+%%---------- Andere bijlagen ----------
 % TODO: Voeg hier eventuele andere bijlagen toe
 %\input{...}
 
-%%---------- Referentielijst --------------------------------------------------
+%%---------- Referentielijst ----------
 
 %voorzie alle bronnen uit de db in referenties
 \nocite{*}
