@@ -5,9 +5,11 @@
 \chapter{Inleiding}
 \label{ch:inleiding}
 
-Datacompressie en het achterliggende compressie idee is niets nieuw. Integendeel, het is één van de oudste zaken binnen IT dat tot op heden van fundamenteel belang is binnen zowat alle IT-toepassingen. Door de databesparing werkt alles niet alleen veelvouden sneller en goedkoper, maar worden bepaalde zaken die voorheen onmogelijk leken mogelijk. Denk hierbij bijvoorbeeld aan recente doorbraken binnen DNA-compressie dat het mogelijk maken steeds meer onderzoeken met betrekking tot het menselijk genoom uit te voeren.
+\Gls{datacompressie} en het achterliggende compressie idee is niets nieuw. Integendeel, het is één van de oudste zaken binnen IT dat tot op heden van fundamenteel belang is voor zowat alle IT-toepassingen. Door de databesparing werkt alles niet alleen veelvouden sneller en goedkoper, maar worden bepaalde zaken die voorheen onmogelijk leken mogelijk. Denk hierbij bijvoorbeeld aan recente doorbraken binnen \gls{dna-compressie} dat het mogelijk maken steeds meer onderzoeken met betrekking tot het menselijk genoom uit te voeren.
 
-\section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}
+
+
+\section{Probleemstelling}
 \label{sec:probleemstelling}
 
 
@@ -23,44 +25,68 @@ Datacompressie en het achterliggende compressie idee is niets nieuw. Integendeel
 %\item \ldots
 %\end{itemize}
 
-\section{\IfLanguageName{dutch}{Onderzoeksvragen}{Research question}}
+\section{Onderzoeksvragen}
 \label{sec:onderzoeksvragen}
 
 
 %TODO: verder 
 %Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
 
-\section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}
+\section{Onderzoeksdoelstelling}
 \label{sec:onderzoeksdoelstelling}
 
 %TODO: verder 
 %Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv. om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
 
-\section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}
+\section{Opzet van deze bachelorproef}
 \label{sec:opzet-bachelorproef}
 
 % Het is gebruikelijk aan het einde van de inleiding een overzicht te
 % geven van de opbouw van de rest van de tekst. Deze sectie bevat al een aanzet
 % die je kan aanvullen/aanpassen in functie van je eigen tekst.
 
-Deze paper zal zich in het eerste deel focussen op het toelichten van de belangrijke termen binnen datacompressie. Ook het ontstaan van datacompressie en enkele basisprincipes zal hier toegelicht worden. Enkele van deze primitieve technieken zullen aan de hand van een voorbeeld toegelicht worden.
-%TODO: nog wat meer over voor die zin Lennert eet veel
+\subsection{Deel 1: situering en literatuurstudie}
+\label{sec:opzet-bachelorproef-deel-1}
+
+Deze paper zal zich in het eerste deel focussen op het toelichten van de belangrijke termen binnen \gls{datacompressie}. In hoofdstuk~\ref{ch:termen} is een lijst met belangrijker termen te vinden die binnen \gls{datacompressie} en deze paper vaak voorkomen. Doorheen deze paper zullen tal van referenties naar deze termen gelegd worden. 
+
+Hoofdstuk~\ref{ch:methodologie} licht de gebruikte methodologie voor deze paper toe. Hieruit wordt duidelijk dat deze paper zo objectief mogelijk is opgesteld met een focus op duidelijkheid en reproduceerbaarheid.
+
+Hoofdstuk~\ref{ch:literatuurstudie} behoort ook tot het situerende eerste deel en zal het ontstaan van \gls{datacompressie} en enkele basisprincipes toelichten. Een reeks van deze primitieve technieken zullen aan de hand van een voorbeeld toegelicht worden.
+%todo: link naar voorbeeld en welke manieren
+
+\subsection{Deel 2: compressie tool ontwikkelen}
+\label{sec:opzet-bachelorproef-deel-2}
  
- In het tweede zal een basis datacompressie tool geïmplementeerd worden om de theorie uit het eerste deel in praktijk te zien.Dit deel is vooral voor technische lezers (programmeurs ed) interessant.
+ In het tweede zal een basis \gls{datacompressie} tool programmatisch geïmplementeerd worden om de theorie uit het eerste deel in praktijk te zien.
+ 
+Hoofdstuk~\ref{ch:compressietool} is hierdoor gericht voor technische lezers als programmeurs. Er is echter telkens voldoende randinformatie gegeven zodanig ook de minder technische lezers een blik achter de schermen kunnen verkrijgen.
  %TODO: welke taal tool gemaakt is en wat deze juist doet etc
 
-In het derde deel worden twee sub domeinen van datacompressie verder toegelicht; afbeelding- en videocompressie. Er zal dieper ingegaan worden op volgende afbeeldingcompressie mogelijkheden: JPEG (= JPG), JPEG2000 (= JPEG2K) en PNG. Voor videocompressie zullen we verder ingaan op de huidige standaard H264/AVC en SVC. Ook de opvolger H265 en open source AV1 zullen besproken worden.
+\subsection{Deel 3: afbeelding- en videocompressie}
+\label{sec:opzet-bachelorproef-deel-3}
+
+In het derde deel worden twee sub domeinen van \gls{datacompressie} verder toegelicht; \gls{afbeeldingscompressie} en \gls{videocompressie}. 
+
+In hoofdstuk~\ref{ch:afbeeldingcompressie} zal er dieper ingegaan worden op volgende afbeelding \glspl{codec}: \gls{jpeg}, \gls{jpeg2000} en \gls{png}. 
 %TODO: aanpassen indien andere op input copromoter
 
-In het vierde deel wordt besproken hoe compressiemethoden binnen video en afbeelding objectief en subjectief gemeten kunnen worden en zal een subjectief onderzoek gedaan worden tussen enkele van de besproken afbeeldingscompressie methoden.
+In hoofdstuk~\ref{ch:videocompressie} zal er verder ingegaan worden op de gekende \gls{videocompressie} standaard: \gls{h264-avc} en \gls{h264-svc}. Ook de opvolger \gls{h265} en open source \gls{av1} zullen besproken worden.
+%TODO: aanpassen indien andere op input copromoter
+
+\subsection{Deel 4: onderzoek afbeelding compressie}
+\label{sec:opzet-bachelorproef-deel-4}
+
+In het vierde deel wordt besproken hoe compressiemethoden binnen video en afbeelding geëvalueerd worden. Hoofdstuk~\ref{ch:kwaliteit} zal enkele veel gebruikte tools en methoden voor objectieve en subjectieve metingen toelichten.
+
+In hoofdstuk~\ref{ch:onderzoek} wordt een subjectieve test voor het evalueren van afbeeldingskwaliteit opgesteld voor portretfoto's. Hierbij zullen enkele van de besproken  \glspl{codec} uit hoofdstuk~\ref{ch:afbeeldingcompressie} tegen elkaar concurreren. De gebruikte tool is voor deze paper opgesteld en zal \gls{open-source} toegankelijk zijn wat het eenvoudig mogelijk maakt om een gelijkaardig onderzoek uit te voeren.
 %TODO: in staat stelllen als bv prog of content zelf kiezen welk gebruiken
 
-In het vijfde deel zullen de huidige uitdagingen van datacompressie kort toegelicht worden.
+\subsection{Deel 5: uitdagingen en conclusie}
+\label{sec:opzet-bachelorproef-deel-5}
+
+In het vijfde deel zullen de huidige uitdagingen van \gls{datacompressie} kort toegelicht worden. Zo zal hoofdstuk~\ref{ch:uitdagingen} een beeld geven van de taken die mensen als Tom Paridaens, co-promoter voor deze paper, krijgen.
 %TODO: copromoter zijn job en eerbetoon vermelden
 
-Het laatste deel zal een objectieve conclussie vormen voor deze paper.
+In hoofdstuk~\ref{ch:conclusie} wordt kort teruggeblikt op de paper en worden enkele besluiten uit het onderzoek van hoofdstuk~\ref{ch:onderzoek} opgesomd. Daarbij wordt ook een aanzet gegeven om zelf meer na te denken over het gebruik van \gls{datacompressie} en bepaalde  \glspl{codec} in projecten, of nog beter, zelf een onderzoek uit te voeren!
 %TODO: lezer aanzetten meer etc
-
-%TODO: verder en meer citen met ~\ref{ch:stand-van-zaken}
-% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
-%In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.

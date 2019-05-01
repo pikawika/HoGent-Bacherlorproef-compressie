@@ -8,6 +8,7 @@
 \usepackage[nonumberlist]{glossaries}
 \renewcommand{\glossarysection}[2][]{} % Fix voor glossary met HoGent Theme
 \makeglossaries
+\input{termen-declaration}
 
 %%---------- Documenteigenschappen ---------------------------------------------
 % De titel van het rapport/bachelorproef
@@ -73,14 +74,19 @@
 % te verspreiden!
 
 \input{inleiding}
+%deel 1
 \input{termen}
 \input{methodologie}
 \input{literatuurstudie}
+%deel 2
 \input{compressietool}
+%deel 3
 \input{afbeeldingcompressie}
 \input{videocompressie}
+%deel 4
 \input{kwaliteit}
 \input{onderzoek}
+%deel 5
 \input{uitdagingen}
 \input{conclusie}
 
@@ -115,6 +121,9 @@ Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat 
 
 %%---------- Referentielijst --------------------------------------------------
 
+%voorzie alle bronnen uit de db in referenties
+\nocite{*}
+%\phantomsection
 \printbibliography[heading=bibintoc]
 
 \end{document}
