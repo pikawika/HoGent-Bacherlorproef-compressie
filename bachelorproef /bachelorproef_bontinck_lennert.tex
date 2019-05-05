@@ -8,8 +8,20 @@
  % Glossary en fix voor glossary met HoGent Theme
 \usepackage[nonumberlist]{glossaries}
 \renewcommand{\glossarysection}[2][]{}
+\setcounter{secnumdepth}{5}
 \makeglossaries
 \input{termen-declaration}
+
+%Meer controle over placement van figuren
+\usepackage{placeins}
+
+%Cite van online beter
+\DeclareCiteCommand{\urlcite}
+[\mkbibfootnote]
+{}
+{\printfield{title} -- \printfield{url}}
+{\addcomma\addspace}
+{}
 
 %%---------- Documenteigenschappen ----------
 % De titel van het rapport/bachelorproef
