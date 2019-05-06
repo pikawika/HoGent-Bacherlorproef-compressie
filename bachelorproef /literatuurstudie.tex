@@ -135,11 +135,18 @@ Een \gls{ascii} teken wordt steeds door acht \glspl{bit}, één \gls{byte} voorg
 
 \subsection{RLE: run length encoding en decoding}
 \label{sec:primitieve-technieken-voorbeeld-rle}
-TODO
+Zoals besproken in deel \ref{sec:ontstaan-datacompressie-primitieve-technieken-binnen-it} is de basis implementatie van \gls{rle-short} zeer eenvoudig. \Gls{rle-long} werkt door run en run value paren op te slaan in plaats van individuele karakters. Dit werkt door te kijken naar het eerste karakter in de reeks en te tellen hoeveel opeenvolgende karakters hetzelfde karakter zijn. Vervolgens wordt het aantal (run) opgeslagen gevolgd door het karakter (run value). Hierna wordt recursief gestart vanaf het eerstvolgende verschillende karakter.
+
+Van \gls{rle-short} zijn enorm veel varianten gemaakt en veel \glspl{compressie-algoritme} gebruiken \gls{rle-short} als onderdeel. Een interessante paper die zich dieper toespitst op \gls{rle-short} en een proof of concept variant is \citetitle{rleimproved} (\cite{rleimproved}). 
+
+In zijn basis vorm zo \gls{rle-short} de zin "lennert eet veel" als volgt comprimeren: 
+"1l1e2n1e1r1t1 2e1t1 1v2e1l". Deze string kan op zijn beurt door \gls{ascii} voorgesteld worden.
 
 \subsubsection{RLE Probleemstelling 1: gecomprimeerd bestand groter dan bron}
 \label{sec:primitieve-technieken-voorbeeld-rle-probleem-1}
-TODO
+Uit het voorbeeld \ref{sec:primitieve-technieken-voorbeeld-rle} blijkt dat \gls{rle-short} voor de zin "lennert eet veel" voor een output zorgt van meer dan 150\% van de originele lengte. \Gls{rle-long} is voor deze situatie dus aanzienlijk groter dan het origineel niet gecomprimeerde bestand. 
+
+Dit zal het geval zijn voor veel gebruiker gegenereerde tekstbestanden en met \gls{rle-short} kan in het slechtste geval een bestandsgrootte van 200\% bereken worden. Denk hierbij aan het comprimeren van het alfabet. \Gls{rle-short} is zeer \gls{use-case} gebonden en wordt vaak gevarieerd gebruikt maar kan in die bepaalde \glspl{use-case} voor een grote databesparing zorgen.
 
 \subsection{Huffman coding}
 \label{sec:primitieve-technieken-voorbeeld-huffman-encoding}
@@ -241,5 +248,5 @@ Een typische \gls{use-case} voor \gls{lossless} \gls{datacompressie} zijn tekstd
 
 Zoals reeds besproken in deel \ref{sec:ontstaan-datacompressie-primitieve-technieken-binnen-it} was de doorbraak van  \gls{lossy} \gls{datacompressie} gepaard met de opkomst van digitale afbeeldingen en muziek. Zo behoud MP3 (\gls{lossy} \gls{codec} voor audio) bepaalde audiofrequenties niet omdat die door het menselijke oor niet waarneembaar zijn. Maar ook waarneembare frequenties kunnen door de MP3 \gls{codec} verloren gaan voor het besparen van data. \gls{jpeg} is één van de oudste en bekendste vormen van \gls{lossy} \gls{compressie-algoritme} voor afbeeldingen. 
 
-De keuze voor \gls{lossless} of \gls{lossy} is \gls{use-case} gebonden. Bij het kiezen voor \gls{lossless} \gls{datacompressie} is een objectief onderzoek naar een goede balans tussen snelheid en databesparing voor de use case aangeraden. Bij \gls{lossy} \gls{datacompressie} zijn zowel objectieve als subjectieve onderzoeken mogelijk. In hoofdstuk \ref{ch:kwaliteit} wordt dieper ingegaan over de verschillende manieren om de prestatie van een \gls{compressie-algoritme} voor afbeeldingen te evalueren. In hoofdstuk \ref{ch:onderzoek} wordt een subjectief onderzoek gevoerd voor het bepalen van het geschikte \gls{afbeeldingsformaat} voor een bepaalde \gls{use-case}
+De keuze voor \gls{lossless} of \gls{lossy} is \gls{use-case} gebonden. Bij het kiezen voor \gls{lossless} \gls{datacompressie} is een objectief onderzoek naar een goede balans tussen snelheid en databesparing voor de use case aangeraden. Bij \gls{lossy} \gls{datacompressie} zijn zowel objectieve als subjectieve onderzoeken mogelijk. In hoofdstuk \ref{ch:kwaliteit} wordt dieper ingegaan over de verschillende manieren om de prestatie van een \gls{compressie-algoritme} voor afbeeldingen te evalueren. In hoofdstuk \ref{ch:onderzoek} wordt een subjectief onderzoek gevoerd voor het bepalen van het geschikte \gls{afbeeldingsformaat} voor een bepaalde \gls{use-case}.
 
