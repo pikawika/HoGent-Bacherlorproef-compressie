@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="628a6d69-9bcb-4cdd-8c60-92ea4f0554c1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onderzoek.php" beforeDir="false" afterPath="$PROJECT_DIR$/onderzoek.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,15 +12,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/onderzoek.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="90" lean-forward="true" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-              <folding>
-                <element signature="n#show_info_about_you#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="559">
+              <caret line="233" column="105" selection-start-line="233" selection-start-column="105" selection-end-line="233" selection-end-column="105" />
             </state>
           </provider>
         </entry>
@@ -37,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/layout/footer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
-              <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+              <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -82,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="-600" />
     <option name="y" value="-1440" />
     <option name="width" value="2560" />
@@ -96,7 +94,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -118,6 +115,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -155,18 +153,19 @@
       <option name="presentableId" value="Default" />
       <updated>1557678532368</updated>
       <workItem from="1557678533527" duration="13300000" />
+      <workItem from="1557699689727" duration="29000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13300000" />
+    <option name="totallyTimeSpent" value="13329000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-600" y="-1440" width="2560" height="1440" extended-state="6" />
+    <frame x="-600" y="-1440" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13860206" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13939634" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -225,6 +224,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/onderzoek.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="233" column="105" selection-start-line="233" selection-start-column="105" selection-end-line="233" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -235,17 +241,7 @@
     <entry file="file://$PROJECT_DIR$/layout/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
-          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/onderzoek.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="90" lean-forward="true" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-          <folding>
-            <element signature="n#show_info_about_you#0;n#!!top" />
-          </folding>
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
         </state>
       </provider>
     </entry>

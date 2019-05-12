@@ -231,7 +231,7 @@ function show_info_about_you()
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Leeftijd</label>
                 <div class="col-sm-10">
-                    <input type="number" name="age" class="w-100" min="0" placeholder="Leeftijd"/>
+                    <input type="number" name="age" class="w-100" min="0" placeholder="Leeftijd" required/>
                 </div>
             </div>
             <hr>
