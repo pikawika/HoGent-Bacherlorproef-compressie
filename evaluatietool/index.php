@@ -38,7 +38,7 @@ include 'layout/header.php';
 
 
     </div>
-    <button type="button" class="btn btn-outline-primary w-100">Ik ben akkoord met de gegevensverwerking en doe mee aan
+    <button type="button" class="btn btn-outline-primary w-100" onclick="window.location.href='introductie.php'">Ik ben akkoord met de gegevensverwerking en doe mee aan
         het onderzoek!
     </button>
 <?php
