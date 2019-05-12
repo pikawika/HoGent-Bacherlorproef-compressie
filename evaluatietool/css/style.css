@@ -1,0 +1,9 @@
+.hoofdwrapper {
+    min-height: calc(100vh - 80px);
+    padding: 5% 10%;
+}
+
+footer {
+    height: 80px;
+    overflow: hidden;
+}
