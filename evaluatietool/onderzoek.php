@@ -3,7 +3,7 @@
 include 'layout/header.php';
 include 'db/db_actions.php';
 
-if (isset($_POST['submit_profile_form'])) {
+if (isset($_POST['submit_profile_form']) || isset($_POST['submit_iterative_photo_rating_form']) ) {
     save_info_about_you();
     show_iterative_photo_rating();
 } else {
