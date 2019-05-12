@@ -9,7 +9,7 @@ include 'layout/header.php';
             <iframe class="embed-responsive-item" src="assets/introductie/uitleg.mp4"></iframe>
         </div>
     </div>
-    <button type="button" class="btn btn-outline-primary w-100">Alles is duidelijk, start het onderzoek!
+    <button type="button" class="btn btn-outline-primary w-100" onclick="window.location.href='onderzoek.php'">Alles is duidelijk, start het onderzoek!
     </button>
 <?php
 //footer voorzien

@@ -7,3 +7,12 @@ footer {
     height: 80px;
     overflow: hidden;
 }
+
+.img_evaluation {
+    max-width: 100%;
+    max-height: 650px;
+    display:block;
+    margin:auto;
+    border: solid white 5px;
+    cursor: zoom-in;
+}
