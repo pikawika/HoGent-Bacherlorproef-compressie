@@ -2,12 +2,28 @@
 % LaTeX sjabloon voor de bachelorproef toegepaste informatica aan HOGENT
 % Meer info op https://github.com/HoGentTIN/bachproef-latex-sjabloon
 %===============================================================================
-
 \documentclass{bachproef-tin}
+\usepackage{hogent-thesis-titlepage}
 
-\usepackage{hogent-thesis-titlepage} % Titelpagina conform aan HOGENT huisstijl
+ % Glossary en fix voor glossary met HoGent Theme
+\usepackage[nonumberlist]{glossaries}
+\renewcommand{\glossarysection}[2][]{}
+\setcounter{secnumdepth}{5}
+\makeglossaries
+\input{termen-declaration}
 
-%%---------- Documenteigenschappen ---------------------------------------------
+%Meer controle over placement van figuren
+\usepackage{placeins}
+
+%Cite van online beter
+\DeclareCiteCommand{\urlcite}
+[\mkbibfootnote]
+{}
+{\printfield{title} -- \printfield{url}}
+{\addcomma\addspace}
+{}
+
+%%---------- Documenteigenschappen ----------
 % De titel van het rapport/bachelorproef
 \title{Je kijkt er naar, maar ziet het niet: datacompressie	principes - JPEG en PNG - H.264/AVC en H.264/SVC}
 
@@ -35,80 +51,61 @@
 %  - tweede zit  = 3e examenperiode => 3
 \examenperiode{2}
 
-%===============================================================================
+%==================
 % Inhoud document
-%===============================================================================
+%==================
 
 \begin{document}
 
-%---------- Taalselectie -------------------------------------------------------
+%---------- Taalselectie ----------
 % Als je je bachelorproef in het Engels schrijft, haal dan onderstaande regel
 % uit commentaar. Let op: de tekst op de voorkaft blijft in het Nederlands, en
 % dat is ook de bedoeling!
 
 %\selectlanguage{english}
 
-%---------- Titelblad ----------------------------------------------------------
+%---------- Titelblad ----------
 \inserttitlepage
 
-%---------- Samenvatting, voorwoord --------------------------------------------
+%---------- Samenvatting, voorwoord ----------
 \usechapterimagefalse
 \input{voorwoord}
 \input{samenvatting}
 
-%---------- Inhoudstafel -------------------------------------------------------
+%---------- Inhoudstafel ----------
 \pagestyle{empty} % Geen hoofding
 \tableofcontents  % Voeg de inhoudstafel toe
 \cleardoublepage  % Zorg dat volgende hoofstuk op een oneven pagina begint
 \pagestyle{fancy} % Zet hoofding opnieuw aan
 
-%---------- Lijst figuren, afkortingen, ... ------------------------------------
-
-% Indien gewenst kan je hier een lijst van figuren/tabellen opgeven. Geef in
-% dat geval je figuren/tabellen altijd een korte beschrijving:
-%
-%  \caption[korte beschrijving]{uitgebreide beschrijving}
-%
-% De korte beschrijving wordt gebruikt voor deze lijst, de uitgebreide staat bij
-% de figuur of tabel zelf.
-
-\listoffigures
-\listoftables
-
-% Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
-% hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
-% https://www.overleaf.com/learn/latex/Glossaries
-
-%---------- Kern ---------------------------------------------------------------
-
-% De eerste hoofdstukken van een bachelorproef zijn meestal een inleiding op
-% het onderwerp, literatuurstudie en verantwoording methodologie.
-% Aarzel niet om een meer beschrijvende titel aan deze hoofstukken te geven of
-% om bijvoorbeeld de inleiding en/of stand van zaken over meerdere hoofdstukken
-% te verspreiden!
+%---------- Kern ----------
 
 \input{inleiding}
-\input{standvanzaken}
+%deel 1
+\input{termen}
 \input{methodologie}
-
-% Voeg hier je eigen hoofdstukken toe die de ``corpus'' van je bachelorproef
-% vormen. De structuur en titels hangen af van je eigen onderzoek. Je kan bv.
-% elke fase in je onderzoek in een apart hoofdstuk bespreken.
-
-%\input{...}
-%\input{...}
-%...
-
+\input{literatuurstudie}
+%deel 2
+\input{compressietool}
+%deel 3
+\input{afbeeldingscompressie}
+\input{videocompressie}
+%deel 4
+\input{kwaliteit}
+\input{onderzoek}
+%deel 5
+\input{uitdagingen}
 \input{conclusie}
 
-%%=============================================================================
+
+%==================
 %% Bijlagen
-%%=============================================================================
+%==================
 
 \appendix
 \renewcommand{\chaptername}{Appendix}
 
-%%---------- Onderzoeksvoorstel -----------------------------------------------
+%%---------- Onderzoeksvoorstel ----------
 
 \chapter{Onderzoeksvoorstel}
 
@@ -117,12 +114,15 @@ Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat 
 % Verwijzing naar het bestand met de inhoud van het onderzoeksvoorstel
 \input{../voorstel/voorstel-inhoud}
 
-%%---------- Andere bijlagen --------------------------------------------------
+%%---------- Andere bijlagen ----------
 % TODO: Voeg hier eventuele andere bijlagen toe
 %\input{...}
 
-%%---------- Referentielijst --------------------------------------------------
+%%---------- Referentielijst ----------
 
+%voorzie alle bronnen uit de db in referenties
+\nocite{*}
+%\phantomsection
 \printbibliography[heading=bibintoc]
 
 \end{document}

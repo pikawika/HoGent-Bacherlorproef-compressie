@@ -16,3 +16,7 @@ Er is per onderdeel handleidingen voorzien, onder andere hoe u het Latex bestand
 ## Handliedingen voor deel: voorstel
 
 > - [Hoe compile je het Latex bestand naar een pdf](voorstel/compileToPdf.md)
+
+## Handliedingen voor deel: bachelorproef
+
+> - [Hoe compile je het Latex bestand naar een pdf](bachelorproef/compileToPdf.md)
