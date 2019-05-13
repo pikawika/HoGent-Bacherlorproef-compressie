@@ -21,16 +21,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/drift.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
 <script>
-    var demoTrigger = document.querySelector('.img_evaluation');
-    var paneContainer = document.querySelector('.img_evaluation_zoomed');
 
-    new Drift(demoTrigger, {
-        paneContainer: paneContainer,
-        inlinePane: false,
-        zoomFactor: 5,
-        handleTouch: true,
-    });
 </script>
 </body>
 </html>

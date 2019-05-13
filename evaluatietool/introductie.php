@@ -2,7 +2,7 @@
 //header voorzien
 include 'layout/header.php';
 ?>
-    <div class="p-5 mb-4 bg-primary text-white">
+    <div class="p-5 mb-4 bg-grey text-white">
         <h1 class="mb-4">Een woordje uitleg</h1>
         <p class="mb-4">Na deze video toch nog vragen? Stel ze mij gerust!</p>
         <div class="embed-responsive embed-responsive-16by9">

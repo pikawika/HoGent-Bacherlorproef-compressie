@@ -3,8 +3,10 @@
 include 'layout/header.php';
 include 'db/db_actions.php';
 
-if (isset($_POST['submit_profile_form']) || isset($_POST['submit_iterative_photo_rating_form']) ) {
+if (isset($_POST['submit_profile_form'])) {
     save_info_about_you();
+    show_iterative_photo_rating();
+} else if (isset($_POST['submit_iterative_photo_rating_form'])) {
     show_iterative_photo_rating();
 } else {
     show_info_about_you();
@@ -55,7 +57,7 @@ function show_iterative_photo_rating()
     //TODO: nu maar temp voor te tonen aan tom.
     ?>
     <form enctype='multipart/form-data' method="post">
-        <div class="p-5 mb-4 bg-primary text-white">
+        <div class="p-5 mb-4 bg-grey text-white">
 
             <div class="mb-5 row">
                 <div class="col">
@@ -69,7 +71,7 @@ function show_iterative_photo_rating()
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Scherpte in focus</label>
+                <label class="col-sm-2 col-form-label">Scherpte</label>
                 <div class="col-sm-10">
 
                     <div class="w-100">
@@ -96,40 +98,6 @@ function show_iterative_photo_rating()
                         </div>
                     </div>
                     <small>De kwaliteit van de scherpe delen van de afbeelding. (scherpe lijnen of wazige lijnen)
-                    </small>
-                </div>
-            </div>
-            <hr>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Bookeh</label>
-                <div class="col-sm-10">
-
-                    <div class="w-100">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="bookeh1" name="bookeh" value="1"
-                                   required>
-                            <label class="form-check-label" for="bookeh1">1 (-)</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="bookeh2" name="bookeh" value="2">
-                            <label class="form-check-label" for="bookeh2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="bookeh3" name="bookeh" value="3">
-                            <label class="form-check-label" for="bookeh3">3</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="bookeh4" name="bookeh" value="4">
-                            <label class="form-check-label" for="bookeh4">4</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="bookeh5" name="bookeh" value="5">
-                            <label class="form-check-label" for="bookeh5">5 (+)</label>
-                        </div>
-                    </div>
-                    <small>De kwaliteit en aangenaamheid van de wazige delen, ook gekend als bookeh of het diepte
-                        effect.
                     </small>
                 </div>
             </div>
@@ -213,7 +181,7 @@ function show_info_about_you()
 {
     ?>
     <form enctype='multipart/form-data' method="post">
-        <div class="p-5 mb-4 bg-primary text-white">
+        <div class="p-5 mb-4 bg-grey text-white">
             <h1 class="mb-4">Informatie over u</h1>
 
             <div class="form-group row">
@@ -236,7 +204,7 @@ function show_info_about_you()
             </div>
             <hr>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Expertise binnen het onderzoek domein</label>
+                <label class="col-sm-2 col-form-label">Expertise binnen het onderzoeksdomein</label>
                 <div class="col-sm-10">
 
                     <div class="w-100">
