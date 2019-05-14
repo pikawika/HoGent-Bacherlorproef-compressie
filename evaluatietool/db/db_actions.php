@@ -109,19 +109,19 @@ function delete_tables()
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "DROP TABLE `participants`";
+    $sql = "DROP TABLE IF EXISTS `participants`";
 
     if ($conn->query($sql) !== TRUE) {
         die("table deletion Participants failed: " . $conn->error);
     }
 
-    $sql = "DROP TABLE `images`";
+    $sql = "DROP TABLE IF EXISTS `images`";
 
     if ($conn->query($sql) !== TRUE) {
         die("table deletion Images failed: " . $conn->error);
     }
 
-    $sql = "DROP TABLE `ratings`";
+    $sql = "DROP TABLE IF EXISTS `ratings`";
 
     if ($conn->query($sql) !== TRUE) {
         die("table deletion Ratings failed: " . $conn->error);
@@ -130,7 +130,8 @@ function delete_tables()
     $conn->close();
 }
 
-function get_all_images() {
+function get_all_images()
+{
     global $servername, $username, $password, $dbname;
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -146,7 +147,8 @@ function get_all_images() {
     return $result;
 }
 
-function get_all_user_rated_images($participant_id) {
+function get_all_user_rated_images($participant_id)
+{
     global $servername, $username, $password, $dbname;
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="628a6d69-9bcb-4cdd-8c60-92ea4f0554c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/setup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/db_actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_actions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluatie_afbeeldingen/evaluatiereeks/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/evaluatie_afbeeldingen/evaluatiereeks/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onderzoek.php" beforeDir="false" afterPath="$PROJECT_DIR$/onderzoek.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +25,25 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/db_actions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+              <folding>
+                <element signature="n#create_tables#0;n#!!top" />
+                <element signature="n#create_user_and_get_user_id#0;n#!!top" />
+                <element signature="n#create_image_record#0;n#!!top" />
+                <element signature="n#get_all_images#0;n#!!top" />
+                <element signature="n#get_all_user_rated_images#0;n#!!top" />
+                <element signature="n#add_user_rating#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -99,8 +112,8 @@
         <option value="$PROJECT_DIR$/setup.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/chrome.php" />
-        <option value="$PROJECT_DIR$/db/db_actions.php" />
         <option value="$PROJECT_DIR$/onderzoek.php" />
+        <option value="$PROJECT_DIR$/db/db_actions.php" />
       </list>
     </option>
   </component>
@@ -204,15 +217,16 @@
       <workItem from="1557787029423" duration="824000" />
       <workItem from="1557819280665" duration="205000" />
       <workItem from="1557830401811" duration="2897000" />
-      <workItem from="1557855363464" duration="7558000" />
+      <workItem from="1557855363464" duration="8015000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27834000" />
+    <option name="totallyTimeSpent" value="28291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49759036" visible="true" weight="0.18884121" />
@@ -322,19 +336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/db_actions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="157" column="29" selection-start-line="157" selection-start-column="28" selection-end-line="157" selection-end-column="29" />
-          <folding>
-            <element signature="n#create_user_and_get_user_id#0;n#!!top" />
-            <element signature="n#create_image_record#0;n#!!top" />
-            <element signature="n#delete_tables#0;n#!!top" />
-            <element signature="n#get_chrome_test_images#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/onderzoek.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -356,6 +357,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/db_actions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding>
+            <element signature="n#create_tables#0;n#!!top" />
+            <element signature="n#create_user_and_get_user_id#0;n#!!top" />
+            <element signature="n#create_image_record#0;n#!!top" />
+            <element signature="n#get_all_images#0;n#!!top" />
+            <element signature="n#get_all_user_rated_images#0;n#!!top" />
+            <element signature="n#add_user_rating#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
