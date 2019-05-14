@@ -32,13 +32,13 @@ include 'layout/header.php';
             <li>
                 De scores die u aan de afbeeldingen toekent
             </li>
-        </ul></p>
-        <p class="mb-2">U zal in totaal 60 afbeeldingen beoordelen. De geschatte duur van dit onderzoek bedraagt 30 tot 45 minuten.</p>
-
-
-
+        </ul>
+        </p>
+        <p class="mb-2">U zal in totaal 60 afbeeldingen beoordelen. De geschatte duur van dit onderzoek bedraagt 30 tot
+            45 minuten.</p>
     </div>
-    <button type="button" class="btn btn-outline-primary w-100" onclick="window.location.href='introductie.php'">Ik ben akkoord met de gegevensverwerking en doe mee aan
+    <button type="button" class="btn btn-outline-primary w-100" onclick="window.location.href='introductie.php'">Ik ben
+        akkoord met de gegevensverwerking en doe mee aan
         het onderzoek!
     </button>
 <?php

@@ -5,9 +5,19 @@ include 'db/db_actions.php';
 
 if (isset($_POST['submit_profile_form'])) {
     save_info_about_you();
-    show_iterative_photo_rating();
-} else if (isset($_POST['submit_iterative_photo_rating_form'])) {
-    show_iterative_photo_rating();
+    show_start_chrome_sequence();
+} else if (isset($_GET['browser']) && isset($_GET['participant_id'])) {
+    if (isset($_POST['image_id'])) {
+        save_post_rating_image();
+    }
+
+    if ($_GET['browser'] == "chrome") {
+        show_next_iterative_photo_rating_chrome();
+    }
+
+    if ($_GET['browser'] == "safari") {
+        show_next_iterative_photo_rating_safari();
+    }
 } else {
     show_info_about_you();
 }
@@ -15,58 +25,194 @@ if (isset($_POST['submit_profile_form'])) {
 function save_info_about_you()
 {
     //db moet bestaan
-    create_tables();
-    $participant_id = create_user($_POST['gender'], $_POST['age'], $_POST['expertise'], $_POST['colorblind'], $_POST['badvision']);
+    $participant_id = create_user_and_get_user_id($_POST['gender'], $_POST['age'], $_POST['expertise'], $_POST['colorblind'], $_POST['badvision']);
     //cookie met user id instellen
     setcookie('participant_id', $participant_id, time() + (86400 * 30), "/");
 }
 
-function decide_next_iterative_photo_rating()
+function show_next_iterative_photo_rating_chrome()
 {
-    //todo uit db: ids
-    $all_test_images = ["1.png", "2.png", "3.png"];
-    //todo uit db: ids
-    $rated_test_images = [];
-    //todo uit db: ids
-    $all_real_images = ["2.png", "3.png"];
-    //todo uit db: ids
-    $rated_real_images = [];
+    setcookie('participant_id', $_GET['participant_id'], time() + (86400 * 30), "/");
+    $all_test_images = [];
+    $all_real_images = [];
+    $rated_images = [];
+    $to_rate_test_images = [];
+    $to_rate_real_images = [];
 
-    $to_rate_test_images = array_values(array_diff($all_test_images, $rated_test_images));
-    $to_rate_real_images = array_values(array_diff($all_real_images, $rated_real_images));
+    $all_images_raw = get_all_images();
+    $all_rated_images_raw = get_all_user_rated_images($_GET['participant_id']);
 
-    if (sizeof($to_rate_test_images) == sizeof($rated_test_images) && sizeof($to_rate_test_images) != 0) {
-        show_testing_image_sequence_warning();
+    while ($row = $all_images_raw->fetch_assoc()) {
+        if ($row["practice_data"] == 1 && $row["chrome_not_safari"] == 1) {
+            array_push($all_test_images, $row);
+        }
+        if ($row["practice_data"] == 0 && $row["chrome_not_safari"] == 1) {
+            array_push($all_real_images, $row);
+        }
+    }
+
+    while ($row = $all_rated_images_raw->fetch_assoc()) {
+        array_push($rated_images, $row);
+    }
+
+    foreach ($all_test_images as $all_test_image) {
+        $match = false;
+        foreach ($rated_images as $rated_image) {
+            if ($all_test_image['image_id'] == $rated_image['image_id']) {
+                $match = true;
+                break;
+            }
+        }
+
+        if (!$match) {
+            array_push($to_rate_test_images, $all_test_image);
+        }
+    }
+
+    foreach ($all_real_images as $all_real_image) {
+        $match = false;
+        foreach ($rated_images as $rated_image) {
+            if ($all_real_image['image_id'] == $rated_image['image_id']) {
+                $match = true;
+                break;
+            }
+        }
+
+        if (!$match) {
+            array_push($to_rate_real_images, $all_real_image);
+        }
+    }
+
+    if (sizeof($to_rate_test_images) != 0) {
+        $random_index = array_rand($to_rate_test_images, 1);
+        show_photo_rating($to_rate_test_images[$random_index]['image_id'], $to_rate_test_images[$random_index]['path']);
         return;
     }
 
-    if (empty($to_rate_test_images)) {
-        show_iterative_photo_rating($to_rate_test_images[array_rand($to_rate_test_images)]);
+    if (sizeof($to_rate_real_images) != 0) {
+        $random_index = array_rand($to_rate_real_images, 1);
+        show_photo_rating($to_rate_real_images[$random_index]['image_id'], $to_rate_real_images[$random_index]['path']);
         return;
     }
+
+    //laatste ratebare image bereikt
+    show_start_safari_sequence();
 }
 
-function show_testing_image_sequence_warning()
+function show_next_iterative_photo_rating_safari()
 {
-    //TODO
+    setcookie('participant_id', $_GET['participant_id'], time() + (86400 * 30), "/");
+    $all_test_images = [];
+    $all_real_images = [];
+    $rated_images = [];
+    $to_rate_test_images = [];
+    $to_rate_real_images = [];
+
+    $all_images_raw = get_all_images();
+    $all_rated_images_raw = get_all_user_rated_images($_GET['participant_id']);
+
+    while ($row = $all_images_raw->fetch_assoc()) {
+        if ($row["practice_data"] == 1 && $row["chrome_not_safari"] == 0) {
+            array_push($all_test_images, $row);
+        }
+        if ($row["practice_data"] == 0 && $row["chrome_not_safari"] == 0) {
+            array_push($all_real_images, $row);
+        }
+    }
+
+    while ($row = $all_rated_images_raw->fetch_assoc()) {
+        array_push($rated_images, $row);
+    }
+
+    foreach ($all_test_images as $all_test_image) {
+        $match = false;
+        foreach ($rated_images as $rated_image) {
+            if ($all_test_image['image_id'] == $rated_image['image_id']) {
+                $match = true;
+                break;
+            }
+        }
+
+        if (!$match) {
+            array_push($to_rate_test_images, $all_test_image);
+        }
+    }
+
+    foreach ($all_real_images as $all_real_image) {
+        $match = false;
+        foreach ($rated_images as $rated_image) {
+            if ($all_real_image['image_id'] == $rated_image['image_id']) {
+                $match = true;
+                break;
+            }
+        }
+
+        if (!$match) {
+            array_push($to_rate_real_images, $all_real_image);
+        }
+    }
+
+    if (sizeof($to_rate_test_images) != 0) {
+        $random_index = array_rand($to_rate_test_images, 1);
+        show_photo_rating($to_rate_test_images[$random_index]['image_id'], $to_rate_test_images[$random_index]['path']);
+        return;
+    }
+
+    if (sizeof($to_rate_real_images) != 0) {
+        $random_index = array_rand($to_rate_real_images, 1);
+        show_photo_rating($to_rate_real_images[$random_index]['image_id'], $to_rate_real_images[$random_index]['path']);
+        return;
+    }
+
+    //laatste ratebare image bereikt
+    show_thanks_screen();
 }
 
-function show_logged_image_sequence_warning()
+function show_start_safari_sequence()
 {
-    //TODO
+    $url = strtok("http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}", '?');
+    $url = $url . "?browser=safari&participant_id=" . $_COOKIE['participant_id'];
+    ?>
+    <div class="p-5 mb-4 bg-grey text-white">
+        <h1 class="mb-4 text-white">Open de volgende link in safari</h1>
+
+        <a class="mb-2 text-white" href="<?php echo $url ?>"><?php echo $url ?></a>
+    </div>
+    <?php
 }
 
-function show_iterative_photo_rating()
+function show_start_chrome_sequence()
 {
-    //TODO: nu maar temp voor te tonen aan tom.
+    $url = strtok("http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}", '?');
+    $url = $url . "?browser=chrome&participant_id=" . $_COOKIE['participant_id'];
+    ?>
+    <div class="p-5 mb-4 bg-grey text-white">
+        <h1 class="mb-4 text-white">Open de volgende link in chrome</h1>
+
+        <a class="mb-2 text-white" href="<?php echo $url ?>"><?php echo $url ?></a>
+    </div>
+    <?php
+}
+
+function show_thanks_screen()
+{
+    ?>
+    <div class="p-5 mb-4 bg-grey text-white">
+        <h1 class="mb-4 text-white">Bedankt om deel te nemen aan dit onderzoek!</h1>
+    </div>
+    <?php
+}
+
+function show_photo_rating($image_id, $path)
+{
     ?>
     <form enctype='multipart/form-data' method="post">
         <div class="p-5 mb-4 bg-grey text-white">
 
             <div class="mb-5 row">
                 <div class="col">
-                    <img class="img_evaluation" src="evaluatie_afbeeldingen/evaluatiereeks/1.jpg"
-                         data-zoom="evaluatie_afbeeldingen/evaluatiereeks/1.jpg">
+                    <img class="img_evaluation" src="<?php echo $path ?>"
+                         data-zoom="<?php echo $path ?>">
                 </div>
                 <div class="col">
                     <p class="img_evaluation_zoomed">Beweeg met de muis over de afbeelding om in te zoomen.</p>
@@ -80,25 +226,25 @@ function show_iterative_photo_rating()
 
                     <div class="w-100">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="focus1" name="focus" value="1"
+                            <input class="form-check-input" type="radio" id="sharpness1" name="sharpness" value="1"
                                    required>
-                            <label class="form-check-label" for="focus1">1 (-)</label>
+                            <label class="form-check-label" for="sharpness1">1 (-)</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="focus2" name="focus" value="2">
-                            <label class="form-check-label" for="focus2">2</label>
+                            <input class="form-check-input" type="radio" id="sharpness2" name="sharpness" value="2">
+                            <label class="form-check-label" for="sharpness2">2</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="focus3" name="focus" value="3">
-                            <label class="form-check-label" for="focus3">3</label>
+                            <input class="form-check-input" type="radio" id="sharpness3" name="sharpness" value="3">
+                            <label class="form-check-label" for="sharpness3">3</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="focus4" name="focus" value="4">
-                            <label class="form-check-label" for="focus4">4</label>
+                            <input class="form-check-input" type="radio" id="sharpness4" name="sharpness" value="4">
+                            <label class="form-check-label" for="sharpness4">4</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="focus5" name="focus" value="5">
-                            <label class="form-check-label" for="focus5">5 (+)</label>
+                            <input class="form-check-input" type="radio" id="sharpness5" name="sharpness" value="5">
+                            <label class="form-check-label" for="sharpness5">5 (+)</label>
                         </div>
                     </div>
                     <small>Een afbeelding wordt aanschouwd als zeer scherp (5) wanneer de elementen die in focus liggen
@@ -173,6 +319,7 @@ function show_iterative_photo_rating()
                 </div>
             </div>
 
+            <input type="hidden" name="image_id" value="<?php echo $image_id ?>">
 
         </div>
 
@@ -182,6 +329,11 @@ function show_iterative_photo_rating()
         </button>
     </form>
     <?php
+}
+
+function save_post_rating_image()
+{
+    add_user_rating($_COOKIE['participant_id'], $_POST['image_id'], $_POST['sharpness'], $_POST['color'], $_POST['general']);
 }
 
 function show_info_about_you()
