@@ -33,7 +33,8 @@ function create_tables()
                 extension VARCHAR(255) NOT NULL,
                 path VARCHAR(255) NOT NULL,
                 practice_data BOOL NOT NULL,
-                chrome_not_safari BOOL NOT NULL
+                chrome_not_safari BOOL NOT NULL,
+                filesize INT NOT NULL
                 )";
 
     if ($conn->query($sql) !== TRUE) {
@@ -80,7 +81,7 @@ function create_user_and_get_user_id($gender, $age, $expertise, $colorblind, $ba
     return $participant_id;
 }
 
-function create_image_record($filename, $extension, $path, $practice_data, $chrome_not_safari)
+function create_image_record($filename, $extension, $path, $practice_data, $chrome_not_safari, $filesize)
 {
     global $servername, $username, $password, $dbname;
     // Create connection
@@ -90,7 +91,7 @@ function create_image_record($filename, $extension, $path, $practice_data, $chro
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO images(filename, extension, path, practice_data, chrome_not_safari) VALUES ('$filename', '$extension', '$path', '$practice_data', '$chrome_not_safari')";
+    $sql = "INSERT INTO images(filename, extension, path, practice_data, chrome_not_safari, filesize) VALUES ('$filename', '$extension', '$path', '$practice_data', '$chrome_not_safari', '$filesize')";
 
     if ($conn->query($sql) !== TRUE) {
         die("insert image failed: " . $conn->error);

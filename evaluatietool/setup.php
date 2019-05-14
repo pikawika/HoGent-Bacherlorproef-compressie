@@ -11,7 +11,8 @@ foreach (glob('evaluatie_afbeeldingen/testreeks/*.*') as $path) {
     $filename = pathinfo($path, PATHINFO_FILENAME);
     $chrome_not_safari = ($extension == "jpg" || $extension == "webp") ? 1 : 0;
     $practice_data = 1;
-    create_image_record($filename, $extension, $path, $practice_data, $chrome_not_safari);
+    $filesize = filesize($path);
+    create_image_record($filename, $extension, $path, $practice_data, $chrome_not_safari, $filesize);
 }
 
 //map afbeeldingen naar db
@@ -20,7 +21,8 @@ foreach (glob('evaluatie_afbeeldingen/evaluatiereeks/*.*') as $path) {
     $filename = pathinfo($path, PATHINFO_FILENAME);
     $chrome_not_safari = ($extension == "jpg" || $extension == "webp") ? 1 : 0;
     $practice_data = 0;
-    create_image_record($filename, $extension, $path, $practice_data, $chrome_not_safari);
+    $filesize = filesize($path);
+    create_image_record($filename, $extension, $path, $practice_data, $chrome_not_safari, $filesize);
 }
 
 
