@@ -6,7 +6,7 @@ include 'layout/header.php';
         <h1 class="mb-4">Een woordje uitleg</h1>
         <p class="mb-4">Na deze video toch nog vragen? Stel ze mij gerust!</p>
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="assets/introductie/uitleg.mp4" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tqx-hmzO4kQ" allowfullscreen></iframe>
         </div>
     </div>
     <button type="button" class="btn btn-outline-primary w-100" onclick="window.location.href='onderzoek.php'">Alles is duidelijk, start het onderzoek!

@@ -97,7 +97,8 @@ function show_iterative_photo_rating()
                             <label class="form-check-label" for="focus5">5 (+)</label>
                         </div>
                     </div>
-                    <small>De kwaliteit van de scherpe delen van de afbeelding. (scherpe lijnen of wazige lijnen)
+                    <small>Een afbeelding wordt aanschouwd als zeer scherp (5) wanneer de elementen die in focus liggen
+                        veel detail bevatten en lijnen vloeiend zijn zoals ze in de echte wereld ook zijn.
                     </small>
                 </div>
             </div>
@@ -130,7 +131,9 @@ function show_iterative_photo_rating()
                             <label class="form-check-label" for="color5">5 (+)</label>
                         </div>
                     </div>
-                    <small>De aangenaamheid van het contrast en de kleuren.</small>
+                    <small>Een afbeelding scoort goed voor kleuren en contrast (5) als u geen artifacten waarneemt en
+                        het gevoel hebt dat er geen details verloren zijn gegaan door een slecht contrast.
+                    </small>
                 </div>
             </div>
             <hr>
@@ -219,9 +222,9 @@ function show_info_about_you()
                         </div>
                     </div>
 
-                    <small>Indien u geen benoemswaardige ervaring heeft met het beoordelen van afbeeldingskwaliteit
-                        selecteert u nee. Indien u bijvoorbeeld hobby fotograaf bent en kennis heeft van
-                        afbeeldingskwaliteit kiest u voor ja.
+                    <small>Indien u een gegronde kennis heeft van afbeeldingscompressie algoritmes, het verschil kent
+                        tussen lossy en lossless algoritmes en artifacten zoals blokartifcaten kan herkennen, kiest
+                        u hier voor de optie ja.
                     </small>
                 </div>
             </div>
