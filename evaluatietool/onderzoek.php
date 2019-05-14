@@ -14,7 +14,11 @@ if (isset($_POST['submit_profile_form'])) {
 
 function save_info_about_you()
 {
-    //TODO
+    //db moet bestaan
+    create_tables();
+    $participant_id = create_user($_POST['gender'], $_POST['age'], $_POST['expertise'], $_POST['colorblind'], $_POST['badvision']);
+    //cookie met user id instellen
+    setcookie('participant_id', $participant_id, time() + (86400 * 30), "/");
 }
 
 function decide_next_iterative_photo_rating()
@@ -212,12 +216,12 @@ function show_info_about_you()
 
                     <div class="w-100">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="expertise1" name="expertise" value="yes"
+                            <input class="form-check-input" type="radio" id="expertise1" name="expertise" value="1"
                                    required>
                             <label class="form-check-label" for="expertise1">Ja</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="expertise2" name="expertise" value="no">
+                            <input class="form-check-input" type="radio" id="expertise2" name="expertise" value="0">
                             <label class="form-check-label" for="expertise2">Nee</label>
                         </div>
                     </div>
@@ -235,13 +239,13 @@ function show_info_about_you()
 
                     <div class="w-100">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="generalblind1" name="colorblind"
-                                   value="yes"
+                            <input class="form-check-input" type="radio" id="colorblind1" name="colorblind"
+                                   value="1"
                                    required>
                             <label class="form-check-label" for="colorblind1">Ja</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="colorblind2" name="colorblind" value="no">
+                            <input class="form-check-input" type="radio" id="colorblind2" name="colorblind" value="0">
                             <label class="form-check-label" for="colorblind2">Nee</label>
                         </div>
                     </div>
@@ -259,12 +263,12 @@ function show_info_about_you()
 
                     <div class="w-100">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="badvision1" name="badvision" value="yes"
+                            <input class="form-check-input" type="radio" id="badvision1" name="badvision" value="1"
                                    required>
                             <label class="form-check-label" for="badvision1">Ja</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="badvision2" name="badvision" value="no">
+                            <input class="form-check-input" type="radio" id="badvision2" name="badvision" value="0">
                             <label class="form-check-label" for="badvision2">Nee</label>
                         </div>
                     </div>
