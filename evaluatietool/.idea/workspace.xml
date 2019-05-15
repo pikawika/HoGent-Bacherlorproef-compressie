@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="628a6d69-9bcb-4cdd-8c60-92ea4f0554c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/db_actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_actions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/setup.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,12 +25,18 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/setup.php">
+        <entry file="file://$PROJECT_DIR$/onderzoek.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="101" selection-start-line="24" selection-start-column="101" selection-end-line="24" selection-end-column="101" />
+            <state relative-caret-position="15">
+              <caret line="1" column="8" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="8" />
+              <folding>
+                <element signature="n#show_next_iterative_photo_rating_safari#0;n#!!top" />
+                <element signature="n#show_photo_rating#0;n#!!top" />
+                <element signature="n#save_post_rating_image#0;n#!!top" />
+                <element signature="n#show_info_about_you#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,6 +75,7 @@
       <find>$all_rated_images</find>
       <find>$_COOKIE['participant_id']</find>
       <find>todo</find>
+      <find>header</find>
     </findStrings>
     <replaceStrings>
       <replace>bookeh</replace>
@@ -220,19 +224,20 @@
       <workItem from="1557830401811" duration="2897000" />
       <workItem from="1557855363464" duration="8363000" />
       <workItem from="1557867872664" duration="148000" />
+      <workItem from="1557870019987" duration="290000" />
+      <workItem from="1557905430828" duration="31000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28787000" />
+    <option name="totallyTimeSpent" value="29111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49638554" visible="true" weight="0.19098713" />
-      <window_info id="Structure" order="2" sideWeight="0.5036145" side_tool="true" visible="true" weight="0.19098713" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4939759" visible="true" weight="0.19670959" />
+      <window_info id="Structure" order="2" sideWeight="0.5060241" side_tool="true" visible="true" weight="0.19670959" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
@@ -310,23 +315,6 @@
     <entry file="file://$PROJECT_DIR$/reset.php" />
     <entry file="file://$PROJECT_DIR$/safari.php" />
     <entry file="file://$PROJECT_DIR$/chrome.php" />
-    <entry file="file://$PROJECT_DIR$/onderzoek.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="185" column="16" selection-start-line="185" selection-start-column="14" selection-end-line="185" selection-end-column="16" />
-          <folding>
-            <element signature="n#save_info_about_you#0;n#!!top" />
-            <element signature="n#show_next_iterative_photo_rating_chrome#0;n#!!top" />
-            <element signature="n#show_next_iterative_photo_rating_chrome#1;n#!!top" />
-            <element signature="n#show_next_iterative_photo_rating_safari#0;n#!!top" />
-            <element signature="n#show_start_chrome_sequence#1;n#!!top" />
-            <element signature="n#show_photo_rating#0;n#!!top" />
-            <element signature="n#save_post_rating_image#0;n#!!top" />
-            <element signature="n#show_info_about_you#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -341,10 +329,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="101" selection-start-line="24" selection-start-column="101" selection-end-line="24" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/db_actions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        <state relative-caret-position="210">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding>
             <element signature="n#create_user_and_get_user_id#0;n#!!top" />
             <element signature="n#create_image_record#0;n#!!top" />
@@ -356,10 +351,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.php">
+    <entry file="file://$PROJECT_DIR$/onderzoek.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="101" selection-start-line="24" selection-start-column="101" selection-end-line="24" selection-end-column="101" />
+        <state relative-caret-position="15">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="8" />
+          <folding>
+            <element signature="n#show_next_iterative_photo_rating_safari#0;n#!!top" />
+            <element signature="n#show_photo_rating#0;n#!!top" />
+            <element signature="n#save_post_rating_image#0;n#!!top" />
+            <element signature="n#show_info_about_you#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
