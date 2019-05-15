@@ -1,5 +1,6 @@
 <?php
 //header voorzien
+ob_start();
 include 'layout/header.php';
 include 'db/db_actions.php';
 
@@ -440,3 +441,4 @@ function show_info_about_you()
 
 //footer voorzien
 include 'layout/footer.php';
+ob_end_flush();
