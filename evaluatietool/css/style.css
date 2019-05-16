@@ -1,0 +1,20 @@
+.hoofdwrapper {
+    min-height: calc(100vh - 80px);
+    padding: 5% 10%;
+}
+
+footer {
+    height: 80px;
+    overflow: hidden;
+}
+
+.img_evaluation {
+    max-width: 100%;
+    max-height: 650px;
+    display: block;
+    margin: auto;
+}
+
+.bg-grey {
+    background-color: #7F7F7F;
+}
