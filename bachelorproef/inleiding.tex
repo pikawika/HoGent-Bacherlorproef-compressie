@@ -5,56 +5,52 @@
 \chapter{Inleiding}
 \label{ch:inleiding}
 
-\Gls{datacompressie}, en compressie in het algemeen is niets nieuw. Integendeel, het is één van de oudste concepten binnen IT en tot op heden van fundamenteel belang voor zowat alle IT-toepassingen. Door de databesparing kan veelvouden sneller en goedkoper gewerkt worden. Datacompressie en de altijd groeiende waaier aan \glspl{compressie-algoritme} maken het ook mogelijk mt data te verwerken waar voorheen geen beginnen aan was. Denk hierbij bijvoorbeeld aan recente doorbraken binnen \gls{dna-compressie} die het mogelijk maken steeds meer onderzoeken met betrekking tot het menselijk genoom uit te voeren.
+\Gls{datacompressie}, en compressie in het algemeen is niets nieuw. Integendeel, het is één van de oudste concepten binnen IT en tot op heden van fundamenteel belang voor zowat alle IT-toepassingen. Door de databesparing kan veelvouden sneller en goedkoper gewerkt worden. Datacompressie en de altijd groeiende waaier aan \glspl{compressie-algoritme} maken het ook mogelijk met data te verwerken waar voorheen geen beginnen aan was. Denk hierbij bijvoorbeeld aan recente doorbraken binnen \gls{dna-compressie} die het mogelijk maken steeds meer onderzoeken met betrekking tot het menselijk genoom uit te voeren.
 
 Er zijn reeds tal van uitgebreide en professionele papers geschreven rond zowel \gls{datacompressie} als \gls{afbeeldingscompressie} en \gls{videocompressie} in het bijzonder. Dit is logisch, want het zijn onderwerpen die van fundamenteel belang zijn binnen IT. De focus van deze paper ligt dan ook niet op het herschrijven van papers die reeds bestaan maar aan het maken van een nuttig document voor iedereen binnen de IT-wereld. 
 
-Door de verworven kennis zal je als programmeur, content creator of eender welk andere belanghebber inzicht krijgen hoe \gls{datacompressie} ontstaan is en werkt. Er zal verklaring komen rond de verschillende mogelijkheden voor \gls{afbeeldingscompressie} en \gls{videocompressie}. Dit zal inzicht geven tot waarom het zo belangrijk is voor de juiste \glspl{codec} en \glspl{afbeeldingsformaat} te kiezen.
+Door de verworven kennis zal je als programmeur, content creator of eender welk andere belanghebber inzicht krijgen hoe \gls{datacompressie} ontstaan is, hoe het werkt en waarom het zo belangrijk is. Er zal duidelijkheid komen rond de verschillende mogelijkheden voor \gls{afbeeldingscompressie} en \gls{videocompressie} en de bijkomende voordelen en nadelen. Dit zal inzicht geven tot waarom het zo belangrijk is voor de juiste \glspl{codec} en \glspl{afbeeldingsformaat} te kiezen.
 
-Er zal een onderzoek uitgevoerd worden welk \gls{afbeeldingsformaat} het best is voor een bepaalde \gls{use-case}: portret foto's op sociale media. De hiervoor ontwikkelde en gratis te gebruiken open source  \gls{afbeeldingsevaluatietool} zal je dan ook de mogelijkheid bieden zelf een subjectief onderzoek te voeren binnen je doelpubliek.
-
-%todo verder en mss andere locatie etc
-
-
+Er zal een onderzoek uitgevoerd worden welk \gls{afbeeldingsformaat} het best is voor een bepaalde \gls{use-case}: portret foto's op de portfolio van een fotografe. De hiervoor ontwikkelde en gratis te gebruiken open source  \gls{afbeeldingsevaluatietool} zal je dan ook de mogelijkheid bieden zelf een subjectief onderzoek te voeren binnen je doelpubliek.
 
 \section{Probleemstelling}
 \label{sec:probleemstelling}
-TODO
+\Gls{datacompressie}, \glspl{afbeeldingsformaat} en video \glspl{codec} spelen een belangrijke rol voor vele werknemers binnen de IT-sector. De kennis van deze onderwerpen is echter ondermaats. 
 
-%TODO: verder 
-%De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
-%\begin{itemize}
-%\item context, achtergrond
-%\item afbakenen van het onderwerp
-%\item verantwoording van het onderwerp, methodologie
-%\item probleemstelling
-%\item onderzoeksdoelstelling
-%\item onderzoeksvraag
-%\item \ldots
-%\end{itemize}
+Dit is deels te weiden aan vele opleidingsinstituten die niet dieper ingaan op \gls{datacompressie} binnen opleidingen als Toegepaste Informatica, Communicatie Management en Digital Media Manager.
+
+Anderzijds is de beschikbare informatie veelal te complex uitgelegd dat een doorsnee lezer al snel afhaakt. Ook focussen veel van deze documenten zich op één specifiek onderdeel binnen \gls{datacompressie} zoals het gedetailleerd uitleggen van één \gls{afbeeldingsformaat} waardoor een globaal beeld moeilijk te scheppen valt.
+
+Het is juist hier waar deze paper beter wilt doen. Dit wordt bereikt door het gebruik van een brede waaier van besproken \glspl{afbeeldingsformaat} en video \glspl{codec}, een woordenlijst (hoofdstuk \ref{ch:termen}), en de nodige theoretische als praktische uitleg gevalideerd door vakexpert Tom Paridaens.
 
 \section{Onderzoeksvragen}
 \label{sec:onderzoeksvragen}
-TODO
+Deze bachelorproef tracht een antwoord te geven op de volgende vragen: 
+\begin{itemize}
+	\item Hoe is \gls{datacompressie} binnen IT ontstaan?
+	\item Wat waren enkele van de eerste primitieve \glspl{compressie-algoritme}?
+	\item Waar zitten de verschillen tussen bij grote waaier aan \glspl{afbeeldingsformaat} en video \glspl{codec}?
+	\item Hoe kan \gls{datacompressie} correct geïmplementeerd worden?
+	\item Wat is het verschil tussen de \glspl{afbeeldingsformaat}:\gls{png}, \gls{jpeg}, \gls{jpeg2000}, \gls{webp} en \gls{heic}
+	\item Wat is het verschil tussen de video \glspl{codec}: \gls{h264-avc}, \gls{h264-svc}, \gls{h265} en \gls{av1}?
+	\item Wat is \gls{dna-compressie} en wat zijn andere uitdagingen binnen \gls{datacompressie}?
+\end{itemize}
 
-%TODO: verder 
-%Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+Hierdoor zou de hoofdonderzoeksvraag moeten kunnen beantwoord worden, zijnde:
+\begin{itemize}
+	\item Waarom moet er stilgestaan worden bij het gebruiken van \glspl{compressie-algoritme}, hoe kies je een juist \gls{compressie-algoritme} voor een bepaalde \gls{use-case} en hoe implementeer je die het best.
+\end{itemize}
 
 \section{Onderzoeksdoelstelling}
 \label{sec:onderzoeksdoelstelling}
-TODO
+
+De doelstelling van deze bachelorproef is het vormen van een nuttig document voor het brede scala belanghebbende naar de onderzoeksvragen (\ref{sec:onderzoeksvragen}). Enerzijds is dit document dus een vergelijkende studie tussen verschillende video \glspl{codec} en \glspl{afbeeldingsformaat} waardoor het ook een verslag vormt met tal van aanbevelingen. Anderzijds zorgt de technische uitleg en basic proof-of-concept \gls{compressietool} samen met de open source \gls{afbeeldingsevaluatietool} voor de nodige kennis en middelen om verder onderzoek te richten.
 
 %TODO: verder 
 %Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv. om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
 
 \section{Opzet van deze bachelorproef}
 \label{sec:opzet-bachelorproef}
-TODO
-
-% Het is gebruikelijk aan het einde van de inleiding een overzicht te
-% geven van de opbouw van de rest van de tekst. Deze sectie bevat al een aanzet
-% die je kan aanvullen/aanpassen in functie van je eigen tekst.
-
 \subsection{Deel 1: situering en literatuurstudie}
 \label{sec:opzet-bachelorproef-deel-1}
 
@@ -68,7 +64,7 @@ Hoofdstuk \ref{ch:literatuurstudie} behoort ook tot het situerende eerste deel e
 \subsection{Deel 2: compressie tool ontwikkelen}
 \label{sec:opzet-bachelorproef-deel-2}
  
- In het tweede zal een basis \gls{datacompressie} tool programmatisch geïmplementeerd worden om de theorie uit het eerste deel in praktijk te brengen.
+ In het tweede zal een basis \gls{compressietool} programmatisch geïmplementeerd worden om de theorie uit het eerste deel in praktijk te brengen.
  
 Hoofdstuk \ref{ch:compressietool} is hierdoor gericht voor technische lezers als programmeurs. Er is echter telkens voldoende randinformatie gegeven zodanig ook de minder technische lezers een blik achter de schermen kunnen verkrijgen.
  %TODO: welke taal tool gemaakt is en wat deze juist doet etc
@@ -89,7 +85,7 @@ In hoofdstuk \ref{ch:videocompressie} zal er verder ingegaan worden op de gekend
 
 In het vierde deel wordt besproken hoe compressiemethoden voor video's en afbeeldingen geëvalueerd worden. Hoofdstuk \ref{ch:kwaliteit} zal enkele veel gebruikte tools en methoden voor objectieve en subjectieve vergelijkingen toelichten.
 
-In hoofdstuk \ref{ch:onderzoek} werd een subjectieve test voor het evalueren van afbeeldingskwaliteit uitgevoerd. Deze test focust zich op portretfoto's. Hierbij zullen enkele van de besproken \glspl{afbeeldingsformaat} uit hoofdstuk \ref{ch:afbeeldingscompressie} tegen elkaar concurreren. De gebruikte tool is voor deze paper opgesteld en is gratis \gls{open-source} toegankelijk gesteld wat het eenvoudig mogelijk maakt om een gelijkaardig onderzoek uit te voeren.
+In hoofdstuk \ref{ch:onderzoek} werd een subjectieve test voor het evalueren van afbeeldingskwaliteit uitgevoerd. Deze test focust zich op portretfoto's. Hierbij zullen enkele van de besproken \glspl{afbeeldingsformaat} uit hoofdstuk \ref{ch:afbeeldingscompressie} tegen elkaar concurreren. De gebruikte \gls{afbeeldingsevaluatietool} is voor deze paper opgesteld en is gratis \gls{open-source} toegankelijk gesteld wat het eenvoudig mogelijk maakt om een gelijkaardig onderzoek uit te voeren.
 %TODO: in staat stelllen als bv prog of content zelf kiezen welk gebruiken
 
 \subsection{Deel 5: uitdagingen en conclusie}
