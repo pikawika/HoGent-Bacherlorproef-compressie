@@ -5,8 +5,7 @@ include 'layout/header.php';
 include 'db/db_actions.php';
 
 if (isset($_POST['submit_profile_form'])) {
-    save_info_about_you();
-    show_start_chrome_sequence();
+    save_info_about_you_and_show_chrome();
 } else if (isset($_GET['browser']) && isset($_GET['participant_id'])) {
     if (isset($_POST['image_id'])) {
         save_post_rating_image();
@@ -23,12 +22,13 @@ if (isset($_POST['submit_profile_form'])) {
     show_info_about_you();
 }
 
-function save_info_about_you()
+function save_info_about_you_and_show_chrome()
 {
     //db moet bestaan
     $participant_id = create_user_and_get_user_id($_POST['gender'], $_POST['age'], $_POST['expertise'], $_POST['colorblind'], $_POST['badvision']);
     //cookie met user id instellen
     setcookie('participant_id', $participant_id, time() + (86400 * 30), "/");
+    show_start_chrome_sequence($participant_id);
 }
 
 function show_next_iterative_photo_rating_chrome()
@@ -182,10 +182,10 @@ function show_start_safari_sequence()
     <?php
 }
 
-function show_start_chrome_sequence()
+function show_start_chrome_sequence($participant_id)
 {
     $url = strtok("http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}", '?');
-    $url = $url . "?browser=chrome&participant_id=" . $_COOKIE['participant_id'];
+    $url = $url . "?browser=chrome&participant_id=" . $participant_id;
     ?>
     <div class="p-5 mb-4 bg-grey text-white">
         <h1 class="mb-4 text-white">Open de volgende link in chrome</h1>
