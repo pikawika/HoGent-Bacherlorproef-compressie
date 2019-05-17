@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="628a6d69-9bcb-4cdd-8c60-92ea4f0554c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../bachelorproef/bachelorproef_bontinck_lennert.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/bachelorproef_bontinck_lennert.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bachelorproef/inleiding.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/inleiding.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bachelorproef/onderzoek.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/onderzoek.tex" afterDir="false" />
-    </list>
+    <list default="true" id="628a6d69-9bcb-4cdd-8c60-92ea4f0554c1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,12 +243,12 @@
       <workItem from="1557945234985" duration="5000" />
       <workItem from="1557991244856" duration="22000" />
       <workItem from="1558004060750" duration="276000" />
-      <workItem from="1558080623656" duration="883000" />
+      <workItem from="1558080623656" duration="1104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31160000" />
+    <option name="totallyTimeSpent" value="31381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
