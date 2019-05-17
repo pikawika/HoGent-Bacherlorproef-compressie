@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="628a6d69-9bcb-4cdd-8c60-92ea4f0554c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../bachelorproef/bachproef-tin.bib" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/bachproef-tin.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bachelorproef/bachelorproef_bontinck_lennert.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/bachelorproef_bontinck_lennert.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bachelorproef/inleiding.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/inleiding.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bachelorproef/onderzoek.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/onderzoek.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bachelorproef/termen-declaration.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/termen-declaration.tex" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +31,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/onderzoek.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
+            <state relative-caret-position="32">
               <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
                 <element signature="n#show_next_iterative_photo_rating_safari#0;n#!!top" />
@@ -377,7 +376,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/onderzoek.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
+        <state relative-caret-position="32">
           <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="n#show_next_iterative_photo_rating_safari#0;n#!!top" />
