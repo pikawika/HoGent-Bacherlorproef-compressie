@@ -1,24 +1,71 @@
 \chapter{Onderzoek}
 \label{ch:onderzoek}
 
-TODO
+Het kiezen voor een bepaald \gls{compressie-algoritme} is zeer \gls{use-case} gebonden. Zeker binnen \gls{videocompressie} en \gls{afbeeldingscompressie} is dit het geval. Ligt de focus op een zo klein mogelijke bestandsgrootte of juist op het behouden van zo veel mogelijk kwaliteit binnen een bepaalde omgeving? Wordt er voor een \gls{lossless} of \gls{lossy} \gls{compressie-algoritme} gekozen?
+
+Zoals besproken in hoofdstuk \ref{ch:kwaliteit} zijn er zowel objectieve als subjectieve onderzoeken die kunnen gevoerd worden om een gepast \gls{compressie-algoritme} te bepalen. In dit hoofdstuk wordt een subjectief onderzoek uitgevoerd voor het bepalen van een geschikt \gls{afbeeldingsformaat} binnen een bepaalde \gls{use-case}. De gebruikte \gls{afbeeldingsevaluatietool} is ontwikkeld voor deze bachelorproef en is \gls{open-source} en gratis in gebruik. De code is te vinden op de \gls{github} repository van deze bachelorproef\urlcite{githubbachelorproef}. Dit maakt het heel eenvoudig dit onderzoek te reproduceren of een gelijkaardig onderzoek uit te voeren met andere \glspl{afbeeldingsformaat} en/of voor een andere \gls{use-case}.
 
 %TODO: onderzoek
 
 \section{Waarom een subjectief onderzoek}
 \label{sec:onderzoek-waarom-subjectief}
 
-TODO
-%TODO: onderzoek
+Zoals besproken in hoofdstuk \ref{ch:kwaliteit} is een subjectief onderzoek aangeraden binnen tal van \glspl{use-case}. Zeker binnen visuele \gls{datacompressie} kan dit de aangeraden manier van werken zijn aangezien de kwaliteit van de afbeeldingen een grote invloed heeft op de gebruikerservaring. 
+
+Een objectief onderzoek dat bijvoorbeeld werkt aan de hand van het vergelijken van een afbeelding voor en na compressie kan een vals positief of negatief beeld geven over een bepaald \gls{afbeeldingsformaat}.
 
 \section{Use case}
 \label{sec:onderzoek-use-case}
 
-TODO
-%TODO: onderzoek
+De \gls{raw} bestanden gebruikt binnen dit onderzoek zijn aangeleverd door Mayté Bogaert, van MaytéB fotografie. Aangezien zij ook aan het plannen is een online portfolio te bouwen vroeg ze zich af in welk \gls{afbeeldingsformaat} en met welke \gls{render} instellingen ze de afbeelding het best online zet. Deze vraag is dan ook de \gls{use-case} van dit onderzoek.
+
+Voor deze \gls{use-case} speelt de gebruikerservaring een zeer belangrijke rol. Als fotografe zijn afbeeldingen je product en moeten potentiële klanten deze dus positief ervaren wanneer ze op je portfolio terecht komen.
+
+Langs de andere kant gaat het om een online website en moet er dus rekening gehouden worden met \gls{hosting} kosten, wachttijden en \gls{bandbreedte} gebruik. Als de website te lang duurt om te laden of alle mobiele data van een potentiële klant opgebruikt is dat geen goede reclame.
+
+Er wordt dus een \gls{afbeeldingsformaat} gezocht met (zeer) goede beoordelingen uit het onderzoek dat de kleinste bestandsgrootte heeft.
+
+\section{Afbeeldingsevaluatietool}
+\label{sec:onderzoek-evaluatietool}
+
+De gebruikte tool voor het voeren van dit onderzoek is een voor deze bachelorproef ontwikkelde \gls{afbeeldingsevaluatietool}. De code is te vinden op de \gls{github} repository van deze bachelorproef\urlcite{githubbachelorproef}. 
+
+Deze tool is geschreven in \gls{php} met een achterliggende \gls{sql} databank. Dit maakt het mogelijk de tool eenvoudig lokaal te runnen door het gebruik van webserver omgevingen als \gls{xampp} of online te plaatsen op de meeste \gls{hosting} platformen.
+
+\subsection{Opzetten van de afbeeldingsevaluatietool}
+\label{sec:onderzoek-evaluatietool-setup}
+
+Een identiek onderzoek maar met andere afbeeldingen kan gevoerd worden zonder code aanpassingen te moeten uitvoeren wat de reproduceerbaarheid van dit onderzoek hoog houd. 
+
+Plaats hiervoor de bronbestanden op de webserver en voorzien een database via localhost genaamd 'bachelorproef'. De gebruiker root met wachtwoord root moet toegang hebben tot deze database. Plaats de te evalueren afbeeldingen onder de map 'evaluatiereeks' en/of 'testreeks' te vinden in de map 'evaluatie\_afbeeldingen'. Surf naar '/setup.php' en wacht tot er 'done' op het scherm verschijnt. Het onderzoek is nu klaar om te starten en kan via de hoofdfolder gestart worden ('/index.php').
+
+Let wel op dat het testtoestel over de nodige browsers beschikt die de te evalueren \glspl{afbeeldingsformaat} ondersteund en dat \gls{js} ondersteuning aanstaat. Websites als caniuse.com zijn ideaal om na te gaan welke browser en toestellen welke \glspl{afbeeldingsformaat} ondersteund.
+
+Voor het opzetten van de \gls{afbeeldingsevaluatietool} met andere instellingen zoals meer ondervraagde kenmerken of \glspl{afbeeldingsformaat} zijn echter wel aanpassingen aan de code vereist. 
+
+\subsubsection{Afbeeldingsevaluatietool instellingen en uitbreidingen}
+\label{sec:onderzoek-evaluatietool-setup-database}
+
+De database instellingen en \gls{sql} query's zijn bewaard onder 'db\_actions.php' te vinden onder de map 'db'. Bovenaan deze file kunnen de servernaam en databasenaam aangepast worden alsook de gebruikersnaam en het wachtwoord.
+
+Mochten er extra bij te houden variabelen gewenst zijn kunnen deze toegevoegd worden in de functie 'create\_tables()' onder 'db\_actions.php'. Deze acties worden opgeroepen vanaf 'onderzoek.php', bijkomende input velden en logica kunnen hier dan ook voorzien worden.
+
+De tekst op het eerste scherm is terug te vinden in 'index.php'. De verwijzing naar het filmpje is terug te vinden in 'introductie.php' en kan vervangen worden door een andere \gls{yt} link of een lokaal bestand.
+
+De tool is voorzien van \gls{bootstrap}, \gls{jquery} en \gls{drift}, een \gls{open-source} \gls{js} \gls{plug-in} voor het inzoomen op afbeeldingen. Er is commentaar voorzien in de code waar mogelijk en functienamen zijn steeds verklarend. Aanpassingen zouden dus mogelijk moeten zijn zonder veel tijd of werk.
+
+\subsection{Werking van de evaluatietool}
+\label{sec:onderzoek-evaluatietool-werking}
 
 TODO
 %TODO: onderzoek
+
+\subsection{Exporteren van de verzamelde gegevens}
+\label{sec:onderzoek-evaluatietool-export}
+
+TODO
+%TODO: onderzoek
+
 
 \section{Uitvoering}
 \label{sec:onderzoek-uitvoering}
@@ -27,19 +74,19 @@ TODO
 %TODO: onderzoek
 
 \subsection{Geëvalueerde afbeeldingsformaten}
-\label{sec:onderzoek-afbeeldingsformaten}
-
-TODO
-%TODO: onderzoek
-
-\subsection{Evaluatietool}
-\label{sec:onderzoek-evaluatietool}
+\label{sec:onderzoek-uitvoering-afbeeldingsformaten}
 
 TODO
 %TODO: onderzoek
 
 \subsection{Deelnemers}
-\label{sec:onderzoek-deelnemers}
+\label{sec:onderzoek-uitvoering-deelnemers}
+
+TODO
+%TODO: onderzoek
+
+\subsection{Opgeslagen data}
+\label{sec:onderzoek-uitvoering-opgeslagen-data}
 
 TODO
 %TODO: onderzoek

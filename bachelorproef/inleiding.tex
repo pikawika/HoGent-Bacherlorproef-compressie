@@ -9,19 +9,21 @@
 
 Er zijn reeds tal van uitgebreide en professionele papers geschreven rond zowel \gls{datacompressie} als \gls{afbeeldingscompressie} en \gls{videocompressie} in het bijzonder. Dit is logisch, want het zijn onderwerpen die van fundamenteel belang zijn binnen IT. De focus van deze paper ligt dan ook niet op het herschrijven van papers die reeds bestaan maar aan het maken van een nuttig document voor iedereen binnen de IT-wereld. 
 
-Door de verworven kennis zal je als programmeur, content creator of eender welk andere belanghebber inzicht krijgen hoe \gls{datacompressie} ontstaan is, hoe het werkt en waarom het zo belangrijk is. Er zal duidelijkheid komen rond de verschillende mogelijkheden voor \gls{afbeeldingscompressie} en \gls{videocompressie} en de bijkomende voordelen en nadelen. Dit zal inzicht geven tot waarom het zo belangrijk is voor de juiste \glspl{codec} en \glspl{afbeeldingsformaat} te kiezen.
+Door de verworven kennis zal je als programmeur, content creator of eender welk andere belanghebber inzicht krijgen hoe \gls{datacompressie} ontstaan is, hoe het werkt en waarom het zo belangrijk is. Er zal duidelijkheid komen rond de verschillende mogelijkheden voor \gls{afbeeldingscompressie} en \gls{videocompressie} en de bijkomende voordelen en nadelen. Dit zal inzicht geven tot waarom het zo belangrijk is voor de juiste video \glspl{codec} en \glspl{afbeeldingsformaat} te kiezen.
 
-Er zal een onderzoek uitgevoerd worden welk \gls{afbeeldingsformaat} het best is voor een bepaalde \gls{use-case}: portret foto's op de portfolio van een fotografe. De hiervoor ontwikkelde en gratis te gebruiken open source  \gls{afbeeldingsevaluatietool} zal je dan ook de mogelijkheid bieden zelf een subjectief onderzoek te voeren binnen je doelpubliek.
+Er zal een onderzoek uitgevoerd worden welk \gls{afbeeldingsformaat} het best is voor een bepaalde \gls{use-case}: portret foto's op de portfolio van een fotografe. De hiervoor ontwikkelde en gratis te gebruiken open source  \gls{afbeeldingsevaluatietool} zal de mogelijkheid bieden dit onderzoek te reproduceren of een gelijkaardig onderzoek met andere \glspl{afbeeldingsformaat}, voor een andere \gls{use-case} of met andere ondervraagde kenmerken uit te voeren.
 
 \section{Probleemstelling}
 \label{sec:probleemstelling}
-\Gls{datacompressie}, \glspl{afbeeldingsformaat} en video \glspl{codec} spelen een belangrijke rol voor vele werknemers binnen de IT-sector. De kennis van deze onderwerpen is echter ondermaats. 
+\Gls{datacompressie}, \glspl{afbeeldingsformaat} en video \glspl{codec} spelen een belangrijke rol voor vele werknemers binnen de IT-sector. De kennis van deze onderwerpen is bij velen echter ondermaats. 
 
 Dit is deels te weiden aan vele opleidingsinstituten die niet dieper ingaan op \gls{datacompressie} binnen opleidingen als Toegepaste Informatica, Communicatie Management en Digital Media Manager.
 
 Anderzijds is de beschikbare informatie veelal te complex uitgelegd dat een doorsnee lezer al snel afhaakt. Ook focussen veel van deze documenten zich op één specifiek onderdeel binnen \gls{datacompressie} zoals het gedetailleerd uitleggen van één \gls{afbeeldingsformaat} waardoor een globaal beeld moeilijk te scheppen valt.
 
 Het is juist hier waar deze paper beter wilt doen. Dit wordt bereikt door het gebruik van een brede waaier van besproken \glspl{afbeeldingsformaat} en video \glspl{codec}, een woordenlijst (hoofdstuk \ref{ch:termen}), en de nodige theoretische als praktische uitleg gevalideerd door vakexpert Tom Paridaens.
+
+Deze bachelorproef schept inzicht over \gls{datacompressie}, het gebruik en de implementatie en voorziet de nodige basiskennis om eventueel verder onderzoek te voeren.
 
 \section{Onderzoeksvragen}
 \label{sec:onderzoeksvragen}
@@ -44,7 +46,7 @@ Hierdoor zou de hoofdonderzoeksvraag moeten kunnen beantwoord worden, zijnde:
 \section{Onderzoeksdoelstelling}
 \label{sec:onderzoeksdoelstelling}
 
-De doelstelling van deze bachelorproef is het vormen van een nuttig document voor het brede scala belanghebbende naar de onderzoeksvragen (\ref{sec:onderzoeksvragen}). Enerzijds is dit document dus een vergelijkende studie tussen verschillende video \glspl{codec} en \glspl{afbeeldingsformaat} waardoor het ook een verslag vormt met tal van aanbevelingen. Anderzijds zorgt de technische uitleg en basic proof-of-concept \gls{compressietool} samen met de open source \gls{afbeeldingsevaluatietool} voor de nodige kennis en middelen om verder onderzoek te richten.
+De doelstelling van deze bachelorproef is het vormen van een nuttig document voor het brede scala belanghebbende naar de onderzoeksvragen (zie \ref{sec:onderzoeksvragen}). Enerzijds is dit document dus een vergelijkende studie tussen verschillende video \glspl{codec} en \glspl{afbeeldingsformaat} waardoor het ook een verslag vormt met tal van aanbevelingen. Anderzijds zorgt de technische uitleg en basic proof-of-concept \gls{compressietool} samen met de open source \gls{afbeeldingsevaluatietool} voor de nodige kennis en middelen om verder onderzoek te richten.
 
 %TODO: verder 
 %Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv. om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
@@ -74,18 +76,16 @@ Hoofdstuk \ref{ch:compressietool} is hierdoor gericht voor technische lezers als
 
 In het derde deel worden twee subdomeinen van \gls{datacompressie} verder toegelicht: \gls{afbeeldingscompressie} en \gls{videocompressie}. 
 
-In hoofdstuk \ref{ch:afbeeldingscompressie} zal er dieper ingegaan worden op volgende \glspl{afbeeldingsformaat} voor \gls{afbeeldingscompressie}: \gls{jpeg}, \gls{jpeg2000} en \gls{png}. 
-%TODO: aanpassen indien andere op input copromoter
+In hoofdstuk \ref{ch:afbeeldingscompressie} zal er dieper ingegaan worden op \gls{afbeeldingscompressie} en volgende \glspl{afbeeldingsformaat}: \gls{png}, \gls{jpeg}, \gls{jpeg2000}, \gls{webp} en \gls{heic}. De ondersteuning van de verschillende \glspl{afbeeldingsformaat} zal toegelicht worden een hoe nieuwe generatie \glspl{afbeeldingsformaat} vandaag al gebruikt kunnen worden desondanks ze nog niet overal gebruikt zijn.
 
-In hoofdstuk \ref{ch:videocompressie} zal er verder ingegaan worden op de gekende \gls{videocompressie} standaarden: \gls{h264-avc} en \gls{h264-svc}. Ook de opvolger \gls{h265} en het open source alternatief \gls{av1} zullen besproken worden.
-%TODO: aanpassen indien andere op input copromoter
+In hoofdstuk \ref{ch:videocompressie} zal er verder ingegaan worden op de gekende \gls{videocompressie} standaarden: \gls{h264-avc} en \gls{h264-svc}. Ook de opvolger \gls{h265} en het open source alternatief \gls{av1} zullen besproken worden. De ondersteuning van de verschillende video \glspl{codec} zal toegelicht worden alsook welke video \glspl{codec} enkele gekende bedrijven gebruiken.
 
 \subsection{Deel 4: onderzoek afbeelding compressie}
 \label{sec:opzet-bachelorproef-deel-4}
 
-In het vierde deel wordt besproken hoe compressiemethoden voor video's en afbeeldingen geëvalueerd worden. Hoofdstuk \ref{ch:kwaliteit} zal enkele veel gebruikte tools en methoden voor objectieve en subjectieve vergelijkingen toelichten.
+In het vierde deel wordt besproken hoe compressiemethoden voor video's en afbeeldingen geëvalueerd worden. Hoofdstuk \ref{ch:kwaliteit} zal enkele veel gebruikte tools en methoden voor objectieve en subjectieve vergelijkingen toelichten. Ook instellingen die zich bezig houden met het evalueren van afbeeldingskwaliteit en videokwaliteit zullen besproken worden en hoe de resultaten soms met een korrel zout genomen moeten worden.
 
-In hoofdstuk \ref{ch:onderzoek} werd een subjectieve test voor het evalueren van afbeeldingskwaliteit uitgevoerd. Deze test focust zich op portretfoto's. Hierbij zullen enkele van de besproken \glspl{afbeeldingsformaat} uit hoofdstuk \ref{ch:afbeeldingscompressie} tegen elkaar concurreren. De gebruikte \gls{afbeeldingsevaluatietool} is voor deze paper opgesteld en is gratis \gls{open-source} toegankelijk gesteld wat het eenvoudig mogelijk maakt om een gelijkaardig onderzoek uit te voeren.
+In hoofdstuk \ref{ch:onderzoek} werd een subjectieve test voor het evalueren van afbeeldingskwaliteit uitgevoerd. Deze test focust zich op portretfoto's die weergegeven zullen worden op een online portfolio van een fotografe. Hierbij zullen enkele van de besproken \glspl{afbeeldingsformaat} uit hoofdstuk \ref{ch:afbeeldingscompressie} tegen elkaar concurreren. De gebruikte \gls{afbeeldingsevaluatietool} is voor deze paper opgesteld en is gratis \gls{open-source} toegankelijk gesteld wat het eenvoudig mogelijk maakt om een gelijkaardig onderzoek uit te voeren.
 %TODO: in staat stelllen als bv prog of content zelf kiezen welk gebruiken
 
 \subsection{Deel 5: uitdagingen en conclusie}

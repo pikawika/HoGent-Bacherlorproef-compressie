@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="628a6d69-9bcb-4cdd-8c60-92ea4f0554c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/db_actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_actions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onderzoek.php" beforeDir="false" afterPath="$PROJECT_DIR$/onderzoek.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bachelorproef/bachproef-tin.bib" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/bachproef-tin.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bachelorproef/inleiding.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/inleiding.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bachelorproef/onderzoek.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/onderzoek.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bachelorproef/termen-declaration.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/termen-declaration.tex" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,13 +32,39 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/onderzoek.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+            <state relative-caret-position="76">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
                 <element signature="n#show_next_iterative_photo_rating_safari#0;n#!!top" />
                 <element signature="n#show_photo_rating#0;n#!!top" />
                 <element signature="n#save_post_rating_image#0;n#!!top" />
                 <element signature="n#show_info_about_you#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/introductie.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/db_actions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="22" />
+              <folding>
+                <element signature="n#create_user_and_get_user_id#0;n#!!top" />
+                <element signature="n#create_image_record#0;n#!!top" />
+                <element signature="n#delete_tables#0;n#!!top" />
+                <element signature="n#get_all_images#0;n#!!top" />
+                <element signature="n#get_all_user_rated_images#0;n#!!top" />
+                <element signature="n#add_user_rating#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -156,6 +183,11 @@
             <path>
               <item name="evaluatietool" type="b2602c69:ProjectViewProjectNode" />
               <item name="evaluatietool" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="evaluatietool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="evaluatietool" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -216,19 +248,20 @@
       <workItem from="1557945234985" duration="5000" />
       <workItem from="1557991244856" duration="22000" />
       <workItem from="1558004060750" duration="276000" />
+      <workItem from="1558080623656" duration="883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30277000" />
+    <option name="totallyTimeSpent" value="31160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.48915663" visible="true" weight="0.2081545" />
-      <window_info id="Structure" order="2" sideWeight="0.5108434" side_tool="true" visible="true" weight="0.2081545" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.48795182" visible="true" weight="0.21101573" />
+      <window_info id="Structure" order="2" sideWeight="0.5120482" side_tool="true" visible="true" weight="0.21101573" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
@@ -306,10 +339,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/layout/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/db_actions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="22" />
           <folding>
             <element signature="n#create_user_and_get_user_id#0;n#!!top" />
             <element signature="n#create_image_record#0;n#!!top" />
@@ -328,24 +375,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/onderzoek.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        <state relative-caret-position="76">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="n#show_next_iterative_photo_rating_safari#0;n#!!top" />
             <element signature="n#show_photo_rating#0;n#!!top" />
