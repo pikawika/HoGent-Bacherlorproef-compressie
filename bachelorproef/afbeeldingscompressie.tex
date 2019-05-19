@@ -13,19 +13,29 @@ Afbeeldingen zijn meestal de grootste bestanden die bij het laden van een webpag
 
 Dit hoofdstuk licht toe welke soorten \gls{afbeeldingscompressie} er bestaan. Ook enkele \glspl{afbeeldingsformaat} zullen besproken worden samen met hun voordelen en nadelen. De mogelijke problemen en oplossingen bij de implementatie van nieuwe generatie \glspl{afbeeldingsformaat} zal alsook besproken worden.
 
-Hoofdstuk \ref{ch:kwaliteit} bespreekt hoe de kwaliteit van een \gls{afbeeldingsformaat} objectief en subjectief beoordeeld kan worden. In hoofdstuk \ref{ch:onderzoek} wordt voor een bepaalde \gls{use-case} een geschikt \gls{afbeeldingsformaat} gezocht aan de hand van een subjectief onderzoek met een \gls{afbeeldingsevaluatietool}.
+Hoofdstuk \ref{ch:kwaliteit} bespreekt hoe de kwaliteit van een \gls{afbeeldingsformaat} objectief en subjectief beoordeeld kan worden. In hoofdstuk \ref{ch:onderzoek} wordt voor een bepaalde \gls{use-case} een geschikt \gls{afbeeldingsformaat} gezocht aan de hand van een subjectief onderzoek met een voor deze bachelorproef geschreven \gls{afbeeldingsevaluatietool}.
+
 
 \section{Afbeeldingsformaten}
 \label{sec:afbeeldingscompressie-afbeeldingsformaten}
 
-TODO
-%TODO: afbeeldingcompressie
+Het nemen van een foto met een digitale camera komt overeen met het openstellen van de beeldsensor aan licht voor een bepaalde duur (sluitertijd). De gegevens die gedurende die tijd waargenomen worden, kunnen direct verwerkt worden en gecomprimeerd opgeslagen worden als bijvoorbeeld een \gls{jpeg}. Dit is hoe de meeste smartphone camera’s te werk gaan. Bij vele, voornamelijk professionele, toestellen kan ingesteld worden dat er geen gecomprimeerd \gls{afbeeldingsformaat} gebruikt moet worden maar maar een \gls{raw} \gls{afbeeldingsformaat}. 
+
+Hieronder worden enkele \glspl{afbeeldingsformaat} verder toegelicht. Het is belangrijk om te weten dat dit niet de enige \glspl{afbeeldingsformaat} zijn die bestaan. De lijst van \glspl{afbeeldingsformaat} blijft groeien en bestaande \glspl{afbeeldingsformaat} kunnen extensies krijgen om gekende problemen als bepaalde \glspl{artefact} tegen te gaan. 
+
+Een mogelijke manier om deze artefacten tegen te gaan is het gebruik ven een andere \gls{wavelet} zoals besproken in \citetitle{inproceedings} (\cite{inproceedings}). Recente doorbraken binnen \gls{ai} maken het zelfs mogelijk op een nog meer dynamische manier \glspl{artefact} in \glspl{afbeeldingsformaat} tegen te gaan zoals besproken in \citetitle{jpegartefactereductionai} (\cite{jpegartefactereductionai}).
+
 
 \subsection{RAW}
 \label{sec:afbeeldingscompressie-raw}
 
-TODO
-%TODO: afbeeldingcompressie
+Een \gls{raw} \gls{afbeeldingsformaat} bevat alle ruwe, onbewerkte en ongecomprimeerde gegevens die de beeldsensor heeft vastgelegd. In een \gls{raw} \gls{afbeeldingsformaat} wordt ook tal van \gls{meta-data}  bijgehouden zoals de gebruikte camera en lens, hun instellingen… De bestandsgrootte van een \gls{raw} bestand is hierdoor aanzienlijk. 
+
+\Gls{raw} is geen afkorting noch een echt \glspl{afbeeldingsformaat} zoals \gls{jpeg} of \gls{png} maar een benaming voor een groep van \glspl{afbeeldingsformaat} die voldoen aan de benoemde eigenschappen. Het effectieve \gls{afbeeldingsformaat} kan verschillen van merk tot merk en zelfs van toestel tot toestel. Zo zijn de \gls{raw} bestanden gebruikt voor het onderzoek in hoofdstuk \ref{ch:onderzoek} afkomstig van een Nikon toestel en zijn ze opgeslagen in het \gls{nef} \gls{afbeeldingsformaat}.
+
+Hoewel er reeds voorstellen zijn gedaan voor een open \gls{raw} standaard om bewerkingen makkelijk te maken zoals \gls{dng} van Adobe is er tot op heden een grote diversiteit aan \gls{raw} \glspl{afbeeldingsformaat} te vinden. Dit vormt binnen \gls{afbeeldingscompressie} en de evaluatie ervan enkele nadelen. Doordat er zo veel verschillende \gls{raw} \glspl{afbeeldingsformaat} zijn en dus veel uiteenlopende licenties en rechten, is het een uitdaging een \gls{compressie-algoritme} voor een \gls{afbeeldingsformaat} te maken dat alle \gls{raw} \glspl{afbeeldingsformaat} ondersteund als input. 
+
+Starten van een \gls{raw} \gls{afbeeldingsformaat} voor het evalueren van \gls{afbeeldingscompressie} is echter wel aangeraden aangezien zelfs het gebruik van een \gls{lossless} \gls{afbeeldingsformaat} voor verlies van \gls{meta-data} kan zorgen zoals eerder besproken. Het weglaten van deze \gls{meta-data} kan onderdeel zijn van het gekozen \gls{afbeeldingsformaat} en bijhorend \gls{compressie-algoritme}. Als deze \gls{meta-data} niet inbegrepen is in het inputbestand wordt het weglaten ervan niet gerepresenteerd in de eindscore wat voor een vals beeld kan zorgen.
 
 \subsection{PNG}
 \label{sec:afbeeldingscompressie-png}
