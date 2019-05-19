@@ -40,17 +40,111 @@ Starten van een \gls{raw} \gls{afbeeldingsformaat} voor het evalueren van \gls{a
 \subsection{PNG}
 \label{sec:afbeeldingscompressie-png}
 
+Portable Network Graphics is een \gls{lossless} \gls{afbeeldingsformaat}. Het is ontwikkeld door de Portable Network Graphics Development Group met een eerste beta in 1995, een draft versie voor \gls{w3c} eind 1995, een officiële \gls{w3c} voorstelling op 1 juli 1996 en goedgekeurd als \gls{w3c} aanbeveling op 1 oktober 1996. Datums uit \citetitle{pnghistory} (\cite{pnghistory}).
+
+\Gls{png} was gemaakt als vervanger van het toen veelgebruikte \gls{gif} \gls{afbeeldingsformaat} dat net zoals vele andere \gls{compressie-algoritme} een nachtmerrie van licenties en patenten aan het worden was. 
+
+\Gls{png} had als doel een \gls{afbeeldingsformaat} te worden dat zeer flexibel is, gemakkelijk te gebruiken is op het internet en allerlei soorten afbeeldingen ondersteund. Meer dan 20 jaar later slaagt het daar nog altijd in.
+
+\subsubsection{PNG: werking}
+\label{sec:afbeeldingscompressie-png-werking}
+
 TODO
 %TODO: afbeeldingcompressie
+
+
+\subsubsection{PNG: voordelen}
+\label{sec:afbeeldingscompressie-png-voordelen}
+
+Het \gls{png} \gls{afbeeldingsformaat} bied tal van voordelen ten opzichte van zijn voorgangers en \gls{lossy} tegenstanders. Enkele van deze voordelen zijn:
+
+\begin{itemize}
+	\item Beschikt over een alpha kanaal waardoor doorzichtigheid meegegeven kan worden als een getal tussen 0 (volledig doorzichtig) en 100 (geen doorzichtigheid).
+	
+	\item Aanzien als een van de standaarden voor \gls{lossless} \glspl{afbeeldingsformaat} waardoor het een goede support heeft overheen verschillende hardware en software.
+	
+	\item \Gls{lossless} \gls{afbeeldingsformaat} waardoor er geen kwaliteit verloren gaat.
+	
+	\item Goede uitbreidbaarheid waardoor \gls{meta-data} en andere randvariabelen aan een \gls{png} bestand kunnen toegevoegd worden terwijl het bestand  \gls{backwards-compatible} blijft.
+	
+	\item Een keuze uit meer dan 16 miljoen kleuren dankzij het \gls{rgb} kleurenprofiel met alpha kanaal. Een groot contrast tegenover \gls{gif} dat maar 256 kleuren ondersteund. 
+\end{itemize}
+
+\subsubsection{PNG: nadelen}
+\label{sec:afbeeldingscompressie-png-nadelen}
+
+\Gls{png} heeft echter ook enkele minpunten, voornamelijk te weiden aan het feit dat \gls{png} ontwikkeld is om te gebruiken op het internet.
+
+\begin{itemize}
+	\item Geen ondersteuning voor kleuromgevingen als \gls{cmyk}.
+	
+	\item Geen standaard ondersteuning voor geanimeerde beelden.
+	
+	\item Grote bestandsgrootte door zijn \gls{lossless} eigenschap.
+\end{itemize}
 
 \subsection{JPEG}
 \label{sec:afbeeldingscompressie-jpeg}
 
+Joint Photographic Experts Group is technisch gezien geen \gls{afbeeldingsformaat} maar een \gls{codec}. Het is een \gls{compressie-algoritme} dat zowel \gls{lossless} als \gls{lossy} te werk kan gaan. Wanneer gesproken wordt over het \gls{jpeg} \gls{afbeeldingsformaat} verwijst dit meestal naar \gls{jpeg-exif} of \gls{jpeg-jfif} welke wel een \gls{afbeeldingsformaat} zijn.
+
+\gls{jpeg} wordt doorgaans als \gls{lossy} \gls{compressie-algoritme} gebruikt voor het opslaan van afbeeldingen waarbij een controle over bestandsgrootte en kwaliteit gewenst is. Dit is mogelijk doordat \gls{jpeg} verschillende parameters ondersteund om de werking van het \gls{compressie-algoritme} te beïnvloeden en dus ook het uiteindelijk bestand zijn kwaliteit en bestandsgrootte.
+
+De ontwikkeling van het \gls{jpeg} \gls{compressie-algoritme} is begonnen in 1986 en de \gls{jpeg} standaard is gemaakt in 1992. Deze bestaat uit 7 delen met de laatste officiële revisie in 1994. Uiteraard zijn er tal van uitbreidingen (of extensies zoals deel 3 van de ISO/IEC 10918 standaard ze benoemd) gemaakt tot op heden. Datums overgenomen van de officiële \gls{jpeg} website (\cite{jpegorg}). 
+
+\gls{jpeg} is ook gekend onder de kortere vorm JPG omdat dit de extensie is die het meest gebruikt wordt voor de \gls{jpeg} \gls{codec}. Dit was omdat in oudere versies van het Windows besturingssysteem, zoals bijvoorbeeld Windows 98, een \gls{extensie} maximaal drie karakters lang mocht zijn. In de huidige versies van Windows is deze beperking echter niet meer actief waardoor de JPG en \gls{jpeg} \glspl{extensie} door elkaar gebruikt kunnen worden.
+
+\subsubsection{JPEG: werking}
+\label{sec:afbeeldingscompressie-jpeg-werking}
+
 TODO
 %TODO: afbeeldingcompressie
 
+\subsubsection{JPEG: voordelen}
+\label{sec:afbeeldingscompressie-jpeg-voordelen}
+
+\Gls{jpeg} is één van de meest gebruikte \gls{lossy} \gls{compressie-algoritme} voor afbeeldingen en heeft onder andere daarom enkele belangrijke voordelen zoals:
+
+\begin{itemize}
+	\item Uitstekende support overheen verschillende hardware en software.
+	
+	\item Door de mogelijkheid om als \gls{lossy} \gls{compressie-algoritme} te werken kan \gls{jpeg} een enorm kleine bestandsgrootte aannemen afhankelijk van de instellingen.
+	
+	\item \Gls{jpeg} werkt snel wat samen met een kleinere bestandsgrootte de mogelijkheid creëert om meer foto's per second te verwerken. Op deze manier kan een digitale camera meer opnames maken in burst wanneer er voor \gls{jpeg-exif} is gekozen als \gls{afbeeldingsformaat} in plaats van een \gls{raw} \gls{afbeeldingsformaat}. 
+\end{itemize}
+
+\subsubsection{JPEG: nadelen}
+\label{sec:afbeeldingscompressie-jpeg-nadelen}
+
+\begin{itemize}
+	\item Door de \gls{lossy} eigenschap aan de hand van clustering kunnen allerlei vormen van \glspl{artefact} voorkomen.
+	
+	\item Geen mogelijkheid voor doorzichtigheid.
+	
+	\item Onnatuurlijke afbeeldingen zoals logo's zijn zeer gevoelig aan het verlies van scherpe lijnen en het ontstaan van \glspl{artefact}.
+\end{itemize}
+
 \subsection{JPEG2000}
 \label{sec:afbeeldingscompressie-jpeg2000}
+
+TODO
+%TODO: afbeeldingcompressie
+
+\subsubsection{JPEG2000: werking}
+\label{sec:afbeeldingscompressie-jpeg2000-werking}
+
+TODO
+%TODO: afbeeldingcompressie
+
+
+\subsubsection{JPEG2000: voordelen}
+\label{sec:afbeeldingscompressie-jpeg2000-voordelen}
+
+TODO
+%TODO: afbeeldingcompressie
+
+\subsubsection{JPEG2000: nadelen}
+\label{sec:afbeeldingscompressie-jpeg2000-nadelen}
 
 TODO
 %TODO: afbeeldingcompressie
@@ -61,8 +155,46 @@ TODO
 TODO
 %TODO: afbeeldingcompressie
 
+\subsubsection{WEBP: werking}
+\label{sec:afbeeldingscompressie-webp-werking}
+
+TODO
+%TODO: afbeeldingcompressie
+
+
+\subsubsection{WEBP: voordelen}
+\label{sec:afbeeldingscompressie-webp-voordelen}
+
+TODO
+%TODO: afbeeldingcompressie
+
+\subsubsection{WEBP: nadelen}
+\label{sec:afbeeldingscompressie-webp-nadelen}
+
+TODO
+%TODO: afbeeldingcompressie
+
 \subsection{HEIC}
 \label{sec:afbeeldingscompressie-heic}
+
+TODO
+%TODO: afbeeldingcompressie
+
+\subsubsection{HEIC: werking}
+\label{sec:afbeeldingscompressie-heic-werking}
+
+TODO
+%TODO: afbeeldingcompressie
+
+
+\subsubsection{HEIC: voordelen}
+\label{sec:afbeeldingscompressie-heic-voordelen}
+
+TODO
+%TODO: afbeeldingcompressie
+
+\subsubsection{HEIC: nadelen}
+\label{sec:afbeeldingscompressie-heic-nadelen}
 
 TODO
 %TODO: afbeeldingcompressie
