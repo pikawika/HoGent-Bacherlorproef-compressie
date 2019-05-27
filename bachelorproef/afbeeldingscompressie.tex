@@ -86,11 +86,11 @@ Het \gls{png} \gls{afbeeldingsformaat} bied tal van voordelen ten opzichte van z
 \subsection{JPEG}
 \label{sec:afbeeldingscompressie-jpeg}
 
-Joint Photographic Experts Group is technisch gezien geen \gls{afbeeldingsformaat} maar een \gls{codec}. Het is een \gls{compressie-algoritme} dat zowel \gls{lossless} als \gls{lossy} te werk kan gaan. Wanneer gesproken wordt over het \gls{jpeg} \gls{afbeeldingsformaat} verwijst dit meestal naar \gls{jpeg-exif} of \gls{jpeg-jfif} welke wel een \gls{afbeeldingsformaat} zijn.
+Joint Photographic Experts Group is technisch gezien geen \gls{afbeeldingsformaat} maar een \gls{codec}. Het is een \gls{compressie-algoritme} dat oorspronkelijk op een \gls{lossy} manier te werk gaat. In een latere revisie is een compleet nieuw \gls{compressie-algoritme} ontwikkeld om \gls{lossless} \gls{jpeg} te ondersteunen maar deze wordt niet grootschalig gebruikt en ook niet verder toegelicht in deze bachelorproef. Wanneer gesproken wordt over het \gls{jpeg} als \gls{afbeeldingsformaat} verwijst dit meestal naar \gls{jpeg-exif} of \gls{jpeg-jfif} welke wel een \gls{afbeeldingsformaat} zijn.
 
 \gls{jpeg} wordt doorgaans als \gls{lossy} \gls{compressie-algoritme} gebruikt voor het opslaan van afbeeldingen waarbij een controle over bestandsgrootte en kwaliteit gewenst is. Dit is mogelijk doordat \gls{jpeg} verschillende parameters ondersteund om de werking van het \gls{compressie-algoritme} te beïnvloeden en dus ook het uiteindelijk bestand zijn kwaliteit en bestandsgrootte.
 
-De ontwikkeling van het \gls{jpeg} \gls{compressie-algoritme} is begonnen in 1986 en de \gls{jpeg} standaard is gemaakt in 1992. Deze bestaat uit 7 delen met de laatste officiële revisie in 1994. Uiteraard zijn er tal van uitbreidingen (of extensies zoals deel 3 van de ISO/IEC 10918 standaard ze benoemd) gemaakt tot op heden. Datums overgenomen van de officiële \gls{jpeg} website (\cite{jpegorg}). 
+De ontwikkeling van het \gls{jpeg} \gls{compressie-algoritme} is begonnen in 1986 en de \gls{jpeg} standaard is gemaakt in 1992. Deze bestaat uit 7 delen met de laatste officiële revisie in 1994. Uiteraard zijn er tal van uitbreidingen (of extensies zoals deel 3 van de \gls{iso}/IEC 10918 standaard ze benoemd) gemaakt tot op heden. Datums overgenomen van de officiële \gls{jpeg} website (\cite{jpegorg}). 
 
 \gls{jpeg} is ook gekend onder de kortere vorm JPG omdat dit de extensie is die het meest gebruikt wordt voor de \gls{jpeg} \gls{codec}. Dit was omdat in oudere versies van het Windows besturingssysteem, zoals bijvoorbeeld Windows 98, een \gls{extensie} maximaal drie karakters lang mocht zijn. In de huidige versies van Windows is deze beperking echter niet meer actief waardoor de JPG en \gls{jpeg} \glspl{extensie} door elkaar gebruikt kunnen worden.
 
@@ -116,6 +116,8 @@ TODO
 \subsubsection{JPEG: nadelen}
 \label{sec:afbeeldingscompressie-jpeg-nadelen}
 
+\Gls{jpeg} heeft uiteraard ook enkele nadelen. De voornaamste zijn:
+
 \begin{itemize}
 	\item Door de \gls{lossy} eigenschap aan de hand van clustering kunnen allerlei vormen van \glspl{artefact} voorkomen.
 	
@@ -127,8 +129,16 @@ TODO
 \subsection{JPEG2000}
 \label{sec:afbeeldingscompressie-jpeg2000}
 
-TODO
-%TODO: afbeeldingcompressie
+\Gls{jpeg2000} is, zoals de naam doet vermoeden, een opvolger van \gls{jpeg} gemaakt door de Joint Photographic Experts Group. Deze waren van mening dat door de opkomst van het internet een betere variant van \gls{jpeg} nodig was.
+
+In Maart 1997 kondigde de Joint Photographic Experts Group aan dat ze een nieuwe standaard voor afbeeldingscompressie willen ontwikkelen en open staan voor bijdrages. Dit wekte de interesse van vele scholen en bedrijven. Zo had enkele maanden na de aankondiging de Universiteit van Arizona samen met SAIC reeds een proof of concept voorgesteld op basis van een \gls{wtcq} \gls{compressie-algoritme} in plaats van het \gls{dct} \gls{compressie-algoritme} gebruikt bij \gls{jpeg}.
+
+In augustus 2000 besloot het Joint Photographic Experts Group dat de toen huidige draft versie klaar was om voor te stellen als nieuwe standaard aan de \gls{iso}. In December van 200 werd dit voorstel goedgekeurd en sinds heden is  \gls{jpeg2000} te vinden onder \gls{iso}/IEC 15444. 
+
+Die \gls{iso} is bestaat op het moment van schrijven uit 14 delen, het laatste deel is gepubliceerd in 2013. De meest gebruikte \glspl{afbeeldingsformaat} voor \gls{jpeg2000} zijn die beschreven in deel één en twee. De gebruikte variant van \gls{jpeg2000} voor het onderzoek van hoofdstuk \ref{ch:onderzoek}, \gls{jpf}, is beschreven in het tweede deel 2 (\gls{iso}/IEC 15444-2).
+
+Hoewel \gls{jpeg2000} veel voorkomend is in \gls{videocompressie} en \gls{afbeeldingscompressie} voor grote afbeeldingen zoals bijvoorbeeld medische afbeeldingen, is het nooit de opvolger geworden van \gls{jpeg} die de Joint Photographic Experts Group voor ogen had.
+
 
 \subsubsection{JPEG2000: werking}
 \label{sec:afbeeldingscompressie-jpeg2000-werking}
@@ -140,20 +150,51 @@ TODO
 \subsubsection{JPEG2000: voordelen}
 \label{sec:afbeeldingscompressie-jpeg2000-voordelen}
 
-TODO
-%TODO: afbeeldingcompressie
+Aangezien \gls{jpeg2000} door de Joint Photographic Experts Group zelf als opvolger van \gls{jpeg} is benoemd zijn sommige van de voordelen van \gls{jpeg2000} hetzelfde als die van \gls{jpeg}.
+
+De voornaamste voordelen van \gls{jpeg2000} zijn:
+
+\begin{itemize}
+	\item In vergelijking met \gls{jpeg} kan \gls{jpeg2000} zowel als \gls{lossless} en \gls{lossy} \gls{compressie-algoritme} gebruikt worden.
+	
+	\item \gls{jpeg2000} heeft voor de meeste \glspl{use-case} betere kwaliteit dan \gls{jpeg} voor een afbeelding met dezelfde bestandsgrootte. Naarmate het compressieratio stijgt wordt dit voordeel groter. (Zoals aangetoond in studies als \citetitle{jpegvsjpeg2000quality} - \cite{jpegvsjpeg2000quality})
+	
+	\item Kent meerdere varianten wat voor zeer veel flexibiliteit zorgt.
+	
+	\item Minder \glspl{artefact} dan \gls{jpeg2000}.
+	
+	\item De  \gls{decoder} kan progressief de afbeelding inladen, startend met een weergave tegen lage resolutie tot deze uiteindelijk volledig is ingeladen. Dit is vooral interessant voor bestanden met enorm grote bestandsgroottes zoals in de medische sector.
+	
+	\item Ondersteuning voor transparantie. In latere versies niet besproken in deze bachelorproef is ook support voor animatie aanwezig.
+	
+	\item Kan progressief ingeladen en 
+	
+	\item Schaalbaar en tal van andere voordelen bij het gebruik van \gls{jpeg2000} als \gls{intra-frame} \gls{datacompressie} schema in \gls{videocompressie}. Deze paper gaat niet verder in op het gebruik van \gls{jpeg2000} binnen \gls{videocompressie}.
+\end{itemize}
 
 \subsubsection{JPEG2000: nadelen}
 \label{sec:afbeeldingscompressie-jpeg2000-nadelen}
 
-TODO
-%TODO: afbeeldingcompressie
+Hoewel het plan van \gls{jpeg2000} om de nieuwe standaard te worden enigszins gelukt is binnen \gls{videocompressie} is dit in \gls{afbeeldingscompressie} niet het geval. Dit en nog enkele limitaties van \gls{jpeg2000} zorgen voor onder meer volgende nadelen:
+
+\begin{itemize}
+	\item Slechte internetbrowser support: momenteel enkel ondersteund op Safari voor macOS en iOS. 
+	
+	\item Doordat de verschillende \gls{iso} revisies steeds andere \glspl{extensie} toelichten is er geen achterwaartse comptabiliteit met oude \glspl{decoder}.
+	
+	\item \Gls{encoding} duurt met de standaard \glspl{encoder} doorgaans langer dan bij \gls{jpeg}. De \gls{encoding} en \gls{decoding} proces vereist ook meer systeemresources dan \gls{jpeg}.
+\end{itemize}
 
 \subsection{WEBP}
 \label{sec:afbeeldingscompressie-webp}
 
-TODO
-%TODO: afbeeldingcompressie
+\Gls{webp} is een \gls{afbeeldingsformaat} dat door Google is uitgebracht in 2010 dat tot op heden uitgebreid wordt. 
+ 
+\Gls{webp} is een zeer belovend \gls{afbeeldingsformaat} voor het internet. Het ondersteund een zeer grote variatie van \glspl{use-case}. Het kan \gls{lossless} en \gls{lossy} gebruikt worden. Het presteert in zij \gls{lossless} variant gemiddeld gezien beter dan \gls{png}. De \gls{lossy} variant presteert gemiddeld gezien dan weer beter als \gls{jpeg}.
+
+De prestatie van het \gls{webp} \gls{afbeeldingsformaat} is reeds objectief en subjectief getest door zowel Google zelf als door onafhankelijke partijen. De resultaten zijn daar gelijklopend en steeds in het voordeel \gls{webp}. De objectieve evaluatie tussen \gls{jpeg} en \gls{webp} (\cite{jpegwebp}) alsook dat tussen \gls{png} en \gls{webp} (\cite{pngwebp}) van KeyCDN preekt zowel op vlak van kwaliteit als snelheid in het voordeel van \gls{webp}.
+
+Dit alles is niet alleen te danken aan het budget dat Google heeft om verdere ontwikkeling voor dit \gls{afbeeldingsformaat} te voorzien maar ook door de macht die het bedrijf heeft. Ze laten hun eigen projecten zoals Android, ChromeOS, YouTube, Gmail, de Google Play Store en meer zo veel mogelijk \gls{webp} gebruiken, door dat dit een immens groot deel is van de markt worden concurrenten onrechtstreeks verplicht dit nieuw \gls{afbeeldingsformaat} ook te gebruiken.
 
 \subsubsection{WEBP: werking}
 \label{sec:afbeeldingscompressie-webp-werking}
@@ -165,39 +206,72 @@ TODO
 \subsubsection{WEBP: voordelen}
 \label{sec:afbeeldingscompressie-webp-voordelen}
 
-TODO
-%TODO: afbeeldingcompressie
+Het gebruik van \gls{webp} bied vele voordelen, enkele van de voornaamste zijn:
+
+\begin{itemize}
+	\item In vergelijking met andere 'nieuwe generatie' \glspl{afbeeldingsformaat} heeft \gls{webp} een goede internetbrowser support. Volgens caniuse.com is \gls{webp} ondersteund in elke grote internetbrowser buiten Safari.
+	
+	\item Zowel de \gls{lossless} als \gls{lossy} variant presteren gemiddeld gezien beter dan respectievelijk \gls{png} en \gls{jpeg}. (Zie \ref{sec:afbeeldingscompressie-webp})
+	
+	\item De \gls{webp} \gls{decoder} kan reeds een portie van de afbeelding weergeven zelfs als deze nog niet volledig gedownload is.
+	
+	\item Ondersteund transparantie en animatie.
+\end{itemize}
 
 \subsubsection{WEBP: nadelen}
 \label{sec:afbeeldingscompressie-webp-nadelen}
 
+\Gls{webp} heeft vooral ondersteuning gerelateerde problemen. De voornaamste zijnde:
+
+\begin{itemize}
+	\item Geen support voor Safari en enkele kleinere of gedateerde internetbrowsers: Internet Explorer, KaiOS en Blackbarry Browser.
+	
+	\item Geen standaard support in \gls{ps} maar gratis \glspl{plug-in} beschikbaar. In het onderzoek uit hoofdstuk \ref{ch:onderzoek} wordt de voor het onderzoek gebruikte \gls{plug-in} toegelicht.
+\end{itemize}
+
+\subsection{HEIF/HEIC}
+\label{sec:afbeeldingscompressie-heif}
+
+High Efficiency Image Format is in een \gls{codec} ontwikkeld door de Moving Picture Experts Group dat het zelf benoemd als \gls{afbeeldingsformaat}. Het is herkend als standaard in het twaalfde deel van \gls{iso} 23008.
+
+Het voornaamste gebruik van \gls{heif} als \gls{afbeeldingsformaat} is voor de verschillende afbeeldingen binnen \gls{intra-frame} \gls{h265} \gls{videocompressie} op te slaan. Het wordt daarom ook aanzien als het \gls{h265} formaat voor 'stilstaande afbeeldingen.
+
+Met de opkomst iOS 11 in 2017 was Apple echter het eerste bedrijf dat \gls{heif} grootschalige gebruikte voor opslag van afbeeldingen. Alle videobestanden waren sindsdien intern opgeslagen met de \gls{h265} \gls{codec} en alle afbeeldingen als \gls{heif} met de de \gls{heic} \gls{extensie}. 
+
+De overstap van \gls{jpeg} naar het nieuwe generatie \gls{afbeeldingsformaat} \gls{heif} was voor Apple interessant op verschillende vlakken. De voornaamste waren kwaliteits- en snelheidswinst. Dit resulteerde dan ook in een kleinere bestandsgrootte waardoor er meer afbeeldingen opgeslagen kunnen worden op een iOS toestel.
+
+Ook de ondersteuning voor burst foto's en live foto's kwam deze keuze ten voordele, het is namelijk mogelijk meerdere afbeeldingen op te slaan onder één \gls{heif} bestand.
+
+\subsubsection{HEIF: werking}
+\label{sec:afbeeldingscompressie-heif-werking}
+
 TODO
 %TODO: afbeeldingcompressie
 
-\subsection{HEIC}
-\label{sec:afbeeldingscompressie-heic}
 
-TODO
-%TODO: afbeeldingcompressie
+\subsubsection{HEIF: voordelen}
+\label{sec:afbeeldingscompressie-heif-voordelen}
 
-\subsubsection{HEIC: werking}
-\label{sec:afbeeldingscompressie-heic-werking}
+\Gls{heif} en het door Apple gebruikte \gls{heic} bied als nieuwe generatie \gls{afbeeldingsformaat} tal van voordelen. De voornaamste zijn: 
 
-TODO
-%TODO: afbeeldingcompressie
+\begin{itemize}
+	\item Zowel \gls{lossless} als \gls{lossy} operatie mogelijk.
+	
+	\item Photoshop CC ondersteuning sinds het einde van 2018. Deze bestanden worden aanzien als \gls{raw}.
+	
+	\item Een uitgebreid assortiment aan functionaliteit zoals het opslaan van meerdere afbeeldingen in één bestand. Deze functionaliteiten zijn interessant voor burst foto's, HDR foto's,...
+	
+	\item Ondersteuning voor transparantie en animatie.
+	
+	\item \Gls{heif} bied ook tal van voordelen bij het gebruik in \gls{videocompressie} die niet verder in deze bachelorproef besproken worden.
+\end{itemize}
 
+\subsubsection{HEIF: nadelen}
+\label{sec:afbeeldingscompressie-heif-nadelen}
 
-\subsubsection{HEIC: voordelen}
-\label{sec:afbeeldingscompressie-heic-voordelen}
+Net zoals \gls{webp} heeft \gls{heif} één groot nadeel: ondersteuning. Apple lost dit op door bij het delen van een foto de afbeelding te converteren naar \gls{jpeg} maar daarmee gaan ook alle voordelen van \gls{heif} verloren...
 
-TODO
-%TODO: afbeeldingcompressie
-
-\subsubsection{HEIC: nadelen}
-\label{sec:afbeeldingscompressie-heic-nadelen}
-
-TODO
-%TODO: afbeeldingcompressie
+Desondanks Apple gebruiker is van \gls{heif}/\gls{heic} is er nog geen ondersteuning voor in de Safari internetbrowser. Ook andere gekende internetbrowsers bieden geen ondersteuning voor dit \gls{afbeeldingsformaat}.
 
 \section{De juiste keuze}
 \label{sec:afbeeldingscompressie-keuze}
