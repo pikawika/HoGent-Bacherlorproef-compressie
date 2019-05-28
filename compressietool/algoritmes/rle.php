@@ -9,7 +9,7 @@ function rle_encode_all($input)
     $minimum_aantal_matches = 0;
 
     if (!$input) {
-        return '';
+        return ['', 0, 0];
     }
 
     $output = '';

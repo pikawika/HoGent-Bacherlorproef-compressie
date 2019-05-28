@@ -98,7 +98,7 @@ De jaren 70 en 80 zorgden voor tal van belangrijke doorbraken binnen \gls{dataco
 Deze eerste softwareoplossingen waren veelal implementatie van \gls{huffman-coding}, eventueel met kleine aanpassingen. Eind de jaren 70 waren de eerste Lempel-Ziv \gls{compressie-algoritme} uitgevonden: LZ77 en LZ78. Dit zijn de grondleggers van \gls{dictionary-coding}. Een veelgebruikte variant van LZ798 is LZW (1984). Net zoals \gls{huffman-coding} de basis legde voor vele van de eerste softwareoplossingen zorgde de grondleggers van \gls{dictionary-coding} voor vele nieuwe softwareoplossingen. De doorgroei van deze \glspl{compressie-algoritme} is zichtbaar in figuur \ref{fig:lossles-datacompressie-overzicht}.
 
 \begin{figure}
-	\includegraphics{img/literatuurstudie/lossles_datacompressie_overzicht.png}
+	\fbox{\includegraphics{img/literatuurstudie/lossles_datacompressie_overzicht.png}}
 	\caption{Lossless datacompressie overzicht (\cite{ethwcompressionhistory})}
 	\label{fig:lossles-datacompressie-overzicht}
 \end{figure}
@@ -148,6 +148,8 @@ Uit het voorbeeld \ref{sec:primitieve-technieken-voorbeeld-rle} blijkt dat \gls{
 
 Dit zal het geval zijn voor veel gebruiker gegenereerde tekstbestanden en met \gls{rle-short} kan in het slechtste geval een bestandsgrootte van 200\% bereken worden. Denk hierbij aan het comprimeren van het alfabet. \Gls{rle-short} is zeer \gls{use-case} gebonden en wordt vaak gevarieerd gebruikt maar kan in die bepaalde \glspl{use-case} voor een grote databesparing zorgen.
 
+Dit probleem kan omzeilt worden door geen run voor de run value te zetten wanneer deze één is. 
+
 \subsection{Huffman coding}
 \label{sec:primitieve-technieken-voorbeeld-huffman-encoding}
 Het bericht kan ook voorgesteld worden door \gls{huffman-coding}. \gls{huffman-coding} valt onder de categorie \gls{prefix-coding}. Hierbij zal elk karakter voorgesteld worden door een \gls{prefix-code} dat op zijn beurt verwijst naar het karakter in bijvoorbeeld \gls{ascii}. 
@@ -164,7 +166,7 @@ Een voorbeeld van hoe het resultaat van deze stap er voor de zin “lennert eet 
 
 \FloatBarrier
 \begin{figure}[h!]
-	\includegraphics[width=100mm]{img/literatuurstudie/huffman-stap-1.png}
+	\fbox{\includegraphics[width=100mm]{img/literatuurstudie/huffman-stap-1.png}}
 	\caption{Een voorbeeld van hoe het resultaat na stap 1 (\ref{sec:primitieve-technieken-voorbeeld-huffman-encoding-1}) van \gls{huffman-coding} er voor de zin “lennert eet veel” kan uitzien. De volgorde van bomen met eenzelfde frequentie mogen van plaats gewisseld worden.}
 	\label{fig:huffman-stap-1}
 \end{figure}
@@ -178,7 +180,7 @@ Een voorbeeld van hoe het resultaat van deze stap er voor de zin “lennert eet 
 
 \FloatBarrier
 \begin{figure}[h!]
-	\includegraphics[width=100mm]{img/literatuurstudie/huffman-stap-2.png}
+	\fbox{\includegraphics[width=100mm]{img/literatuurstudie/huffman-stap-2.png}}
 	\caption{Een voorbeeld van hoe het resultaat na stap 2 (\ref{sec:primitieve-technieken-voorbeeld-huffman-encoding-2}) van \gls{huffman-coding} er voor de zin “lennert eet veel” kan uitzien. De knopen van een karakter met eenzelfde frequentie kunnen in sommige gevallen van plaats gewisseld worden.}
 	\label{fig:huffman-stap-2}
 \end{figure}

@@ -8,18 +8,18 @@ function huffman_encode($input)
 {
     $originele_input = $input;
     $input_voor_karakters_bepaling = $input;
-    $karakters = array();
+    $karakters_met_frequentie = array();
 
     //zolang $input_voor_karakters_bepaling een (eerste) karakter bevat
     while (isset($input_voor_karakters_bepaling[0])) {
         //voeg eerste karakter toe aan de karakters array en tel alle voorkomens in $input_voor_karakters_bepaling
-        $karakters[] = array(substr_count($input_voor_karakters_bepaling, $input_voor_karakters_bepaling[0]), $input_voor_karakters_bepaling[0]);
+        $karakters_met_frequentie[] = array(substr_count($input_voor_karakters_bepaling, $input_voor_karakters_bepaling[0]), $input_voor_karakters_bepaling[0]);
         //verwijder alle voorkomens van net toegevoegd karakter in $input_voor_karakters_bepaling
         $input_voor_karakters_bepaling = str_replace($input_voor_karakters_bepaling[0], '', $input_voor_karakters_bepaling);
     }
 
     //maak een boom van nodes met karakters en voorkomen en zet diegene met minste voorkomens eerst
-    $huffman_bomen = $karakters;
+    $huffman_bomen = $karakters_met_frequentie;
     sort($huffman_bomen);
 
     //zolang er meerdere bomen zijn zet je de met minste voorkomens samen (bovenste in array door sort)
