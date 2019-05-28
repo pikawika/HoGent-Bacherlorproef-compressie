@@ -8,7 +8,7 @@
 \newglossaryentry{bit}
 {
 	name={bit},
-	description={Zoals de naam bit, kort voor binary digit, suggereert kan een bit beschouwd worden als een binair signaal. Een bit wordt beschouwd als de kleinste data eenheid voor dataopslag. Meer informatie rond bestandsgrootte en dataopslag worden besproken in hoofdstuk \ref{ch:literatuurstudie}, deel \ref{sec:bestandsgrootte-dataopslag}},
+	description={Zoals de naam bit, kort voor binary digit, suggereert kan een bit beschouwd worden als een binair signaal. Een bit wordt beschouwd als de kleinste eenheid voor dataopslag. Meer informatie rond bestandsgrootte en dataopslag worden besproken in hoofdstuk \ref{ch:literatuurstudie}, deel \ref{sec:bestandsgrootte-dataopslag}},
 	plural={bits}
 }
 
@@ -21,19 +21,19 @@
 \newglossaryentry{afbeeldingscompressie}
 {
 	name={afbeeldingscompressie},
-	description={Afbeeldingscomspressie bestaat er uit een afbeelding in zo weinig mogelijk aantal bits op te slaan terwijl een aanvaardbare kwaliteit behouden blijft. Dit kan zowel via lossless als lossy algoritmes. Afbeeldingscompressie wordt uitgebreid besproken in hoofdstuk \ref{ch:afbeeldingscompressie}}
+	description={Afbeeldingscompressie bestaat er uit een afbeelding in zo weinig mogelijk aantal bits op te slaan terwijl een aanvaardbare kwaliteit behouden blijft. Dit kan zowel via lossless als lossy algoritmes. Afbeeldingscompressie wordt uitgebreid besproken in hoofdstuk \ref{ch:afbeeldingscompressie}}
 }
 
 \newglossaryentry{videocompressie}
 {
 	name={videocompressie},
-	description={Videocompressie bestaat er uit een videobstand in zo weinig mogelijk aantal bits op te slaan terwijl een accapteerbare kwaliteit behouden blijft. Dit kan zowel via lossless als lossy algoritmes. videcompressie wordt uitgebreid besproken in hoofdstuk \ref{ch:videocompressie}}
+	description={Videocompressie bestaat er uit een videobestand in zo weinig mogelijk aantal bits op te slaan terwijl een accapteerbare kwaliteit behouden blijft. Dit kan zowel via lossless als lossy algoritmes. videcompressie wordt uitgebreid besproken in hoofdstuk \ref{ch:videocompressie}}
 }
 
 \newglossaryentry{codec}
 {
 	name={codec},
-	description={Binnen datacompressie betekent codec de gebruikte techniek om een bestand te comprimeren. De codec is dus is de technologie verantwoordelijk voor het encoden en decoden van een bestand volgens een bapaald compressiealgoritme. BV; H.265},
+	description={De coder-decoder. Binnen datacompressie betekent codec de gebruikte techniek om een bestand te comprimeren. De codec is dus is de technologie verantwoordelijk voor het encoden en decoden van een bestand volgens een bapaald compressiealgoritme. BV; H.265},
 	plural={codecs}
 }
 
@@ -47,7 +47,7 @@
 \newglossaryentry{container}
 {
 	name={container},
-	description={Binnen datacompressie kan een container vrijwel letterlijk vertaald worden. Het is een verpakking voor alle data die men opslaat alsook de instructies voor het openen van die data. onder andere de codec plaatst data in deze container. Wanneer er gesproken wordt over bestandsextensies wordt vaak de container bedoeld. Bv; MP4 }
+	description={Binnen datacompressie kan een container vrijwel letterlijk vertaald worden. Het is een verpakking voor alle data die men opslaat en metadata. onder andere de codec plaatst data in deze container. Wanneer er gesproken wordt over bestandsextensies wordt vaak de container bedoeld. Bv; MP4 }
 }
 
 \newglossaryentry{jpeg}
@@ -84,8 +84,8 @@
 
 \newglossaryentry{h265}
 {
-	name={H.265},
-	description={H.265 is een videocodec ontwikkelt als opvolger van H.264. Videocompresssie en H.265 worden uitgebreid besproken in hoofdstuk \ref{ch:videocompressie}}
+	name={H.265/HEVC},
+	description={H.265/HEVC is een videocodec ontwikkelt als opvolger van H.264/AVC. Videocompresssie en H.265/HEVC worden uitgebreid besproken in hoofdstuk \ref{ch:videocompressie}}
 }
 % TODO: veruidelijken als deel geschreven is.
 
@@ -99,25 +99,25 @@
 \newglossaryentry{open-source}
 {
 	name={open source},
-	description={Als een programmeer project open source is wilt dit zeggen dat de broncode raadpleegbaar is en aanpasbaar is door iedereen. Dit wil echter niet gegarandeerd zeggen dat het software programma gratis is in gebruik.}
+	description={Als een programmeer project open source is wilt dit zeggen dat de broncode raadpleegbaar is. Dit wil echter niet gegarandeerd zeggen dat het software programma gratis is in gebruik of de code zomaar aangepast mag worden. Dit hangt af van de licentie.}
 }
 
 \newglossaryentry{lossless}
 {
 	name={lossless},
-	description={Binnen datacompressie slaat lossless compressie op het comprimeren van een bestand zonder kwaliteitsverlies. In het geval van video's en afbeeldingen wilt dit zeggen dat een bestand gecomprimeerd met een lossless algoritme visueel dezelfde kwaliteit moet hebben}
+	description={Binnen datacompressie slaat lossless compressie op het comprimeren van een bestand zonder kwaliteitsverlies. In het geval van video's en afbeeldingen wilt dit zeggen dat een bestand gecomprimeerd met een lossless algoritme identiek is aan het origineel}
 }
 
 \newglossaryentry{lossy}
 {
 	name={lossy},
-	description={Binnen datacompressie slaat lossy compressie op het comprimeren van een bestand met mogelijks kwaliteitsverlies voor het besparen van data. In het geval van video's en afbeeldingen wilt dit zeggen dat een bestand gecomprimeerd met een lossy algoritme een significante hoeveelheid aan data en kwaliteit kan verliezen in vergelijking met het originele bestand}
+	description={Binnen datacompressie slaat lossy compressie op het comprimeren van een bestand met kwaliteitsverlies voor het besparen van data. In het geval van video's en afbeeldingen wilt dit zeggen dat een bestand gecomprimeerd met een lossy algoritme een significante hoeveelheid aan data en kwaliteit kan verliezen in vergelijking met het originele bestand}
 }
 
 \newglossaryentry{afbeeldingsevaluatietool}
 {
 	name={afbeeldingsevaluatietool},
-	description={Een software applicatie gemaakt voor het voeren van een objectief of subjectief onderzoek naar afbeeldingskwaliteit. De mogelijke soorten tools worden verder besproken in hoofdstuk \ref{ch:kwaliteit}. Een subjectieve afbeeldingsevaluatietool werd gebouwd voor deze paper en wordt verder besproken in hoofdstuk \ref{ch:onderzoek}}
+	description={Een applicatie gemaakt voor het voeren van een objectief of subjectief onderzoek naar afbeeldingskwaliteit. De mogelijke soorten tools worden verder besproken in hoofdstuk \ref{ch:kwaliteit}. Een subjectieve afbeeldingsevaluatietool werd gebouwd voor deze paper en wordt verder besproken in hoofdstuk \ref{ch:onderzoek}}
 }
 
 \newglossaryentry{binaire-voorstelling-bestandsgrootte}
@@ -196,7 +196,7 @@
 
 \newglossaryentry{frequency-based}
 {
-	name={frequency based},
+	name={frequency-based},
 	description={todo}
 }
 % TODO
@@ -274,7 +274,7 @@
 
 \newglossaryentry{meta-data}
 {
-	name={meta data},
+	name={metadata},
 	description={todo}
 }
 
@@ -525,7 +525,8 @@
 \newglossaryentry{intra-frame}
 {
 	name={intra-frame},
-	description={todo}
+	description={todo},
+	plural={intra-frames}
 }
 % TODO
 
@@ -584,6 +585,85 @@
 \newglossaryentry{raster}
 {
 	name={raster},
+	description={todo}
+}
+% TODO
+
+\newglossaryentry{lbhuffman}
+{
+	name={LbHuffman},
+	description={todo}
+}
+% TODO
+
+\newglossaryentry{lbrlea}
+{
+	name={LbRleA},
+	description={todo}
+}
+% TODO
+
+\newglossaryentry{lbrle}
+{
+	name={LbRle},
+	description={todo}
+}
+% TODO
+
+\newglossaryentry{html}
+{
+	name={HTML},
+	description={todo}
+}
+% TODO
+
+\newglossaryentry{bootsrap}
+{
+	name={Bootstrap},
+	description={todo}
+}
+% TODO
+
+\newglossaryentry{library}
+{
+	name={library},
 	description={todo},
+	plural={Libraries}
+}
+% TODO
+
+\newglossaryentry{string}
+{
+	name={string},
+	description={todo},
+	plural={strings}
+}
+% TODO
+
+\newglossaryentry{regex}
+{
+	name={regex},
+	description={todo}
+}
+% TODO
+
+\newglossaryentry{recursieve-functie}
+{
+	name={recursieve functie},
+	description={todo}
+}
+% TODO
+
+\newglossaryentry{array}
+{
+	name={array},
+	description={todo}
+}
+% TODO
+
+\newglossaryentry{json}
+{
+	name={json},
+	description={todo}
 }
 % TODO
