@@ -41,9 +41,14 @@ function process_encode()
         $rle_bestand = 'temp/encoded_rle.lbrle';
         $rle_inhoud = rle_encode(file_get_contents($_FILES['bestand']['tmp_name']));
         file_put_contents($rle_bestand, $rle_inhoud);
+        //huffman
+        $huffman_bestand = 'temp/encoded_huffman.lbhuffman';
+        $huffman_inhoud = huffman_encode(file_get_contents($_FILES['bestand']['tmp_name']));
+        $huffman_inhoud = json_encode($huffman_inhoud);
+        file_put_contents($huffman_bestand, $huffman_inhoud);
 
         //toon output scherm
-        show_encoded_output_screen($rlea_bestand, $rle_bestand);
+        show_encoded_output_screen($rlea_bestand, $rle_bestand, $huffman_bestand);
     } else {
         //upgeloade bestand niet correct ontvangen
         show_input_screen();
@@ -73,13 +78,30 @@ function process_decode_rle()
         show_decoded_output_screen($decoded_rle_bestand);
     } else {
         //upgeloade bestand niet correct ontvangen
-        show_input_screen();
+        show_input_screen("Fout bij uploaden");
     }
 }
 
 function process_decode_huffman()
 {
-    //todo
+    if ($_FILES['bestand']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['bestand']['tmp_name'])) {
+        if (pathinfo($_FILES['bestand']['name'], PATHINFO_EXTENSION) != "lbhuffman") {
+            show_input_screen("Geen geldig huffman bestand geselecteerd");
+            exit();
+        }
+
+        $huffman_string = json_decode(file_get_contents($_FILES['bestand']['tmp_name']))[0];
+        $huffman_lookup = json_decode(file_get_contents($_FILES['bestand']['tmp_name']))[1];
+
+        $decoded_huffman_bestand = 'temp/decoded_huffman.txt';
+        $decoded_huffman_inhoud = huffman_decode($huffman_string, $huffman_lookup);
+        file_put_contents($decoded_huffman_bestand, $decoded_huffman_inhoud);
+
+        show_decoded_output_screen($decoded_huffman_bestand);
+    } else {
+        //upgeloade bestand niet correct ontvangen
+        show_input_screen("Fout bij uploaden");
+    }
 }
 
 
@@ -134,7 +156,7 @@ function show_decoded_output_screen($file_url)
     <?php
 }
 
-function show_encoded_output_screen($rlea_url, $rle_url)
+function show_encoded_output_screen($rlea_url, $rle_url, $huffman_url)
 {
     ?>
     <div class="p-5 mb-4 bg-primary text-white">
@@ -144,6 +166,7 @@ function show_encoded_output_screen($rlea_url, $rle_url)
         <br>
         <a href="<?php echo $rle_url ?>" class="text-white" download>Download RLE encoded bestand</a>
         <br>
+        <a href="<?php echo $huffman_url ?>" class="text-white" download>Download Huffman encoded bestand</a>
     </div>
     <a class="btn btn-outline-primary w-100 mb-3" href=".">Keer terug naar eerste pagina
     </a>
