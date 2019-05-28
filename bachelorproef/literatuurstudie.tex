@@ -228,7 +228,8 @@ In het voorgaande deel (\ref{sec:primitieve-technieken-voorbeeld-huffman-decodin
 \subsubsection{Huffman coding Probleemstelling 2: gecomprimeerd bestand groter dan bron}
 Zoals in probleemstelling \ref{sec:primitieve-technieken-voorbeeld-huffman-probleem-1} besproken is moet een soort \gls{lookup-table} bijgehouden worden als \gls{meta-data} voor het gecomprimeerd bestand. Dit veroorzaakt echter een volgend potentieel probleem .
 
-Wanneer zowel de \gls{huffman-coding} reeks als de binaire zoekboom moeten opgeslagen worden bestaat de kans dat het gecomprimeerde bestand een grotere bestandsgrootte heeft als het oorspronkelijk (door \gls{ascii} encoded) bestand. De mogelijkheid dat een gecomprimeerd bestand groter is dan een niet gecomprimeerd bestand is wederkerend bij \gls{datacompressie} en \gls{lossless} compressie in het bijzonder.
+
+Wanneer zowel de \gls{huffman-coding} reeks als de binaire zoekboom moeten opgeslagen worden bestaat de kans dat het gecomprimeerde bestand een grotere bestandsgrootte heeft als het oorspronkelijk (door \gls{ascii} encoded) bestand. De mogelijkheid dat een gecomprimeerd bestand groter is dan een niet gecomprimeerd bestand is wederkerend bij \gls{datacompressie} en \gls{lossless} compressie in het bijzonder.
 
 
 \subsubsection{Huffman coding Probleemstelling 3: overlappende prefix codes}
@@ -240,13 +241,16 @@ Vooraleer er gebruik gemaakt werd van een binaire boom voor het bepalen van de \
 
 \section{Lossless vs lossy datacompressie}
 \label{sec:ontstaan-datacompressie-lossless-lossy}
-Zoals in hoofdstuk \ref{ch:termen} gedefinieerd slaat \gls{lossless} en \gls{lossy} op een categorie voor \glspl{compressie-algoritme}.Bij \gls{lossless} \gls{datacompressie} is er geen verlies van "kwaliteit" terwijl dit bij \gls{lossy} \gls{datacompressie} geen garantie is.
+Zoals in hoofdstuk \ref{ch:termen} gedefinieerd slaat \gls{lossless} en \gls{lossy} op een categorie voor \glspl{compressie-algoritme}.
+Bij \gls{lossless} \gls{datacompressie} is er geen verlies van "kwaliteit" terwijl dit bij \gls{lossy} \gls{datacompressie} geen garantie is.
 
 Het besproken \gls{huffman-coding} principe valt onder \gls{lossless} \gls{datacompressie}. Meer zelfs, de originele boodschap (en eender welke vorm van input) is bit per bit reconstrueerbaar door het \gls{compressie-algoritme}, er gaat dus geen data verloren. Een bit per bit reconstrueerbare clone is echter geen garantie voor \gls{lossless} \glspl{compressie-algoritme} aangezien \gls{meta-data} en andere zaken die geen impact hebben op “kwaliteit” wel verloren kunnen gaan.
 
 Een typische \gls{use-case} voor \gls{lossless} \gls{datacompressie} zijn tekstdocumenten, de eindgebruiker wilt namelijk niet dat na het comprimeren letters verloren gaan in het document. 
 
 Zoals reeds besproken in deel \ref{sec:ontstaan-datacompressie-primitieve-technieken-binnen-it} was de doorbraak van  \gls{lossy} \gls{datacompressie} gepaard met de opkomst van digitale afbeeldingen en muziek. Zo behoud MP3 (\gls{lossy} \gls{codec} voor audio) bepaalde audiofrequenties niet omdat die door het menselijke oor niet waarneembaar zijn. Maar ook waarneembare frequenties kunnen door de MP3 \gls{codec} verloren gaan voor het besparen van data. \gls{jpeg} is één van de oudste en bekendste vormen van \gls{lossy} \gls{compressie-algoritme} voor afbeeldingen. 
+
+Zoals besproken in \citetitle{kaur2016} (\cite{kaur2016}) kunnen audiobestanden door het gebruik \gls{lossy} \gls{datacompressie} tot 90\% kleiner worden in bestandsgrootte zonder een storende vermindering aan kwaliteit. Bij video kan een immense databesparing voorkomen, tot meer dan 99\% zonder daar veel visueel waarneembaar verschil mee gepaard gaat. Bij stilstaande afbeeldingen is het kwaliteitsverlies door \gls{lossy} \gls{datacompressie} vaak wel zeer zichtbaar wanneer 90\% of meer aan bestandsgrootte bespaard wordt.
 
 De keuze voor \gls{lossless} of \gls{lossy} is \gls{use-case} gebonden. Bij het kiezen voor \gls{lossless} \gls{datacompressie} is een objectief onderzoek naar een goede balans tussen snelheid en databesparing voor de use case aangeraden. Bij \gls{lossy} \gls{datacompressie} zijn zowel objectieve als subjectieve onderzoeken mogelijk. In hoofdstuk \ref{ch:kwaliteit} wordt dieper ingegaan over de verschillende manieren om de prestatie van een \gls{compressie-algoritme} voor afbeeldingen te evalueren. In hoofdstuk \ref{ch:onderzoek} wordt een subjectief onderzoek gevoerd voor het bepalen van het geschikte \gls{afbeeldingsformaat} voor een bepaalde \gls{use-case}.
 

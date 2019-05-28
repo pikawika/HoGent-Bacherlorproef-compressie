@@ -2,7 +2,7 @@
 % LaTeX sjabloon voor de bachelorproef toegepaste informatica aan HOGENT
 % Meer info op https://github.com/HoGentTIN/bachproef-latex-sjabloon
 %===============================================================================
-\documentclass{bachproef-tin}
+\documentclass[table,xcdraw]{bachproef-tin}
 \usepackage{hogent-thesis-titlepage}
 
  % Glossary en fix voor glossary met HoGent Theme
@@ -15,6 +15,9 @@
 %Meer controle over placement van figuren
 \usepackage{placeins}
 
+%Kleuren in tabellen
+\usepackage{xcolor}
+
 %Cite van online beter
 \DeclareCiteCommand{\urlcite}
 [\mkbibfootnote]
@@ -25,7 +28,7 @@
 
 %%---------- Documenteigenschappen ----------
 % De titel van het rapport/bachelorproef
-\title{Je kijkt er naar, maar ziet het niet: datacompressie	principes --- ontstaan en uitdagingen --- implementaties --- \gls{afbeeldingscompressie}: \gls{png} | \gls{jpeg} | \gls{jpeg2000} | \gls{webp} | \gls{heic} --- \gls{videocompressie}:  \gls{h264-avc} | \gls{h264-svc} | \gls{h265} | \gls{av1}}
+\title{Je kijkt er naar, maar ziet het niet: datacompressie	principes --- ontstaan en uitdagingen --- implementaties --- \gls{afbeeldingscompressie}: \gls{png} | \gls{jpeg} | \gls{jpeg2000} | \gls{webp} | \gls{heif} --- \gls{videocompressie}:  \gls{h264-avc} | \gls{h264-svc} | \gls{h265} | \gls{av1}}
 
 % Je eigen naam
 \author{Bontinck Lennert}
@@ -102,6 +105,7 @@
 %% Bijlagen
 %==================
 
+\input{bijlages}
 \appendix
 \renewcommand{\chaptername}{Appendix}
 
