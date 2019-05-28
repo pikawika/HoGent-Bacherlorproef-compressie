@@ -34,14 +34,16 @@ function rle_encode_all($input)
     }
     $output .= $letter;
 
-    return $output;
+    return [$output, strlen($input), strlen($output)];
 }
 
 function rle_encode($input)
 {
-    return preg_replace_callback('/(.)\1+/', function ($overeenkomst) {
+    $output = preg_replace_callback('/(.)\1+/', function ($overeenkomst) {
         return strlen($overeenkomst[0]) . $overeenkomst[1];
     }, $input);
+
+    return [$output, strlen($input), strlen($output)];
 }
 
 function rle_decode($input)

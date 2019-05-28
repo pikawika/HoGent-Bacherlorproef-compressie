@@ -4,6 +4,8 @@ include 'layout/header.php';
 include 'algoritmes/rle.php';
 include 'algoritmes/huffman.php';
 
+make_temp_dir();
+
 if (isset($_POST['encode'])) {
     process_encode();
 } else if (isset($_POST['rle-decode'])) {
@@ -16,7 +18,6 @@ if (isset($_POST['encode'])) {
 
 function process_encode()
 {
-    make_temp_dir();
     if ($_FILES['bestand']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['bestand']['tmp_name'])) {
         if (pathinfo($_FILES['bestand']['name'], PATHINFO_EXTENSION) != "txt") {
             show_input_screen("Geen txt bestand geselecteerd");
@@ -35,20 +36,28 @@ function process_encode()
 
         //rle all
         $rlea_bestand = 'temp/encoded_rle_all.lbrlea';
-        $rlea_inhoud = rle_encode_all(file_get_contents($_FILES['bestand']['tmp_name']));
+        $rlea_encoder_response = rle_encode_all(file_get_contents($_FILES['bestand']['tmp_name']));
+        $rlea_inhoud = $rlea_encoder_response[0];
+        $rlea_origineel_aantal_karakters = $rlea_encoder_response[1];
+        $rlea_encoded_aantal_karakters = $rlea_encoder_response[2];
         file_put_contents($rlea_bestand, $rlea_inhoud);
         //rle 1+
         $rle_bestand = 'temp/encoded_rle.lbrle';
-        $rle_inhoud = rle_encode(file_get_contents($_FILES['bestand']['tmp_name']));
+        $rle_encoder_response = rle_encode(file_get_contents($_FILES['bestand']['tmp_name']));
+        $rle_inhoud = $rle_encoder_response[0];
+        $rle_origineel_aantal_karakters = $rle_encoder_response[1];
+        $rle_encoded_aantal_karakters = $rle_encoder_response[2];
         file_put_contents($rle_bestand, $rle_inhoud);
         //huffman
         $huffman_bestand = 'temp/encoded_huffman.lbhuffman';
-        $huffman_inhoud = huffman_encode(file_get_contents($_FILES['bestand']['tmp_name']));
-        $huffman_inhoud = json_encode($huffman_inhoud);
+        $huffman_encoder_response = huffman_encode(file_get_contents($_FILES['bestand']['tmp_name']));
+        $huffman_inhoud = json_encode(array_slice($huffman_encoder_response, 0, 2));
+        $huffman_origineel_bits = $huffman_encoder_response[2];
+        $huffman_encoded_bits = $huffman_encoder_response[3];
         file_put_contents($huffman_bestand, $huffman_inhoud);
 
         //toon output scherm
-        show_encoded_output_screen($rlea_bestand, $rle_bestand, $huffman_bestand);
+        show_encoded_output_screen($rlea_bestand, $rlea_origineel_aantal_karakters, $rlea_encoded_aantal_karakters, $rle_bestand, $rle_origineel_aantal_karakters, $rle_encoded_aantal_karakters, $huffman_bestand, $huffman_origineel_bits, $huffman_encoded_bits);
     } else {
         //upgeloade bestand niet correct ontvangen
         show_input_screen();
@@ -148,7 +157,7 @@ function show_decoded_output_screen($file_url)
     <div class="p-5 mb-4 bg-primary text-white">
         <h1 class="mb-4">Decoding geslaagd</h1>
 
-        <a href="<?php echo $file_url ?>" class="text-white" download>Download decoded bestand</a>
+        <a href="<?php echo $file_url ?>" class="btn btn-info" download>Download decoded bestand &darr;</a>
 
     </div>
     <a class="btn btn-outline-primary w-100 mb-3" href=".">Keer terug naar eerste pagina
@@ -156,17 +165,39 @@ function show_decoded_output_screen($file_url)
     <?php
 }
 
-function show_encoded_output_screen($rlea_url, $rle_url, $huffman_url)
+function show_encoded_output_screen($rlea_url, $rlea_origineel_aantal_karakters, $rlea_encoded_aantal_karakters, $rle_url, $rle_origineel_aantal_karakters, $rle_encoded_aantal_karakters, $huffman_url, $huffman_origineel_bits, $huffman_encoded_bits)
 {
     ?>
     <div class="p-5 mb-4 bg-primary text-white">
-        <h1 class="mb-4">Decoding geslaagd</h1>
+        <h1 class="mb-4">Encoding geslaagd</h1>
 
-        <a href="<?php echo $rlea_url ?>" class="text-white" download>Download RLE all encoded bestand</a>
+        <h3>RLE all encoded</h3>
+        <p>
+            <b>Origineel aantal karakters: </b> <?php echo $rlea_origineel_aantal_karakters ?>
+            <br>
+            <b>Encoded aantal karakters: </b> <?php echo $rlea_encoded_aantal_karakters ?>
+        </p>
+        <a href="<?php echo $rlea_url ?>" class="btn btn-info" download>Download &darr;</a>
+        <hr>
+
+        <h3>RLE encoded</h3>
+        <p>
+            <b>Origineel aantal karakters: </b> <?php echo $rle_origineel_aantal_karakters ?>
+            <br>
+            <b>Encoded aantal karakters: </b> <?php echo $rle_encoded_aantal_karakters ?>
+        </p>
+        <a href="<?php echo $rle_url ?>" class="btn btn-info" download>Download &darr;</a>
+        <hr>
+
+        <h3>Huffman encoded</h3>
+        <p>
+            <b>Origineel aantal bits: </b> <?php echo $huffman_origineel_bits ?>
+            <br>
+            <b>Encoded aantal bits (exclusief lookup table): </b> <?php echo $huffman_encoded_bits ?>
+        </p>
+        <a href="<?php echo $huffman_url ?>" class="btn btn-info" download>Download &darr;</a>
         <br>
-        <a href="<?php echo $rle_url ?>" class="text-white" download>Download RLE encoded bestand</a>
-        <br>
-        <a href="<?php echo $huffman_url ?>" class="text-white" download>Download Huffman encoded bestand</a>
+        <small>Lookup table en encoding string opgeslagen als json en dus een niet representabele bestandsgrootte voor dit compressie-algoritme</small>
     </div>
     <a class="btn btn-outline-primary w-100 mb-3" href=".">Keer terug naar eerste pagina
     </a>

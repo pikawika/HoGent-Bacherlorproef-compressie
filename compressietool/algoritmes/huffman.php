@@ -40,7 +40,7 @@ function huffman_encode($input)
         $output .= $lookup_table[$originele_input[$i]];
     }
 
-    return [$output, $lookup_table];
+    return [$output, $lookup_table, strlen($input) * 8, strlen($output)];
 }
 
 // zolang een karakter een array is verder gaan in die array waarbij stap naar 'links' 0 wordt en elke stap naar 'rechts' 1
