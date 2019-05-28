@@ -354,11 +354,12 @@ Binnen webomgevingen zijn tal van manieren om een alternatieve afbeelding op te 
 
 Een éénvoudige en universeel werkende manieren om een terugval afbeelding op te geven is door gebruik te maken van een picture tag in HTML. Deze ziet er als volgt uit:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=htmlcssjs]
 <picture>
 	<source srcset="pad/naar/afbeelding.webp" type="image/webp">
-	<source srcset="pad/naar/afbeelding.jpf" type="image/jpeg2000">
+	<source srcset="pad/naar/afbeelding.jpf" type="image/jpx">
 	<source srcset="pad/naar/afbeelding.png" type="image/png"> 
+	<source srcset="pad/naar/afbeelding.jpg" type="image/jpeg"> 
 	<img src="pad/naar/afbeelding.jpg">
 </picture>
 \end{lstlisting}
