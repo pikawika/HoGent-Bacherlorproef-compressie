@@ -15,6 +15,12 @@ Dit hoofdstuk licht toe welke soorten \gls{afbeeldingscompressie} er bestaan. Oo
 
 Hoofdstuk \ref{ch:kwaliteit} bespreekt hoe de kwaliteit van een \gls{afbeeldingsformaat} objectief en subjectief beoordeeld kan worden. In hoofdstuk \ref{ch:onderzoek} wordt voor een bepaalde \gls{use-case} een geschikt \gls{afbeeldingsformaat} gezocht aan de hand van een subjectief onderzoek met een voor deze bachelorproef geschreven \gls{afbeeldingsevaluatietool}.
 
+\section{Raster vs vector afbeeldingsformaten}
+\label{sec:afbeeldingscompressie-raster-vector}
+
+TODO
+%todo
+
 
 \section{Afbeeldingsformaten}
 \label{sec:afbeeldingscompressie-afbeeldingsformaten}
@@ -65,6 +71,8 @@ Het \gls{png} \gls{afbeeldingsformaat} bied tal van voordelen ten opzichte van z
 	
 	\item \Gls{lossless} \gls{afbeeldingsformaat} waardoor er geen kwaliteit verloren gaat.
 	
+	\item De  \gls{decoder} kan progressief de afbeelding inladen, startend met een weergave tegen lage resolutie tot deze uiteindelijk volledig is ingeladen.
+	
 	\item Goede uitbreidbaarheid waardoor \gls{meta-data} en andere randvariabelen aan een \gls{png} bestand kunnen toegevoegd worden terwijl het bestand  \gls{backwards-compatible} blijft.
 	
 	\item Een keuze uit meer dan 16 miljoen kleuren dankzij het \gls{rgb} kleurenprofiel met alpha kanaal. Een groot contrast tegenover \gls{gif} dat maar 256 kleuren ondersteund. 
@@ -76,8 +84,6 @@ Het \gls{png} \gls{afbeeldingsformaat} bied tal van voordelen ten opzichte van z
 \Gls{png} heeft echter ook enkele minpunten, voornamelijk te weiden aan het feit dat \gls{png} ontwikkeld is om te gebruiken op het internet.
 
 \begin{itemize}
-	\item Geen ondersteuning voor kleuromgevingen als \gls{cmyk}.
-	
 	\item Geen standaard ondersteuning voor geanimeerde beelden.
 	
 	\item Grote bestandsgrootte door zijn \gls{lossless} eigenschap.
@@ -107,6 +113,8 @@ TODO
 
 \begin{itemize}
 	\item Uitstekende support overheen verschillende hardware en software.
+	
+	\item De  \gls{decoder} kan progressief de afbeelding inladen, startend met een weergave tegen lage resolutie tot deze uiteindelijk volledig is ingeladen.
 	
 	\item Door de mogelijkheid om als \gls{lossy} \gls{compressie-algoritme} te werken kan \gls{jpeg} een enorm kleine bestandsgrootte aannemen afhankelijk van de instellingen.
 	
@@ -163,11 +171,9 @@ De voornaamste voordelen van \gls{jpeg2000} zijn:
 	
 	\item Minder \glspl{artefact} dan \gls{jpeg2000}.
 	
-	\item De  \gls{decoder} kan progressief de afbeelding inladen, startend met een weergave tegen lage resolutie tot deze uiteindelijk volledig is ingeladen. Dit is vooral interessant voor bestanden met enorm grote bestandsgroottes zoals in de medische sector.
+	\item De  \gls{decoder} kan progressief de afbeelding inladen, startend met een weergave tegen lage resolutie tot deze uiteindelijk volledig is ingeladen.
 	
 	\item Ondersteuning voor transparantie. In latere versies niet besproken in deze bachelorproef is ook support voor animatie aanwezig.
-	
-	\item Kan progressief ingeladen en 
 	
 	\item Schaalbaar en tal van andere voordelen bij het gebruik van \gls{jpeg2000} als \gls{intra-frame} \gls{datacompressie} schema in \gls{videocompressie}. Deze paper gaat niet verder in op het gebruik van \gls{jpeg2000} binnen \gls{videocompressie}.
 \end{itemize}
@@ -213,8 +219,6 @@ Het gebruik van \gls{webp} bied vele voordelen, enkele van de voornaamste zijn:
 	
 	\item Zowel de \gls{lossless} als \gls{lossy} variant presteren gemiddeld gezien beter dan respectievelijk \gls{png} en \gls{jpeg}. (Zie \ref{sec:afbeeldingscompressie-webp})
 	
-	\item De \gls{webp} \gls{decoder} kan reeds een portie van de afbeelding weergeven zelfs als deze nog niet volledig gedownload is.
-	
 	\item Ondersteund transparantie en animatie.
 \end{itemize}
 
@@ -225,6 +229,8 @@ Het gebruik van \gls{webp} bied vele voordelen, enkele van de voornaamste zijn:
 
 \begin{itemize}
 	\item Geen support voor Safari en enkele kleinere of gedateerde internetbrowsers: Internet Explorer, KaiOS en Blackbarry Browser.
+	
+	\item Geen progressieve \gls{decoding} mogelijk.
 	
 	\item Geen standaard support in \gls{ps} maar gratis \glspl{plug-in} beschikbaar. In het onderzoek uit hoofdstuk \ref{ch:onderzoek} wordt de voor het onderzoek gebruikte \gls{plug-in} toegelicht.
 \end{itemize}
@@ -269,30 +275,110 @@ TODO
 \subsubsection{HEIF: nadelen}
 \label{sec:afbeeldingscompressie-heif-nadelen}
 
-Net zoals \gls{webp} heeft \gls{heif} één groot nadeel: ondersteuning. Apple lost dit op door bij het delen van een foto de afbeelding te converteren naar \gls{jpeg} maar daarmee gaan ook alle voordelen van \gls{heif} verloren...
+Net zoals \gls{webp} heeft \gls{heif} één groot nadeel: ondersteuning. Apple lost dit op door bij het delen van een foto de afbeelding te converteren naar \gls{jpeg} maar daarmee gaan ook alle voordelen van \gls{heif} verloren... 
 
 Desondanks Apple gebruiker is van \gls{heif}/\gls{heic} is er nog geen ondersteuning voor in de Safari internetbrowser. Ook andere gekende internetbrowsers bieden geen ondersteuning voor dit \gls{afbeeldingsformaat}.
+
+Ook is er geen progressieve \gls{decoding} mogelijk.
 
 \section{De juiste keuze}
 \label{sec:afbeeldingscompressie-keuze}
 
-TODO
-%TODO: afbeeldingcompressie
+De juiste keuze van \gls{afbeeldingsformaat} maken is geen eenvoudige taak en zeer \gls{use-case} gebonden. Hoewel nieuwe \glspl{afbeeldingsformaat} tal van interessante voordelen bieden is vooral compatibiliteit een wederkerend probleem. Hier bestaan relatief eenvoudige oplossingen voor in webomgevingen waarvan enkele besproken zijn in deel \ref{sec:afbeeldingscompressie-implementatie-on-premise}. De keuze voor een nieuw \gls{afbeeldingsformaat} bij \gls{on-premise} applicaties is iets lastiger om te implementeren en word kort besproken in deel \ref{sec:afbeeldingscompressie-implementatie-on-premise}. Indien de \gls{use-case} professionele drukwerk omvat is een keuze voor een \gls{raster} \gls{afbeeldingsformaat} ten sterkste aangeraden. Deze \glspl{afbeeldingsformaat} zijn niet verder besproken in deze bachelorproef.
 
-\subsection{Lossless of lossy afbeeldingscompressie}
-\label{sec:afbeeldingscompressie-lossless-of-lossy}
+\subsection{Functievereisten}
+\label{sec:afbeeldingscompressie-functievereisten}
 
-TODO
-%TODO: afbeeldingcompressie
+Het is belangrijk om voor elke \gls{use-case} grondig na te denken welke \glspl{afbeeldingsformaat} de beste keuzes zijn. De selectie verfijnen kan je reeds eenvoudig doen door naar enkele functievereisten als ondersteuning voor transparantie te kijken. 
+
+Een korte overzichtstabel van enkele kernfunctionaliteiten per \gls{afbeeldingsformaat} is te vinden in figuur \ref{fig:overzichtstabel-afbeeldingsformaten-functies}. Hier zijn enkele opmerkingen bij:
+
+\begin{itemize}
+	\item \gls{jpeg2000} ondersteund pas sinds \gls{iso} 15444 deel drie animatie onder de vorm van Motion \gls{jpeg2000} (.mj2). In deze bachelorproef is echter de meest voorkomende versie .jpf uit deel twee besproken. Deze ondersteund geen animatie.
+	
+	\item \Gls{webp} ondersteund geen progressieve \gls{decoding} maar wel incrementele \gls{decoding}. Dit zorgt er voor dat het wel mogelijk is reeds 'iets' weer te geven terwijl \gls{decoding} (en zelfs download) nog gaande is.
+\end{itemize}
+
+\begin{table}[]
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		& \textbf{PNG}                   & \textbf{JPEG}                  & \textbf{JPEG200}               & \textbf{WebP}                  & \textbf{HEIF}               \\ \hline
+		\textbf{Lossless}            & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{CB0000}Deels* & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja  \\ \hline
+		\textbf{lossy}               & \cellcolor[HTML]{CB0000}Nee    & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja  \\ \hline
+		\textbf{Transparantie}       & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{CB0000}Nee    & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja  \\ \hline
+		\textbf{Animatie}            & \cellcolor[HTML]{CB0000}Nee  & \cellcolor[HTML]{CB0000}Nee    & \cellcolor[HTML]{9B9B9B}Deels* & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja  \\ \hline
+		\textbf{Progressief decoden} & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{9B9B9B}Deels* & \cellcolor[HTML]{CB0000}Nee \\ \hline
+	\end{tabular}
+	\caption{Overzichtstabel van enkele kernfunctionaliteiten per \gls{afbeeldingsformaat}. Dit wordt verder besproken in deel \ref{sec:afbeeldingscompressie-functievereisten}.}
+	\label{fig:overzichtstabel-afbeeldingsformaten-functies}
+\end{table}
 
 \subsection{Ondersteuning}
 \label{sec:afbeeldingscompressie-ondersteuning}
 
-TODO
-%TODO: afbeeldingcompressie
+De algemene ondersteuning voor \gls{jpeg} en \gls{png} is zeer uitgebreid. Alle recente internetbrowser en besturingssystemen kunnen er perfect met om. Dit is één van de grootste redenen waarom deze verouderde \gls{afbeeldingsformaat} nog zo dominant aanwezig zijn. Nieuwe \glspl{afbeeldingsformaat} falen namelijk vaak doordat er een slechte ondersteuning is en niet door een slecht \gls{compressie-algoritme}.
 
-\section{Implementatie}
+Zo heeft \gls{heic} geen browserondersteuning tot op heden. \Gls{jpeg2000} heeft een hele slechte internetbrowser ondersteuning met enkel ondersteuning in Safari onder de gekende browsers. \Gls{webp} heeft een aanvaardbare internetbrowser ondersteuning met momenteel enkel geen ondersteuning in Safari onder de gekende internetbrowser.
+
+Een compleet overzicht is beschikbaar in figuur \ref{fig:overzichtstabel-afbeeldingsformaten-support}
+
+\begin{table}[]
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		& \textbf{PNG}                                      & \textbf{JPEG}                                     & \textbf{JPEG200}                                  & \textbf{WebP}                                     & \textbf{HEIF}               \\ \hline
+		\textbf{Chrome}             & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee \\ \hline
+		\textbf{Edge}               & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee \\ \hline
+		\textbf{Firefox}            & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee \\ \hline
+		\textbf{Safari}             & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{CB0000}Nee \\ \hline
+		\textbf{Internet explorer}  & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{CB0000}Nee \\ \hline
+		\textbf{Opera}              & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee \\ \hline
+		\textbf{Blackberry browser} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{CB0000}Nee \\ \hline
+		\textbf{KaiOS browser}      & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{32CB00}{\color[HTML]{333333} Ja} & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{CB0000}Nee                       & \cellcolor[HTML]{CB0000}Nee \\ \hline
+	\end{tabular}
+	\caption{Overzichtstabel van internetbrowser ondersteuning per afbeeldingsformaat. Data verkregen van caniuse.com in mei 2019.}
+	\label{fig:overzichtstabel-afbeeldingsformaten-support}
+\end{table}
+
+\section{Implementatiemogelijkheden voor nieuwe afbeeldingsformaten}
 \label{sec:afbeeldingscompressie-implementatie}
 
-TODO
-%TODO: afbeeldingcompressie
+Het gebruik van nieuwe \glspl{afbeeldingsformaat} kan afgeschrikt worden wanneer je leest dat de ondersteuning nog niet optimaal is. Er zijn echter tal van manieren om toch de juiste afbeelding weer te geven wanneer er geen ondersteuning beschikbaar is. Dit wordt in onderstaande delen kort besproken voor zowel implementatie in webomgevingen als \gls{on-premise} omgevingen.
+
+\subsection{Webomgeving}
+\label{sec:afbeeldingscompressie-implementatie-web}
+
+Binnen webomgevingen zijn tal van manieren om een alternatieve afbeelding op te geven als terugval afbeelding moest het laden van een afbeelding mislukken. Dit zorgt er voor dat een internetbrowser die het gekozen \gls{afbeeldingsformaat} niet ondersteund de terugval afbeelding weergeeft. Deze is doorgaans dan een \gls{png} of \gls{jpeg}. Dit kan op verschillende manieren bereken worden.
+
+\subsection{Manueel}
+\label{sec:afbeeldingscompressie-implementatie-web-manueel}
+
+Een éénvoudige en universeel werkende manieren om een terugval afbeelding op te geven is door gebruik te maken van een picture tag in HTML. Deze ziet er als volgt uit:
+
+\begin{lstlisting}
+<picture>
+	<source srcset="pad/naar/afbeelding.webp" type="image/webp">
+	<source srcset="pad/naar/afbeelding.jpf" type="image/jpeg2000">
+	<source srcset="pad/naar/afbeelding.png" type="image/png"> 
+	<img src="pad/naar/afbeelding.jpg">
+</picture>
+\end{lstlisting}
+
+De volgorde is hier enorm van belang. Internetbrowsers die de picture tag niet ondersteunen negeren de source tags ook en herkennen enkel de img tag en geven alsvolgt de afbeelding binnen die tag ingesteld weer. Indien een internetbrowser de picture tag wel ondersteund zal hij het type uit de eerste sourceset die hij ondersteund nemen als bron voor de afbeelding. De internetbrowser werkt hier van boven naar onder en stopt bij een match.
+
+\subsection{geautomatiseerd}
+\label{sec:afbeeldingscompressie-implementatie-web-automated}
+
+Er zijn tal van mogelijkheden om op een geautomatiseerde manier gebruik te maken van nieuwe \glspl{afbeeldingsformaat}. Vele caching diensten, zoals Cloudflare, bieden de mogelijkheid automatisch elke afbeelding te converteren naar verschillende afbeeldingsformaten en diegene weer te geven met de kleinst mogelijke bestandsgrootte. 
+
+Voor \gls{wordpress} en tal van andere \glspl{cms} zijn er ook \glspl{plug-in} voorzien die op een zelfde manier te werk gaan. Voor \gls{wordpress} is er bijvoorbeeld de WebP Express \urlcite{webpwordpress} \gls{plug-in}.
+
+Sommige automatisaties kiezen er voor de afbeelding direct op te slaan in alle \glspl{afbeeldingsformaat} wat de opslagruimte te min gaat maar response time te goeie doet. Andere houden enkele het bronbestand bij en genereren het gevraagde formaat bij aanvraag. Dit gaat dan weer te min van de response time en het cpu gebruik van de \gls{hosting} server. Dit is uiteraard ook manueel te implementeren.
+
+\subsection{On-premise omgeving}
+\label{sec:afbeeldingscompressie-implementatie-on-premise}
+
+Bij een \gls{on-premise} omgeving zijn er ook verschillende mogelijkheden om een terugval afbeelding in te stellen. In een situatie als die van Apple (besproken in \ref{sec:afbeeldingscompressie-heif-nadelen}) kan gekozen worden om een converter in te bouwen die het \gls{afbeeldingsformaat} omzet naar een wel ondersteund formaat bij het bekijken of delen van een afbeelding. Dit kan echter heel intensief voor de CPU worden.
+
+Een andere oplossing is een encoder en of decoder te voorzien in de installatie die de ondersteuning voor het \gls{afbeeldingsformaat} levert. Dit bestaat in het geval van \gls{webp} voor zowel macOS, Windows als bepaalde Linux distributies.
+
+Er kan uiteraard ook gekozen worden om de terugval afbeelding effectief mee op te slaan op het toestel. Er kan dan gebruik gemaakt worden van een simpele universeel aanspreekbare controle dat het juiste afbeeldingsformaat selecteert. Deze controle kan ook tijdens de installatie gedaan worden en zo enkel de afbeeldingen in het nodige \gls{afbeeldingsformaat} over te zetten naar het toestel maar dit kan voor problemen zorgen wanneer de software op het systeem update en de ondersteuningen verander.
