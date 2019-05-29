@@ -126,7 +126,6 @@ function show_input_screen($error = false)
         <div class="p-5 mb-4 bg-primary text-white">
             <h1 class="mb-4">Bachelorproef POC: compressietool</h1>
 
-
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="bestand" name="bestand" required>
                 <label class="custom-file-label" for="bestand">Kies bestand</label>
@@ -136,6 +135,7 @@ function show_input_screen($error = false)
                 </small>
             </div>
 
+            <a href="input/demo_input.zip" class="btn btn-info mt-3" download>Download de demo tekstbestanden &darr;</a>
 
         </div>
 

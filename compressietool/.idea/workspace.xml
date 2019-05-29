@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="798e7ca5-7006-4ade-8552-597b8000a2bb" name="Default Changelist" comment="" />
+    <list default="true" id="798e7ca5-7006-4ade-8552-597b8000a2bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../bachelorproef/compressietool.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/compressietool.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bachelorproef/termen-declaration.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/termen-declaration.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,23 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-              <folding>
-                <element signature="e#6153#6159#0#HTML" expanded="true" />
-                <element signature="e#6977#6983#0#HTML" expanded="true" />
-                <element signature="e#7335#7341#0#HTML" expanded="true" />
-                <element signature="e#7700#7706#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,6 +40,7 @@
       <find>make_temp_dir();</find>
       <find>geslaa</find>
       <find>$karakters</find>
+      <find>download</find>
     </findStrings>
     <replaceStrings>
       <replace>$overeenkomst</replace>
@@ -75,9 +65,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -87,9 +74,9 @@
         <option value="$PROJECT_DIR$/layout/footer.php" />
         <option value="$PROJECT_DIR$/algoritmes/huffman-decode.php" />
         <option value="$PROJECT_DIR$/algoritmes/huffman-encode-ok.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/algoritmes/rle.php" />
         <option value="$PROJECT_DIR$/algoritmes/huffman.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -162,25 +149,19 @@
       <option name="presentableId" value="Default" />
       <updated>1559045911608</updated>
       <workItem from="1559045912685" duration="18774000" />
+      <workItem from="1559139113226" duration="175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18774000" />
+    <option name="totallyTimeSpent" value="18949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Command Line Tools Console" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -188,10 +169,16 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="10" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,23 +241,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algoritmes/huffman-meh.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algoritmes/huffman-decode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="27" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algoritmes/huffman-encode-ok.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="60" column="35" lean-forward="true" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/algoritmes/huffman-meh.php" />
+    <entry file="file://$PROJECT_DIR$/algoritmes/huffman-decode.php" />
+    <entry file="file://$PROJECT_DIR$/algoritmes/huffman-encode-ok.php" />
     <entry file="file://$PROJECT_DIR$/algoritmes/rle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
@@ -290,14 +263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-          <folding>
-            <element signature="e#6153#6159#0#HTML" expanded="true" />
-            <element signature="e#6977#6983#0#HTML" expanded="true" />
-            <element signature="e#7335#7341#0#HTML" expanded="true" />
-            <element signature="e#7700#7706#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="561">
+          <caret line="137" column="120" selection-start-line="137" selection-start-column="120" selection-end-line="137" selection-end-column="120" />
         </state>
       </provider>
     </entry>
