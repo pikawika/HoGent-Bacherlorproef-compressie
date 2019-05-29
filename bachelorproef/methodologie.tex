@@ -5,16 +5,109 @@
 \chapter{Methodologie}
 \label{ch:methodologie}
 
-TODO - op het einde
+Bij het schrijven van een wetenschappelijk document is een gegronde methodologie vereist. Dit hoofdstuk licht de gekozen methodologie voor deze bachelorproef toe en bespreekt die keuze per deel van dit document. Ook de gebruikte \LaTeX{} packages worden kort toegelicht.
 
-%% TODO: Hoe ben je te werk gegaan? Verdeel je onderzoek in grote fasen, en
-%% licht in elke fase toe welke stappen je gevolgd hebt. Verantwoord waarom je
-%% op deze manier te werk gegaan bent. Je moet kunnen aantonen dat je de best
-%% mogelijke manier toegepast hebt om een antwoord te vinden op de
-%% onderzoeksvraag.
+\section{Aanpak van deze bachelorproef}
+\label{sec:aanpak-bachelorproef}
 
-%TODO: zeggen dat je literatuurstudie van betrouwbare bronnen komt 
-%TODO: zeggen dat je tool open source is en zelfgeschreven met validatie van co-promoter 
-%TODO: zeggen dat je opzoekingswerk afb en vid compressie goed is door co-promoter en zijn collega's
-%TODO: zeggen dat eval tool open source zelfgemaakt is met zelfde pc etc en dat daarom betrouwbare resultaten zijn die kunnen nagebootst worden
-%TODO: zeggen dat door werkwijze toelichten zelf een test opgezet kan worden zodanig dit besluit gevalideerd kan worden of zelf verder onderzoek
+Deze bachelorproef streeft naar een correcte en verantwoordelijke manier van werken om de betrouwbaarheid van dit document te bewaren. Hiervoor is dit document meermaals gevalideerd door en veranderd naar input van vakexpert en co-promotor Tom Paridaens. 
+
+Om dit te garanderen is er ook uitsluitend gebruik gemaakt van primaire of secundaire bronnen en geen tertiaire bronnen. De kennis verworven uit primaire bronnen is steeds gevalideerd met secundaire bronnen. De volledig bronnenlijst is ter beschikking gesteld op het einde van dit document. Wanneer data uit een bron overgenomen is naar dit document is steeds een verwijzing naar de oorspronkelijke bron voorzien. 
+
+De kennis uit primaire brommen komen voornamelijk uit de vijf jaar informatica gerelateerde studies en twee jaar fotografie gerelateerde studies dat door de auteur van deze bachelorproef gevolgd zijn.
+
+Dit document is geschreven in \LaTeX{} en is voorzien van een BibTeX bibliografische databank. Er is onder andere gebruik gemaakt van volgende packages: 
+
+\begin{itemize}
+	
+	\item Glossary voor het voorzien van een woordenlijst. Woorden die voorkomen in de woordenlijst uit hoofdstuk \ref{ch:termen} bevatten een verwijzing naar dit overzicht wanneer er op geklikt wordt.
+	
+	\item Listings en colors voor het voorzien van code met de gepaste highlighting. 
+	
+	\item Xcolor voor het voorzien van kleuren achtergrondkleuren in de cellen van een tabel.
+	
+	\item Placeins voor meer controle over de plaatsing van tabellen en andere figuren door \LaTeX{}.
+	
+\end{itemize}
+
+In de volgende secties zal voor de vijf verschillende delen van dit document kort toegelicht worden wat de gekozen methodologie is en waarom.
+
+\subsection{Deel 1: situering en literatuurstudie}
+\label{sec:aanpak-bachelorproef-deel-1}
+
+In hoofdstuk \ref{ch:termen} is er voor gekozen een lijst van belangrijke termen te voorzien. Deze lijst helpt de lezer de bachelorproef vlot te lezen. Er is gebruik gemaakt van de Glossary package omdat deze de mogelijkheid voor referenties en een alfabetisch gerangschikte woordenlijst voorziet.
+
+De literatuurstudie (hoofdstuk \ref{ch:literatuurstudie}) is kort gehouden maar volstaat samen met de woordenlijst uit hoofdstuk \ref{ch:termen} voor het begrijpen van de overige besproken zaken uit dit document. Deze literatuurstudie licht ook enkele primitieve \glspl{compressie-algoritme} toe en maakt daarvoor gebruik van de originele documenten omtrent de uitgave van deze \glspl{compressie-algoritme}. 
+
+In dit deel worden de volgende onderzoekvragen (deels) beantwoord: 
+\begin{itemize}
+	\item Hoe is \gls{datacompressie} binnen IT ontstaan?
+	\item Wat waren enkele van de eerste \glspl{compressie-algoritme}?
+	\item Waar zitten de verschillen tussen de \glspl{afbeeldingsformaat} en video \glspl{codec}?
+	\item Hoe kan \gls{datacompressie} correct geïmplementeerd worden?
+\end{itemize}
+
+\subsection{Deel 2: datacompressietool ontwikkelen}
+\label{sec:aanpak-bachelorproef-deel-2}
+
+Aan de hand van de verworven kennis uit de hoofdstuk \ref{ch:literatuurstudie} is een proof of concept \gls{compressietool} geschreven in \gls{php} met een grafische interface in \gls{html}, \gls{css} en \gls{bootsrap}. Er is gekozen om de \gls{compressietool} in deze talen te schrijven aangezien deze eenvoudig online te hosten zijn of lokaal te runnen. De tool is dan ook online ter beschikking gesteld op de website van Lennert Bontinck\urlcite{compressietool}. Dit maakt het voor de lezer eenvoudig om de \gls{compressietool} zelf te testen.
+
+De code van de \gls{compressietool} is publiek ter beschikking gesteld op de \gls{github} repository van deze bachelorproef\urlcite{githubbachelorproef}. Deze is vrijgegeven onder de GNU GPLv3 licentie en mag dus gratis aangepast en gebruikt worden voor alle doeleinden. Dit maakt het eenvoudig voor de lezer om de broncode raad te plegen en, aan de hand van de uitleg in hoofdstuk \ref{ch:compressietool}, aan te passen.
+
+Er is bewust gekozen om de code achter deze tool simpel te houden en te werken met Nederlandse variabelen zodanig de code, mits de voorziene uitleg in hoofdstuk \ref{ch:compressietool}, ook voor minder technische lezers verstaanbaar is. Hiervoor zijn ook tal van links naar de geziene theorie uit deel \ref{sec:primitieve-technieken-voorbeeld} voorzien.
+
+De verworven bestanden na compressie worden met het origineel vergeleken op basis van het aantal karakters nodig om de tekst op te slaan voor de \gls{rle-long} gebaseerde \glspl{compressie-algoritme} en het aantal bits nodig om de tekst op te slaan voor het \gls{huffman-coding} gebaseerde \gls{compressie-algoritme}. Dit geeft een duidelijker beeld van de prestatie van het \gls{compressie-algoritme} dan de zuiver de bestandsgrootte.
+
+Aangezien het om een proof of concept \gls{compressietool} gaat zijn er enkele beperkingen, deze worden dan ook toegelicht in deel \ref{sec:compressietool-beperkingen}. Dit doet de gebruiker stilstaan over mogelijke (ongewenste) beperkingen die kunnen voorkomen bij het implementeren van een \gls{compressie-algoritme} en nadenken over mogelijke oplossingen.
+
+In dit deel worden de volgende onderzoekvragen (deels) beantwoord: 
+\begin{itemize}
+	\item Wat waren enkele van de eerste \glspl{compressie-algoritme}?
+	\item Hoe kan \gls{datacompressie} correct geïmplementeerd worden?
+\end{itemize}
+
+\subsection{Deel 3: afbeelding- en videocompressie}
+\label{sec:aanpak-bachelorproef-deel-3}
+
+In dit deel is er voor gekozen om de volgende \glspl{afbeeldingsformaat} toe te lichten: \gls{png} | \gls{jpeg} | \gls{jpeg2000} | \gls{webp} | \gls{heif}. \Gls{png} en \gls{jpeg} zijn namelijk de bekendste en op het web meest gebruikte \glspl{afbeeldingsformaat}. \Gls{jpeg2000}, \gls{webp} en \gls{heif} zijn dan weer enkele van de bekendste nieuwe generatie \glspl{afbeeldingsformaat}. Dit zorgt er voor dat de besproken \glspl{afbeeldingsformaat} diegene zijn dat het meeste potentieel hebben om een goede keuze te zijn voor het doelpubliek van deze bachelorproef.
+
+Voor elk \gls{afbeeldingsformaat} is kort het ontstaan toegelicht en aan de hand van de bijhorende \gls{iso} de werking uitgelegd. Deze \gls{iso} is door de maker mee opgesteld en garandeert dus dat de werking van het \gls{afbeeldingsformaat} juist beschreven is. De belangrijkste voordelen en nadelen zijn ook steeds toegelicht zodanig de lezer zelf een beeld kan scheppen welk \gls{afbeeldingsformaat} geschikt is voor zijn \gls{use-case}. De overzichtstabellen in deel \ref{sec:afbeeldingscompressie-functievereisten} en \ref{sec:afbeeldingscompressie-ondersteuning} omtrent functievereisten en ondersteuning helpen de lezer hier ook bij.
+
+Ook de betekenis van \gls{raw} afbeeldingen wordt hier toegelicht en waarom ze belangrijk zijn om op een objectieve manier een onderzoek te voeren naar de prestatie van een \gls{afbeeldingsformaat}.
+
+Om te vermeiden dat lezers schrik hebben om nieuwe \glspl{afbeeldingsformaat} te gebruiken is in deel \ref{sec:afbeeldingscompressie-implementatie} besproken hoe je deze nieuwe \glspl{afbeeldingsformaat} eenvoudig kan implementeren. Ook oplossingen voor situaties waar de gebruiker geen ondersteuning heeft voor deze nieuwe generatie \glspl{afbeeldingsformaat} wordt besproken. Er zijn ook enkele geautomatiseerde oplossingen voor het voorzien van deze nieuwe \glspl{afbeeldingsformaat} besproken in deel \ref{sec:afbeeldingscompressie-implementatie-web-automated}. Dit helpt de lezer inzicht te geven hoe de implementatie zal verlopen voor zijn \gls{use-case}.
+
+In hoofdstuk \ref{ch:videocompressie} zijn \gls{h264-avc}, \gls{h264-svc}, \gls{h265} en \gls{av1} besproken. Dit omdat \gls{h264-avc}, \gls{h264-svc} en \gls{h265} de bekendste video \glspl{codec} zijn en \gls{av1} een gekende \gls{open-source} alternatief is voor vrij gebruik. Ook hier is er gekozen om kort het ontstaan toe te lichten alsook de voordelen en de nadelen. Ook de werking wordt hier kort aangegaan met ondersteuning van de bijhorende \gls{iso}. De belangrijkste voordelen en nadelen worden voor elke video \gls{codec} toegelicht en helpen de lezer samen met de punten uit deel \ref{sec:videocompressie-keuze} een juiste keuze te maken.
+
+In dit deel worden de volgende onderzoekvragen (deels) beantwoord: 
+\begin{itemize}
+	\item Waar zitten de verschillen tussen de \glspl{afbeeldingsformaat} en video \glspl{codec}?
+	\item Hoe kan \gls{datacompressie} correct geïmplementeerd worden?
+	\item Wat is het verschil tussen de \glspl{afbeeldingsformaat}: \gls{png}, \gls{jpeg}, \gls{jpeg2000}, \gls{webp} en \gls{heif}
+	\item Wat is het verschil tussen de video \glspl{codec}: \gls{h264-avc}, \gls{h264-svc}, \gls{h265} en \gls{av1}?
+	\item Hoe kan \gls{datacompressie} correct geïmplementeerd worden?
+\end{itemize}
+
+\subsection{Deel 4: onderzoek afbeeldingscompressie}
+\label{sec:aanpak-bachelorproef-deel-4}
+
+In hoofdstuk \ref{ch:onderzoek} wordt een subjectief onderzoek naar de afbeeldingskwaliteit van \gls{png}, \gls{jpeg}, \gls{jpeg2000} en \gls{webp} gevoerd. Er is gekozen voor een subjectief onderzoek omdat dit voor de \gls{use-case} de aangeraden manier van werken is. Voor dit subjectieve onderzoek is een \gls{afbeeldingsevaluatietool} geschreven in \gls{php}, \gls{sql}, \gls{html}, \gls{css}, \gls{js} en \gls{drift}. Net zoals de \gls{compressietool} is deze publiek ter beschikking gesteld op de \gls{github} repository van deze bachelorproef\urlcite{githubbachelorproef}. Deze is vrijgegeven onder de GNU GPLv3 licentie en mag dus gratis aangepast en gebruikt worden voor alle doeleinden. Dit maakt het eenvoudig voor de lezer om zelf, aan de hand van de uitleg in deel \ref{sec:onderzoek-evaluatietool}, een subjectief onderzoek te voeren.
+
+De resultaten van het onderzoek worden met \gls{r} scripts in overzichtelijke grafieken en tabellen gezet. Deze \gls{r} scripts zijn samen met de resultaten beschikbaar op de \gls{github} van deze bachelorproef. Er is bewust gekomen om de lezer zelf de kans te geven een besluit te trekken aan de hand van de geziene theorie en de resultaten.
+
+%todo: verder aanvullen wanneer onderzoek en bespreking gedaan.
+
+In dit deel worden de volgende onderzoekvragen (deels) beantwoord: 
+\begin{itemize}
+	\item Waar zitten de verschillen tussen de \glspl{afbeeldingsformaat} en video \glspl{codec}?
+	\item Wat is het verschil tussen de \glspl{afbeeldingsformaat}: \gls{png}, \gls{jpeg}, \gls{jpeg2000}, \gls{webp} en \gls{heif}
+\end{itemize}
+
+\subsection{Deel 5: uitdagingen en conclusie}
+\label{sec:aanpak-bachelorproef-deel-5}
+
+Tot slot is er gekozen om nog enkele van de uitdagingen binnen \gls{datacompressie} toe te lichten aan de lezer. Dit is deels als ode voor vakexpert en co-promotor Tom Paridaens maar ook om de lezer warm te maken zich verder te verdiepen in deze uitdagingen.
+
+In de conclusie (hoofdstuk \ref{ch:conclusie}) wordt op een objectieve manier teruggeblikt naar de antwoorden dat deze bachelorproef biedt alsook naar interessante vragen die ze opwekt. Het grote doel is om de lezer te overtuigen zich verder te verdiepen in \gls{datacompressie} en meer stil te staan bij de keuze van een \gls{compressie-algoritme}.
+
+In dit deel wordt het antwoord op de volgende onderzoekvragen gegeven: 'Wat is \gls{dna-compressie} en wat zijn andere uitdagingen binnen \gls{datacompressie}?'. In de conclusie (hoofdstuk \ref{ch:conclusie}) wordt nog eens teruggeblikt op alle delen waardoor ook het antwoord op de hoofdonderzoeksvraag in dit deel gegeven wordt.
