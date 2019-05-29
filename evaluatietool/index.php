@@ -11,7 +11,7 @@ include 'layout/header.php';
         <p class="mb-2">Dit onderzoek bestaat uit het beoordelen van drie kenmerken van een afbeelding met een score van
             één tot vijf. Er zullen in totaal vier verschillende afbeeldingsformaten geëvalueerd worden welke niet
             gekend zijn door de participant van dit onderzoek. Meer info volgt aan de hand van een korte
-            introductie video op de volgende pagina. </p>
+            introductievideo op de volgende pagina. </p>
         <p class="mb-2">Voor dit onderzoek zullen de volgende gegevens van u bewaard worden:
         <ul>
             <li>

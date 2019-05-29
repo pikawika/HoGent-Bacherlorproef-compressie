@@ -18,9 +18,22 @@ Hoofdstuk \ref{ch:kwaliteit} bespreekt hoe de kwaliteit van een \gls{afbeeldings
 \section{Raster vs vector afbeeldingsformaten}
 \label{sec:afbeeldingscompressie-raster-vector}
 
-TODO
-%todo
+Binnen \glspl{afbeeldingsformaat} kan men een onderscheid maken tussen twee soorten \glspl{afbeeldingsformaat}: \gls{raster} en \gls{vector}. Net zoals bij de keuze tussen \gls{lossless} en \gls{lossy} is er geen eenduidig antwoord welke beter is. De keuze is \gls{use-case} gebonden. Het grote verschil tussen de twee is de manier waarop ze de data bijhouden voor het weergeven van de afbeelding.
 
+\Gls{raster} afbeeldingen bestaan uit een grid van kleine punten, meestal vierkantjes, dat pixels genoemd worden. Voor elke pixel wordt een bepaalde kleur bijgehouden. Bij bepaalde \glspl{afbeeldingsformaat} kan ook de doorzichtigheid van een pixel bijgehouden worden. Het is door het naast elkaar weergeven van al deze pixels dat we een afbeelding verkrijgen. Hoe dichter deze pixels bij elkaar staan hoe scherper de afbeelding oogt. Wanneer je voldoende inzoomt op een afbeeldingen met een \gls{raster} \gls{afbeeldingsformaat} kan je deze pixels visueel zien.
+
+\Gls{vector} afbeeldingen werken niet met pixels maar kunnen aanzien worden als een soort tekening. Een afbeelding bestaat dan uit allerlei vormen, denk hierbij onder andere aan cirkels, rechthoeken en (gebogen) lijnen. Voor elk van deze vormen wordt dan de kleur bijgehouden, de start en eindpunten, de boog in graden, ... Het is door het samenvoegen van al deze vormen dat we de finale afbeelding verkrijgen. Het grote voordeel van vector \glspl{afbeeldingsformaat} is dat je kan blijven inzoomen zonder dat je daarbij kwaliteit verliest. Er is namelijk geen sprake van een gelimiteerd aantal pixels maar van bepaalde vormen die zo groot of klein als gewenst getekend kunnen worden. Figuur \ref{fig:raster-vs-vector} geeft dit duidelijk weer.
+
+\begin{figure}
+	\centering
+	\fbox{\includegraphics[width=0.5\linewidth]{img/afbeeldingscompressie/raster-vector.jpg}}
+	\caption{Illustratie dat het verschil tussen \gls{raster} en \gls{vector} weergeeft (\cite{rastervsvector})}
+	\label{fig:raster-vs-vector}
+\end{figure}
+
+\Gls{raster} \glspl{afbeeldingsformaat} zijn ideaal voor het opslaan van foto's aangezien de beeldsensor van een camera ook bestaat uit meerdere punten (pixels). Een foto met natuurlijke objecten is veelal ook (veel) te complex om op een efficiënte en realistische manier te kunnen voorstellen met de vormen dat \gls{raster} \glspl{afbeeldingsformaat}  ondersteunen. Grafisch werk als logo's en iconen kunnen vaak wel opgeslagen worden door deze vormen waardoor een \gls{vector} \gls{afbeeldingsformaat} aangeraden is.
+
+Gekende software voor het maken en bewerken van \gls{raster} afbeeldingen is \gls{ps}, voor het maken en bewerken van \gls{vector} afbeeldingen is dit \gls{illustrator}. De \glspl{afbeeldingsformaat} die in dit hoofdstuk besproken zullen worden zijn allen voorbeelden van \gls{raster} \glspl{afbeeldingsformaat}. Een gekend voorbeeld van \gls{vector} \glspl{afbeeldingsformaat} is het \gls{svg} \gls{afbeeldingsformaat}.
 
 \section{Afbeeldingsformaten}
 \label{sec:afbeeldingscompressie-afbeeldingsformaten}
@@ -375,8 +388,7 @@ Voor \gls{wordpress} en tal van andere \glspl{cms} zijn er ook \glspl{plug-in} v
 
 Sommige automatisaties kiezen er voor de afbeelding direct op te slaan in alle \glspl{afbeeldingsformaat} wat de opslagruimte te min gaat maar response time te goeie doet. Andere houden enkele het bronbestand bij en genereren het gevraagde formaat bij aanvraag. Dit gaat dan weer te min van de response time en het cpu gebruik van de \gls{hosting} server. Dit is uiteraard ook manueel te implementeren.
 
-%todo javascript decoders
-
+Voor de meeste \glspl{afbeeldingsformaat} zijn ook \gls{js} \glspl{decoder} beschikbaar. Dit is \gls{js} code dat afbeeldingen van een bepaald \gls{afbeeldingsformaat} omzet naar een ander \gls{afbeeldingsformaat}. Deze conversie gebeurd op het toestel van de bezoeker en vereist dus geen systeemresources van de \gls{hosting} server. De conversie gebeurt meestal naar een \gls{lossless} \gls{afbeeldingsformaat} zoals \gls{png} omdat op die manier geen kwaliteit verloren gaat en \gls{png} een goede internetbrowser ondersteuning heeft. Deze conversie kan altijd gebeuren of wanneer de bezoeker zijn internetbrowser het normale \gls{afbeeldingsformaat} niet ondersteund. Een voorbeeld van een \gls{js} \glspl{decoder} voor het \gls{webp} \gls{afbeeldingsformaat} naar \gls{png} om te zetten is WebPJS van Dominik Homberger\urlcite{webpjsdecoder}.
 
 \subsection{On-premise omgeving}
 \label{sec:afbeeldingscompressie-implementatie-on-premise}
