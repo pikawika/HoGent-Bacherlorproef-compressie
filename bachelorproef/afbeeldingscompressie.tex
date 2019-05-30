@@ -297,7 +297,7 @@ Dit alles is niet alleen te danken aan het budget dat Google heeft om verdere on
 
 De werking van de \gls{webp} wordt in dit deel beknopt uitgelegd aan de hand van de officiële Google documentatie\urlcite{webpdocs}. 
 
-De \gls{lossy} variant van \gls{webp} is een \gls{afbeeldingsformaat} dat zoals vele nieuwe generatie \glspl{afbeeldingsformaat} ontstaan is uit een \gls{intra-frame} \gls{compressie-algoritme} voor \gls{videocompressie}in dit geval VP8, een \gls{compressie-algoritme} dat in 2008 door Google ontwikkeld is. Het maakt is gebaseerd op het block prediction \gls{compressie-algoritme}.
+De \gls{lossy} variant van \gls{webp} is een \gls{afbeeldingsformaat} dat zoals vele nieuwe generatie \glspl{afbeeldingsformaat} ontstaan is uit een \gls{intra-frame} \gls{compressie-algoritme} voor \gls{videocompressie}in dit geval \gls{vp8}, een \gls{compressie-algoritme} dat in 2008 door Google ontwikkeld is. Het maakt is gebaseerd op het block prediction \gls{compressie-algoritme}.
 
 Het \gls{compressie-algoritme} voor de \gls{lossy} variant deel de afbeelding dus op in verschillende segmenten die macroblocks genoemd worden. Een macroblock word bijgehouden door de verschillen met de voorgaande macroblock bij te houden, zoals \gls{png} dat doet voor pixels. Dit wordt predictive coding genoemd. De resulterende data is dan net zoals \gls{jpeg} omgezet via \gls{dct} wat resulteert in een resultaat met veel nul waardes. Tot deze stap werkt het \gls{compressie-algoritme} volledig \gls{lossless}. Na deze stap wordt het resultaat \gls{lossy} comprimeerd aan de hand van Quantization. Dat resultaat wordt vervolgens entropy-coded.
 
@@ -390,7 +390,7 @@ Een korte overzichtstabel van enkele kernfunctionaliteiten per \gls{afbeeldingsf
 	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
 		& \textbf{PNG}                   & \textbf{JPEG}                  & \textbf{JPEG200}               & \textbf{WebP}                  & \textbf{HEIF}               \\ \hline
-		\textbf{Lossless}            & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{CB0000}Deels* & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja  \\ \hline
+		\textbf{Lossless}            & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{9B9B9B}Deels* & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja  \\ \hline
 		\textbf{lossy}               & \cellcolor[HTML]{CB0000}Nee    & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja  \\ \hline
 		\textbf{Transparantie}       & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{CB0000}Nee    & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja  \\ \hline
 		\textbf{Animatie}            & \cellcolor[HTML]{CB0000}Nee  & \cellcolor[HTML]{CB0000}Nee    & \cellcolor[HTML]{9B9B9B}Deels* & \cellcolor[HTML]{32CB00}Ja     & \cellcolor[HTML]{32CB00}Ja  \\ \hline
