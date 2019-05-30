@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="798e7ca5-7006-4ade-8552-597b8000a2bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../bachelorproef/compressietool.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/compressietool.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bachelorproef/afbeeldingscompressie.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/afbeeldingscompressie.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bachelorproef/bachproef-tin.bib" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/bachproef-tin.bib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bachelorproef/termen-declaration.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelorproef/termen-declaration.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -150,16 +149,17 @@
       <updated>1559045911608</updated>
       <workItem from="1559045912685" duration="18774000" />
       <workItem from="1559139113226" duration="175000" />
+      <workItem from="1559164321268" duration="4000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18949000" />
+    <option name="totallyTimeSpent" value="18953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
