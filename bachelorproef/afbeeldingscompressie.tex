@@ -164,7 +164,14 @@ Kenmerkend aan \gls{jpeg} is dat de \gls{lossy} variant enorm veel input mogelij
 	
 	\item Indien de encoderen afbeelding in kleur is en in het luminantie/ chrominantie kleurprofiel word de chrominantie waarde over meerdere aaneensluitende pixels gedeeld. Overheen hoeveel pixels de chrominantie gedeeld moet worden is een instelbare input variabele.
 	
-	\item De afbeelding wordt ingedeeld over blokken van 64 pixels (8x8) dat elk apart gecomprimeerd zullen worden. Dit worden data units genoemd. Het is door deze groepering en onafhankelijke \gls{datacompressie} dat bekende \glspl{artefact} als blok\glspl{artefact} voorkomen bij \gls{jpeg}.
+	\item De afbeelding wordt ingedeeld over blokken van 64 pixels (8x8) dat elk apart gecomprimeerd zullen worden. Dit worden data units genoemd. Het is door deze groepering en onafhankelijke \gls{datacompressie} dat bekende \glspl{artefact} als blok\glspl{artefact} voorkomen bij \gls{jpeg}. Een voorbeeld waar deze blok\glspl{artefact} goed zichtbaar zijn is weergegeven in figuur \ref{fig:block-artefact}.
+	
+	\begin{figure}
+		\centering
+		\fbox{\includegraphics[width=0.5\linewidth]{img/afbeeldingscompressie/block-artefact.png}}
+		\caption{Zwaar gecomprimeerde afbeelding met blok\glspl{artefact}. Afbeelding overgenomen uit \citetitle{blokartefact} (\cite{blokartefact})}
+		\label{fig:block-artefact}
+	\end{figure}
 	
 	\item Door het gebruik van \gls{dct} wordt een map van 64 (8x8) frequentie componenten gemaakt. Dit zijn de pixels nu voorgesteld als een getal. In deze stap is reeds enige informatie verloren gegaan door het gebruik van \gls{dct}, een wiskundig algoritme, maar dit verlies aan informatie is niet het gene wat voor het grootte \gls{compressieratio} van \gls{jpeg} zorgt.
 	
@@ -223,9 +230,20 @@ Hoewel \gls{jpeg2000} veel voorkomend is in \gls{videocompressie} en \gls{afbeel
 \subsubsection{JPEG2000: werking}
 \label{sec:afbeeldingscompressie-jpeg2000-werking}
 
-TODO
-%TODO: afbeeldingcompressie
+Doordat \gls{jpeg2000} meerdere revisies kent, elk met hen eigen \glspl{encoder} en \glspl{decoder}, wordt de effectieve werking van het \gls{compressie-algoritme} niet uitgelegd in deze bachelorproef. \Gls{jpeg2000} is een zeer uitgebreid en complex \gls{compressie-algoritme} dat zowel \gls{lossless} als \gls{lossy} te werk kan gaan. De standaard is gedefinieerd in \gls{iso}/IEC 15444.
 
+\Gls{jpeg2000} wordt een schaalbaar \gls{compressie-algoritme} genoemd doordat de \gls{decoding} op verschillende manieren kan gebeuren. Zo kunnen de \glspl{bit} op een andere manier gerangschikt en deels weggelaten worden om een lagere resolutie variant te maken.
+
+Een belangrijk verschil met \gls{jpeg} is dat het geen gebruik meer maakt van de besproken 8x8 data units. Dit zorgt er voor dat de storende blok\glspl{artefact} niet meer voorkomen bij \gls{jpeg2000}. \Gls{jpeg2000} kan wel ring\glspl{artefact} bevatten, deze zijn weergegeven in figuur \ref{fig:ring-artefact}.
+
+\begin{figure}
+	\centering
+	\fbox{\includegraphics[width=0.5\linewidth]{img/afbeeldingscompressie/ring-artefact.png}}
+	\caption{Gecomprimeerde afbeelding op linkerkant met ring\glspl{artefact}, oorspronkelijke afbeelding op de rechterkant. Afbeeldingen van \cite{ringartefact}}
+	\label{fig:ring-artefact}
+\end{figure}
+
+\gls{jpeg2000} maakt gebruik van \glspl{wavelet} en het quantization \gls{compressie-algoritme}.
 
 \subsubsection{JPEG2000: voordelen}
 \label{sec:afbeeldingscompressie-jpeg2000-voordelen}
@@ -277,9 +295,13 @@ Dit alles is niet alleen te danken aan het budget dat Google heeft om verdere on
 \subsubsection{WEBP: werking}
 \label{sec:afbeeldingscompressie-webp-werking}
 
-TODO
-%TODO: afbeeldingcompressie
+De werking van de \gls{webp} wordt in dit deel beknopt uitgelegd aan de hand van de officiële Google documentatie\urlcite{webpdocs}. 
 
+De \gls{lossy} variant van \gls{webp} is een \gls{afbeeldingsformaat} dat zoals vele nieuwe generatie \glspl{afbeeldingsformaat} ontstaan is uit een \gls{intra-frame} \gls{compressie-algoritme} voor \gls{videocompressie}in dit geval VP8, een \gls{compressie-algoritme} dat in 2008 door Google ontwikkeld is. Het maakt is gebaseerd op het block prediction \gls{compressie-algoritme}.
+
+Het \gls{compressie-algoritme} voor de \gls{lossy} variant deel de afbeelding dus op in verschillende segmenten die macroblocks genoemd worden. Een macroblock word bijgehouden door de verschillen met de voorgaande macroblock bij te houden, zoals \gls{png} dat doet voor pixels. Dit wordt predictive coding genoemd. De resulterende data is dan net zoals \gls{jpeg} omgezet via \gls{dct} wat resulteert in een resultaat met veel nul waardes. Tot deze stap werkt het \gls{compressie-algoritme} volledig \gls{lossless}. Na deze stap wordt het resultaat \gls{lossy} comprimeerd aan de hand van Quantization. Dat resultaat wordt vervolgens entropy-coded.
+
+De \gls{lossless} \gls{webp} variant gebruikt een \gls{compressie-algoritme} dat volledig door Google geschreven is. Ze gebruiken hier onder andere een variatie van \gls{huffman-coding} voor.
 
 \subsubsection{WEBP: voordelen}
 \label{sec:afbeeldingscompressie-webp-voordelen}
@@ -319,13 +341,6 @@ Met de opkomst iOS 11 in 2017 was Apple echter het eerste bedrijf dat \gls{heif}
 De overstap van \gls{jpeg} naar het nieuwe generatie \gls{afbeeldingsformaat} \gls{heif} was voor Apple interessant op verschillende vlakken. De voornaamste waren kwaliteits- en snelheidswinst. Dit resulteerde dan ook in een kleinere bestandsgrootte waardoor er meer afbeeldingen opgeslagen kunnen worden op een iOS toestel.
 
 Ook de ondersteuning voor burst foto's en live foto's kwam deze keuze ten voordele, het is namelijk mogelijk meerdere afbeeldingen op te slaan onder één \gls{heif} bestand.
-
-\subsubsection{HEIF: werking}
-\label{sec:afbeeldingscompressie-heif-werking}
-
-TODO
-%TODO: afbeeldingcompressie
-
 
 \subsubsection{HEIF: voordelen}
 \label{sec:afbeeldingscompressie-heif-voordelen}
@@ -429,6 +444,7 @@ Een éénvoudige en universeel werkende manieren om een terugval afbeelding op t
 \begin{lstlisting}[style=htmlcssjs]
 <picture>
 	<source srcset="pad/naar/afbeelding.webp" type="image/webp">
+	<source srcset="pad/naar/afbeelding.heic" type="image/heic">
 	<source srcset="pad/naar/afbeelding.jpf" type="image/jpx">
 	<source srcset="pad/naar/afbeelding.png" type="image/png"> 
 	<source srcset="pad/naar/afbeelding.jpg" type="image/jpeg"> 
