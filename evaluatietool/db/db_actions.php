@@ -150,6 +150,40 @@ function get_all_images()
     return $result;
 }
 
+function get_all_participants()
+{
+    global $servername, $username, $password, $dbname;
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM participants";
+    $result = $conn->query($sql);
+
+    $conn->close();
+    return $result;
+}
+
+function get_all_ratings()
+{
+    global $servername, $username, $password, $dbname;
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM ratings";
+    $result = $conn->query($sql);
+
+    $conn->close();
+    return $result;
+}
+
 function get_all_user_rated_images($participant_id)
 {
     global $servername, $username, $password, $dbname;

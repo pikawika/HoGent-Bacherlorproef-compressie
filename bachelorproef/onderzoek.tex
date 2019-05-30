@@ -5,7 +5,7 @@ Het kiezen voor een bepaald \gls{compressie-algoritme} is zeer \gls{use-case} ge
 
 Zoals besproken in hoofdstuk \ref{ch:kwaliteit} zijn er zowel objectieve als subjectieve onderzoeken die kunnen gevoerd worden om een gepast \gls{compressie-algoritme} te bepalen. In dit hoofdstuk wordt een subjectief onderzoek uitgevoerd voor het bepalen van een geschikt \gls{afbeeldingsformaat} binnen een bepaalde \gls{use-case}. De gebruikte \gls{afbeeldingsevaluatietool} is ontwikkeld voor deze bachelorproef en is \gls{open-source} en gratis in gebruik. De code is te vinden op de \gls{github} repository van deze bachelorproef\urlcite{githubbachelorproef}. Dit maakt het heel eenvoudig dit onderzoek te reproduceren of een gelijkaardig onderzoek uit te voeren met andere \glspl{afbeeldingsformaat} en/of voor een andere \gls{use-case}.
 
-%TODO: onderzoek
+De gebruikte afbeeldingen zijn op aanvraag beschikbaar: info@lennertbontinck.com.
 
 \section{Waarom een subjectief onderzoek}
 \label{sec:onderzoek-waarom-subjectief}
@@ -30,31 +30,184 @@ Er wordt dus een \gls{afbeeldingsformaat} gezocht met (zeer) goede beoordelingen
 
 De gebruikte \gls{afbeeldingsevaluatietool} voor het voeren van dit onderzoek is een voor deze bachelorproef ontwikkelde \gls{afbeeldingsevaluatietool}. De code is te vinden op de \gls{github} repository van deze bachelorproef\urlcite{githubbachelorproef}. De \gls{afbeeldingsevaluatietool} is ook raadpleegbaar via de website van Lennert Bontinck\urlcite{evaluatietool}.
 
-Deze tool is geschreven in \gls{php} met een achterliggende \gls{sql} databank. Dit maakt het mogelijk de tool eenvoudig lokaal te runnen door het gebruik van webserver omgevingen als \gls{xampp} of online te plaatsen op de meeste \gls{hosting} platformen.
+Deze tool is geschreven in \gls{php} met een achterliggende \gls{sql} databank. Er is een grafische interface voorzien die gebruik maakt van \gls{html}, \gls{css}, \gls{js}, \gls{jquery}, \gls{drift} en \gls{bootsrap}. Dit maakt het mogelijk de tool eenvoudig lokaal te runnen door het gebruik van webserver omgevingen als \gls{xampp} of online te plaatsen op de meeste \gls{hosting} platformen.
 
 De \gls{afbeeldingsevaluatietool} maakt gebruik van een 50\% grijze achtergrond doorheen de ondervraging. Dit is de aangeraden kleur om geen impact te hebben op de perceptie van de kleuren binnen de afbeelding. Het inzoomen gebeurt aan de hand van pure \gls{js} waardoor geen manipulaties aan de afbeelding gebeuren en deze worden weergegeven zoals ze opgeslagen zijn. 
 
 \subsection{Opzetten van de afbeeldingsevaluatietool}
 \label{sec:onderzoek-evaluatietool-setup}
 
-Een identiek onderzoek maar met andere afbeeldingen kan gevoerd worden zonder code aanpassingen te moeten uitvoeren wat de reproduceerbaarheid van dit onderzoek hoog houd. 
+Een identiek onderzoek maar met andere afbeeldingen kan gevoerd worden zonder code aanpassingen te moeten uitvoeren wat de reproduceerbaarheid van dit onderzoek hoog houd. De gebruikte afbeeldingen kunnen ook op aanvraag geleverd worden, neem hiervoor contact via info@lennertbontinck.com.
 
-Plaats hiervoor de bronbestanden op de webserver en voorzien een database via localhost genaamd 'bachelorproef'. De gebruiker root met wachtwoord root moet toegang hebben tot deze database. Plaats de te evalueren afbeeldingen onder de map 'evaluatiereeks' en/of 'testreeks' te vinden in de map 'evaluatie\_afbeeldingen'. Surf naar '/setup.php' en wacht tot er 'done' op het scherm verschijnt. Het onderzoek is nu klaar om te starten en kan via de hoofdfolder gestart worden ('/index.php').
+Om de \gls{afbeeldingsevaluatietool} op te zetten clone je de \gls{github} repository. Alle nodige bestanden voor deze \gls{afbeeldingsevaluatietool} zijn te vinden onder de map 'evaluatietool'. Plaats alle bronbestanden uit deze map op de webserver en voorzie een database via localhost genaamd 'bachelorproef'. De gebruiker root met wachtwoord root moet toegang hebben tot deze database. 
 
-Let wel op dat het testtoestel over de nodige browsers beschikt die de te evalueren \glspl{afbeeldingsformaat} ondersteund en dat \gls{js} ondersteuning aanstaat. Websites als caniuse.com zijn ideaal om na te gaan welke browser en toestellen welke \glspl{afbeeldingsformaat} ondersteund.
+De te evalueren afbeeldingen dienen voorzien te worden onder de map 'evaluatiereeks' en/of 'testreeks' te vinden in de map 'evaluatie\_afbeeldingen'.
 
-Voor het opzetten van de \gls{afbeeldingsevaluatietool} met andere instellingen zoals meer ondervraagde kenmerken of \glspl{afbeeldingsformaat} zijn echter wel aanpassingen aan de code vereist. 
+Surf naar '/setup.php' en wacht tot er 'done' op het scherm verschijnt. De afbeeldingen zijn nu in de databank opgeslagen en het onderzoek is nu klaar om van start te gaan. Surf hiervoor naar '/index.php', je krijgt het welkomstscherm te zien zoals op figuur \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-welkom} weergegeven.
+
+Aangezien bij dit onderzoek twee nog niet volledig ondersteunde \glspl{afbeeldingsformaat} worden getest, \gls{jpeg2000} en \gls{webp}, is een Apple computer met de Safari (voor \gls{jpeg2000}) en Google Chrome internetbrowsers (voor \gls{webp}) nodig. Het onderzoek begint in de Google Chrome internetbrowser en halverwege het onderzoek krijgt de deelnemer een scherm te zien dat deze moet overschakelen naar de Safari internetbrowser.
+
+Voor het opzetten van de \gls{afbeeldingsevaluatietool} met extra functionaliteit zoals meer ondervraagde kenmerken of andere \glspl{afbeeldingsformaat} zijn aanpassingen van de code vereist. De code is in het volgende deel kort toegelicht en beschikt over verklarende functienamen en commentaar in de code zelf. 
 
 \subsubsection{Afbeeldingsevaluatietool instellingen en uitbreidingen}
 \label{sec:onderzoek-evaluatietool-setup-database}
 
-De database instellingen en \gls{sql} query's zijn bewaard onder 'db\_actions.php' te vinden onder de map 'db'. Bovenaan deze file kunnen de servernaam en databasenaam aangepast worden alsook de gebruikersnaam en het wachtwoord.
+\paragraph{Db/db\_actions.php}
+\label{sec:onderzoek-evaluatietool-setup-db}
 
-Mochten er extra bij te houden variabelen gewenst zijn kunnen deze toegevoegd worden in de functie 'create\_tables()' onder 'db\_actions.php'. Deze acties worden opgeroepen vanaf 'onderzoek.php', bijkomende input velden en logica kunnen hier dan ook voorzien worden.
+De database instellingen zijn bovenaan het bestand 'db/db\_actions.php' voorzien. De standaard waarden zijn in de code snippet hieronder weergegeven.
 
-De tekst op het eerste scherm is terug te vinden in 'index.php'. De verwijzing naar het filmpje is terug te vinden in 'introductie.php' en kan vervangen worden door een andere \gls{yt} link of een lokaal bestand.
+\begin{lstlisting}
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "bachelorproef";
+\end{lstlisting}
 
-De tool is voorzien van \gls{bootstrap}, \gls{jquery} en \gls{drift}, een \gls{open-source} \gls{js} \gls{plug-in} voor het inzoomen op afbeeldingen. Er is commentaar voorzien in de code waar nodig en functienamen zijn steeds verklarend. Aanpassingen zouden dus mogelijk moeten zijn zonder veel tijd of werk.
+In de functie 'create\_tables()' worden alle tabellen voorzien, deze wordt aangeroepen vanuit 'setup.php'. De volgende tabellen en velden worden reeds bijgehouden. In deze functie kunnen extra velden toegevoegd worden.
+
+\begin{itemize}
+	
+	\item images
+	\begin{itemize}
+		\item image\_id $\rightarrow$ auto increment integer (primaire sleutel)
+		\item filename $\rightarrow$ string 
+		\item extension $\rightarrow$ string 
+		\item path $\rightarrow$ string 
+		\item practice\_data $\rightarrow$ boolean 
+		\item chrome\_not\_safari $\rightarrow$ boolean
+		\item filesize $\rightarrow$ integer
+	\end{itemize}
+
+	\item participants
+	\begin{itemize}
+		\item participant\_id $\rightarrow$ auto increment integer (primaire sleutel)
+		\item gender $\rightarrow$ string 
+		\item age $\rightarrow$ integer 
+		\item expertise $\rightarrow$ boolean 
+		\item colorblind $\rightarrow$ boolean 
+		\item bad\_vision $\rightarrow$ boolean
+	\end{itemize}
+
+	\item ratings
+	\begin{itemize}
+		\item participant\_id $\rightarrow$ auto increment integer (samengestelde primaire sleutel)
+		\item image\_id $\rightarrow$ auto increment integer (samengestelde primaire sleutel)
+		\item sharpness $\rightarrow$ integer 
+		\item color\_contrast $\rightarrow$ integer 
+		\item general $\rightarrow$ integer
+	\end{itemize}
+
+\end{itemize}
+
+Ook de overige database bewerkingen zijn te vinden in dit bestand. Dit zijn onder andere de functies voor het opslaan van de deelnemer zijn gegevens. Alle functies en variabelen hebben een verklarende benaming.
+
+\paragraph{Js/*}
+\label{sec:onderzoek-evaluatietool-setup-js}
+
+In de folder 'js' is \gls{drift} voorzien onder het bestand 'drift.min.js'. In het bestand 'scripts.js' wordt een \gls{drift} instantie aangemaakt met de nodige instellingen. De standaard instellingen voor drift zijn hieronder zichtbaar. De zoom factor aanpassen kan door de waarde van 'zoomFactor' op de vijfde regel aan te passen.
+
+\begin{lstlisting}[style=htmlcssjs]
+if ($('.img_evaluation').length) {
+	new Drift(document.querySelector('.img_evaluation'), {
+		paneContainer: document.querySelector('.img_evaluation_zoomed'),
+		inlinePane: 900,
+		zoomFactor: 5,
+		inlineOffsetY: -85,
+		containInline: true,
+		hoverBoundingBox: true,
+		touchBoundingBox: true
+	});
+}
+\end{lstlisting}
+
+\paragraph{Layout/*}
+\label{sec:onderzoek-evaluatietool-setup-layout}
+
+In de folder 'layout' is de header en footer dat gedeeld wordt overheen de pagina's voorzien. De titel van de webpagina aanpassen of extra tags in de header voorzien kan in het bestand 'header.php'. De copyright in de footer veranderen of extra tags toevoegen op het einde van de webpagina kan in het bestand 'footer.php'.
+
+\paragraph{Index.php}
+\label{sec:onderzoek-evaluatietool-setup-index}
+
+Het bestand 'index.php' verzorgt het welkomstscherm weergegeven in figuur \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-welkom}. In dit bestand kan u de welkomsttekst wijzigen. De knop onderaan de pagina bevat een verwijzing naar 'introductie.php'.
+
+\paragraph{Introductie.php}
+\label{sec:onderzoek-evaluatietool-setup-introductie}
+
+Het bestand 'introductie.php' verzorgt de webpagina met de introductievideo weergegeven in figuur \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-video}. Het filmpje dat ingeladen wordt kan aangepast worden door een andere YouTube URL in te geven onder het src attribuut van regel twee of het pad naar een lokaal voorziene video.
+
+\begin{lstlisting}[style=htmlcssjs]
+<div class="embed-responsive embed-responsive-16by9">
+	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tqx-hmzO4kQ" allowfullscreen></iframe>
+</div>
+\end{lstlisting}
+
+De knop onderaan deze webpagina verwijst naar 'onderzoek.php'
+
+\paragraph{Onderzoek.php}
+\label{sec:onderzoek-evaluatietool-setup-onderzoek}
+
+Het bestand 'onderzoek.php' verzorgt de webpagina waar de deelnemer zijn informatie ingeeft en de afbeeldingen kan beoordelen weergegeven in figuur \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-over-u} en \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-evalutie}.  
+
+In dit bestand wordt zijn volgende functies opgenomen met een verklarende naam:
+
+\begin{itemize}
+	\item show\_info\_about\_you()
+	\item save\_info\_about\_you\_and\_show\_chrome()
+	\item show\_start\_chrome\_sequence(\$participant\_id)
+	\item show\_next\_iterative\_photo\_rating\_chrome()
+	\item show\_photo\_rating(\$image\_id, \$path)
+	\item save\_post\_rating\_image()
+	\item show\_start\_safari\_sequence()
+	\item show\_next\_iterative\_photo\_rating\_safari()
+	\item show\_thanks\_screen()
+\end{itemize}
+
+\paragraph{Setup.php}
+\label{sec:onderzoek-evaluatietool-setup-setup}
+
+Het bestand 'setup.php' maakt de \gls{afbeeldingsevaluatietool} klaar voor gebruik. Hier worden de tabellen eerst verwijderd indien ze bestaan waarna ze terug aangemaakt worden. Vervolgens wordt elke afbeelding in de tabel 'images' gezet door de code hieronder voorzien.
+
+\begin{lstlisting}
+foreach (glob('evaluatie_afbeeldingen/testreeks/*.*') as $path) {
+	$extension = pathinfo($path, PATHINFO_EXTENSION);
+	$filename = pathinfo($path, PATHINFO_FILENAME);
+	$chrome_not_safari = ($extension == "jpg" || $extension == "webp") ? 1 : 0;
+	$practice_data = 1;
+	$filesize = filesize($path);
+	create_image_record($filename, $extension, $path, $practice_data, $chrome_not_safari, $filesize);
+}
+\end{lstlisting}
+
+Op regel vier wordt bepaald of de afbeelding in Google Chrome moet weergegeven worden. Dit is het geval wanneer de \gls{extensie} die voor \gls{jpeg} of \gls{webp} is. Een gelijkaardig lus wordt gebruikt voor de evaluatiereeks. 
+
+\paragraph{Export.php}
+\label{sec:onderzoek-evaluatietool-setup-export}
+
+Het bestand 'export.php' verzorgt de webpagina waar de organisator de geëxporteerde gegevens kan downloaden, weergegeven in figuur \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-export}.  
+
+Voor het maken van de CSV bestanden wordt de volgende functie gebruikt.
+
+\begin{lstlisting}
+function make_csv_files() {
+	//participants
+	$file = fopen("temp/participants.csv", "w");
+	fputcsv($file, array('participant_id', 'gender', 'age', 'expertise', 'colorblind', 'bad_vision'));
+	$records = get_all_participants();
+	while ($row = mysqli_fetch_assoc($records)) {
+		fputcsv($file, $row);
+	}
+	fclose($file);
+	
+	//images
+	...
+	
+	//ratings
+	...
+}
+\end{lstlisting}
+
+De volledige \gls{sql} tabel met de bijhorende velden worden dus gedumpt naar het CSV bestand met als heading de veldnamen. De code voor images en ratings is weggelaten omdat deze identiek is aan participants maar met andere variabelen namen.
 
 \subsection{Verloop  van de afbeeldingsevaluatietool}
 \label{sec:onderzoek-evaluatietool-verloop}
@@ -68,7 +221,7 @@ Enkele screenshots van de \gls{afbeeldingsevaluatietool} zijn raadpleegbaar in d
 
 De deelnemer van het onderzoek wordt begroet met een scherm dat mededeelt waarover het onderzoek gaat, welke gegevens van de deelnemer gevraagd en bewaard zullen blijven en de geschatte duur van het onderzoek, zijnde een half uur tot drie kwartier. Een screenshot is voorzien in figuur \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-welkom}.
 
-Als de deelnemer akkoord gaat met de gegevensverwerking wordt deze doorgebracht naar een volgende pagina met een video\urlcite{introductievideo} van 4 minuten op. Hierin worden de geëvalueerde onderdelen uitgelegd aan de hand van enkele extreme voorbeelden. Ook de \gls{use-case} en gegevensverwerking worden nogmaals uitgelegd. Een screenshot is voorzien in figuur \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-video}.
+Als de deelnemer akkoord gaat met de gegevensverwerking wordt deze doorgebracht naar een volgende pagina met een introductievideo\urlcite{introductievideo} van 4 minuten op. Hierin worden de geëvalueerde onderdelen uitgelegd aan de hand van enkele extreme voorbeelden. Ook de \gls{use-case} en gegevensverwerking worden nogmaals uitgelegd. Een screenshot is voorzien in figuur \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-video}.
 
 \subsection{Verloop  van de afbeeldingsevaluatietool: Informatie over deelnemer}
 \label{sec:onderzoek-evaluatietool-verloop-info-participant}
@@ -114,30 +267,31 @@ De deelnemer dient de afbeelding te beoordelen op de volgende drie kenmerken met
 
 Een afbeelding wordt beschouwd als scherp wanneer de lijnen vloeiend worden weergegeven en er veel detail aanwezig is. Een fragment uit de introductievideo van de \gls{afbeeldingsevaluatietool} waarin het kenmerk scherpte wordt uitgelegd is terug te vinden in figuur \ref{fig:kenmerk-scherpte}.
 
-Hier wordt scherpte uitgelegd aan de hand van van de randen in het Twitter logo links bovenaan waarbij de linkse variant zeer goed zou scoren (dus richting de vijf) en de rechter variant eerder slecht (richting de één).
-
-Bij de hond is de linkerfoto de slechtere variant doordat veel detail rond de snuit verloren is gegaan. De hond heeft ook last van een slecht contrast op zijn poot waardoor bij de linker variant het verschil tussen de nagel en de poot soms slecht zichtbaar is.
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{img/onderzoek/scherpte.png}
+\begin{figure}[]
+	\centering
+	\fbox{\includegraphics[width=0.6\linewidth]{img/onderzoek/scherpte.png}}
 	\caption{Een fragment uit de introductievideo van de \gls{afbeeldingsevaluatietool} waarin het kenmerk scherpte (\ref{sec:onderzoek-evaluatietool-verloop-beoordeling-scherpte}) uitgelegd wordt. (\cite{introductievideo})}
 	\label{fig:kenmerk-scherpte}
 \end{figure}
+
+Hier wordt scherpte uitgelegd aan de hand van van de randen in het Twitter logo links bovenaan waarbij de linkse variant zeer goed zou scoren (dus richting de vijf) en de rechter variant eerder slecht (richting de één).
+
+Bij de hond is de linkerfoto de slechtere variant doordat veel detail rond de snuit verloren is gegaan. De hond heeft ook last van een slecht contrast op zijn poot waardoor bij de linker variant het verschil tussen de nagel en de poot soms slecht zichtbaar is.
 
 \subsubsection{Kenmerk: kleuren en contrast}
 \label{sec:onderzoek-evaluatietool-verloop-beoordeling-kleur}
 
 Zoals hierboven besproken is de poot van de hond in figuur \ref{fig:kenmerk-scherpte} een goed voorbeeld van een slecht contrast. Op figuur \ref{fig:kenmerk-kleuren} is een fragment uit de introductievideo van de \gls{afbeeldingsevaluatietool} waarin het kenmerk kleur wordt uitgelegd zichtbaar. 
 
-Hier worden vooral veelvoorkomende soorten \glspl{artefact} met betrekking op kleur weergeven. Bijvoorbeeld de \glspl{artefact} zichtbaar bij de ster door clustering in bijvoorbeeld het \gls{jpeg} \gls{afbeeldingsformaat}.
-
-\FloatBarrier
-\begin{figure}[h!]
-	\includegraphics[width=\linewidth]{img/onderzoek/kleuren.png}
+\begin{figure}[]
+	\centering
+	\fbox{\includegraphics[width=0.6\linewidth]{img/onderzoek/kleuren.png}}
 	\caption{Een fragment uit de introductievideo van de \gls{afbeeldingsevaluatietool} waarin het kenmerk kleuren en contrast (\ref{sec:onderzoek-evaluatietool-verloop-beoordeling-scherpte}) uitgelegd wordt. (\cite{introductievideo})}
 	\label{fig:kenmerk-kleuren}
 \end{figure}
-\FloatBarrier
+
+Hier worden vooral veelvoorkomende soorten \glspl{artefact} met betrekking op kleur weergeven. Bijvoorbeeld de \glspl{artefact} zichtbaar bij de ster door clustering in bijvoorbeeld het \gls{jpeg} \gls{afbeeldingsformaat}.
+
 
 \subsubsection{Kenmerk: algemene indruk}
 \label{sec:onderzoek-evaluatietool-verloop-beoordeling-algemeen}
@@ -147,9 +301,32 @@ Tot slot wordt ook de algemene indruk van de deelnemer gevraagd omtrent deze afb
 \subsection{Exporteren van de verzamelde gegevens}
 \label{sec:onderzoek-evaluatietool-export}
 
-TODO
-%TODO: onderzoek
+Na het uitvoeren van het onderzoek kunnen de gegevens eenvoudig geëxporteerd worden naar drie verschillende CSV bestanden:
 
+\begin{itemize}
+	
+	\item images.csv: een dump van de \gls{sql} tabel 'images' met als header de veldnamen.
+	
+	\item participants.csv: een dump van de \gls{sql} tabel 'participants' met als header de veldnamen.
+	
+	\item ratings.csv: een dump van de \gls{sql} tabel 'ratings' met als header de veldnamen.
+\end{itemize}
+
+Om deze CSV bestanden te genereren moet naar '/export.php' gesurft worden. Het export scherm, zichtbaar op figuur \ref{fig:bijlages-screenshot-afbeeldingsevaluatietool-export}, wordt weergegeven. De resultaten van dit onderzoek zijn beschikbaar op de \gls{github} repository van deze bachelorproef\urlcite{githubbachelorproef} onder de map 'resultaten'.
+
+Het kan interessant zijn om de verschillende CSV bestanden samen te voegen naar één CSV bestand. Dit kaan eenvoudig in Python door gebruik te maken van Pandas. Het commando ziet er als volgt uit:
+
+\begin{lstlisting}[language=Python]
+import pandas as pd
+images=pd.read_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/images.csv")
+participants=pd.read_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/participants.csv")
+ratings=pd.read_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/ratings.csv")
+merged=merged.merge(images,on="image_id")
+merged=ratings.merge(participants,on="participant_id")
+merged.to_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/merged.csv", index=False)
+\end{lstlisting}
+
+De notebook voor het samenvoegen van de CSV bestanden is terug te vinden onder 'resultaten/python/merge/merge-csv.ipynb'.
 
 \section{Uitvoering}
 \label{sec:onderzoek-uitvoering}

@@ -1,5 +1,6 @@
 <?php
 include 'db/db_actions.php';
+include 'layout/header.php';
 
 delete_tables();
 
@@ -26,4 +27,9 @@ foreach (glob('evaluatie_afbeeldingen/evaluatiereeks/*.*') as $path) {
 }
 
 
-echo "done!";
+echo '<div class="p-5 mb-4 bg-primary text-white text-center">';
+echo '<h1 class="mb-4">Setup done!</h1>';
+echo '<a href="index.php" class="btn btn-info w-100 mb-3">Start onderzoek</a>';
+echo '</div>';
+
+include 'layout/footer.php';
