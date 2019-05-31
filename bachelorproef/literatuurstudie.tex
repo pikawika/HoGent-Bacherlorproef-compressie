@@ -5,7 +5,7 @@
 % dit hoofdstuk past binnen het geheel van de bachelorproef. Geef in het
 % bijzonder aan wat de link is met het vorige en volgende hoofdstuk.
 
-Deze literatuurstudie zal samen met de lijst van termen uit hoofdstuk \ref{ch:termen} de nodige achtergrondinformatie bieden om de volgende delen van de paper te begrijpen. Er zal verwezen worden naar meerdere papers van andere instellingen zodanig dat u zich verder kan inlezen waar gewenst.
+Deze literatuurstudie zal samen met de lijst van termen uit hoofdstuk \ref{ch:termen} de nodige achtergrondinformatie bieden om de volgende delen van de paper te begrijpen. Er zal verwezen worden naar meerdere papers van andere instellingen zodat u zich verder kan inlezen waar gewenst.
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
@@ -22,17 +22,17 @@ Deze literatuurstudie zal samen met de lijst van termen uit hoofdstuk \ref{ch:te
 \label{sec:bestandsgrootte-dataopslag}
 Zoals in de definitie van \gls{datacompressie} besproken is, bestaat \gls{datacompressie} uit het digitaal opslaan van een bestand met zo weinig mogelijk \glspl{bit}.
 
-\Gls{bit} staat kort voor binary digit. Een bit wordt beschouwd als de kleinste data eenheid voor dataopslag. Een bit kan twee waarden aannemen, deze worden voorgesteld door 1 of 0 (binair talstelsel) maar kunnen ook geïnterpreteerd worden als aan of uit, ja of nee…
+\Gls{bit} staat kort voor binary digit. Een bit wordt beschouwd als de kleinste data eenheid voor dataopslag. Een bit kan twee waarden aannemen, deze worden voorgesteld door 1 of 0 (binair talstelsel), maar kunnen ook geïnterpreteerd worden als aan of uit, ja of nee…
 
 \subsection{Voorvoegsels voor het uitdrukken van bestandsgrootte}
 \label{sec:bestandsgrootte-dataopslag-voorvoegsels}
 
-Bestandsgroottes worden meestal uitgedrukt in bytes (8 bits), al dan niet met voorvoegsel dat een veelvoud voorstelt. Deze voorvoegsels en het door elkaar gebruik van de \gls{si-voorstelling-bestandsgrootte} en \gls{binaire-voorstelling-bestandsgrootte} kan voor enige verwarring zorgen. Denk hierbij aan het fenomeen dat harde schijven die geadverteerd zijn als 1TB (\gls{si-voorstelling-bestandsgrootte}) overeen komt met 931GiB (\gls{binaire-voorstelling-bestandsgrootte}) op de meeste besturingssystemen. Doorheen deze paper zal de \gls{si-voorstelling-bestandsgrootte} gebruikt worden.
+Bestandsgroottes worden meestal uitgedrukt in bytes (8 bits), al dan niet met voorvoegsel dat een veelvoud voorstelt. Deze voorvoegsels en het door elkaar gebruik van de \gls{si-voorstelling-bestandsgrootte} en \gls{binaire-voorstelling-bestandsgrootte} kan voor enige verwarring zorgen. Denk hierbij aan het fenomeen dat harde schijven die geadverteerd zijn als 1TB (\gls{si-voorstelling-bestandsgrootte}) overeen komen met 931GiB (\gls{binaire-voorstelling-bestandsgrootte}) op de meeste besturingssystemen. Doorheen deze paper zal de \gls{si-voorstelling-bestandsgrootte} gebruikt worden.
 
 \subsubsection{SI voorstelling}
 \label{sec:bestandsgrootte-dataopslag-voorvoegsels-si}
 
-De \gls{si-voorstelling-bestandsgrootte} gebruikt als basis 1000 wat overeen komt met $ 10^{3} $. SI staat voor International System of Units en beschrijft. Het wordt beschouwd als een moderne vorm op het metrisch stelsel. SI beschrijft onder IEC 60027 het gebruik van bepaalde voorvoegsels voor het uitdrukken van machten op 10. (\cite{iec60027}) Een conversietabel is hieronder raadpleegbaar. 
+De \gls{si-voorstelling-bestandsgrootte} gebruikt als basis 1000 wat overeen komt met $ 10^{3} $. SI staat voor International System of Units en beschrijft de standaardeenheden voor het meten van bepaalde data. Het wordt beschouwd als een moderne vorm op het metrisch stelsel. SI beschrijft onder IEC 60027 het gebruik van bepaalde voorvoegsels voor het uitdrukken van machten op 10. (\cite{iec60027}) Een conversietabel is hieronder raadpleegbaar. 
 
 \FloatBarrier
 \begin{table}[h]
@@ -49,7 +49,7 @@ De \gls{si-voorstelling-bestandsgrootte} gebruikt als basis 1000 wat overeen kom
 \subsubsection{Binaire voorstelling}
 \label{sec:bestandsgrootte-dataopslag-voorvoegsels-binair}
 
-De \gls{binaire-voorstelling-bestandsgrootte} gebruikt als basis 1024 wat overeen komt met $ 2^{10} $. Deze voorstelling is een standaardisatie opgelegd door \gls{ieee} 1541-2002 (\cite{ieee15412002}). Een conversietabel is hieronder raadpleegbaar.
+De \gls{binaire-voorstelling-bestandsgrootte} gebruikt als basis 1024, wat overeen komt met $ 2^{10} $. Deze voorstelling is een standaardisatie opgelegd door \gls{ieee} 1541-2002 (\cite{ieee15412002}). Een conversietabel is hieronder raadpleegbaar.
 
 \FloatBarrier
 \begin{table}[h]
@@ -68,11 +68,11 @@ De \gls{binaire-voorstelling-bestandsgrootte} gebruikt als basis 1024 wat overee
 
 Een andere belangrijke term bij dataopslag is de \gls{clustergrootte}. Data moet namelijk bijgehouden worden in één of meerdere \glspl{cluster} op een opslagmedium zodat naar deze \glspl{cluster} kan verwezen worden voor het lezen van de data. 
 
-Aangezien alle data steeds minstens in één \gls{cluster} staat en twee verschillende databestanden nooit een \gls{cluster} kunnen delen kan dit voor opslagruimteverlies zorgen. 
+Aangezien alle data steeds minstens in één \gls{cluster} staat en twee verschillende databestanden nooit een \gls{cluster} kunnen delen, kan dit voor opslagruimteverlies zorgen. 
 
 Neem bijvoorbeeld een \gls{clustergrootte} van 4096 \glspl{byte}, een vaak voorkomende \gls{clustergrootte}. Als in deze situatie een bestand van 2000 \glspl{byte} groot zou opgeslagen worden, zijn de overige 2096 \glspl{byte} aan opslagcapaciteit op die schijf verloren. Een bestand van 4097 \glspl{byte} zou twee \glspl{cluster} in beslag nemen waardoor 4095 \glspl{byte} verloren gaan. 
 
-Dit speelt vooral een rol wanneer \gls{datacompressie} gebruikt wordt voor het besparen van opslagruimte op een opslagmedium. Een gecomprimeerd bestand met een kleinere bestandsgrootte dat dezelfde hoeveelheid \glspl{clustergrootte} nodig heeft op het medium zal dus niet voor plaats besparing zorgen op dat opslagmedium. 
+Dit speelt vooral een rol wanneer \gls{datacompressie} gebruikt wordt voor het besparen van opslagruimte op een opslagmedium. Een gecomprimeerd bestand met een kleinere bestandsgrootte dat dezelfde hoeveelheid \glspl{clustergrootte} nodig heeft op het medium zal dus niet voor plaatsbesparing zorgen op dat opslagmedium. 
 
 Theoretisch gezien zal er wel een verbetering te zien zijn in \glspl{leestijd} en de gebruikte \gls{bandbreedte} bij een bestandsoverdracht omdat de effectieve bestandsgrootte kleiner is. 
 
@@ -82,41 +82,39 @@ Er zijn tal van reden waarom een andere \gls{clustergrootte} aangeraden is, een 
 \label{sec:ontstaan-datacompressie-primitieve-technieken}
 \subsection{Eerste vorm van datacompressie}
 \label{sec:ontstaan-datacompressie-primitieve-technieken-eerste-vorm}
-Vele onderzoekers zijn het erover eens dat \gls{datacompressie} dateert van voor de uitvinding van de computer. Zo kan morsecode gezien worden als een vorm van \gls{datacompressie}. Morsecode is uitgevonden voor het computertijdperk, in 1832, door Samuel F.B. Morse. Het kan aanzien worden als een vorm van datacompressie doordat veel voorkomende letters een kortere audiotoon kregen dan minder gebruikte letters. (\cite{morsecode})
+Vele onderzoekers zijn het erover eens dat \gls{datacompressie} dateert van voor de uitvinding van de computer. Zo kan morsecode gezien worden als een vorm van \gls{datacompressie}. Morsecode is uitgevonden voor het computertijdperk, in 1832, door Samuel F.B. Morse. Het kan gezien worden als een vorm van datacompressie doordat veel voorkomende letters een kortere audiotoon kregen dan minder gebruikte letters. (\cite{morsecode})
 
 \subsection{Ontwikkeling datacompressie binnen IT}
 \label{sec:ontstaan-datacompressie-primitieve-technieken-binnen-it}
 
-Bij de prille opkomst van mainframes eind de jaren 40 en begin de jaren 50 zijn twee belangrijke doorbraken binnen \gls{datacompressie} gemaakt. Beiden maken gebruik van \gls{prefix-code}. De originele uitvinder van dit soort compressie was Shannon Claude dat Shannon coding uitvond, een proof of concept voor zijn artikel \citetitle{shannon1948} (\cite{shannon1948}). In diezelfde periode werd ook Shannon-Fano coding voorgesteld, een project samen met Robert Fano dat verschillende \glspl{use-case} had. Geen van beide technieken waren echter optimaal aangezien de \glspl{compressie-algoritme} niet gegarandeerd de korst mogelijke prefix codes gaven. 
+Bij de prille opkomst van mainframes eind de jaren 40 en begin de jaren 50 zijn twee belangrijke doorbraken binnen \gls{datacompressie} gemaakt. Beiden maken gebruik van \gls{prefix-code}. De originele uitvinder van dit soort compressie was Shannon Claude die Shannon coding uitvond, een proof of concept voor zijn artikel \citetitle{shannon1948} (\cite{shannon1948}). In diezelfde periode werd ook Shannon-Fano coding voorgesteld, een project samen met Robert Fano dat verschillende \glspl{use-case} had. Geen van beide technieken waren echter optimaal aangezien de \glspl{compressie-algoritme} niet gegarandeerd de kortst mogelijke prefix codes gaven. 
 
-\Gls{huffman-coding}, voorgesteld in  \citetitle{huffman} (\cite{huffman}) was een optimale variant op deze techniek. Dit is een \gls{compressie-algoritme} door David Huffman als examen vervangende opdracht. Zijn lector had vermeld dat er eerste vormen van \gls{prefix-code} \gls{compressie-algoritme} bestonden maar geen enkel optimaal was. Een student die een optimaal algoritme wist te vinden kreeg een vrijstelling voor het desbetreffende examen. Bijna 70 jaar na publicatie legt dit nog steeds de basis voor vele \gls{lossless} \gls{datacompressie} \glspl{compressie-algoritme}. Deze soort \glspl{compressie-algoritme} worden frequency-based \glspl{compressie-algoritme} genoemd. Het exacte verschil tussen \gls{huffman-coding} en Shannon-Fano coding en meer informatie over deze \glspl{compressie-algoritme} zijn beschreven in \citetitle{lelewer87datacompression} (\cite{lelewer87datacompression}). In deel \ref{sec:primitieve-technieken-voorbeeld-huffman-encoding} wordt een praktisch voorbeeld van \gls{huffman-coding} uitgewerkt. In hoofdstuk  \ref{ch:compressietool} zal onder andere \gls{huffman-coding} gebruikt worden voor het maken van de compressietool.
+\Gls{huffman-coding}, voorgesteld in  \citetitle{huffman} (\cite{huffman}), was een optimale variant op deze techniek. Dit is een \gls{compressie-algoritme} door David Huffman als examen vervangende opdracht. Zijn lector had vermeld dat er eerste vormen van \gls{prefix-code} \gls{compressie-algoritme} bestonden maar geen enkel optimaal was. Een student die een optimaal algoritme wist te vinden kreeg een vrijstelling voor het desbetreffende examen. Bijna 70 jaar na publicatie legt dit nog steeds de basis voor vele \gls{lossless} \glspl{compressie-algoritme}. Deze soort \glspl{compressie-algoritme} worden frequency-based \glspl{compressie-algoritme} genoemd. Het exacte verschil tussen \gls{huffman-coding} en Shannon-Fano coding en meer informatie over deze \glspl{compressie-algoritme} zijn beschreven in \citetitle{lelewer87datacompression} (\cite{lelewer87datacompression}). In deel \ref{sec:primitieve-technieken-voorbeeld-huffman-encoding} wordt een praktisch voorbeeld van \gls{huffman-coding} uitgewerkt. In hoofdstuk  \ref{ch:compressietool} zal onder andere \gls{huffman-coding} gebruikt worden voor het maken van de compressietool.
 
 Zoals in \citetitle{robinson1967} (\cite{robinson1967}) beschreven staat, werd \gls{rle-long} gebruikt in de jaren 60 en 70 voor het uitzenden van televisiesignalen. Het is echter moeilijk te zeggen dat deze implementatie van \gls{rle-short} ook het eerste voorkomen van \gls{rle-short} was. Het concept achter \gls{rle-long} is één van de eenvoudigste \glspl{compressie-algoritme} tot op heden waardoor het ontstaan moeilijk te achterhalen is. In deel \ref{sec:primitieve-technieken-voorbeeld-rle} wordt een praktisch voorbeeld met \gls{rle-long} uitgewerkt.
 
-De jaren 70 en 80 zorgden voor tal van belangrijke doorbraken binnen \gls{datacompressie}. Dit was te weiden aan de opkomst van het internet en de steeds groter wordende bestanden. Ook werd hardwarematige compressie (zoals \gls{prefix-code} met vaste \gls{lookup-table} voor tekstbestanden) steeds meer vervangen door dynamische compressie (codegewijs). 
+De jaren 70 en 80 zorgden voor tal van belangrijke doorbraken binnen \gls{datacompressie}. Dit kwam door de opkomst van het internet en de steeds groter wordende bestanden. Ook werd hardwarematige compressie (zoals \gls{prefix-code} met vaste \gls{lookup-table} voor tekstbestanden) steeds meer vervangen door dynamische compressie (codegewijs). 
 
-%TODO: uitleg
-
-Deze eerste softwareoplossingen waren veelal implementatie van \gls{huffman-coding}, eventueel met kleine aanpassingen. Eind de jaren 70 waren de eerste Lempel-Ziv \glspl{compressie-algoritme} uitgevonden: LZ77 en LZ78. Dit zijn de grondleggers van dictionary coding. Een veelgebruikte variant van LZ78 is LZW (1984). Net zoals \gls{huffman-coding} de basis legde voor vele van de eerste softwareoplossingen zorgde de grondleggers van dictionary coding voor vele nieuwe softwareoplossingen. De doorgroei van deze \glspl{compressie-algoritme} is zichtbaar in figuur \ref{fig:lossles-datacompressie-overzicht}.
+Deze eerste softwareoplossingen waren veelal implementatie van \gls{huffman-coding}, eventueel met kleine aanpassingen. Eind jaren 70 werden de eerste Lempel-Ziv \glspl{compressie-algoritme} uitgevonden: LZ77 en LZ78. Dit zijn de grondleggers van dictionary coding. Een veelgebruikte variant van LZ78 is LZW (1984). Net zoals \gls{huffman-coding} de basis legde voor vele van de eerste softwareoplossingen, zorgden de grondleggers van dictionary coding voor vele nieuwe softwareoplossingen. De doorgroei van deze \glspl{compressie-algoritme} is zichtbaar in figuur \ref{fig:lossles-datacompressie-overzicht}.
 
 Het grootste verschil tussen \gls{prefix-coding} en dictionary coding zit in de naam zelf. Bij \gls{prefix-coding} wordt elk karakter vervangen door een \gls{prefix-code} terwijl bij dictionary coding een reeks van karakters vervangen kunnen worden door één enkele \gls{prefix-code}.  
 
-Eind de jaren 80 en begin de jaren 90, door de digitalisering van afbeeldingen en muziek, begonnen \gls{lossy} \glspl{compressie-algoritme} steeds meer op te komen. Het verschil tussen \gls{lossless} en \gls{lossy} \glspl{compressie-algoritme} wordt in deel \ref{sec:ontstaan-datacompressie-lossless-lossy} verder besproken.
+Eind jaren 80 en begin de jaren 90, door de digitalisering van afbeeldingen en muziek, begonnen \gls{lossy} \glspl{compressie-algoritme} steeds meer op te komen. Het verschil tussen \gls{lossless} en \gls{lossy} \glspl{compressie-algoritme} wordt in deel \ref{sec:ontstaan-datacompressie-lossless-lossy} verder besproken.
 
 
 \section{Primitieve technieken: een voorbeeld}
 \label{sec:primitieve-technieken-voorbeeld}
-Aan de hand van een eenvoudig voorbeeld zal de basis werking van \gls{ascii}, \gls{rle-long} en \gls{huffman-coding} uitgelegd worden. De innerlijke werking van deze \glspl{compressie-algoritme} begrijpen is niet nodig voor de kern van deze paper te begrijpen maar dient als verduidelijking voor mogelijke vragen en als inleiding op hoofdstuk \ref{ch:compressietool}. Een basiskennis van binaire bomen is vereist.
+Aan de hand van een eenvoudig voorbeeld zal de basis werking van \gls{ascii}, \gls{rle-long} en \gls{huffman-coding} uitgelegd worden. De innerlijke werking van deze \glspl{compressie-algoritme} begrijpen is niet nodig om de kern van deze paper te begrijpen, maar dient als verduidelijking voor mogelijke vragen en als inleiding op hoofdstuk \ref{ch:compressietool}. Een basiskennis van binaire bomen is vereist.
 
 \subsection{Situering}
 \label{sec:primitieve-technieken-voorbeeld-situering}
-\Gls{huffman-coding} en \gls{rle-long} zijn \gls{lossless} \glspl{compressie-algoritme}. \Gls{huffman-coding} pronkt in het opslaan van tekst gebaseerde bestanden maar is bruikbaar voor virtueel alle toepassingen. \Gls{rle-long} in zijn basisvorm is heel \gls{use-case} gebonden en gaat gemiddeld gezien niet zo goed presteren in tekstbestanden. De reden hiervan zal duidelijk worden door het voorbeeld \ref{sec:primitieve-technieken-voorbeeld-rle} en probleemstelling \ref{sec:primitieve-technieken-voorbeeld-ascii-probleem-1}. Een blik op de prestatie van onder andere \gls{rle-long} en \gls{huffman-coding} is te lezen in \citetitle{losslessfortextdata} (\cite{losslessfortextdata}).
+\Gls{huffman-coding} en \gls{rle-long} zijn \gls{lossless} \glspl{compressie-algoritme}. \Gls{huffman-coding} pronkt in het opslaan van tekst gebaseerde bestanden, maar is bruikbaar voor tal van toepassingen. \Gls{rle-long} in zijn basisvorm is heel \gls{use-case} gebonden en gaat gemiddeld gezien niet zo goed presteren in tekstbestanden. De reden hiervoor zal duidelijk worden door het voorbeeld \ref{sec:primitieve-technieken-voorbeeld-rle} en probleemstelling \ref{sec:primitieve-technieken-voorbeeld-ascii-probleem-1}. Een blik op de prestatie van onder andere \gls{rle-long} en \gls{huffman-coding} is te lezen in \citetitle{losslessfortextdata} (\cite{losslessfortextdata}).
 
-In dit voorbeeld wordt er van uit gegaan dat een gebruiker de zin “lennert eet veel” wenst op te slaan. Aan de hand van dit voorbeeld zal duidelijk worden hoe \gls{ascii}, \gls{huffman-coding} en \gls{rle-long} werken en wat mogelijke problemen zijn.
+In dit voorbeeld wordt er van uitgegaan dat een gebruiker de zin “lennert eet veel” wenst op te slaan. Aan de hand van dit voorbeeld zal duidelijk worden hoe \gls{ascii}, \gls{huffman-coding} en \gls{rle-long} werken en wat mogelijke problemen zijn.
 
 \subsection{ASCII encoding en decoding}
 \label{sec:primitieve-technieken-voorbeeld-ascii}
-Een makkelijke manier om tekst om te zetten naar een binaire reeks is door gebruik te maken van \gls{ascii}. \Gls{ascii} is een tekenset waarbij elke teken in een getal toegekend heeft. Dat getal kan dan weer eenvoudig binair voorgesteld worden. Er zijn meerdere conversielijsten online raadpleegbaar\urlcite{asciitobinary}
+Een makkelijke manier om tekst om te zetten naar een binaire reeks is door gebruik te maken van \gls{ascii}. \Gls{ascii} is een tekenset waarbij elke teken een getal toegekend heeft gekregen. Dat getal kan dan weer eenvoudig binair voorgesteld worden. Er zijn meerdere conversielijsten online raadpleegbaar\urlcite{asciitobinary}
 
 De zin "lennert eet veel" zou met \gls{ascii} binair voorgesteld worden als: 
 “01101100 01100101 01101110 01101110 01100101 01110010 01110100 00100000 01100101 01100101 01110100 00100000 01110110 01100101 01100101 01101100”
@@ -135,28 +133,28 @@ Zoals besproken in deel \ref{sec:ontstaan-datacompressie-primitieve-technieken-b
 
 Van \gls{rle-short} zijn enorm veel varianten gemaakt en veel \glspl{compressie-algoritme} gebruiken \gls{rle-short} als onderdeel. Een interessante paper die zich dieper toespitst op \gls{rle-short} en een proof of concept variant is \citetitle{rleimproved} (\cite{rleimproved}). 
 
-In zijn basis vorm zo \gls{rle-short} de zin 'lennert eet veel' als volgt comprimeren: 
+In zijn basisvorm zou \gls{rle-short} de zin 'lennert eet veel' als volgt comprimeren: 
 '1l1e2n1e1r1t1 2e1t1 1v2e1l'. Deze string kan op zijn beurt door \gls{ascii} voorgesteld worden.
 
 \subsubsection{RLE Probleemstelling 1: gecomprimeerd bestand groter dan bron}
 \label{sec:primitieve-technieken-voorbeeld-rle-probleem-1}
 Uit het voorbeeld \ref{sec:primitieve-technieken-voorbeeld-rle} blijkt dat \gls{rle-short} voor de zin "lennert eet veel" voor een output zorgt van meer dan 150\% van de originele lengte. \Gls{rle-long} is voor deze situatie dus aanzienlijk groter dan het origineel niet gecomprimeerde bestand. 
 
-Dit zal het geval zijn voor veel gebruiker gegenereerde tekstbestanden en met \gls{rle-short} kan in het slechtste geval een bestandsgrootte van 200\% bereken worden. Denk hierbij aan het comprimeren van het alfabet. \Gls{rle-short} is zeer \gls{use-case} gebonden en wordt vaak gevarieerd gebruikt maar kan in die bepaalde \glspl{use-case} voor een grote databesparing zorgen.
+Dit zal het geval zijn voor veel gebruiker gegenereerde tekstbestanden en met \gls{rle-short} kan in het slechtste geval een bestandsgrootte van 200\% bereken worden. Denk hierbij aan het comprimeren van het alfabet. \Gls{rle-short} is zeer \gls{use-case} gebonden en wordt vaak gevarieerd gebruikt, maar kan in die bepaalde \glspl{use-case} voor een grote databesparing zorgen.
 
-Dit probleem kan omzeilt worden door geen run voor de run value te zetten wanneer deze één is. 
+Dit probleem kan omzeild worden door geen run voor de run value te zetten wanneer deze één is. 
 
 \subsection{Huffman coding}
 \label{sec:primitieve-technieken-voorbeeld-huffman-encoding}
 Het bericht kan ook voorgesteld worden door \gls{huffman-coding}. \gls{huffman-coding} valt onder de categorie \gls{prefix-coding}. Hierbij zal elk karakter voorgesteld worden door een \gls{prefix-code} dat op zijn beurt verwijst naar het karakter in bijvoorbeeld \gls{ascii}. 
 
-Doordat \gls{huffman-coding} optimaal is zal het meest voorkomende karakter steeds de kleinste \gls{prefix-code} toegewezen krijgen.
+Doordat \gls{huffman-coding} optimaal is, zal het meest voorkomende karakter steeds de kleinste \gls{prefix-code} toegewezen krijgen.
 
 \subsubsection{Huffman encoding stap 1: meerdere bomen}
 \label{sec:primitieve-technieken-voorbeeld-huffman-encoding-1}
 Als eerste stap dient een boom gemaakt te worden voor elk karakter met een toegevoegde eigenschap zijnde de frequentie van voorkomen. Deze bomen bestaan dus telkens uit 1 knoop (het hoofd).
 
-Deze bomen moeten aflopend gesorteerd worden op deze eigenschap 
+Deze bomen moeten aflopend gesorteerd worden op deze eigenschap.
 
 Een voorbeeld van hoe het resultaat van deze stap er voor de zin “lennert eet veel” kan uitzien is te vinden op figuur \ref{fig:huffman-stap-1}.
 
@@ -170,7 +168,7 @@ Een voorbeeld van hoe het resultaat van deze stap er voor de zin “lennert eet 
 
 \subsubsection{Huffman encoding stap 2: bomen samenvoegen}
 \label{sec:primitieve-technieken-voorbeeld-huffman-encoding-2}
-Als tweede stap moeten alle bomen samengevoegd worden tot één boom waarbij voorrang gegeven wordt aan diegene met het kleinste totaal van frequenties. Indien er evenveel frequenties zijn heeft diegene met de kleinste diepte voorrang.
+Als tweede stap moeten alle bomen samengevoegd worden tot één boom waarbij voorrang gegeven wordt aan diegene met het kleinste totaal van frequenties. Indien er evenveel frequenties zijn, heeft diegene met de kleinste diepte voorrang.
 
 Een voorbeeld van hoe het resultaat van deze stap er voor de zin “lennert eet veel” kan uitzien is te vinden op figuur \ref{fig:huffman-stap-2}.
 
@@ -182,7 +180,7 @@ Een voorbeeld van hoe het resultaat van deze stap er voor de zin “lennert eet 
 \end{figure}
 \FloatBarrier
 
-\subsubsection{stap 3: prefix tabel (optioneel)}
+\subsubsection{Huffman encoding stap 3: prefix tabel (optioneel)}
 \label{sec:primitieve-technieken-voorbeeld-huffman-encoding-3}
 Als derde, optionele, stap kan voor elk karakter de \gls{prefix-code} gemaakt worden en bijgehouden worden in een \gls{lookup-table}. Dit wordt gedaan door het pad naar het blad van het karakter bij te houden startend uit het hoofd waarbij een stap naar links als 0 genoteerd wordt en een stap naar rechts als 1.
 
@@ -206,12 +204,12 @@ De bekomen binaire boom van stap \ref{sec:primitieve-technieken-voorbeeld-huffma
 \end{table}
 \FloatBarrier
 
-\subsubsection{stap 4: encoding}
+\subsubsection{Huffman encoding stap 4: encoding}
 \label{sec:primitieve-technieken-voorbeeld-huffman-encoding-4}
-Als vierde en laatste stap kan nu eenvoudig weg elk karakter vervangen worden door zijn bijhorende \gls{prefix-code}. De zin “lennert eet veel” wordt door de bovenstaande \gls{lookup-table} voorgesteld als:
+Als vierde en laatste stap kan nu eenvoudigweg elk karakter vervangen worden door zijn bijhorende \gls{prefix-code}. De zin “lennert eet veel” wordt door de bovenstaande \gls{lookup-table} voorgesteld als:
 "000 01 001 001 01 110 100 101 01 01 100 101 111 01 01 000"
 
-Het valt direct op dat deze reeks van \glspl{bit} (42 \glspl{bit}) veel kleiner is als in het \gls{ascii} voorbeeld (128 \glspl{bit}). Dit is de reden dat \gls{huffman-coding} tot op heden de grondlegger is voor veel \glspl{compressie-algoritme}. Hoewel \gls{huffman-coding} \gls{lossless} is en dus voornamelijk in andere \gls{lossless} \glspl{compressie-algoritme} gebruikt wordt is \gls{huffman-coding} ook te vinden als onderdeel van tal van \gls{lossy} \glspl{compressie-algoritme}.
+Het valt direct op dat deze reeks van \glspl{bit} (42 \glspl{bit}) veel kleiner is als in het \gls{ascii} voorbeeld (128 \glspl{bit}). Dit is de reden dat \gls{huffman-coding} tot op heden de grondlegger is voor veel \glspl{compressie-algoritme}. Hoewel \gls{huffman-coding} \gls{lossless} is en dus voornamelijk in andere \gls{lossless} \glspl{compressie-algoritme} gebruikt wordt, is \gls{huffman-coding} ook te vinden als onderdeel van tal van \gls{lossy} \glspl{compressie-algoritme}.
 
 
 \subsubsection{Huffman decoding}
@@ -220,14 +218,14 @@ De \gls{decoding} is visueel het eenvoudigst met behulp van de binaire boom door
 
 \subsubsection{Huffman coding Probleemstelling 1: binaire boom niet opgeslagen}
 \label{sec:primitieve-technieken-voorbeeld-huffman-probleem-1}
-In het voorgaande deel (\ref{sec:primitieve-technieken-voorbeeld-huffman-decoding}) is bewezen dat via de \gls{huffman-coding} reeks en de oorpsronkelijke binaire boom het oorspronkelijk bericht volledig terug kan opgehaalt worden (of via de \gls{lookup-table}). Er is echter enkel rekening gehouden met de \gls{huffman-coding} reeks voor het bepalen van de bestandsgrootte. Volgens die logica zou de originele binaire boom (of lookup table) dus niet opgeslagen worden en bijgevolg zou de originele tekst niet meer te reconstrueren zijn. Een soort \gls{lookup-table} zal dus ook moeten opgeslagen worden als \gls{meta-data}.
+In het voorgaande deel (\ref{sec:primitieve-technieken-voorbeeld-huffman-decoding}) is bewezen dat via de \gls{huffman-coding} reeks en de oorspronkelijke binaire boom het oorspronkelijk bericht volledig terug kan opgehaald worden (of via de \gls{lookup-table}). Er is echter enkel rekening gehouden met de \gls{huffman-coding} reeks voor het bepalen van de bestandsgrootte. Volgens die logica zou de originele binaire boom (of lookup table) dus niet opgeslagen worden en bijgevolg zou de originele tekst niet meer te reconstrueren zijn. Een soort \gls{lookup-table} zal dus ook moeten opgeslagen worden als \gls{meta-data}.
 
 
 \subsubsection{Huffman coding Probleemstelling 2: gecomprimeerd bestand groter dan bron}
 Zoals in probleemstelling \ref{sec:primitieve-technieken-voorbeeld-huffman-probleem-1} besproken is moet een soort \gls{lookup-table} bijgehouden worden als \gls{meta-data} voor het gecomprimeerd bestand. Dit veroorzaakt echter een volgend potentieel probleem .
 
 
-Wanneer zowel de \gls{huffman-coding} reeks als de binaire zoekboom moeten opgeslagen worden bestaat de kans dat het gecomprimeerde bestand een grotere bestandsgrootte heeft als het oorspronkelijk (door \gls{ascii} encoded) bestand. De mogelijkheid dat een gecomprimeerd bestand groter is dan een niet gecomprimeerd bestand is wederkerend bij \gls{datacompressie} en \gls{lossless} compressie in het bijzonder.
+Wanneer zowel de \gls{huffman-coding} reeks als de binaire zoekboom moeten opgeslagen worden bestaat de kans dat het gecomprimeerde bestand een grotere bestandsgrootte heeft dan het oorspronkelijk (door \gls{ascii} encoded) bestand. De mogelijkheid dat een gecomprimeerd bestand groter is dan een niet gecomprimeerd bestand is wederkerend bij \gls{datacompressie} en \gls{lossless} compressie in het bijzonder.
 
 
 \subsubsection{Huffman coding Probleemstelling 3: overlappende prefix codes}
@@ -248,7 +246,7 @@ Een typische \gls{use-case} voor \gls{lossless} \gls{datacompressie} zijn tekstd
 
 Zoals reeds besproken in deel \ref{sec:ontstaan-datacompressie-primitieve-technieken-binnen-it} was de doorbraak van \gls{lossy} \gls{datacompressie} de opkomst van digitale afbeeldingen en muziek. Zo behoudt MP3 (\gls{lossy} \gls{codec} voor audio) bepaalde (combinaties van) audiofrequenties niet omdat die door het menselijke oor niet waarneembaar zijn. Maar ook waarneembare frequenties kunnen door de MP3 \gls{codec} verloren gaan voor het besparen van data. \gls{jpeg} is één van de oudste en bekendste vormen van \gls{lossy} \gls{compressie-algoritme} voor afbeeldingen. 
 
-Zoals besproken in \citetitle{kaur2016} (\cite{kaur2016}) kunnen audiobestanden door het gebruik van \gls{lossy} \gls{datacompressie} tot 90\% kleiner worden in bestandsgrootte zonder een storende vermindering aan kwaliteit. Bij video kan een een nog grotere databesparing voorkomen, tot meer dan 99\% zonder daar veel visueel waarneembaar verschil mee gepaard gaat. Immers, opeenvolgende beelden lijken meestal erg op elkaar. Bij stilstaande afbeeldingen is het kwaliteitsverlies door \gls{lossy} \gls{datacompressie} vaak wel zeer zichtbaar wanneer 90\% of meer aan bestandsgrootte bespaard wordt.
+Zoals besproken in \citetitle{kaur2016} (\cite{kaur2016}) kunnen audiobestanden door het gebruik van \gls{lossy} \gls{datacompressie} tot 90\% kleiner worden in bestandsgrootte zonder een storende vermindering aan kwaliteit. Bij video kan een een nog grotere databesparing voorkomen, tot meer dan 99\% zonder dat daar veel visueel waarneembaar verschil mee gepaard gaat. Immers, opeenvolgende beelden lijken meestal erg op elkaar. Bij stilstaande afbeeldingen is het kwaliteitsverlies door \gls{lossy} \gls{datacompressie} vaak wel zeer zichtbaar wanneer 90\% of meer aan bestandsgrootte bespaard wordt.
 
-De keuze voor \gls{lossless} of \gls{lossy} is \gls{use-case} gebonden. Bij het kiezen voor \gls{lossless} \gls{datacompressie} is een objectief onderzoek naar een goede balans tussen snelheid en databesparing voor de use case aangeraden. Bij \gls{lossy} \gls{datacompressie} zijn zowel objectieve als subjectieve onderzoeken mogelijk. In hoofdstuk \ref{ch:kwaliteit} wordt dieper ingegaan over de verschillende manieren om de prestatie van een \gls{compressie-algoritme} voor afbeeldingen te evalueren. In hoofdstuk \ref{ch:onderzoek} wordt een subjectief onderzoek gevoerd voor het bepalen van het geschikte \gls{afbeeldingsformaat} voor een bepaalde \gls{use-case}.
+De keuze voor \gls{lossless} of \gls{lossy} is \gls{use-case} gebonden. Bij het kiezen voor \gls{lossless} \gls{datacompressie} is een objectief onderzoek naar een goede balans tussen snelheid en databesparing voor de use case aangeraden. Bij \gls{lossy} \gls{datacompressie} zijn zowel objectieve als subjectieve onderzoeken mogelijk. In hoofdstuk \ref{ch:kwaliteit} wordt dieper ingegaan op de verschillende manieren om de prestatie van een \gls{compressie-algoritme} voor afbeeldingen te evalueren. In hoofdstuk \ref{ch:onderzoek} wordt een subjectief onderzoek gevoerd voor het bepalen van het geschikte \gls{afbeeldingsformaat} voor een bepaalde \gls{use-case}.
 

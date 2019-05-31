@@ -1,7 +1,7 @@
 \chapter{Kwaliteit beoordelen}
 \label{ch:kwaliteit}
 
-In de twee voorgaande hoofdstukken is dieper ingegaan op een aantal \glspl{afbeeldingsformaat} en video \glspl{codec}. Om de prestatie van de achterliggende \glspl{compressie-algoritme} te beoordelen wordt meestal gesproken van een gelijkaardige of betere kwaliteit met een kleinere bestandsgrootte. Maar hoe kan er nagegaan worden of die kwaliteit wel degelijk gelijkaardig of beter is en niet slechter? Dit hoofdstuk neemt een kijk naar de mogelijke manieren om de kwaliteit van afbeeldingen en dus de achterliggende \glspl{compressie-algoritme} te evalueren. Zowel objectieve als subjectieve manieren zullen besproken worden. In hoofdstuk \ref{ch:onderzoek} zal een subjectief onderzoek gevoerd worden om de kwaliteit van enkele \glspl{afbeeldingsformaat} te testen voor een bepaalde \gls{use-case}. 
+In de twee voorgaande hoofdstukken is dieper ingegaan op een aantal \glspl{afbeeldingsformaat} en video \glspl{codec}. Om de prestatie van achterliggende \glspl{compressie-algoritme} te beoordelen, wordt meestal gesproken van een gelijkaardige, betere of slechtere kwaliteit met dezelfde bestandsgrootte. Maar hoe kan er nagegaan worden of die kwaliteit wel degelijk gelijkaardig, beter of slechter is? Dit hoofdstuk neemt een kijk in de mogelijke manieren om de kwaliteit van afbeeldingen en dus de achterliggende \glspl{compressie-algoritme} te evalueren. Zowel objectieve als subjectieve manieren zullen besproken worden. In hoofdstuk \ref{ch:onderzoek} zal een subjectief onderzoek gevoerd worden om de kwaliteit van enkele \glspl{afbeeldingsformaat} te testen voor een bepaalde \gls{use-case}. 
 
 Kwaliteit van een afbeelding beoordelen is in theorie alleen interessant voor \gls{lossy} \gls{compressie-algoritme} aangezien \gls{lossless} \gls{compressie-algoritme} per definitie steeds dezelfde kwaliteit als de originele afbeelding dienen te hebben. De prestatie van \gls{lossless} \gls{compressie-algoritme} testen kan dus uitsluitend objectief gedaan worden door de bestandsgrootte samen met de \gls{encoding} en \gls{decoding} tijd en complexiteit te evalueren.
 
@@ -12,32 +12,37 @@ Hoewel deze bachelorproef niet dieper ingaat op mogelijke manieren voor kwalitei
 
 Er kan onderscheid gemaakt worden tussen twee grote soorten onderzoeken naar kwaliteit: objectieve en subjectieve onderzoeken. In een objectief onderzoek wordt veelal gebruik gemaakt van software toepassingen om een afbeelding te evalueren. Enkele van deze toepassingen worden besproken in deel \ref{sec:kwaliteit-tools}. 
 	
-Er kan ook gekozen worden om een subjectief onderzoek te voeren. Deze gaan bijvoorbeeld te werk door de afbeeldingen aan deelnemers van een onderzoek weer te geven. De deelnemers moeten dan scores toekennen voor één of meerdere kenmerken van de afbeelding. Deze scores worden gebruikt om de kwaliteit van een afbeelding finaal te beoordelen. 
+Er kan ook gekozen worden om een subjectief onderzoek te voeren. Deze gaan bijvoorbeeld te werk door de afbeeldingen aan deelnemers van een onderzoek te tonen. De deelnemers moeten dan scores toekennen voor één of meerdere kenmerken van de afbeelding. Deze scores worden gebruikt om de kwaliteit van een afbeelding finaal te beoordelen. 
 
 Een objectief onderzoek is veelal sneller en makkelijker om uit te voeren aan de hand van de vele goede beschikbare software. Een subjectief onderzoek is ook eenvoudig zelf uit te voeren maar eist meer tijd. Voor het voeren van een subjectief onderzoek kan gebruik gebruik gemaakt worden van de voor deze bachelorproef geschreven \gls{afbeeldingsevaluatietool} verder besproken in deel \ref{sec:onderzoek-evaluatietool}. Er kan ook gekozen worden om de beoordeling van afbeeldingskwaliteit over te laten aan een instelling. Enkele van deze instellingen worden besproken in deel \ref{sec:kwaliteit-bedrijven}. Deze kunnen zowel objectieve als subjectieve onderzoeken voeren.
 
-De keuze voor een subjectief onderzoek klinkt wetenschappelijk veelal minder verantwoord als een objectief onderzoek maar is voor bepaalde \glspl{use-case} de aangeraden manier van werken. Vooral voor \gls{lossy} \glspl{compressie-algoritme} is het moeilijk een objectief onderzoek uit te voeren dat een duidelijk beeld geeft van de prestatie van het \gls{compressie-algoritme}. Objectieve software tools kunnen bij deze \glspl{compressie-algoritme} vele afwijkingen en \glspl{artefact} opvangen wat resulteert in een slechte score. De eindgebruiker zal zich hier in de werkelijkheid echter misschien niet aan storen. Ook omgekeerd kan een voor software kleine imperfectie de gebruikerservaring juist enorm te min gaan. Dit is de reden dat er nog steeds veel subjectieve onderzoeken gevoerd worden. 
+De keuze voor een subjectief onderzoek klinkt wetenschappelijk veelal minder verantwoord als een objectief onderzoek, maar is voor bepaalde \glspl{use-case} de aangeraden manier van werken. Vooral voor \gls{lossy} \glspl{compressie-algoritme} is het moeilijk een objectief onderzoek uit te voeren dat een duidelijk beeld geeft van de prestatie van het \gls{compressie-algoritme}. Objectieve software tools kunnen bij deze \glspl{compressie-algoritme} vele afwijkingen en \glspl{artefact} opvangen wat resulteert in een slechte score. De eindgebruiker zal zich hier in werkelijkheid echter misschien niet aan storen. Ook omgekeerd kan een voor software kleine imperfectie de gebruikerservaring juist enorm te min gaan. Dit is de reden date subjectieve onderzoeken eigenlijk als betrouwbaarder beschouwd worden dan objectieve metrieken en wordt dan ook steevast gebruikt bij het vergelijken van nieuwe datacompressiestandaarden.
 
 \section{Software voor het objectief evalueren van afbeeldingen}
 \label{sec:kwaliteit-tools}
 
-Er bestaat enerzijds software om afbeeldingen hun kwaliteit te beoordelen op bijvoorbeeld scherpte en contrast. Bij dit soort software worden afbeeldingen dus individueel beoordeeld en niet vergeleken met een andere afbeelding. Deze soort software is vooral interessant voor het testen van de effectieve camera (hardware) en niet zo zeer voor het testen van \glspl{compressie-algoritme}. Dit is de soort software dat makers van lenzen en camera's gebruiken om nieuwe hardware te testen. Een gekend bedrijf dat deze software samen met geautomatiseerde machines voor testen produceert is 'imatest'\urlcite{imatest}. Deze soort software is echter niet zo interessant voor het evalueren van \glspl{compressie-algoritme} en wordt daarom niet verder toegelicht in deze bachelorproef.
+Er bestaat enerzijds software om de kwaliteit van afbeeldingen te beoordelen op bijvoorbeeld scherpte en contrast. Bij dit soort software worden afbeeldingen dus individueel beoordeeld en niet vergeleken met een andere afbeelding. Dit soort software is vooral interessant voor het testen van de effectieve camera (hardware) en niet zo zeer voor het testen van \glspl{compressie-algoritme}. Dit is het soort software dat makers van lenzen en camera's gebruiken om nieuwe hardware te testen. Een gekend bedrijf dat deze software samen met geautomatiseerde machines voor testen produceert is 'imatest'\urlcite{imatest}. Dit soort software is echter niet zo interessant voor het evalueren van \glspl{compressie-algoritme} en wordt daarom niet verder toegelicht in deze bachelorproef.
 
-Anderzijds bestaat er software dat twee afbeeldingen met elkaar vergelijkt. Dit is interessant voor het beoordelen van \gls{compressie-algoritme} door een \gls{lossless} gecomprimeerde variant te vergelijken met het te testen \gls{lossy} \gls{compressie-algoritme}. De software kan hiervoor gebruik maken van enkele variabelen die eenvoudig te berekenen zijn tussen twee afbeeldingen. Enkele van deze variabelen worden hieronder besproken. Aangezien dit wiskundige berekeningen zijn kunnen deze berekend worden door software van bedrijven als MathWorks\urlcite{mathworks}. Er is ook veel, al dan niet betalende, software ter beschikking dat het mogelijk maakt twee afbeeldingen te selecteren waarna de software alle berekeningen geautomatiseerd doet.
+Anderzijds bestaat er software die twee afbeeldingen met elkaar vergelijkt. Dit is interessant voor het beoordelen van \gls{compressie-algoritme} door een \gls{lossless} gecomprimeerde variant te vergelijken met het te testen \gls{lossy} \gls{compressie-algoritme}. De software kan hiervoor gebruik maken van enkele variabelen die eenvoudig te berekenen zijn tussen twee afbeeldingen. Enkele van deze variabelen worden hieronder besproken. Aangezien dit wiskundige berekeningen zijn kunnen deze berekend worden door software van bedrijven als MathWorks\urlcite{mathworks}. Er is ook veel, al dan niet betalende, software ter beschikking die het mogelijk maakt twee afbeeldingen te selecteren waarna de software alle berekeningen geautomatiseerd doet.
 
 \subsection{RMSE}
 \label{sec:kwaliteit-rmse}
 
-De Root Mean Square Error (de wortel van de gemiddelde kwadratische afwijking) stelt de standaarddeviatie van het verschil tussen de gemeten waarde en de voorspelde waarde voor. De voorspelde waarde is in dit geval één pixel van de \gls{lossless} variant en de gemeten waarde de overeenkomende pixel van het te evalueren \gls{afbeeldingsformaat}. Hoe lager de \gls{rmse} van een pixel hoe meer deze op elkaar lijken. Een bepaalde uitkomst voor één situatie zeer goed zijn en voor een andere zeer slecht doordat er geen vaste grenzen zijn en de uitkomst zonder context dus niets zegt. Dit wordt voor alle pixels herhaald. 
+De Root Mean Square Error (de wortel van de gemiddelde kwadratische afwijking) stelt de standaarddeviatie van het verschil tussen de gemeten waarde en de voorspelde waarde voor. De voorspelde waarde is in dit geval één pixel van de \gls{lossless} variant en de gemeten waarde de overeenkomende pixel van het te evalueren \gls{afbeeldingsformaat}. Hoe lager de \gls{rmse} van een pixel hoe meer deze op elkaar lijken. Een bepaalde uitkomst voor een situatie zeer goed zijn en voor een andere zeer slecht doordat er geen vaste grenzen zijn en de uitkomst zonder context dus niets zegt. Dit wordt voor alle pixels herhaald. 
 
-Deze maatstaf werkt zeer goed vanuit een theoretisch standpunt maar is niet representatief naar de perceptie van het menselijk oog. Het menselijke oog neemt de afbeelding echter als één geheel waar en niet pixel per pixel.
+Deze maatstaf werkt zeer goed vanuit een theoretisch standpunt, maar is niet representatief naar de perceptie van het menselijk oog. Het menselijke oog neemt de afbeelding echter als één geheel waar en niet pixel per pixel.
 
 \subsection{SSIM}
 \label{sec:kwaliteit-ssim}
 
 De structural similarity index probeert het probleem met \gls{rmse} op te lossen door een groepering van pixels te vergelijken in plaats van elke pixel individueel. Het vergelijkt zowel de belichtingssterkte, het contrast als de structuur van de groep pixels. Dit leunt meer aan naar hoe het menselijke oog twee afbeeldingen zou vergelijken.
 
-In vergelijking met \gls{rmse} waar de uitkomst niet tussen twee vaste grenzen ligt is de \gls{ssim} altijd uitgedrukt tussen -1 en 1. Dit maakt het makkelijker om te bepalen of het resultaat goed of slecht is zonder context. Een resultaat van \gls{ssim} dat bij -1 aanleunt duid op een groot visueel verschil, een resultaat dat naar 1 aanleunt duid op een bijna identieke match.
+In vergelijking met \gls{rmse}, waar de uitkomst niet tussen twee vaste grenzen ligt, is de \gls{ssim} altijd uitgedrukt tussen -1 en 1. Dit maakt het makkelijker om te bepalen of het resultaat goed of slecht is zonder context. Een resultaat van \gls{ssim} dat bij -1 aanleunt duid op een groot visueel verschil, een resultaat dat naar 1 aanleunt duid op een bijna identieke match.
+
+\subsection{PSNR}
+\label{sec:kwaliteit-psnr}
+
+Peak signal-to-noise ratio is een techniek dat, net zoals de vorige beschreven technieken, via een wiskundige berekening twee afbeeldingen vergelijkt om na te gaan hoeveel de twee afbeeldingen op elkaar lijken.
 
 \subsection{Het probleem met deze formules}
 \label{sec:kwaliteit-tools-probleem}
@@ -49,15 +54,15 @@ Hoewel \gls{ssim} beter aanleunt naar de perceptie van een afbeelding zoals het 
 
 Er kan beroep gedaan worden op tal van instellingen die zich professioneel bezig houden met het evalueren van afbeeldingskwaliteit. Door het werken met een erkende derde partij vermijd je, althans in theorie, dat kwaliteitsbeoordelingen doelbewust beter zijn om je product ten voordele te komen.
 
-\subsection{dxomark}
+\subsection{DxOMark}
 \label{sec:kwaliteit-dxomark}
 
-\Gls{dxomark} is een bedrijf dat voornamelijk gekend is voor het beoordelen van smartphones hun camera's. De duurste toestellen van producenten als Samsung en OnePlus gebruiken deze \gls{dxomark} score vaak als verkooppunt om te aan te tonen hoe goed de camera's van hun toestellen zijn. \Gls{dxomark} evalueert zowel afbeeldingen als video's.
+\Gls{dxomark} is een bedrijf dat voornamelijk gekend is voor het beoordelen van de camera's in smartphones. De duurste toestellen van producenten als Samsung en OnePlus gebruiken deze \gls{dxomark} score vaak als verkooppunt om te aan te tonen hoe goed de camera's van hun toestellen zijn. \Gls{dxomark} evalueert zowel afbeeldingen als video's.
 
 \subsection{Maximum Compression}
 \label{sec:kwaliteit-maximum-compression}
 
-\Gls{maximum-compression} is een instelling die voor verschillende bestandsformaten, waaronder het \gls{afbeeldingsformaat} \gls{jpeg}, nagaat wat de maximaal te bereiken \gls{compressieratio} is. Het maakt hier uitsluiten gebruik van \gls{lossless} \gls{compressie-algoritme}. De gebruikte data en software is publiek beschikbaar wat \Gls{maximum-compression} één van de meest objectieve instellingen op de markt maakt. 
+\Gls{maximum-compression} is een instelling die voor verschillende bestandsformaten, waaronder het \gls{afbeeldingsformaat} \gls{jpeg}, nagaat wat de maximaal te bereiken \gls{compressieratio} is. Het maakt hier uitsluitend gebruik van \gls{lossless} \gls{compressie-algoritme}. De gebruikte data en software is publiek beschikbaar wat \Gls{maximum-compression} één van de meest objectieve instellingen op de markt maakt. 
 
 \subsection{Het probleem met deze instellingen}
 \label{sec:kwaliteit-instellingen-probleem}
