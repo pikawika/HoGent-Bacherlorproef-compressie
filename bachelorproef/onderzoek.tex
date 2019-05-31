@@ -17,7 +17,7 @@ Een objectief onderzoek dat bijvoorbeeld werkt aan de hand van het vergelijken v
 \section{Use case}
 \label{sec:onderzoek-use-case}
 
-De \gls{raw} bestanden gebruikt binnen dit onderzoek zijn aangeleverd door Mayté Bogaert, van MaytéB fotografie. Aangezien zij ook aan het plannen is een online portfolio te bouwen vroeg ze zich af in welk \gls{afbeeldingsformaat} en met welke compressie instellingen ze de afbeelding het best online zet. Deze vraag is dan ook de \gls{use-case} van dit onderzoek.
+De \gls{raw} bestanden gebruikt binnen dit onderzoek zijn aangeleverd door Mayté Bogaert van MaytéB fotografie. Aangezien zij ook aan het plannen is een online portfolio te bouwen vroeg ze zich af in welk \gls{afbeeldingsformaat} en met welke compressie instellingen ze de afbeelding het best online zet. Deze vraag is dan ook de \gls{use-case} van dit onderzoek.
 
 Voor deze \gls{use-case} speelt de gebruikerservaring een zeer belangrijke rol. Als fotografe zijn afbeeldingen je product en moeten potentiële klanten deze dus positief ervaren wanneer ze op je portfolio terecht komen.
 
@@ -318,48 +318,116 @@ Het kan interessant zijn om de verschillende CSV bestanden samen te voegen naar 
 
 \begin{lstlisting}[language=Python]
 import pandas as pd
-images=pd.read_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/images.csv")
-participants=pd.read_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/participants.csv")
-ratings=pd.read_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/ratings.csv")
-merged=merged.merge(images,on="image_id")
-merged=ratings.merge(participants,on="participant_id")
-merged.to_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/merged.csv", index=False)
+images=pd.read_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/csv/images.csv")
+participants=pd.read_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/csv/participants.csv")
+ratings=pd.read_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/csv/ratings.csv")
+merged=images.merge(ratings,on="image_id")
+merged=merged.merge(participants,on="participant_id")
+merged.to_csv("/Users/lennertbontinck/Documents/github/bachelorproef-compressie/resultaten/csv/merged.csv", index=False)
 \end{lstlisting}
 
 De notebook voor het samenvoegen van de CSV bestanden is terug te vinden onder 'resultaten/python/merge/merge-csv.ipynb'.
 
+Onder 'resultaten/python/*' zijn alle gebuikte notebooks voor het maken van de grafieken uit deel \ref{sec:onderzoek-resultaten}
+
 \section{Uitvoering}
 \label{sec:onderzoek-uitvoering}
 
-TODO
-%TODO: onderzoek
+Het onderzoek is gevoerd overheen twee maanden tijd waarbij in totaal 43 mensen hebben deelgenomen. Er wordt meer over de deelnemers gesproken in deel \ref{sec:onderzoek-uitvoering-deelnemers}. Het verloop van het onderzoek is te lezen in deel \ref{sec:onderzoek-evaluatietool-verloop}.
 
-\subsection{Geëvalueerde afbeeldingsformaten}
+Voor de effectieve uitvoering van het onderzoek is met éénzelfde laptop gewerkt: een Apple MacBook Pro Mid 2014 15 inch met retina display. Dit toestel is gekozen voor zijn hoge resolutie scherm (2880x1800 \glspl{pixel}) een een goede representatie van het  sRGB color gamut. Bij elke deelnemer was verzekert dat de volgende zaken overeen kwamen:
+
+\begin{itemize}
+	\item Het testtoestel heeft 100\% batterij en is aangesloten op het netsnoer.
+	
+	\item Het testtoestel zijn helderheid staat op 100\% met alle vormen van kleuraanpassingen uitgeschakeld (night mode,...).
+	
+	\item Het testtoestel zijn toetsenbordverlichting staat uit zodanig dit niet voor reflectie in het scherm kan zorgen.
+	
+	\item Het testtoestel zijn scherm is volledig stof en vlek vrij gemaakt door het gebruik van een microvezeldoek.
+	
+	\item De gebruikte browsers staan klaar met leeggemaakte cache en in incognito modus zonder enige vorm van databesparing aan staat.
+	
+	\item De deelnemer zit in een door led lamp verlichte ruimte waarbij geen directe inval van zonlicht op het scherm is.
+\end{itemize}
+
+Op deze manier zijn zoveel mogelijk randvariabelen geëlimineerd bij het uitvoeren van het onderzoek.
+
+De auteur van deze bachelorproef was ten alle tijden aanwezig in het onderzoek moesten er vragen zijn of er zich problemen voor doen.
+
+\subsection{Geëvalueerde afbeeldingen}
 \label{sec:onderzoek-uitvoering-afbeeldingsformaten}
 
-TODO
-%TODO: onderzoek
+Voor dit onderzoek zijn 15 afbeeldingen geëvalueerd in de volgende vier \glspl{afbeeldingsformaat}: 
+
+\begin{itemize}
+	\item \gls{png}
+	
+	\item \gls{jpeg}
+	
+	\item \gls{jpeg2000}
+	
+	\item \gls{webp}
+\end{itemize}
+
+Er is gebruik gemaakt van een selectie \gls{raw} afbeeldingen aangeleverd door Mayté Bogaert van MaytéB fotografie met volgende kenmerken:
+
+\begin{itemize}
+	\item Getrokken met een 'Nikon D750' toestel en 'TAMRON SP AF 28-75mm F2.8 XR Di LD Aspherical IF Macro A09NII' lens.
+	
+	\item Portretfoto's waarbij het onderwerp in focus is en de achtergrond wazig door het gebruik van een kleine diafragma waarde (grote opening).
+	
+	\item Zowel afbeeldingen die met en zonder flash genomen zijn.
+	
+	\item Zowel afbeeldingen die in een zeer goed verlichte omgeving als donkere omgeving genomen zijn.
+	
+	\item Zowel afbeeldingen met een groot contrast en een klein contrast.
+\end{itemize}
+
+De afbeeldingen zijn allen geëxporteerd vanuit \gls{ps}. Hiervoor is het steeds het \gls{raw} bestand als startbestand gebruikt waarbij de canvasgrootte omgezet is naar 1000 x 1498 \glspl{pixel} (portret) of 1498 x 1000 \glspl{pixel} (landschap). Het exporteren naar \gls{png}, \gls{jpeg}, en \gls{jpeg2000} zitten standaard ingebouwd in deze versie van \gls{ps} (CC 20.0.0). Voor het exporteren naar \gls{webp} is gebruik gemaakt van de gratis \gls{open-source} \gls{plug-in} 'AdobeWebM' door fnordware\urlcite{fnordwarewebm}.
+
+De exacte instellingen gebruikt voor het opslaan van de afbeeldingen is terug te vinden in figuur \ref{fig:bijlages-onderzoek-render}.
 
 \subsection{Deelnemers}
 \label{sec:onderzoek-uitvoering-deelnemers}
 
-TODO
-%TODO: onderzoek
+In totaal hebben er 43 mensen deelgenomen aan het onderzoek waarvan 15 vrouwen en 28 mannen. Zes personen hebben opgegeven dat ze expertise binnen het domein hebben, drie mensen dat ze slechtziend zijn op het moment dat ze het onderzoek afleggen en twee personen hebben aangegeven dat ze kleurenblind zijn. Dit waren beide mannen. Deze gegevens komen overeen met de verwachting uit deel \ref{sec:onderzoek-evaluatietool-verloop-info-participant}. Hoewel er geen perfecte 50/50 verhouding is tussen mannen en vrouwen is deze verhouding aanvaardbaar.
 
-\subsection{Opgeslagen data}
-\label{sec:onderzoek-uitvoering-opgeslagen-data}
-
-TODO
-%TODO: onderzoek
+Alle informatie die in dit deel benoemd is, is te bepalen via de Python scripts te vinden onder 'resultaten/python/statistieken/participants/*'. De gebruikte CSV is te vinden onder 'resultaten/csv/participants.csv'.
 
 \section{Resultaten}
 \label{sec:onderzoek-resultaten}
 
-TODO
-%TODO: onderzoek
+De resultaten zijn na afloop van het onderzoek geëxporteerd naar drie CSV bestanden en samengevoegd naar één CSV bestand zoals uitgelegd in deel \ref{sec:onderzoek-evaluatietool-export}. Alle informatie dat in dit deel toegelicht zal worden, is te bepalen via de Python scripts te vinden onder 'resultaten/python/statistieken/*'. De gebruikte CSV bestanden zjin te vinden onder 'resultaten/csv/*'.
+
+\section{Resultaten lossless afbeeldingsformaten}
+\label{sec:onderzoek-resultaten-lossles}
+
+Zoals verwacht scoort \gls{png} en de \gls{lossless} variant van \gls{webp} en \gls{jpeg2000} zeer goed. In figuur \ref{fig:bijlages-onderzoek-resultaten-png-gem-med} is duidelijk te zien dat \gls{png} voor het kenmerk 'algemene indruk' steeds een mediaan heeft van vijf en het gemiddelde ook dicht bij vijf ligt, de maximumscore. Dit is ook voor kenmerk 'scherpte' en 'kleuren en contrast' het geval. Een bijna identiek resultaat is zichtbaar voor de \gls{lossless} variant van \gls{webp} (figuur \ref{fig:bijlages-onderzoek-resultaten-lossless-webp-gem-med}) en de \gls{lossless} variant van \gls{jpeg2000} (figuur \ref{fig:bijlages-onderzoek-resultaten-lossless-jpeg2000-gem-med}).
+
+Wanneer echter naar de bestandsgrootte wordt gekeken is wel een groot verschil te zien tussen de verschillende \glspl{afbeeldingsformaat}. Dit wordt weergegeven in figuur \ref{fig:onderzoek-resultaten-lossless-sizes}. \Gls{webp} scoort in beide gevallen iets beter dan \gls{jpeg2000} welke, met behoorlijke marge, beter presteert dan \gls{png}.  
+
+\begin{figure}[]
+	\centering
+	\fbox{\includegraphics[width=0.5\linewidth]{img/bijlages/onderzoek/resultaat/lossless/lossless_sizes.png}}
+	\caption{De bestandsgrootte in \glspl{bit} voor de afbeeldingen dat \gls{lossless} gecomprimeerd zijn door zowel \gls{png}, \gls{jpeg2000} en \gls{webp}.}
+	\label{fig:onderzoek-resultaten-lossless-sizes}
+\end{figure}
+
+\section{Resultaten lossy afbeeldingsformaten}
+\label{sec:onderzoek-resultaten-lossy}
+
+Afbeelding één tot en met dertien zijn door \gls{jpeg}, \gls{jpeg2000} en \gls{webp} \gls{lossy} gecomprimeerd. De gebruikte instellingen zijn terug te vinden in figuur \ref{fig:bijlages-onderzoek-render}.
+
+Wat direct opvalt is dat de bestandsgroottes immens verschillen desondanks percentuele instellingen voor kwaliteitsbehoud identiek waren. Dit is weergegeven in figuur \ref{fig:onderzoek-resultaten-lossy-sizes}. Dit maakt het moeilijk om de resultaten voor de \gls{lossy} \glspl{afbeeldingsformaat} te vergelijken. Het verschil in \gls{compressieratio} verschilt namelijk te sterk om per afbeelding de \glspl{afbeeldingsformaat} te vergelijken. 
+
+Er kan echter wel een interessant overzicht gemaakt worden door een verhouding tussen de bestandsgrootte en toegekende scores op te stellen. Deze verhoudingen zijn weergegeven in figuur \ref{fig:onderzoek-resultaten-lossy-ratio-jpf}, \ref{fig:onderzoek-resultaten-lossy-ratio-jpg} en \ref{fig:onderzoek-resultaten-lossy-ratio-webp}. Als we deze figuren vergelijken met de figuren van de bestandsgrootte, en de verhoudingen vergelijken daar waar de bestandsgroottes gelijkaardig zijn, is \gls{webp} de duidelijke winner.
 
 \section{Besluit}
 \label{sec:onderzoek-besluit}
 
-TODO
-%TODO: onderzoek
+Hoewel de gegevens niet ideaal zijn door de onverwachts grote variatie in compressieratio tussen de \glspl{afbeeldingsformaat}, is er wel een duidelijke trend met de beschikbare gegevens. \Gls{webp} behaald voor een zelfde bestandsgrootte een aanzienlijke grotere score dan \gls{jpeg2000} wat op zijn beurt beter presteert dan \gls{jpeg}. Ook valt op dat de scores voor de drie kenmerken bij \gls{webp} zeer gelijkaardig zijn terwijl bij \gls{jpeg} en \gls{jpeg2000} de kleur gemiddeld gezien bij bijna alle afbeeldingen het slechtst scoort, gevolgd door de scherpte. De gegeven algemene score ligt gemiddeld gezien ook hoger dan zowel de score op scherpte als op kleuren en contrast voor de drie \glspl{afbeeldingsformaat}.
+
+Zoals verwacht krijgen de \gls{lossless} \glspl{afbeeldingsformaat} zeer gelijkaardige scores. Dit is dan ook het kenmerk van \gls{lossless}, dat ze een afbeelding produceren zonder kwaliteitsverlies en dus identiek zijn ongeacht het \gls{afbeeldingsformaat}. Hier kan een winnaar dus puur objectief gekozen worden op basis van bestandsgrootte en ook daar wint \gls{webp}. \Gls{jpeg2000} is bij de geteste \gls{lossless} gecomprimeerde afbeeldingen tussen de vijf en tien percent groter dan \gls{webp}. \Gls{png} is aanzienlijk groter dan \gls{lossless} \gls{jpeg2000} en \gls{webp} met een bestandsgrootte van ongeveer 30\% meer dan de andere \glspl{afbeeldingsformaat}.
+
+Voor deze \gls{use-case} kan dus besloten worden gebruik te maken van een manuele implementatie waarbij het picture element gebruikt wordt besproken in \ref{sec:afbeeldingscompressie-implementatie-web}. De volgorde voor ondersteuning is dan \gls{webp}, \gls{jpeg2000} en tot slot \gls{jpeg2000}. Deze afbeeldingen zullen manueel voorzien worden aangezien het gebruik van een \gls{js} \gls{decoder} een dubbele \gls{lossy} \gls{datacompressie} zou veroorzaken wat ongewenste kwaliteitsgevolgen kan hebben. Wanneer een bezoeker op een afbeelding klikt zal een \gls{lossless} \gls{webp} afbeelding geladen en vergroot getoond worden. Indien deze niet ondersteund wordt zal gebruik gemaakt worden van de \gls{js} \gls{decoder} om hem om te zetten naar \gls{png} zoals besproken in deel \ref{sec:afbeeldingscompressie-implementatie-web-automated}. Dit beperkt de overhead voor het creëren van de afbeelding in alle \glspl{afbeeldingsformaat} enigszins. Op Google I/O 2019 is echter ook een nieuwe feature van Google Chrome aangekondigd dat eenvoudig geïmplementeerd kan worden. Door het voorzien van de data tag loading=''lazy'' zal Google Chrome automatisch de afbeeldingen lazy loaden waardoor de gebruiker de webpagina reeds kan zien zonder de afbeeldingen ingeladen zijn. Dit bevorderd de response time enorm.
