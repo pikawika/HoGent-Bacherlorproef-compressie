@@ -5,23 +5,23 @@
 \chapter{Inleiding}
 \label{ch:inleiding}
 
-\Gls{datacompressie}, en compressie in het algemeen is niets nieuw. Integendeel, het is één van de oudste concepten binnen IT en tot op heden van fundamenteel belang voor zowat alle IT-toepassingen. \Glspl{compressie-algoritme} zorgen ervoor dat er veelvouden sneller en goedkoper gewerkt kan worden. \gls{datacompressie} en de altijd groeiende waaier aan \glspl{compressie-algoritme} maken het ook mogelijk om data te verwerken waar voorheen geen beginnen aan was. Denk hierbij bijvoorbeeld aan recente doorbraken binnen \gls{dna-compressie} die het mogelijk maken steeds meer onderzoeken met betrekking tot het menselijk genoom uit te voeren.
+\Gls{datacompressie}, en compressie in het algemeen is niets nieuw. Integendeel, het is één van de oudste concepten binnen IT en tot op heden van fundamenteel belang voor zowat alle IT-toepassingen. \Glspl{compressie-algoritme} zorgen ervoor dat er veel sneller en goedkoper gewerkt kan worden. \Gls{datacompressie} en de altijd groeiende waaier aan \glspl{compressie-algoritme} maken het ook mogelijk om data te verwerken waar voorheen geen beginnen aan was. Denk hierbij bijvoorbeeld aan recente doorbraken binnen \gls{dna-compressie} die het mogelijk maken steeds meer onderzoeken met betrekking tot het menselijk genoom uit te voeren.
 
-Er zijn reeds tal van uitgebreide en professionele papers geschreven rond zowel \gls{datacompressie} als \gls{afbeeldingscompressie} en \gls{videocompressie} in het bijzonder. Deze onderwerpen zijn immers van fundamenteel belang zijn binnen IT. De focus van deze paper ligt dan ook niet op het herschrijven van papers die reeds bestaan maar aan het maken van een nuttig document voor iedereen binnen de IT-wereld. 
+Er zijn reeds tal van uitgebreide en professionele papers geschreven rond zowel \gls{datacompressie} als \gls{afbeeldingscompressie} en \gls{videocompressie} in het bijzonder. Deze onderwerpen zijn immers van fundamenteel belang binnen IT. De focus van deze paper ligt dan ook niet op het herschrijven van papers die reeds bestaan, maar aan het maken van een nuttig document voor iedereen binnen de IT-wereld. 
 
-Door de verworven kennis zal je als programmeur, content creator of eender welk andere belanghebber inzicht krijgen hoe \gls{datacompressie} ontstaan is, hoe het werkt en waarom het zo belangrijk is. Verschillende mogelijkheden voor \gls{afbeeldingscompressie} en \gls{videocompressie} zullen besproken worden, samen met hen voordelen en nadelen. Dit zal inzicht geven tot waarom het zo belangrijk is voor de juiste video \glspl{codec} en \glspl{afbeeldingsformaat} te kiezen.
+Door de verworven kennis zal je als programmeur, content creator of eender welk andere belanghebber inzicht krijgen hoe \gls{datacompressie} ontstaan is, hoe het werkt en waarom het zo belangrijk is. Verschillende mogelijkheden voor \gls{afbeeldingscompressie} en \gls{videocompressie} zullen besproken worden, samen met hun voordelen en nadelen. Dit zal inzicht geven tot waarom het zo belangrijk is om voor de juiste video \glspl{codec} en \glspl{afbeeldingsformaat} te kiezen.
 
-Er zal een onderzoek uitgevoerd worden welk \gls{afbeeldingsformaat} het best is voor een bepaalde \gls{use-case}: portret foto's in de portfolio van een fotografe. De hiervoor ontwikkelde en gratis te gebruiken open source  \gls{afbeeldingsevaluatietool} zal de mogelijkheid bieden dit onderzoek te reproduceren of een gelijkaardig onderzoek met andere \glspl{afbeeldingsformaat}, voor een andere \gls{use-case} of met andere ondervraagde kenmerken uit te voeren.
+Er zal een onderzoek uitgevoerd worden welk \gls{afbeeldingsformaat} het best is voor een bepaalde \gls{use-case}: portret foto's in de portfolio van een fotografe. De hiervoor ontwikkelde en gratis te gebruiken open source  \gls{afbeeldingsevaluatietool} zal de mogelijkheid bieden dit onderzoek te reproduceren of een gelijkaardig onderzoek met andere \glspl{afbeeldingsformaat}, voor een andere \gls{use-case} of met andere ondervraagde kenmerken, uit te voeren.
 
 \section{Probleemstelling}
 \label{sec:probleemstelling}
 \Gls{datacompressie}, \glspl{afbeeldingsformaat} en video \glspl{codec} spelen een belangrijke rol voor vele werknemers binnen de IT-sector. De kennis van deze onderwerpen is bij velen echter ondermaats. 
 
-Dit is deels te weiden aan vele opleidingsinstituten die niet dieper ingaan op \gls{datacompressie} binnen opleidingen als Toegepaste Informatica, Communicatie Management en Digital Media Manager.
+Dit is deels te wijten aan vele opleidingsinstellingen die niet dieper ingaan op \gls{datacompressie} binnen opleidingen als Toegepaste Informatica, Communicatie Management en Digital Media Manager.
 
-Anderzijds is de beschikbare informatie veelal te complex uitgelegd dat een doorsnee lezer al snel afhaakt. Ook focussen veel van deze documenten zich op één specifiek onderdeel binnen \gls{datacompressie} zoals het gedetailleerd uitleggen van één \gls{afbeeldingsformaat} waardoor een globaal beeld moeilijk te scheppen valt.
+Anderzijds is de beschikbare informatie veelal te complex uitgelegd zodat een doorsnee lezer al snel afhaakt. Ook focussen veel van deze documenten zich op één specifiek onderdeel binnen \gls{datacompressie}, zoals het gedetailleerd uitleggen van één \gls{afbeeldingsformaat}, waardoor een globaal beeld moeilijk te scheppen valt.
 
-Het is juist hier waar deze paper beter wilt doen. Dit wordt bereikt door het gebruik van een brede waaier van besproken \glspl{afbeeldingsformaat} en video \glspl{codec}, een woordenlijst (hoofdstuk \ref{ch:termen}), en de nodige theoretische als praktische uitleg gevalideerd door vakexpert Tom Paridaens.
+Het is juist hier waar deze paper beter wilt doen. Dit wordt bereikt door het gebruik van een brede waaier van besproken \glspl{afbeeldingsformaat} en video \glspl{codec}, een woordenlijst (hoofdstuk \ref{ch:termen}), en de nodige theoretische en praktische uitleg gevalideerd door vakexpert Tom Paridaens.
 
 Deze bachelorproef schept inzicht over \gls{datacompressie}, het gebruik en de implementatie en voorziet de nodige basiskennis om eventueel verder onderzoek te voeren.
 
@@ -40,36 +40,33 @@ Deze bachelorproef tracht een antwoord te geven op de volgende vragen:
 
 Hierdoor zou de hoofdonderzoeksvraag moeten kunnen beantwoord worden, zijnde:
 \begin{itemize}
-	\item Waarom moet er stilgestaan worden bij het gebruiken van \glspl{compressie-algoritme}, hoe kies je een geschikt \gls{compressie-algoritme} voor een bepaalde \gls{use-case} en hoe implementeer je dit het best.
+	\item Waarom moet er stilgestaan worden bij het gebruiken van \glspl{compressie-algoritme}, hoe kies je een geschikt \gls{compressie-algoritme} voor een bepaalde \gls{use-case} en hoe implementeer je dit best.
 \end{itemize}
 
 \section{Onderzoeksdoelstelling}
 \label{sec:onderzoeksdoelstelling}
 
-De doelstelling van deze bachelorproef is het vormen van een nuttig document voor het brede scala belanghebbenden naar de onderzoeksvragen (zie \ref{sec:onderzoeksvragen}). Enerzijds is dit document dus een vergelijkende studie tussen verschillende video \glspl{codec} en \glspl{afbeeldingsformaat} waardoor het ook een verslag vormt met tal van aanbevelingen. Anderzijds zorgt de technische uitleg en basic proof-of-concept \gls{compressietool} samen met de open source \gls{afbeeldingsevaluatietool} voor de nodige kennis en middelen om verder onderzoek te richten.
-
-%TODO: verder 
-%Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv. om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+De doelstelling van deze bachelorproef is het vormen van een nuttig document voor het brede scala belanghebbenden naar de onderzoeksvragen (zie \ref{sec:onderzoeksvragen}). Enerzijds is dit document dus een vergelijkende studie tussen verschillende video \glspl{codec} en \glspl{afbeeldingsformaat} waardoor het ook een verslag vormt met tal van aanbevelingen. Anderzijds zorgt de technische uitleg en basic proof-of-concept \gls{compressietool} samen met de open source \gls{afbeeldingsevaluatietool} voor de nodige kennis en middelen om verder onderzoek te verrichten.
 
 \section{Opzet van deze bachelorproef}
 \label{sec:opzet-bachelorproef}
 \subsection{Deel 1: situering en literatuurstudie}
 \label{sec:opzet-bachelorproef-deel-1}
 
-Deze paper zal zich in het eerste deel focussen op het toelichten van de belangrijke termen binnen \gls{datacompressie}. In hoofdstuk \ref{ch:termen} is een lijst met belangrijke termen te vinden die binnen \gls{datacompressie} en deze paper vaak voorkomen. Doorheen deze paper zullen tal van referenties naar deze termen gelegd worden. 
+Deze paper zal zich in het eerste deel focussen op het toelichten van de belangrijkste termen binnen \gls{datacompressie}. In hoofdstuk \ref{ch:termen} is een lijst met belangrijke termen te vinden die binnen \gls{datacompressie} en deze paper vaak voorkomen. Doorheen deze paper zullen tal van referenties naar deze termen gemaakt worden. 
 
 Hoofdstuk \ref{ch:methodologie} licht de gebruikte methodologie voor deze paper toe. Hieruit wordt duidelijk dat deze paper zo objectief mogelijk is opgesteld met een focus op duidelijkheid en reproduceerbaarheid.
 
-Hoofdstuk \ref{ch:literatuurstudie} zal de nodige basis voor het begrijpen van deze bachelorproef toelichten. Ook enkele primitieve \glspl{compressie-algoritme} zullen besproken worden alsook de theoretische werking ervan in deel \ref{sec:primitieve-technieken-voorbeeld}.
-%todo: link naar voorbeeld en welke manieren
+Hoofdstuk \ref{ch:literatuurstudie} zal de nodige basis voor het begrijpen van deze bachelorproef toelichten. Ook enkele van de eerste \glspl{compressie-algoritme} zullen besproken worden alsook de theoretische werking ervan in deel \ref{sec:primitieve-technieken-voorbeeld}. De besproken \gls{compressie-algoritme} in dit deel zijn dit \gls{rle-long} en \gls{huffman-coding}, deze worden ook gebruikt voor het maken van de \gls{compressietool} uit hoofdstuk \ref{ch:compressietool}.
 
 \subsection{Deel 2: datacompressietool ontwikkelen}
 \label{sec:opzet-bachelorproef-deel-2}
  
  In het tweede deel zal een basis \gls{compressietool} programmatisch geïmplementeerd worden om de theorie uit het eerste deel in praktijk te brengen.
  
-Hoofdstuk \ref{ch:compressietool} is hierdoor gericht voor zowel technische lezers als programmeurs. Er is echter telkens voldoende randinformatie gegeven zodanig ook de minder technische lezers een blik achter de schermen kunnen verkrijgen.
- %TODO: welke taal tool gemaakt is en wat deze juist doet etc
+Hoofdstuk \ref{ch:compressietool} is hierdoor gericht aan zowel technische lezers als programmeurs. Er is echter telkens voldoende randinformatie gegeven zodat ook de minder technische lezers een blik achter de schermen kunnen verkrijgen.
+
+Deze \gls{compressietool} en de achterliggende \glspl{compressie-algoritme} zijn geschreven in \gls{php}. Er is een grafische interface voorzien die gebruik maakt van \gls{html}, \gls{css}, \gls{js} en \gls{bootstrap}. De geïmplementeerde \glspl{compressie-algoritme} zijn twee varianten van \gls{rle-long} en een uitwerking van \gls{huffman-coding}.
 
 \subsection{Deel 3: afbeelding- en videocompressie}
 \label{sec:opzet-bachelorproef-deel-3}
@@ -85,14 +82,11 @@ In hoofdstuk \ref{ch:videocompressie} zal er verder ingegaan worden op de gekend
 
 In het vierde deel wordt besproken hoe compressiemethoden voor video's en afbeeldingen geëvalueerd worden. Hoofdstuk \ref{ch:kwaliteit} zal enkele veel gebruikte tools en methoden voor objectieve en subjectieve vergelijkingen toelichten. Ook instellingen die zich bezig houden met het evalueren van afbeeldingskwaliteit en videokwaliteit zullen besproken worden en hoe de resultaten soms met een korrel zout genomen moeten worden.
 
-In hoofdstuk \ref{ch:onderzoek} wordt een subjectieve test voor het evalueren van afbeeldingskwaliteit besproken. Deze test focust zich op portretfoto's die weergegeven zullen worden op een online portfolio van een fotografe. Hierbij zullen enkele van de besproken \glspl{afbeeldingsformaat} uit hoofdstuk \ref{ch:afbeeldingscompressie} tegen elkaar concurreren. De gebruikte \gls{afbeeldingsevaluatietool} is voor deze paper opgesteld en is gratis \gls{open-source} toegankelijk gesteld wat het eenvoudig mogelijk maakt om een gelijkaardig onderzoek uit te voeren.
-%TODO: in staat stelllen als bv prog of content zelf kiezen welk gebruiken
+In hoofdstuk \ref{ch:onderzoek} wordt een subjectieve onderzoek voor het evalueren van afbeeldingskwaliteit besproken. Dit onderzoek focust zich op portretfoto's die weergegeven zullen worden op een online portfolio van een fotografe. Hierbij zullen enkele van de besproken \glspl{afbeeldingsformaat} uit hoofdstuk \ref{ch:afbeeldingscompressie} tegen elkaar concurreren. De gebruikte \gls{afbeeldingsevaluatietool} is voor deze paper opgesteld en is gratis \gls{open-source} toegankelijk gesteld, wat het eenvoudig mogelijk maakt om een gelijkaardig onderzoek uit te voeren. Dit moet de lezer in staat stellen om samen met de verworven kennis van het voorgaande deel een gegronde keuze te kunnen maken tussen de verschillende \glspl{compressie-algoritme} voor een bepaalde \gls{use-case}.
 
 \subsection{Deel 5: uitdagingen en conclusie}
 \label{sec:opzet-bachelorproef-deel-5}
 
 In het vijfde deel zullen de huidige uitdagingen van \gls{datacompressie} kort toegelicht worden. Zo zal hoofdstuk \ref{ch:uitdagingen} een beeld geven van de taken die mensen als Tom Paridaens, co-promoter voor deze paper, krijgen.
-%TODO: copromoter zijn job en eerbetoon vermelden
 
-In hoofdstuk \ref{ch:conclusie} wordt kort teruggeblikt op de paper en worden enkele besluiten uit het onderzoek van hoofdstuk \ref{ch:onderzoek} besproken. Daarbij wordt ook een aanzet gegeven om zelf meer na te denken over het gebruik van \gls{datacompressie} en bepaalde  \glspl{codec} in projecten, of nog beter, zelf een onderzoek uit te voeren!
-%TODO: lezer aanzetten meer etc
+In hoofdstuk \ref{ch:conclusie} worden de onderzoeksvragen herhaalt en nagegaan op welke manier deze paper een antwoord heeft geboden op die onderzoeksvragen. In deel \ref{sec:conclussie-uitbreidingen} wordt kritisch teruggeblikt op deze bachelorproef en vermeld waar uitbreidingen voor de bachelorproef mogelijk zijn. Dit moet de lezer stimuleren om verder opzoekingswerk omtrent de interessante wereld van \gls{datacompressie} te verrichten.

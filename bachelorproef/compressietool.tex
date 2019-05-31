@@ -18,7 +18,7 @@ Enkele screenshots van de \gls{afbeeldingsevaluatietool} zijn raadpleegbaar in d
 \section{Gebruikte technologie}
 \label{sec:compressietool-gebruikte-technologie}
 
-Deze \gls{compressietool} en de achterliggende \glspl{compressie-algoritme} zijn geschreven in \gls{php}. Er is een grafische interface voorzien die gebruik maakt van \gls{html}, \gls{css}, \gls{js} en \gls{bootsrap}. Dit maakt het mogelijk de tool eenvoudig lokaal te runnen door het gebruik van een webserver omgeving als \gls{xampp} of hem online te zetten op een \gls{hosting} platform.
+Deze \gls{compressietool} en de achterliggende \glspl{compressie-algoritme} zijn geschreven in \gls{php}. Er is een grafische interface voorzien die gebruik maakt van \gls{html}, \gls{css}, \gls{js} en \gls{bootstrap}. Dit maakt het mogelijk de tool eenvoudig lokaal te runnen door het gebruik van een webserver omgeving als \gls{xampp} of hem online te zetten op een \gls{hosting} platform.
 
 Er is geen gebruik gemaakt van \glspl{library} voor de \glspl{compressie-algoritme} te voorzien, deze zijn volledig zelf geïmplementeerd aan de hand van de besproken theorie in hoofdstuk \ref{ch:literatuurstudie} en standaard \gls{php} functies.
 
@@ -27,7 +27,7 @@ Er zit een minimale vorm van validatie in de \gls{compressietool} om na te gaan 
 \section{Run length encoding - lang}
 \label{sec:compressietool-rlea}
 
-De gebruiker voorziet een tekstbestand, dat enkel waarden bevat die voorgesteld kunnen worden door \gls{ascii} met uitzondering van de cijfers uit ons talstelsel, en klikt op de knop 'bestand encoderen' weergegeven op afbeelding \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu een door \gls{rle-long} gecomprimeerde \gls{lbrlea} versie van de tekst in dat bestand downloaden via het scherm weergeven in afbeelding \ref{fig:bijlages-screenshot-datacompressietool-encoded}. Deze versie van \gls{rle-long} in de \gls{compressietool} voorziet voor elk karakter de opeenvolgende frequentie links van het karakter. De theoretische werking van \gls{rle-long} is besproken in deel \ref{sec:primitieve-technieken-voorbeeld-rle}.
+De gebruiker voorziet een tekstbestand, dat enkel waarden bevat die voorgesteld kunnen worden door \gls{ascii} met uitzondering van de cijfers uit ons talstelsel, en klikt op de knop 'bestand encoderen' weergegeven op figuur \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu een door \gls{rle-long} gecomprimeerde \gls{lbrlea} versie van de tekst in dat bestand downloaden via het scherm weergeven in figuur \ref{fig:bijlages-screenshot-datacompressietool-encoded}. Deze versie van \gls{rle-long} in de \gls{compressietool} voorziet voor elk karakter de opeenvolgende frequentie links van het karakter. De theoretische werking van \gls{rle-long} is besproken in deel \ref{sec:primitieve-technieken-voorbeeld-rle}.
 
 Achterliggend wordt hiervoor één \gls{php} functie aangesproken: 'rle\_encode\_all' voorzien in 'algoritmes/rle.php'. De code van deze functie is hieronder weergegeven.
 
@@ -67,23 +67,23 @@ return [$output, strlen($input), strlen($output)];
 }
 \end{lstlisting}
 
-Op regel twee in deze functie is de variabele voor het minimum aantal matches (de minimum run) in te stellen. Deze is standaard ingesteld op nul wat wilt zeggen dat elk karakter (run value) voorafgegaan wordt door de run. Dit gaat de bestandsgrootte te min, doordat het probleem beschreven in deel \ref{sec:primitieve-technieken-voorbeeld-rle-probleem-1} kan voorkomen, maar is hoe de originele uitwerking van \gls{rle-long} is geschreven. Deze kan op één gezet worden om geen run te voorzien links van de run value indien deze gelijk is aan nul. Indien deze variabele op nul staat is het aantal karakters na de \gls{encoding} maximaal dubbel zo veel als voor de \gls{encoding}. Indien deze op nul staat is het maximum aantal karakters na de \gls{encoding} evenveel als voor de \gls{encoding}.
+Op regel twee in deze functie is de variabele voor het minimum aantal matches (de minimum run) in te stellen. Deze is standaard ingesteld op nul wat wilt zeggen dat elk karakter (run value) voorafgegaan wordt door de run. Dit gaat de bestandsgrootte te min, doordat het probleem beschreven in deel \ref{sec:primitieve-technieken-voorbeeld-rle-probleem-1} kan voorkomen, maar is hoe de originele uitwerking van \gls{rle-long} is geschreven. Deze kan op één gezet worden om geen run te voorzien links van de run value indien deze gelijk is aan nul. Indien deze variabele op nul staat is het aantal karakters na de \gls{encoding} maximaal dubbel zoveel als voor de \gls{encoding}. Indien deze op nul staat, is het maximum aantal karakters na de \gls{encoding} evenveel als voor de \gls{encoding}.
 
-Op regel vier wordt de controle uitgevoerd of de input niet leeg is, indien dit het geval is wordt op regels vijf een lege \gls{string} als antwoord gestuurd. Regel acht tot elf voorzien de nodige variabelen.
+Op regel vier wordt de controle uitgevoerd of de input niet leeg is. Indien dit het geval is wordt op regel vijf een lege \gls{string} als antwoord gestuurd. Regel acht tot elf voorzien de nodige variabelen.
 
-Regel 13 tot 23 worden voor elk karakter van de input \gls{string} uitgevoerd. In deze herhaling wordt op regel 13 nagegaan of de vorige letter gelijk is aan de huidige, indien dit het geval is wordt op regel 14 de huidige frequentie (run) voor het huidige karakter (run value) met één verhoogd. 
+Regel 13 tot 23 worden voor elk karakter van de input \gls{string} uitgevoerd. In deze herhaling wordt op regel 13 nagegaan of de vorige letter gelijk is aan de huidige. Indien dit het geval is, wordt op regel 14 de huidige frequentie (run) voor het huidige karakter (run value) met één verhoogd. 
 
-Indien de vorige letter niet gelijk is aan de huidige letter wordt op regel 16 gecontroleerd of de voorgaande letter reeds geïnitialiseerd was en of de run hoger is dan het ingestelde minimum. Indien dit het geval is wordt op regel 17 de run toegevoegd aan de output \gls{string}, vervolgens wordt op regel 19 de run value toegevoegd aan de output \gls{string}. De run wordt dan ook teruggezet naar één en de run value wordt ingesteld naar het nieuwe karakter.
+Indien de vorige letter niet gelijk is aan de huidige letter wordt op regel 16 gecontroleerd of de voorgaande letter reeds geïnitialiseerd was en of de run hoger is dan het ingestelde minimum. Indien dit het geval is, wordt op regel 17 de run toegevoegd aan de output \gls{string}, vervolgens wordt op regel 19 de run value toegevoegd aan de output \gls{string}. De run wordt dan ook teruggezet naar één en de run value wordt ingesteld naar het nieuwe karakter.
 
 Na de herhaling wordt de huidige run (indien hoger dan de ingestelde minimum) en run value nog aan de output \gls{string} toegevoegd. Op regel 32 wordt deze input \gls{string} samen met de lengte van de originele \gls{string} en de lengte van de gecomprimeerde \gls{string} als antwoord verstuurd.
 
-De logica in deze code maakt geen gebruik van \gls{php} exclusieve functies en zou dus voor de meeste programmeertalen moeten te maken zijn.
+De logica in deze code maakt geen gebruik van \gls{php} exclusieve functies en zou dus in de meeste programmeertalen na te maken moeten zijn.
 
 
 \section{Run length encoding - kort}
 \label{sec:compressietool-rle}
 
-De gebruiker voorziet een tekstbestand, dat enkel waarden bevat die voorgesteld kunnen worden door \gls{ascii} met uitzondering van de cijfers uit ons talstelsel, en klikt op de knop 'bestand encoderen' weergegeven op afbeelding \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu een door \gls{rle-long} gecomprimeerde \gls{lbrle} versie van de tekst in dat bestand downloaden via het scherm weergeven in afbeelding \ref{fig:bijlages-screenshot-datacompressietool-encoded}. Deze versie van \gls{rle-long} in de \gls{compressietool} voorziet links van elke run value de run indien deze groter is dan nul. De theoretische werking van \gls{rle-long} is besproken in deel \ref{sec:primitieve-technieken-voorbeeld-rle}.
+De gebruiker voorziet een tekstbestand, dat enkel waarden bevat die voorgesteld kunnen worden door \gls{ascii} met uitzondering van de cijfers uit ons talstelsel, en klikt op de knop 'bestand encoderen' weergegeven op figuur \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu een door \gls{rle-long} gecomprimeerde \gls{lbrle} versie van de tekst in dat bestand downloaden via het scherm weergeven in figuur \ref{fig:bijlages-screenshot-datacompressietool-encoded}. Deze versie van \gls{rle-long} in de \gls{compressietool} voorziet links van elke run value de run indien deze groter is dan nul. De theoretische werking van \gls{rle-long} is besproken in deel \ref{sec:primitieve-technieken-voorbeeld-rle}.
 
 Achterliggend wordt hiervoor één \gls{php} functie aangesproken die veel korter is dan de optie besproken in deel \ref{sec:compressietool-rlea}: 'rle\_encode' voorzien in 'algoritmes/rle.php'. De code van deze functie is hieronder weergegeven en komt overeen met de output van de functie uit deel \ref{sec:compressietool-rlea} wanneer de minimum run value zou ingesteld zijn op één.
 
@@ -102,7 +102,7 @@ Deze functie maakt gebruik van een \gls{php} exclusieve functie die in staat is 
 \section{Run length decoding}
 \label{sec:compressietool-rle-decoding}
 
-De gebruiker voorziet een \gls{lbrlea} of \gls{lbrle} bestand, dat voordien door de \gls{compressietool} gemaakt is, en klikt op de knop 'RLE decoderen' weergegeven op afbeelding \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu de inhoud van het originele tekstbestand downloaden via het scherm weergeven in afbeelding \ref{fig:bijlages-screenshot-datacompressietool-decoded}.
+De gebruiker voorziet een \gls{lbrlea} of \gls{lbrle} bestand, dat voordien door de \gls{compressietool} gemaakt is, en klikt op de knop 'RLE decoderen' weergegeven op figuur \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu de inhoud van het originele tekstbestand downloaden via het scherm weergeven in figuur \ref{fig:bijlages-screenshot-datacompressietool-decoded}.
 
 Achterliggend wordt hiervoor één \gls{php} functie aangesproken: 'rle\_decode' voorzien in 'algoritmes/rle.php'. De code van deze functie is hieronder weergegeven.
 
@@ -114,14 +114,14 @@ function rle_decode($input) {
 }
 \end{lstlisting}
 
-Deze functie maakt gebruik van dezelfde \gls{php} exclusieve functie uit deel \ref{sec:compressietool-rle}. Deze gaat op zoek naar een run gevolgd door de run value (regel twee) en vervangt de match door de nodige hoeveelheid karakters. (regel vier).
+Deze functie maakt gebruik van dezelfde \gls{php} exclusieve functie uit deel \ref{sec:compressietool-rle}. Deze gaat op zoek naar een run gevolgd door de run value (regel twee) en vervangt de match door de nodige hoeveelheid karakters (regel vier).
 
-Indien de gebruikte preg\_replace\_callback of een gelijkaardige functie niet beschikbaar is in gewenste programmeertaal kan de \gls{string} karakter per karakter overlopen worden. Wanneer een numerieke waarde ontdekt wordt is er sprake van de run en is het volgende karakter de run value. met een simpele lus kan voor run keer run value toegevoegd worden aan de output string in plaats van de run en run value.
+Indien de gebruikte preg\_replace\_callback of een gelijkaardige functie niet beschikbaar is in gewenste programmeertaal kan de \gls{string} karakter per karakter overlopen worden. Wanneer een numerieke waarde ontdekt wordt, is er sprake van de run en is het volgende karakter de run value. Met een simpele lus kan voor run keer run value toegevoegd worden aan de output string in plaats van de run en run value.
 
 \section{Huffman encoding}
 \label{sec:compressietool-huffman-encoding}
 
-De gebruiker voorziet een tekstbestand, dat enkel waarden bevat die voorgesteld kunnen worden door \gls{ascii} met uitzondering van de cijfers uit ons talstelsel, en klikt op de knop 'bestand encoderen' weergegeven op afbeelding \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu een door \gls{huffman-coding} gecomprimeerde \gls{lbhuffman} versie van de tekst in dat bestand downloaden via het scherm weergeven in afbeelding \ref{fig:bijlages-screenshot-datacompressietool-encoded}.
+De gebruiker voorziet een tekstbestand, dat enkel waarden bevat die voorgesteld kunnen worden door \gls{ascii} met uitzondering van de cijfers uit ons talstelsel, en klikt op de knop 'bestand encoderen' weergegeven op figuur \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu een door \gls{huffman-coding} gecomprimeerde \gls{lbhuffman} versie van de tekst in dat bestand downloaden via het scherm weergeven in figuur \ref{fig:bijlages-screenshot-datacompressietool-encoded}.
 
 Achterliggend wordt hiervoor één \gls{php} functie aangesproken: 'huffman\_encode' voorzien in 'algoritmes/huffman.php'. Deze functie roept een andere functie op: 'recursive\_huffman\_lookup\_table\_generator' voorzien in 'algoritmes/huffman.php'.  De code van deze functies is hieronder weergegeven.
 
@@ -162,7 +162,7 @@ Van regel één tot en met drie worden de nodige variabelen geïnitialiseerd. De
 
 Vervolgens wordt van regel 14 tot 19 een lus gemaakt zolang er meerdere bomen aanwezig zijn waarin de twee kleinste bomen samen genomen worden en één nieuwe boom maken zoals besproken in deel \ref{sec:primitieve-technieken-voorbeeld-huffman-encoding-2}.
 
-De \gls{lookup-table} wordt aangemaakt door een \gls{recursieve-functie} die aangeroepen wordt op regel 22 en verder in dit document besproken wordt. De \gls{lookup-table} wordt als variabele meegeven in deze functie op een manier zodanig de originele variabele gebruikt kan worden en doorheen de iteraties éénzelfde \gls{lookup-table} aangepast wordt.
+De \gls{lookup-table} wordt aangemaakt door een \gls{recursieve-functie} die aangeroepen wordt op regel 22 en verder in dit document besproken wordt. De \gls{lookup-table} wordt als variabele meegeven in deze functie op een manier zodat de originele variabele gebruikt kan worden en doorheen de iteraties éénzelfde \gls{lookup-table} aangepast wordt.
 
 Uiteindelijk wordt aan de hand van de \gls{lookup-table} elk karakter vervangen door zijn prefix code in de lus van regel 25 tot 27. De \gls{string} die deze lus genereert wordt dan teruggestuurd als antwoord samen met de \gls{lookup-table}, de bestandsgrootte in \gls{bit} van de originele \gls{string} en de bestandsgrootte in \gls{bit} van de gecomprimeerde output \gls{string}.
 
@@ -185,14 +185,14 @@ function recursive_huffman_lookup_table_generator(&$lookup_table, $karakter, $pa
 
 Deze \gls{recursieve-functie} wordt gebruikt voor het maken van de \gls{lookup-table}. De \gls{array} wordt aanzien als boom en zolang een knoop kinderen heeft (array in array - if op regel twee en zeven) moet er dieper gegaan worden in de boom tot een blad gevonden wordt. Een stap naar links wordt daarbij als nul opgeslagen en een stap naar rechts als één. 
 
-Van zodra een blad gevonden is wordt het pad naar dat blad en het karakter van dat blad bijgehouden in de \gls{lookup-table}. Dit gebeurd in de else van regel vier tot zes en regel tien tot twaalf.
+Van zodra een blad gevonden is, wordt het pad naar dat blad en het karakter van dat blad bijgehouden in de \gls{lookup-table}. Dit gebeurt in de else van regel vier tot zes en regel tien tot twaalf.
 
 Er moet geen waarde teruggegeven worden aangezien de \gls{lookup-table} die meegeven wordt als parameter een verwijzing is naar de originele \gls{lookup-table} waardoor deze gelijk blijven tussen de functie en de oproepende functie.
 
 \section{Huffman decoding}
 \label{sec:compressietool-huffman-decoding}
 
-De gebruiker voorziet een \gls{lbhuffman} bestand, dat voordien door de \gls{compressietool} gemaakt is, en klikt op de knop 'Huffman decoderen' weergegeven op afbeelding \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu de inhoud van het originele tekstbestand downloaden via het scherm weergeven in afbeelding \ref{fig:bijlages-screenshot-datacompressietool-decoded}.
+De gebruiker voorziet een \gls{lbhuffman} bestand, dat voordien door de \gls{compressietool} gemaakt is, en klikt op de knop 'Huffman decoderen' weergegeven op figuur \ref{fig:bijlages-screenshot-datacompressietool-index}. De gebruiker kan nu de inhoud van het originele tekstbestand downloaden via het scherm weergeven in figuur \ref{fig:bijlages-screenshot-datacompressietool-decoded}.
 
 Achterliggend wordt hiervoor één \gls{php} functie aangesproken: 'huffman\_decode' voorzien in 'algoritmes/huffman.php'. De code van deze functie is hieronder weergegeven.
 
@@ -220,18 +220,18 @@ function huffman_decode($input, $lookup_table) {
 
 Van regel twee tot vijf worden de variabelen klaargemaakt voor gebruik. 
 
-Van regel zeven tot zestien worden alle \glspl{bit} van de input string overlopen. Op regel acht wordt eerst de huidige \gls{bit} toegevoegd aan de huidige volgorde van \glspl{bit} sinds een match in de \gls{lookup-table}. Dan wordt aan de hand van een tweede lus van regel negen tot vijftien gekeken of de huidige volgorde van \glspl{bit} zonder match overeenkomt met een \gls{prefix-code} uit de \gls{lookup-table}. Indien dit het geval is wordt het bijhorend karakter aan de output \gls{string} toegevoegd en de huidige volgorde van \glspl{bit} zonder match gereset. 
+Van regel zeven tot zestien worden alle \glspl{bit} van de input string overlopen. Op regel acht wordt eerst de huidige \gls{bit} toegevoegd aan de huidige volgorde van \glspl{bit} sinds een match in de \gls{lookup-table}. Dan wordt aan de hand van een tweede lus van regel negen tot vijftien gekeken of de huidige volgorde van \glspl{bit} zonder match overeenkomt met een \gls{prefix-code} uit de \gls{lookup-table}. Indien dit het geval is, wordt het bijhorend karakter aan de output \gls{string} toegevoegd en de huidige volgorde van \glspl{bit} zonder match gereset. 
 
 Deze output \gls{string} wordt uiteindelijk teruggestuurd op regel 18.
 
 \section{Opslaan van de gecomprimeerde bestanden}
 \label{sec:compressietool-opslaan}
 
-De besproken functies in de voorgaande delen slaan geen bestanden op maar sturen steeds het gecomprimeerde bericht als variabele terug. Het opslaan van deze variabelen gebeurd in 'index.php' waar deze functies ook aangesproken worden. 
+De besproken functies in de voorgaande delen slaan geen bestanden op, maar sturen steeds het gecomprimeerde bericht als variabele terug. Het opslaan van deze variabelen gebeurt in 'index.php' waar deze functies ook aangesproken worden. 
 
-Voor de functies die gebruik maken \gls{rle-long} besproken in deel \ref{sec:compressietool-rlea} en \ref{sec:compressietool-rle} kan dit eenvoudig door de \gls{string} op te slaan als een tekstbestand. De extensie hiervan wordt dan ingesteld als respectievelijk \gls{lbrlea} of \gls{lbrle}. De winst reflecteert zich hierbij dan ook direct op de bestandsgrootte van het gecomprimeerde bestand.
+Voor de functies die gebruik maken van \gls{rle-long}, besproken in deel \ref{sec:compressietool-rlea} en \ref{sec:compressietool-rle}, kan dit eenvoudig door de \gls{string} op te slaan als een tekstbestand. De extensie hiervan wordt dan ingesteld als respectievelijk \gls{lbrlea} of \gls{lbrle}. De winst reflecteert zich hierbij dan ook direct op de bestandsgrootte van het gecomprimeerde bestand.
 
-Voor de functie die gebruik maakt van \gls{huffman-coding} besproken in deel \ref{sec:compressietool-huffman-decoding} is dit moeilijker. De bekomen gecomprimeerde \gls{string} is geen tekst maar een volgorde van \glspl{bit}. \Gls{php} bied geen voor de hand liggende manier om effectieve bytes op te slaan en aangezien deze implementatie ook enkel als proof of concept dient is ervoor gekozen om deze op te slaan als \gls{json} samen met de \gls{lookup-table}. Dit maakt het bekomen bestand met \gls{lbhuffman} extensie veel groter dan het in een effectieve implementatie zou zijn.
+Voor de functie die gebruik maakt van \gls{huffman-coding} besproken in deel \ref{sec:compressietool-huffman-decoding} is dit moeilijker. De bekomen gecomprimeerde \gls{string} is geen tekst maar een volgorde van \glspl{bit}. \Gls{php} bied geen voor de hand liggende manier om effectieve bytes op te slaan en aangezien deze implementatie ook enkel als proof of concept dient, is ervoor gekozen om deze op te slaan als \gls{json} samen met de \gls{lookup-table}. Dit maakt het bekomen bestand met \gls{lbhuffman} extensie veel groter dan het in een effectieve implementatie zou zijn.
 
 \section{Resultaten}
 \label{sec:compressietool-resultaten}
@@ -244,11 +244,11 @@ Er zijn twee test tekstbestanden voorzien onder de map 'input' of downloadbaar v
 	\item 'dna\_met\_1\_miljoen\_bases.txt': een tekstbestand met één lange \gls{string} van miljoen bases. Dit is het soort bestanden dat \gls{dna-compressie} probeert te comprimeren besproken in deel \ref{sec:uitdagingen-dna-compressie}.
 \end{itemize}
 
-Voor \gls{rle-long} is de winst het duidelijkst wanneer de tekst wordt weergegeven als aantal karakters. De resultaten hiervoor zijn te vinden in tabel \ref{tab:compressietool-winst-rle}. In deze tabel is duidelijk te zien dat \gls{rle-long} een heel \gls{use-case} gebonden \gls{compressie-algoritme} is. Zo is het bestand na compressie in het beste geval even groot als dat het origineel zou zijn bij de zin 'lennert eet veel'. Dit is reeds besproken in deel \ref{sec:primitieve-technieken-voorbeeld-rle-probleem-1}. Het is met deze zin ook duidelijk dat door het gebruik van \gls{rle-long} in de variant waar de run enkel voorzien wordt indien deze groter is dan 1 nooit een groter bestand dan origineel bereken kan worden. Voor het bestand met de miljoen bases is het voordeel van \gls{rle-long} wel zichtbaar. Het bestand bekomen door de tweede variatie heeft een verkleining van meer dan 6\%.
+Voor \gls{rle-long} is de winst het duidelijkst wanneer de tekst wordt weergegeven als aantal karakters. De resultaten hiervoor zijn te vinden in tabel \ref{tab:compressietool-winst-rle}. In deze tabel is duidelijk te zien dat \gls{rle-long} een heel \gls{use-case} gebonden \gls{compressie-algoritme} is. Zo is het bestand na compressie in het beste geval even groot als dat het origineel zou zijn bij de zin 'lennert eet veel'. Dit is reeds besproken in deel \ref{sec:primitieve-technieken-voorbeeld-rle-probleem-1}. Het is met deze zin ook duidelijk dat door het gebruik van \gls{rle-long} in de variant waar de run enkel voorzien wordt indien deze groter is dan één, er nooit een groter bestand dan origineel kan verkregen worden. Voor het bestand met de miljoen bases is het voordeel van \gls{rle-long} wel zichtbaar. Het bestand bekomen door de tweede variatie heeft een verkleining van meer dan 6\%.
 
-Voor \gls{huffman-coding} is de winst het duidelijkst wanneer de tekst wordt weergegeven als aantal \glspl{bit}. De resultaten hiervoor zijn te vinden in tabel \ref{tab:compressietool-winst-huffman}. De afgebeelde grootte in \gls{bit} is echter wel zonder \gls{lookup-table} wat in de werkelijkheid ook steeds met het bestand mee moet opgeslagen worden.
+Voor \gls{huffman-coding} is de winst het duidelijkst wanneer de tekst wordt weergegeven als aantal \glspl{bit}. De resultaten hiervoor zijn te vinden in tabel \ref{tab:compressietool-winst-huffman}. De afgebeelde grootte in \gls{bit} is echter wel zonder \gls{lookup-table} wat in werkelijkheid ook steeds met het bestand mee moet opgeslagen worden.
 
-De \gls{compressietool} kan met eigen tekst bestanden getest worden op de website van Lennert Bontinck\urlcite{evaluatietool}. Een uitbreiding zoals het gebruiken van zowel \gls{huffman-coding} als \gls{rle-long} kan eenvoudig voorzien worden door het downloaden van de code via de \gls{github} repository\urlcite{githubbachelorproef} maar wordt niet verder in deze bachelorproef besproken.
+De \gls{compressietool} kan met eigen tekstbestanden getest worden op de website van Lennert Bontinck\urlcite{evaluatietool}. Een uitbreiding, zoals het gebruiken van zowel \gls{huffman-coding} als \gls{rle-long}, kan eenvoudig voorzien worden door het downloaden van de code via de \gls{github} repository\urlcite{githubbachelorproef}, maar wordt niet verder in deze bachelorproef besproken.
 
 \begin{table}[h]
 	\begin{tabular}{|l|l|l|l|}
@@ -279,6 +279,6 @@ Deze \gls{compressietool} dient enkel als proof of concept en bevat daardoor enk
 
 De run en run value waardes bij \gls{rle-long} worden bij de \gls{encoding} opgeslagen als \gls{ascii} waarden. Doordat het input bestand geen numerieke waardes mag bevatten, weet de \gls{decoder} dat bij het vinden van eender welke numerieke waarde een run is gevonden. Als bij een implementatie wel numerieke waarden in het input bestand mogen voorkomen werkt deze \gls{decoder} dus niet. 
 
-Een mogelijke oplossing is elke verplicht een run en run value te hebben voor elke waarde uit de originele tekst. Op die manier is de eerste waarde in het bestand steeds de run en de daaropvolgende waarde de run value waardoor onderscheid tussen een run en een numerieke waarde in het originele input bestand gemaakt kan worden. Dit veroorzaakt echter een bijkomend probleem: wat als de run hoger is dan negen en dus met twee karakters uitgedrukt moet worden? Het tweede karakter van de run wordt dan aanzien als run value wat de \gls{decoder} laat falen. Ook hier zijn oplossingen voor door het bijvoorbeeld opsplitsen van '13a' in '9a4a'. De bachelorproef gaat niet dieper in op deze implementatie.
+Een mogelijke oplossing is dat elk gecomprimeerd karakter verplicht een run en run value moet hebben. Op die manier is de eerste waarde in het bestand steeds de run en de daaropvolgende waarde de run value, waardoor onderscheid tussen een run en een numerieke waarde in het originele input bestand gemaakt kan worden. Dit veroorzaakt echter een bijkomend probleem: wat als de run hoger is dan negen en dus met twee karakters uitgedrukt moet worden? Het tweede karakter van de run wordt dan aanzien als run value wat de \gls{decoder} laat falen. Ook hier zijn oplossingen voor, bijvoorbeeld door het opsplitsen van '13a' in '9a4a'. De bachelorproef gaat niet dieper in op deze implementatie.
 
 Bij de \gls{huffman-coding} implementatie is in deel \ref{sec:compressietool-opslaan} reeds besproken dat de bestandsgrootte de besparing door dit \gls{compressie-algoritme} niet representeert. De door \gls{huffman-coding} bekomen bits worden echter opgeslagen als \gls{ascii} waarden waardoor één \gls{bit} voorgesteld wordt door acht \glspl{bit}.
