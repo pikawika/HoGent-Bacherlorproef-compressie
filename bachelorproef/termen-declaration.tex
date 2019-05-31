@@ -47,7 +47,7 @@
 \newglossaryentry{container}
 {
 	name={container},
-	description={Binnen datacompressie kan een container vrijwel letterlijk vertaald worden. Het is een verpakking voor alle data die men opslaat en metadata. onder andere de codec plaatst data in deze container. Wanneer er gesproken wordt over bestandsextensies wordt vaak de container bedoeld. Bv; MP4 }
+	description={Binnen datacompressie kan een container vrijwel letterlijk vertaald worden. Het is een verpakking voor alle data die men opslaat en metadata. onder andere de codec plaatst data in deze container. Wanneer er gesproken wordt over bestandsextensies wordt vaak de container bedoeld. Bv; MP4}
 }
 
 \newglossaryentry{jpeg}
@@ -71,35 +71,31 @@
 \newglossaryentry{h264-avc}
 {
 	name={H.264-AVC},
-	description={H.264-AVC is één van de gekenste videocodecs die grootschalig gebruikt wordt. AVC is een afkorting van Advanced Video Coding. Videocompresssie en H.264-AVC worden uitgebreid besproken in hoofdstuk \ref{ch:videocompressie}}
+	description={H.264-AVC is één van de gekenste videocodecs die grootschalig gebruikt wordt. AVC is een afkorting van Advanced Video Coding. H.264-AVC wordt uitgebreid besproken in deel \ref{sec:videocompressie-h264-AVC}}
 }
-% TODO: veruidelijken als deel geschreven is.
 
 \newglossaryentry{h264-svc}
 {
 	name={H.264-SVC},
-	description={H.264-SVC is een videocodec ontwikkelt als extensie van H264-AVC. SVC is een afkorting voor Scalable Video Coding. De nadruk bij deze extensie ligt zoals de naam sugereert op schaalbaarheid. Videocompresssie en H.264-SVC worden uitgebreid besproken in hoofdstuk \ref{ch:videocompressie}}
+	description={H.264-SVC is een videocodec ontwikkelt als extensie op H264-AVC. SVC is een afkorting voor Scalable Video Coding. De nadruk bij deze extensie ligt zoals de naam sugereert op schaalbaarheid. H.264-SVC wordt uitgebreid besproken in deel \ref{sec:videocompressie-h264-SVC}}
 }
-% TODO: veruidelijken als deel geschreven is.
 
 \newglossaryentry{h265}
 {
 	name={H.265/HEVC},
-	description={H.265/HEVC is een videocodec ontwikkelt als opvolger van H.264/AVC. Videocompresssie en H.265/HEVC worden uitgebreid besproken in hoofdstuk \ref{ch:videocompressie}}
+	description={H.265/HEVC is een videocodec ontwikkelt als opvolger van H.264/AVC. H.265/HEVC wordt uitgebreid besproken in deel \ref{sec:videocompressie-h265}}
 }
-% TODO: veruidelijken als deel geschreven is.
 
 \newglossaryentry{av1}
 {
 	name={AV1},
-	description={AV1 is een videocodec ontwikkelt als open standaard. AV1 is een afkorting voor AOMedia Video. AV1 is vooral interessant omdat het royalty free is en dus geen licentiekosten heeft. Videocompresssie en AV1 worden uitgebreid besproken in hoofdstuk \ref{ch:videocompressie}}
+	description={AV1 is een videocodec ontwikkelt als open standaard. AV1 is een afkorting voor AOMedia Video. AV1 is vooral interessant omdat het royalty free is en dus geen licentiekosten heeft. AV1  wordt uitgebreid besproken in deel \ref{sec:videocompressie-av1}}
 }
-% TODO: veruidelijken als deel geschreven is.
 
 \newglossaryentry{open-source}
 {
 	name={open source},
-	description={Als een programmeer project open source is wilt dit zeggen dat de broncode raadpleegbaar is. Dit wil echter niet gegarandeerd zeggen dat het software programma gratis is in gebruik of de code zomaar aangepast mag worden. Dit hangt af van de licentie.}
+	description={Als een programmeer project open source is wilt dit zeggen dat de broncode raadpleegbaar is. Dit wil echter niet gegarandeerd zeggen dat het software programma gratis is in gebruik of de code zomaar aangepast mag worden. Dit hangt af van de licentie}
 }
 
 \newglossaryentry{lossless}
@@ -123,708 +119,619 @@
 \newglossaryentry{binaire-voorstelling-bestandsgrootte}
 {
 	name={Binaire voorstelling},
-	description={todo}
+	description={De binaire voorstelling voor bestandsgroottes maakt gebruik van 1024 als basis wat overeen komt met $ 2^{10} $. Dit wordt verder besproken in deel \ref{sec:bestandsgrootte-dataopslag-voorvoegsels-binair}}
 }
-% TODO
 
 \newglossaryentry{si-voorstelling-bestandsgrootte}
 {
 	name={SI voorstelling},
-	description={todo}
+	description={De SI voorstelling voor bestandsgroottes maakt gebruik van 1000 als basis wat overeen komt met $ 10^{3} $. Dit wordt verder besproken in deel \ref{sec:bestandsgrootte-dataopslag-voorvoegsels-si}}
 }
-% TODO
 
 \newglossaryentry{ieee}
 {
 	name={IEEE},
-	description={todo}
+	description={Institute of Electrical and Electronics Engineers. Het is een non-profit instituut dat zich inzet voor technologische vooruitgang}
 }
-% TODO
 
 \newglossaryentry{clustergrootte}
 {
 	name={clustergrootte},
-	description={todo}
+	description={De grootte van een cluster. Dit is verder besproken in deel \ref{sec:bestandsgrootte-dataopslag-clustergrootte}}
 }
-% TODO
 
 \newglossaryentry{cluster}
 {
 	name={cluster},
-	description={todo},
+	description={Het kleinste deel van een oplsagmedium waar data in voorzien kan worden. Dit is verder besproken in deel \ref{sec:bestandsgrootte-dataopslag-clustergrootte}},
 	plural={clusters}
 }
-% TODO
 
 \newglossaryentry{byte}
 {
 	name={byte},
-	description={todo},
+	description={Een term voor acht bits},
 	plural={bytes}
 }
-% TODO
 
 \newglossaryentry{leestijd}
 {
 	name={leestijd},
-	description={todo},
+	description={De tijd die verstrekt tussen het aanvragen van een bestand op een opslagmedium tot het effectief verkrijgen van dat bestand},
 	plural={leestijden}
 }
-% TODO
 
 \newglossaryentry{bandbreedte}
 {
 	name={bandbreedte},
-	description={todo}
+	description={Een term waarmee de maximale beschikbare hoeveelheid data dat over een netwerkverbinding verstuurd kan worden bedoeld wordt}
 }
-% TODO
 
 \newglossaryentry{prefix-code}
 {
 	name={prefix code},
-	description={todo},
+	description={Een korte waarde die een langere waarde voorstelt binnen prefix coding. Dit is verder beschreven in deel \ref{sec:ontstaan-datacompressie-primitieve-technieken-binnen-it}},
 	plural={prefix codes}
 }
-% TODO
 
 \newglossaryentry{huffman-coding}
 {
 	name={Huffman coding},
-	description={todo}
+	description={Een compressie-algoritme gebasseerd op prefix code. Huffman coding wordt verder toegelicht aan de hand van een voorbeeld in deel \ref{sec:primitieve-technieken-voorbeeld-huffman-encoding}. Een implementatie wordt voorzien in hoofdstuk \ref{ch:compressietool}}
 }
-% TODO
-
-\newglossaryentry{frequency-based}
-{
-	name={frequency-based},
-	description={todo}
-}
-% TODO
 
 \newglossaryentry{compressie-algoritme}
 {
 	name={compressie-algoritme},
-	description={todo},
+	description={Een set instructies dat het mogelijk maakt om bepaalde informatie met minder resources voor te stellen. Binnen deze bachelorproef wilt dit code voorstellen die een een bestand zijn bestandsgrootte kan verkleinen. Dit kan zowel lossless als lossy},
 	plural={compressie-algoritmen}
 }
-% TODO
 
 \newglossaryentry{lookup-table}
 {
 	name={lookup table},
-	description={todo}
+	description={Een tabel waar waardes in opgezocht kunnen worden. Bij prefix code is dit de tabel waar de lange waarde staat die de korte prefix code voorstelt}
 }
-% TODO
-
-\newglossaryentry{dictionary-coding}
-{
-	name={dictionary coding},
-	description={todo}
-}
-% TODO
 
 \newglossaryentry{prefix-coding}
 {
 	name={prefix coding},
-	description={todo}
+	description={Een vorm van datacompressie waar bij een waarde wordt toegekend aan iets dat verwijst naar een andere, langere waarde. Dit is verder beschreven in deel \ref{sec:ontstaan-datacompressie-primitieve-technieken-binnen-it}}
 }
-% TODO
 
 \newglossaryentry{use-case}
 {
 	name={use case},
-	description={todo},
+	description={Representeert een bepaald doel en de manier waarop dat doel bereken wenst te worden},
 	plural={use cases}
 }
-% TODO
 
 \newglossaryentry{rle-long}
 {
 	name={run length encoding},
-	description={todo}
+	description={Een compressietechniek die verder besproken wordt in deel \ref{sec:primitieve-technieken-voorbeeld-rle} en geïmplementeerd wordt in deel \ref{ch:compressietool}}
 }
-% TODO
 
 \newglossaryentry{rle-short}
 {
 	name={RLE},
-	description={Kort voor \gls{rle-long}}
+	description={Kort voor run length encoding}
 }
 
 \newglossaryentry{ascii}
 {
 	name={ASCII},
-	description={todo}
+	description={Een tekenset die voorgesteld wordt door acht bits}
 }
-% TODO
 
 \newglossaryentry{encoding}
 {
 	name={encoding},
-	description={todo}
+	description={Het proces dat een encoder uitvoert}
 }
-% TODO
 
 \newglossaryentry{decoding}
 {
 	name={decoding},
-	description={todo}
+	description={het process dat een decoder uitvoert}
 }
-% TODO
 
 \newglossaryentry{meta-data}
 {
 	name={metadata},
-	description={todo}
+	description={Data over data}
 }
 
 \newglossaryentry{webp}
 {
 	name={WebP},
-	description={todo}
+	description={Een afbeeldingsformaat dat uitgebreid besproken wordt in deel \ref{sec:afbeeldingscompressie-webp}}
 }
 
 \newglossaryentry{heif}
 {
 	name={HEIF},
-	description={todo}
+	description={Een codec dat uitgebreid besproken wordt in deel \ref{sec:afbeeldingscompressie-heif}}
 }
 
 \newglossaryentry{ps}
 {
 	name={Adobe Photoshop},
-	description={todo}
+	description={Computersoftware voor het aanmaken en bewerken van rasterafbeeldingen}
 }
 
 \newglossaryentry{css}
 {
 	name={CSS},
-	description={todo}
+	description={Programmeertaal die verantwoordelijk is voor het opmaken van een webpagina}
 }
 
 \newglossaryentry{minifyen}
 {
 	name={minifyen},
-	description={todo}
+	description={Een proces waarbij code zodanig herschreven wordt dat dit de minste hoveelheid ruimte in beslag neemt}
 }
 
 \newglossaryentry{render}
 {
 	name={render},
-	description={todo}
+	description={het genereren van een digitale afbeelding of video met behulp van computersoftware}
 }
 
 \newglossaryentry{raw}
 {
 	name={RAW},
-	description={todo}
+	description={Een benaming voor afbeeldingsformaten dat in geen enkele vorm gecomprimeerd worden. RAW wordt uitgebreid besproken in deel \ref{sec:afbeeldingscompressie-raw}}
 }
 
 \newglossaryentry{compressietool}
 {
 	name={datacompressietool},
-	description={todo}
+	description={Een kleine applicatie voor het comprimeren van data. In hoofdstuk \ref{ch:compressietool} wordt een proof of concept compressietool geïmplementeerd}
 }
 
 \newglossaryentry{github}
 {
 	name={GitHub},
-	description={todo}
+	description={Een online platform voor versiebeheer van code}
 }
 
 \newglossaryentry{hosting}
 {
 	name={hosting},
-	description={todo}
+	description={Het delen van een bepaalde webpagina met anderen}
 }
-% TODO
 
 \newglossaryentry{php}
 {
 	name={PHP},
-	description={todo}
+	description={Een programmeertaal die voornamelijk de logica bij websites voorziet}
 }
-% TODO
 
 \newglossaryentry{sql}
 {
 	name={SQL},
-	description={todo}
+	description={Een standaard programmertaal voor communicatie met een relationele databank}
 }
-% TODO
 
 \newglossaryentry{xampp}
 {
 	name={XAMPP},
-	description={todo}
+	description={Een software pakket waarmee eenvoudig een hosting omgeving kan opgezet worden}
 }
 
 \newglossaryentry{jquery}
 {
 	name={JQuery},
-	description={todo}
+	description={Een uitbreiding op JavaScript}
 }
 
 \newglossaryentry{drift}
 {
 	name={Drift},
-	description={todo}
+	description={Een JavaScript library dat het eenvoudig maakt om in te zoomen op afbeeldingen zonder manipulaties}
 }
 
 \newglossaryentry{bootstrap}
 {
 	name={Bootstrap},
-	description={todo}
+	description={Een toolkit voor het eenvoudig programmeren met HTML, CSS, JS en jQuery}
 }
-% TODO
 
 \newglossaryentry{js}
 {
 	name={JavaScript},
-	description={todo}
+	description={Een programmeertaal waarmee onder andere de inhoud van een webpagina gemanipuleerd kan worden}
 }
-% 
 
 \newglossaryentry{yt}
 {
 	name={YouTube},
-	description={todo}
+	description={Een online website waar gebruikers gratis video's kunnen uploaden. YouTube is een dochterbedrijf van Google en is één van de grootste streaming diensten}
 }
-% TODO
 
 \newglossaryentry{plug-in}
 {
 	name={plug-in},
-	description={todo},
+	description={Een downloadbare collectie code die bepaalde functionaliteit voorziet},
 	plural={plug-ins}
 }
-% TODO
 
 \newglossaryentry{artefact}
 {
 	name={artefact},
-	description={todo},
+	description={Een kunstmatig verschijnsel. Binnen datacompressie zijn artefacten zichtbare of hoorbare fouten},
 	plural={artefacten}
 }
-% TODO
 
 \newglossaryentry{wavelet}
 {
 	name={wavelet},
-	description={todo},
+	description={Een golfvormige soort data},
 	plural={wavelets}
 }
-% TODO
 
 \newglossaryentry{ai}
 {
 	name={artificiële intelligentie},
-	description={todo}
+	description={Wanneer een apparaat kan reageren op binnenkomende data en op basis daarvan een eigen beslissing kan maken zonder dit expliciet geprogrammeerd is spreek men van artificiële intelligentie}
 }
-% TODO
 
 \newglossaryentry{nef}
 {
 	name={NEF},
-	description={todo}
+	description={Het RAW afbeeldingsformaat van Nikon}
 }
-% TODO
 
 \newglossaryentry{dng}
 {
 	name={DNG},
-	description={todo}
+	description={Digital Negative Specification is een RAW formaat dat Adobe heeft uitgevonden met de bedoelding dat dit wereldwijd geadopteerd zou worden als standaard voor RAW afbeeldingsformaten}
 }
-% TODO
 
 \newglossaryentry{w3c}
 {
 	name={W3C},
-	description={todo}
+	description={World Wide Web Consortium is een organisatie die standaarden voor het web voorziet}
 }
-% TODO
 
 \newglossaryentry{gif}
 {
 	name={GIF},
-	description={todo}
+	description={Graphics interchange format is een afbeeldingsformaat dat op heden voornamelijk gebruikt wordt om bewegende delen voor te stellen}
 }
-% TODO
-
-\newglossaryentry{backwards-compatible}
-{
-	name={backwards compatible},
-	description={todo}
-}
-% TODO
 
 \newglossaryentry{rgb}
 {
 	name={RGB},
-	description={todo}
+	description={Red Green Blue is een kleurcodering systeem voor het voorstellen van kleuren aan de hand van deze drie basiskleuren}
 }
-% TODO
 
 \newglossaryentry{cmyk}
 {
 	name={CMYK},
-	description={todo}
+	description={Cyan, Magenta, Yellow, Key is een kleurcodering systeem voor het voorstellen van kleuren aan de hand van deze drie basiskleuren}
 }
-% TODO
 
 \newglossaryentry{jpeg-exif}
 {
 	name={JPEG/Exif},
-	description={todo}
+	description={Een bestandsformaat verder toegelicht in deel \ref{sec:afbeeldingscompressie-jpeg}}
 }
-% TODO
 
 \newglossaryentry{jpeg-jfif}
 {
 	name={JPEG/JFIF},
-	description={todo}
+	description={Een bestandsformaat verder toegelicht in deel \ref{sec:afbeeldingscompressie-jpeg}}
 }
-% TODO
 
 \newglossaryentry{extensie}
 {
 	name={bestandsextensie},
-	description={todo},
+	description={Een toevoeging op het einde van een bestandsnaam om weer te geven wat voor soort bestand het is},
 	plural={bestandsextensies}
 }
-% TODO
 
 \newglossaryentry{dct}
 {
 	name={DCT},
-	description={todo}
+	description={Discrete cosine transform is een wiskundige formule dat binnen datacompressie voornamelijk gebruikt wordt om een pixels te kunnen voorstellen als een makkelijk comprimeerbaar getal}
 }
-% TODO
 
 \newglossaryentry{wtcq}
 {
 	name={WTCQ},
-	description={todo}
+	description={Wavelet/Trellis Coded Quantization is een compressie algoritme dat de start vormde voor JPEG2000. JPEG2000 wordt uigebreid besproken in deel \ref{sec:afbeeldingscompressie-jpeg2000}}
 }
-% TODO
 
 \newglossaryentry{iso}
 {
 	name={ISO},
-	description={todo}
+	description={De International Organization for Standardization is een organisatie die internationale standaarden oplecht voor bijvoorbeeld compressie-algoritmen}
 }
-% TODO
 
 \newglossaryentry{jpf}
 {
 	name={JPF},
-	description={todo}
+	description={JPf is de bestandsexentsie van JPEG2000. JPEG2000 wordt uigebreid besproken in deel \ref{sec:afbeeldingscompressie-jpeg2000}}
 }
-% TODO
 
 \newglossaryentry{intra-frame}
 {
 	name={intra-frame},
-	description={todo},
+	description={intra-frame compressie is een techniek van afbeeldingen comprimeren binnen videocompressie dat uitgebreid besproken wordt in deel \ref{sec:videocompressie-intra-inter}},
 	plural={intra-frames}
 }
-% TODO
 
 \newglossaryentry{inter-frame}
 {
 	name={inter-frame},
-	description={todo},
+	description={inter-frame compressie is een techniek van afbeeldingen comprimeren binnen videocompressie dat uitgebreid besproken wordt in deel \ref{sec:videocompressie-intra-inter}},
 	plural={inter-frames}
 }
-% TODO
 
 \newglossaryentry{decoder}
 {
 	name={decoder},
-	description={todo},
+	description={Een softwareapplicatie dat een gecomprimeerd bestand terug omzet naar zijn originele vorm, al dan niet met kwaliteitsverlies },
 	plural={decoders}
 }
-% TODO
 
 \newglossaryentry{encoder}
 {
 	name={encoder},
-	description={todo},
+	description={Een softwareapplicatie dat een bestand omzet naar een gecomprimeerde vorm, al dan niet met kwaliteitsverlies},
 	plural={encoders}
 }
-% TODO
 
 \newglossaryentry{heic}
 {
 	name={HEIC},
-	description={todo},
+	description={Een afbeeldingsformaat dat uitgebreid besproken wordt in \ref{sec:afbeeldingscompressie-heif}},
 }
-% TODO
 
 \newglossaryentry{on-premise}
 {
 	name={on premise},
-	description={todo},
+	description={Software is on-premise wanneer deze lokaal geïnstalleerd en gedraaid wordt op het toestel van de gebruiker},
 }
-% TODO
 
 \newglossaryentry{vector}
 {
 	name={vector},
-	description={todo},
+	description={Een categorie voor afbeeldingsformaten dat verder toegelicht wordt in deel \ref{sec:afbeeldingscompressie-raster-vector}},
 }
-% TODO
 
 \newglossaryentry{cms}
 {
 	name={CMS},
-	description={todo},
+	description={Een content management system is een systeem dat het voor een eindgebruiker eenvoudig moet maken om de inhoud binnen een IT-applicatie eenvoudig te beheren},
 	plural={CMS'en}
 }
-% TODO
 
 \newglossaryentry{wordpress}
 {
 	name={WordPress},
-	description={todo}
+	description={Een CMS voor web development}
 }
-% TODO
 
 \newglossaryentry{raster}
 {
 	name={raster},
-	description={todo}
+	description={Een categorie voor afbeeldingsformaten dat verder toegelicht wordt in deel \ref{sec:afbeeldingscompressie-raster-vector}}
 }
-% TODO
 
 \newglossaryentry{lbhuffman}
 {
 	name={lbhuffman},
-	description={todo}
+	description={Een bestandsextensie gebruikt voor binnen de datacompressietool verder besproken in deel \ref{sec:compressietool-opslaan}}
 }
-% TODO
 
 \newglossaryentry{lbrlea}
 {
 	name={lbrlea},
-	description={todo}
+	description={Een bestandsextensie gebruikt voor binnen de datacompressietool verder besproken in deel \ref{sec:compressietool-opslaan}}
 }
-% TODO
 
 \newglossaryentry{lbrle}
 {
 	name={lbrle},
-	description={todo}
+	description={Een bestandsextensie gebruikt voor binnen de datacompressietool verder besproken in deel \ref{sec:compressietool-opslaan}}
 }
-% TODO
 
 \newglossaryentry{html}
 {
 	name={HTML},
-	description={todo}
+	description={Een programmeertaal voor het opbouwen van webpagina's}
 }
-% TODO
-
-\newglossaryentry{bootsrap}
-{
-	name={Bootstrap},
-	description={todo}
-}
-% TODO
 
 \newglossaryentry{library}
 {
 	name={library},
-	description={todo},
+	description={Een verzameling code dat door een programma gebruikt kan worden},
 	plural={Libraries}
 }
-% TODO
 
 \newglossaryentry{string}
 {
 	name={string},
-	description={todo},
+	description={Een term binnen programmeren dat slaat op een tekstfragment zonder opmaak},
 	plural={strings}
 }
-% TODO
 
 \newglossaryentry{regex}
 {
 	name={regex},
-	description={todo}
+	description={Regular Expressions zijn uitdrukkingen waarmee op zoek kan gegaan worden naar een tekst met een bepaalde structuur}
 }
-% TODO
 
 \newglossaryentry{recursieve-functie}
 {
 	name={recursieve functie},
-	description={todo}
+	description={een recursieve functie is een functie die zichelf (al dan niet meermaals)oproept}
 }
-% TODO
 
 \newglossaryentry{array}
 {
 	name={array},
-	description={todo}
+	description={Een term binnen programmeren dat slaat op een verzameling van variabelen}
 }
-% TODO
 
 \newglossaryentry{json}
 {
 	name={json},
-	description={todo}
+	description={Een techniek voor het opslaan van variabelen in een string}
 }
-% TODO
 
 \newglossaryentry{rmse}
 {
 	name={rmse},
-	description={Root mean square error, bespsroken in deel \ref{sec:kwaliteit-rmse}.}
+	description={Root mean square error, bespsroken in deel \ref{sec:kwaliteit-rmse}}
 }
 
 \newglossaryentry{ssim}
 {
 	name={SSIM},
-	description={Structural similarity index, bespsroken in deel \ref{sec:kwaliteit-ssim}.}
+	description={Structural similarity index, bespsroken in deel \ref{sec:kwaliteit-ssim}}
 }
 
 \newglossaryentry{vdp}
 {
 	name={VDP},
-	description={Visual difference predictor is een term voor functies die visuele verschillen tussen afbeeldingen probeert uit te drukken.}
+	description={Visual difference predictor is een term voor functies die visuele verschillen tussen afbeeldingen probeert uit te drukken}
 }
 
 \newglossaryentry{dxomark}
 {
 	name={DxOMark},
-	description={Een erkende instelling dat de kwaliteit van, voornamelijk smartphone, camera's beoordeeld. DxOMark wordt verder toegelicht in deel \ref{sec:kwaliteit-dxomark}.}
+	description={Een erkende instelling dat de kwaliteit van, voornamelijk smartphone, camera's beoordeeld. DxOMark wordt verder toegelicht in deel \ref{sec:kwaliteit-dxomark}}
 }
 
 \newglossaryentry{maximum-compression}
 {
 	name={Maximum Compression},
-	description={Een erkende instelling dat de compressieratio van lossles compressie-algoritmes beoordeeld. Maximum Compression wordt verder toegelicht in deel \ref{sec:kwaliteit-maximum-compression}.}
+	description={Een erkende instelling dat de compressieratio van lossles compressie-algoritmes beoordeeld. Maximum Compression wordt verder toegelicht in deel \ref{sec:kwaliteit-maximum-compression}}
 }
 
 \newglossaryentry{compressieratio}
 {
 	name={compressieratio},
-	description={TODO}
+	description={De verhouding waarmee een bestand gecomprimeerd is ten opzichte van het originele bestand}
 }
 
 \newglossaryentry{python}
 {
 	name={Python},
-	description={TODO}
+	description={Een programmeertaal dat voornamelijk gebruikt wordt voor het verwerken van data in de vorm van grote datascheets}
 }
 
 \newglossaryentry{pandas}
 {
 	name={Pandas},
-	description={TODO}
+	description={Een uitbreiding voor Python}
 }
 
 \newglossaryentry{illustrator}
 {
 	name={Adobe Illustrator},
-	description={TODO}
+	description={Computerssoftware voor het bewerken van vector afbeeldingen}
 }
 
 \newglossaryentry{svg}
 {
 	name={SVG},
-	description={TODO}
+	description={Scalable Vector Graphics zijn is een schaalbare vorm van vector afbeeldingen. Vector wordt verder toegelicht in deel \ref{sec:afbeeldingscompressie-raster-vector}}
 }
 
 \newglossaryentry{deflate}
 {
 	name={deflate},
-	description={TODO}
+	description={Een datacompressie techniek die voornamelijk binnen videcompressie gebruikt wordt}
 }
 
 \newglossaryentry{pixel-prediction}
 {
 	name={pixel prediction},
-	description={TODO}
+	description={Een datacompressie techniek die de pixel van een afbeelding gaat voorspellen aan de hand van een andere pixel}
 }
 
 \newglossaryentry{crc}
 {
 	name={CRC},
-	description={Cyclic redundancy check TODO}
+	description={Cyclic redundancy check is een foutdetectie code om te kunnen nagana of een bestand goed is toegekomen}
 }
 
 \newglossaryentry{bitplane}
 {
 	name={bitplane},
-	description={TODO},
+	description={Een term voor een groepering van bits},
 	plural={bitplanes}
 }
 
 \newglossaryentry{mp4}
 {
 	name={MP4},
-	description={TODO}
+	description={Een container voor onder andere videocodecs. Videocodecs worden verder toegelicht in hoofdstuk \ref{ch:videocompressie}}
 }
 
 \newglossaryentry{avi}
 {
 	name={AVI},
-	description={TODO}
+	description={Een container voor onder andere videocodecs. Videocodecs worden verder toegelicht in hoofdstuk \ref{ch:videocompressie}}
 }
 
 \newglossaryentry{mkv}
 {
 	name={MKV},
-	description={TODO}
+	description={Een container voor onder andere videocodecs. Videocodecs worden verder toegelicht in hoofdstuk \ref{ch:videocompressie}}
 }
 
 \newglossaryentry{mpeg-4}
 {
 	name={MPEG-4},
-	description={TODO}
+	description={Een videocompressie algoritme dat de voorganger was van H.264/AVC toegelicht in deel \ref{sec:videocompressie-h264-AVC}}
 }
 
 \newglossaryentry{hlg}
 {
 	name={HLG},
-	description={Hybrid Log-Gamma TODO}
+	description={Hybrid Log-Gamma is een standaard voor het voorzien van HDR content}
 }
 
 \newglossaryentry{hdr}
 {
 	name={HDR},
-	description={TODO}
+	description={High Dynamic Range beelden zijn beelden die een hoog dynamisch bereik hebben}
 }
 
 \newglossaryentry{frame}
 {
 	name={frame},
-	description={TODO},
+	description={Een frame is één stilstaande afbeelding binnen een video},
 	plural={frames}
 }
 
 \newglossaryentry{interlace}
 {
 	name={interlace},
-	description={TODO}
+	description={Een techniek waarbij twee frames tegelijk getoond worden waardoor de kijker een vals beeld krijgt dat de frame rate sneller is dan hij werkelijk is}
 }
 
 \newglossaryentry{frame-rate}
 {
 	name={frame rate},
-	description={TODO}
+	description={De snelheid waarmee frames elkaar opvolgen, vaak uitgedruk in frames per seconden (FPS)}
 }
 
 \newglossaryentry{pixel}
 {
 	name={pixel},
-	description={TODO},
+	description={Één punt binnen een rasterafbeelding},
 	plural={pixels}
 }
 
 \newglossaryentry{vp8}
 {
 	name={VP8},
-	description={TODO}
+	description={Een video codec gemaakt door Google. WebP, besproken in deel \ref{sec:afbeeldingscompressie-webp}, is afkomstig van VP8. AV1 besproken in \ref{sec:videocompressie-av1} is een verre opvolger van VP8}
 }
