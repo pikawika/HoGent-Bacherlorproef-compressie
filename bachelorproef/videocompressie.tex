@@ -1,46 +1,46 @@
 \chapter{Videocompressie}
 \label{ch:videocompressie}
 
-\Gls{videocompressie} is een subdomein van \gls{datacompressie}. \Gls{videocompressie} bestaat er uit een video (verzameling van opeenvolgende afbeeldingen die frames genoemd worden) in zo weinig mogelijk aantal \glspl{bit} op te slaan terwijl een aanvaardbare kwaliteit behouden blijft. Dit kan zowel via \gls{lossless} als \gls{lossy} \glspl{compressie-algoritme}. \Gls{lossless} \gls{videocompressie} wordt in de praktijk echter zelden gebruikt voor web doeleinden door de grote hoeveelheid data dat ze in beslag nemen. \Gls{lossless} \gls{videocompressie} wordt vooral voor medische doeleinden gebruikt.
+\Gls{videocompressie} is een subdomein van \gls{datacompressie}. \Gls{videocompressie} bestaat uit een video (verzameling van opeenvolgende afbeeldingen die frames genoemd worden) in zo weinig mogelijk aantal \glspl{bit} op te slaan terwijl een aanvaardbare kwaliteit behouden blijft. Dit kan zowel via \gls{lossless} als \gls{lossy} \glspl{compressie-algoritme}. \Gls{lossless} \gls{videocompressie} wordt in de praktijk echter zelden gebruikt voor web doeleinden door de grote hoeveelheid data die het in beslag neemt. \Gls{lossless} \gls{videocompressie} wordt vooral voor medische doeleinden gebruikt.
 
 De output van een \gls{lossless} video \gls{codec} kan oplopen tot een bestand dat vijf tot wel twintig keer groter is dan een \gls{lossy} variant met een visueel zeer gelijkaardig resultaat. Een \gls{lossy} variant kan met enig verlies van kwaliteit meer dan 100 keer kleiner zijn dan een niet gecomprimeerde variant (\cite{importancelossyvidecodecs}). Het is door deze hoge \gls{compressieratio} dat de keuze voor een goede video \gls{codec} zo belangrijk is en dat het (live) streamen van video's mogelijk is. Zonder \gls{lossy} compressie zouden de meeste toestellen ook niet genoeg systeemresources hebben om de video vloeiend af te spelen.
 
-De meest gebruikte \gls{lossy} video \glspl{codec} zijn \gls{h265} en motion \gls{jpeg2000}. Deze hebben beide ook een \gls{lossy} modus. De \gls{lossy} modus van \gls{h265} wordt in dit hoofdstuk besproken. Er wordt in deze bachelorproef niet verder ingegaan op \gls{lossy} video \glspl{codec}.
+De meest gebruikte \gls{lossy} video \glspl{codec} zijn \gls{h265} en motion \gls{jpeg2000}. Deze hebben beiden ook een \gls{lossy} modus. De \gls{lossy} modus van \gls{h265} wordt in dit hoofdstuk besproken. Er wordt in deze bachelorproef niet verder ingegaan op \gls{lossy} video \glspl{codec}.
 
 Dit hoofdstuk licht enkele van de bekendste video \glspl{codec} toe die grootschalig gebruikt worden door websites als YouTube en Netflix.
 
-\section{Intra vs inter frame}
+\section{Intra- vs inter-frame}
 \label{sec:videocompressie-intra-inter}
 
-\Gls{inter-frame} en \gls{inter-frame} \gls{datacompressie} zijn technieken voor \gls{videocompressie} dat gezamenlijk of individueel gebruikt kunnen worden door een video \gls{codec}. Dit kan volledig \gls{lossless} of \gls{lossy} gebeuren.
+\Gls{inter-frame} en \gls{intra-frame} \gls{datacompressie} zijn technieken voor \gls{videocompressie} die gezamenlijk of individueel gebruikt kunnen worden door een video \gls{codec}. Dit kan volledig \gls{lossless} of \gls{lossy} gebeuren.
 
-\Gls{intra-frame} \gls{datacompressie} kan het beste vergeleken worden met de compressie die binnen een \gls{afbeeldingsformaat} gebeurd. Het is een \gls{compressie-algoritme} dat één alleenstaand \gls{frame} comprimeert met enkel de data die het heeft van dat \gls{frame}. Dit kan bijvoorbeeld door \gls{pixel-prediction} (zoals \gls{png} besproken in deel \ref{sec:afbeeldingscompressie-png-werking}). Het is niet ongewoon dat alleenstaande \glspl{afbeeldingsformaat} gebruikt worden voor \gls{intra-frame} compressie. \Gls{jpeg2000} wordt vaak gebruikt voor videobestanden waar kwaliteit een grote rol spelen (in zijn \gls{lossless} of \gls{lossy} variant). Tegenwoordig is echter de omgekeerde verschijning meer voorkomend, dat \glspl{compressie-algoritme} oorspronkelijk gebruikt voor \gls{intra-frame} \gls{videocompressie} overgezet worden naar alleenstaande \glspl{afbeeldingsformaat}. Denk hierbij aan \gls{webp} dat van \gls{vp8}, een voorganger van \gls{av1} afkomstig is. \Gls{heic} komt oorspronkelijk ook uit \gls{intra-frame} \gls{datacompressie} bij \gls{h265}.
+\Gls{intra-frame} \gls{datacompressie} kan het best vergeleken worden met de compressie die binnen een \gls{afbeeldingsformaat} gebeurt. Het is een \gls{compressie-algoritme} dat één alleenstaand \gls{frame} comprimeert met enkel de data die het heeft van dat \gls{frame}. Dit kan bijvoorbeeld door \gls{pixel-prediction} (zoals \gls{png} besproken in deel \ref{sec:afbeeldingscompressie-png-werking}). Het is niet ongewoon dat alleenstaande \glspl{afbeeldingsformaat} gebruikt worden voor \gls{intra-frame} compressie. \Gls{jpeg2000} wordt vaak gebruikt voor videobestanden waar kwaliteit een grote rol speelt (in zijn \gls{lossless} of \gls{lossy} variant). Tegenwoordig is echter de omgekeerde verschijning meer voorkomend, dat \glspl{compressie-algoritme}, oorspronkelijk gebruikt voor \gls{intra-frame} \gls{videocompressie}, overgezet worden naar alleenstaande \glspl{afbeeldingsformaat}. Denk hierbij aan \gls{webp} dat van \gls{vp8}, een voorganger van \gls{av1}, afkomstig is. \Gls{heic} komt oorspronkelijk ook uit \gls{intra-frame} \gls{datacompressie} bij \gls{h265}.
 
-\Gls{inter-frame} \gls{datacompressie} maakt voor het comprimeren niet alleen gebruik van het huidige \gls{frame} maar ook voorgaande of volgende \glspl{frame}. Zo is het mogelijk om bijvoorbeeld verwijzingen te behouden naar éénzelfde achtergrond binnen een videofragment overheen de \glspl{frame}. Het aantal \glspl{frame} waarnaar verwezen kan worden is afhankelijk van de gebruikte \gls{codec}. Aangezien videofragmenten vaak wederkerende elementen hebben (zoals de achtergrond) voor een langdurige periode kan deze vorm van \gls{datacompressie} voor enorme besparingen zorgen. 
+\Gls{inter-frame} \gls{datacompressie} maakt voor het comprimeren niet alleen gebruik van het huidige \gls{frame} maar ook voorgaande of volgende \glspl{frame}. Zo is het mogelijk om bijvoorbeeld verwijzingen te behouden naar éénzelfde achtergrond binnen een videofragment overheen de \glspl{frame}. Het aantal \glspl{frame} waarnaar verwezen kan worden is afhankelijk van de gebruikte \gls{codec}. Aangezien videofragmenten vaak terugkerende elementen hebben (zoals de achtergrond) voor een langdurige periode kan deze vorm van \gls{datacompressie} voor enorme besparingen zorgen. 
 
-Een probleem dat bij \gls{inter-frame} \gls{datacompressie} opduikt is wanneer een bestand dat gebruikt maakt van dit \gls{compressie-algoritme} achteraf bijgesneden wordt. De verwezen \glspl{frame} (of delen van het frame bij croppen) kunnen hierdoor verloren zijn waardoor het decoden faalt. Hoewel sommige video bewerkingsoftware hier rekening mee houd door de verwijzingen naar \glspl{frame} dat verwijderd gaan worden eerst te vervangen door de effectieve data, is dit geen garantie.
+Een probleem dat bij \gls{inter-frame} \gls{datacompressie} opduikt, is wanneer een bestand dat gebruik maakt van dit \gls{compressie-algoritme} achteraf bijgesneden wordt. De verwezen \glspl{frame} (of delen van het frame bij croppen) kunnen hierdoor verloren zijn waardoor het decoden faalt. Hoewel sommige video bewerkingsoftware hier rekening mee houden door de verwijzingen naar \glspl{frame} die verwijderd gaan worden eerst te vervangen door de effectieve data, is dit geen garantie.
 
 
 \section{Video codecs}
 \label{sec:videocompressie-video-codecs}
 
-In die hoofdstuk worden video \glspl{codec} besproken en geen \glspl{container}. Een \gls{container} is, zoals de naam doet vermoeden, een verpakking voor alle data die opslagen moet worden en eventuele metadata. Deze containers bepalen de \gls{extensie} van een bestand,  enkele gekende video \glspl{container} zijn: \gls{mp4}, \gls{avi} en \gls{mkv}. Bij video's slaat de \gls{codec} dus data op in een passende \gls{container}. Ook de ondertiteling en dergelijke zijn opgenomen in de \gls{container}.
+In die hoofdstuk worden video \glspl{codec} besproken en geen \glspl{container}. Een \gls{container} is, zoals de naam doet vermoeden, een verpakking voor alle data die opslagen moet worden en eventuele metadata. Deze containers bepalen de \gls{extensie},  enkele gekende video \glspl{container} zijn: \gls{mp4}, \gls{avi} en \gls{mkv}. Bij video's slaat de \gls{codec} dus data op in een passende \gls{container}. Ook de ondertiteling en dergelijke zijn opgenomen in de \gls{container}.
 
-Een \gls{codec}, de coder-decoder, is de technologie verantwoordelijk voor de \gls{encoding} en \gls{decoding} van een bestand dat gebruik kan maken van één of meerdere \glspl{compressie-algoritme}. In het geval van een video \gls{codec} is dit de technologie dat het videofragment omzet in een zo klein mogelijke collectie van \glspl{bit}.
+Een \gls{codec}, de coder-decoder, is de technologie verantwoordelijk voor de \gls{encoding} en \gls{decoding} van een bestand dat gebruik kan maken van één of meerdere \glspl{compressie-algoritme}. In het geval van een video \gls{codec} is dit de technologie die het videofragment omzet in een zo klein mogelijke collectie van \glspl{bit}.
 
 \subsection{H.264-AVC}
 \label{sec:videocompressie-h264-AVC}
 
-\Gls{h264-avc}, waarbij AVC voor 'advanced video coding' staat, is een onderdeel van de \gls{mpeg-4} \gls{iso} standaard dat in deel tien van deze standaard voor het eerst toegelicht wordt. Één van de eerste edities van \gls{iso}/IEC 14496-10 is online raadpleegbaar\urlcite{h264avciso} en geeft een inzicht op de basis werking van deze video \gls{codec}.
+\Gls{h264-avc}, waarbij AVC voor 'advanced video coding' staat, is een onderdeel van de \gls{mpeg-4} \gls{iso} standaard dat in deel tien van deze standaard voor het eerst toegelicht wordt. Één van de eerste edities van \gls{iso}/IEC 14496-10 is online raadpleegbaar\urlcite{h264avciso} en geeft een inzicht in de basiswerking van deze video \gls{codec}.
 
-\Gls{h264-avc} is aangekondigd in mei 2003 en is daarmee de oudste besproken video \gls{codec} in deze bachelorproef. Desondanks zijn leeftijd is het nog altijd één van de meest gebruikte video \glspl{codec} op het web en in het algemeen. Dit is te weiden aan de jarenlange verder ontwikkeling van de standaard. De huidige versie van de \gls{iso} standaard is momenteel versie 25 uit april 2017. Deze voegt documentatie over het gebruik van \gls{hlg} met \gls{h264-avc} toe. Een veel gebruikte \gls{hdr} standaard.
+\Gls{h264-avc} is aangekondigd in mei 2003 en is daarmee de oudst besproken video \gls{codec} in deze bachelorproef. Desondanks zijn leeftijd is het nog altijd één van de meest gebruikte video \glspl{codec} op het web en in het algemeen. Dit is te danken aan de jarenlange verdere ontwikkeling van de standaard. De huidige versie van de \gls{iso} standaard is momenteel versie 25 uit april 2017. Deze voegt documentatie over het gebruik van \gls{hlg} met \gls{h264-avc} toe aan de \gls{iso}. Een veel gebruikte \gls{hdr} standaard.
 
 \Gls{h264-avc} is een uitbreiding op vorige standaarden van de \gls{mpeg-4} standaard dat onder andere de volgende belangrijke extra functionaliteit met zich meebrengt:
 
 \begin{itemize}
-	\item Multi-picture inter-picture prediction. Deze techniek bied tal van voordelen op voorgaande technieken. Het voornaamste is de mogelijkheid om tot wel 16 verschillende referentie \glspl{frame} te kunnen bijhouden voor het comprimeren van één \gls{frame}. In vorige (bekende) standaarden waren hooguit twee referentie \glspl{frame} mogelijk. Deze uitbreiding kan voor (veel) kwaliteitswinst en een (veel) hoger \gls{compressieratio} zorgen in tal van scenario's. Bijvoorbeeld bij een \gls{frame} waar een achtergrond bestaat uit een combinatie van de achtergronden van meerdere \glspl{frame}.
+	\item Multi-picture inter-picture prediction. Deze techniek biedt tal van voordelen op voorgaande technieken. Het voornaamste is de mogelijkheid om tot wel 16 verschillende referentie \glspl{frame} te kunnen bijhouden voor het comprimeren van één \gls{frame}. In vorige (bekende) standaarden waren hooguit twee referentie \glspl{frame} mogelijk. Deze uitbreiding kan voor (veel) kwaliteitswinst en een (veel) hoger \gls{compressieratio} zorgen in tal van scenario's. Bijvoorbeeld bij een \gls{frame} waar een achtergrond bestaat uit een combinatie van de achtergronden van meerdere \glspl{frame}.
 	
-	\item Flexibelere interlace opties dat het mogelijk maken de kijker het gevoel te geven dat de \gls{frame-rate} twee keer hoger is dan ze werkelijk is door twee verschillende \glspl{frame} met elkaar te combineren.
+	\item Flexibelere interlace opties die het mogelijk maken de kijker het gevoel te geven dat de \gls{frame-rate} twee keer hoger is dan ze werkelijk is door twee verschillende \glspl{frame} met elkaar te combineren.
 	
 	\item Tal van technieken die de \gls{decoder} geschikt maken om te werken met livestreams waar enkele \glspl{frame} soms verloren gaan.
 \end{itemize}
@@ -48,11 +48,11 @@ Een \gls{codec}, de coder-decoder, is de technologie verantwoordelijk voor de \g
 \subsubsection{H.264-AVC: voordelen}
 \label{sec:videocompressie-h264-AVC-voordelen}
 
-\Gls{h264-avc} is een standaard die reeds jarenlang wereldwijde adoptie kent. Dit is te weiden aan ondere andere volgende voordelen:
+\Gls{h264-avc} is een standaard die reeds jarenlang wereldwijde implementaties kent. Dit is te danken aan ondere andere volgende voordelen:
 
 \begin{itemize}
 	
-	\item Een \gls{compressieratio} tot meer dan dubbel dat van voorgangers als MPEG-2 (\cite{h264avcmpeg2kwaliteit}) voor dezelfde perceptuele kwaliteit. Dit zorgt resulteert in de bestandsgrootte en het \gls{bandbreedte} gebruik.
+	\item Een \gls{compressieratio} tot meer dan het dubbel dan dat van de voorgangers zoals MPEG-2 (\cite{h264avcmpeg2kwaliteit}) voor dezelfde perceptuele kwaliteit. Dit resulteert in een kleinere bestandsgrootte.
 	
 	\item Een grote ondersteuning zowel op vlak van input \gls{frame} \glspl{afbeeldingsformaat} voor de \gls{encoder} als in internetbrowsers. Enkel ondersteuning op de Opera Mini browser ontbreekt volgens de gegevens van caniuse\urlcite{h264caniuse}.
 	
@@ -65,7 +65,7 @@ Een \gls{codec}, de coder-decoder, is de technologie verantwoordelijk voor de \g
 \subsubsection{H.264-AVC: nadelen}
 \label{sec:videocompressie-h264-AVC-nadelen}
 
-\Gls{h264-avc} bied ook enkele nadelen, de voornaamste zijn:
+\Gls{h264-avc} biedt ook enkele nadelen, de voornaamste zijn:
 
 \begin{itemize}
 	
@@ -73,30 +73,30 @@ Een \gls{codec}, de coder-decoder, is de technologie verantwoordelijk voor de \g
 	
 	\item \Gls{h264-avc} is een zeer complex \gls{compressie-algoritme} wat het moeilijk maakt om als derde partij extensies te voorzien.
 	
-	\item \Gls{h264-avc} is ontwikkeld in een tijdperk waar full HD (1920 x 1080 \glspl{pixel}) een zeer hoge resolutie was. De maximum ondersteunde resolutie van \gls{h264-avc} is dan ook maximaal 4096x2304 \glspl{pixel}. 4K (3840 x 2160 \glspl{pixel}) is dus nog net ondersteund maar hogere resoluties niet meer. De bestandsgrootte van een \gls{h264-avc} groeit ook aanzienlijk eens de resolutie boven full HD gaat wat het voor 4K streaming minder interessant maakt.
+	\item \Gls{h264-avc} is ontwikkeld in een tijdperk waar full HD (1920 x 1080 \glspl{pixel}) een zeer hoge resolutie was. De maximum ondersteunde resolutie van \gls{h264-avc} is dan ook maximaal 4096x2304 \glspl{pixel}. 4K (3840 x 2160 \glspl{pixel}) is dus nog net ondersteund maar hogere resoluties niet meer. De bestandsgrootte van een \gls{h264-avc} groeit ook aanzienlijk eens de resolutie boven full HD gaat, wat het voor 4K streaming minder interessant maakt.
 	
-	\item \Gls{h264-avc} vereist complexe licenties, die bij een herziening in 2015 nog complexer zijn geworden, voor zowel \gls{encoding} en \gls{decoding}. Deze licenties moeten zowel betaald worden door de bedrijven die \glspl{encoder} en \glspl{decoder} voorzien (internetbrowsers, apps, ...) als diegene die video's publiek beschikbaar maken (DVD's, YouTube, ...). Dit is gebaseerd op de eenheden verkocht (bv: individuele software en video's) of op het aantal abonnees (bv: streaming diensten). Er is een minimum van 100 duizend gebruikers vooraleer licenties nodig zijn, daarna kan een licentie tot wel 20 cent per extra gebruiker zijn.
+	\item \Gls{h264-avc} vereist complexe licenties, die bij een herziening in 2015 nog complexer zijn geworden, voor zowel \gls{encoding} als \gls{decoding}. Deze licenties moeten zowel betaald worden door de bedrijven die \glspl{encoder} en \glspl{decoder} voorzien (internetbrowsers, apps, ...) als diegene die video's publiek beschikbaar maken (DVD's, YouTube, ...). Dit is gebaseerd op de verkochte eenheden (bv: individuele software en video's) of op het aantal abonnees (bv: streaming diensten). Er is een minimum van 100 duizend gebruikers vooraleer licenties nodig zijn, daarna kan een licentie tot wel 20 cent per extra gebruiker zijn.
 	
 \end{itemize}
 
 \subsubsection{H.264-SVC}
 \label{sec:videocompressie-h264-SVC}
 
-\Gls{h264-svc}, waarbij SVC voor 'scalable video coding' staat, is een extensie op de in deel \ref{sec:videocompressie-h264-AVC} besproken \gls{h264-avc} \gls{videocompressie} standaard. Zoals de naam doet vermoeden verbeterd \gls{h264-svc} de schaalbaarheid van \gls{h264-avc}.
+\Gls{h264-svc}, waarbij SVC voor 'scalable video coding' staat, is een extensie op de in deel \ref{sec:videocompressie-h264-AVC} besproken \gls{h264-avc} \gls{videocompressie} standaard. Zoals de naam doet vermoeden verbetert \gls{h264-svc} de schaalbaarheid van \gls{h264-avc}.
 
-\Gls{h264-avc} kan slecht in één resolutie geëncodeerd worden. Om de optie te voorzien een gebruiker te laten kiezen in welke resolutie deze de video wil bekijken was dus het maken van verschillende video bestanden nodig. Dit nam niet alleen meer tijd en bestandsruimte in dan één groot bestand hebben maar kwam ook nadelig uit wanneer er dynamisch tussen verschillende resoluties geswitcht wou worden bij bijvoorbeeld een variërende \gls{bandbreedte} tijdens het streamen.
+\Gls{h264-avc} kan slecht in één resolutie geëncodeerd worden. Om de optie te voorzien een gebruiker te laten kiezen in welke resolutie deze de video wil bekijken was dus het maken van verschillende video bestanden nodig. Dit nam niet alleen meer tijd en bestandsruimte in dan één groot bestand hebben, maar kwam ook nadelig uit wanneer er dynamisch tussen verschillende resoluties geswitcht wou worden bij bijvoorbeeld een variërende \gls{bandbreedte} tijdens het streamen.
 
-\Gls{h264-svc} bied een oplossing door één bestand te kunnen gebruiken voor het weergeven van meerdere resoluties. Dit maakt het eerder besproken dynamisch switchen tussen resolutie afhankelijk van de \gls{bandbreedte} mogelijk. Iets cruciaal bij (live) streamen waar het niet altijd mogelijk is een cache te maken en dus bij een tekort aan \gls{bandbreedte} geswitcht kan worden naar een lagere resolutie om te alle tijden 'iets' aan de eindgebruiker te kunnen laten zien. Hiervoor was zowel binnen hardware als software extra functionaliteit nodig op zowel netwerk als \gls{codec} laag. Een uitgebreid artikel over \gls{h264-svc} is \citetitle{H264svcoverview} (\cite{H264svcoverview}).
+\Gls{h264-svc} biedt een oplossing door één bestand te kunnen gebruiken voor het weergeven van meerdere resoluties. Dit maakt het eerder besproken dynamisch switchen tussen resolutie afhankelijk van de \gls{bandbreedte} mogelijk. Iets cruciaal bij (live) streamen waar het niet altijd mogelijk is een cache te maken en dus bij een tekort aan \gls{bandbreedte} geswitcht kan worden naar een lagere resolutie om te alle tijden 'iets' aan de eindgebruiker te kunnen laten zien. Hiervoor was zowel binnen hardware als software extra functionaliteit nodig op zowel netwerk als \gls{codec} laag. Een uitgebreid artikel over \gls{h264-svc} is \citetitle{H264svcoverview} (\cite{H264svcoverview}).
 
 
 \subsection{H.265/HEVC}
 \label{sec:videocompressie-h265}
 
-\Gls{h265} is de officiële opvolger van \gls{h264-avc} dat het eerst is voorgesteld in april 2013. Het zorgt voor een bestandsgrootte dat gemiddeld 25 tot 50\% kleiner is dan \gls{h264-avc} met visueel gelijkaardige kwaliteit (\cite{h262h264h265vergelijking}). De gebruikte \gls{inter-frame} \gls{datacompressie} is de basis voor \gls{heif} besproken in deel \ref{sec:afbeeldingscompressie-heif}.
+\Gls{h265} is de officiële opvolger van \gls{h264-avc} dat het eerst is voorgesteld in april 2013. Het zorgt voor een bestandsgrootte die gemiddeld 25 tot 50\% kleiner is dan \gls{h264-avc} met visueel gelijkaardige kwaliteit (\cite{h262h264h265vergelijking}). De gebruikte \gls{inter-frame} \gls{datacompressie} is de basis voor \gls{heif}, besproken in deel \ref{sec:afbeeldingscompressie-heif}.
 
-Een ander belangrijk voordeel van deze video \gls{codec} is dat het resolutie tot 8192×4320 \glspl{pixel} ondersteund, ongeveer het dubbele van zijn voorganger \gls{h264-avc}. \Gls{h265} ondersteund dus nog net 8K UHD waardoor de eerste adoptie voornamelijk in cinema's plaats vond.
+Een ander belangrijk voordeel van deze video \gls{codec} is dat het resolutie tot 8192×4320 \glspl{pixel} ondersteunt, ongeveer het dubbele van zijn voorganger \gls{h264-avc}. \Gls{h265} ondersteunt dus nog net 8K UHD waardoor de eerste adoptie voornamelijk in cinema's plaatsvond.
 
-De werking van \gls{h265} is meer een uitbreiding op \gls{h264-avc} dan een compleet nieuwe uitwerking. De voornaamste aanpassingen waardoor extra efficiëntie kan bereken worden zijn:
+De werking van \gls{h265} is meer een uitbreiding op \gls{h264-avc} dan een compleet nieuwe uitwerking. De voornaamste aanpassingen waardoor extra efficiëntie kan bereikt worden zijn:
 
 \begin{itemize}
 	
@@ -104,7 +104,7 @@ De werking van \gls{h265} is meer een uitbreiding op \gls{h264-avc} dan een comp
 	
 	\item Ondersteuning voor een groter vlak (64x64 \glspl{pixel} in plaats van 16x16 \glspl{pixel}) voor patroon compressie en difference-coding.
 	
-	\item Een betere \gls{compressie-algoritme} voor het gokken van een \gls{pixel} (\gls{pixel-prediction}) door een betere kennis van de camera beweging en hoe een \gls{pixel} zich verplaatst tegenover het voorgaande en volgende \glspl{frame}.
+	\item Een beter \gls{compressie-algoritme} voor het gokken van een \gls{pixel} (\gls{pixel-prediction}) door een betere kennis van de camera beweging en hoe een \gls{pixel} zich verplaatst tegenover het voorgaande en volgende \glspl{frame}.
 	
 \end{itemize}
 
@@ -119,7 +119,7 @@ De voornaamste voordelen bij het gebruik van \gls{h265} over \gls{h264-avc} zijn
 	
 	\item Ondersteuning voor resoluties tot 8192×4320 \glspl{pixel}, waar 8K UHD net bijhoort.
 	
-	\item Gemiddeld besparing van 25 tot 50\%  ten opzichte van \gls{h264-avc} met een visueel gelijkaardige kwaliteit (\cite{h262h264h265vergelijking}).
+	\item Gemiddelde besparing van 25 tot 50\%  ten opzichte van \gls{h264-avc} met een visueel gelijkaardige kwaliteit (\cite{h262h264h265vergelijking}).
 	
 \end{itemize}
 
@@ -134,25 +134,25 @@ De voornaamste nadelen bij het gebruik van \gls{h265} zijn:
 	
 	\item Relatief slechte browser support enkel volledige ondersteuning op recente versies van iOS Safari en gedeeltelijke ondersteuning op Safari voor macOS, Internet Explorer en Edge.
 	
-	\item Een (veel) langere \gls{encoding} en iets langere \gls{decoding} tijd dan \gls{h264-avc} door te toegevoegde complexiteit.
+	\item Een (veel) langere \gls{encoding} en iets langere \gls{decoding} tijd dan \gls{h264-avc} door de toegevoegde complexiteit.
 	
 \end{itemize}
 
 \subsection{AV1}
 \label{sec:videocompressie-av1}
 
-\Gls{av1} is \gls{open-source} en royalty-free video \gls{codec} dat komaf maakt met de complexe en dure licenties verbonden aan andere video \glspl{codec} zoals \gls{h264-avc} en \gls{h265}. Het is ontwikkeld door AOMedia (Alliance for Open Media). Na een aankondiging in september 2015, samen met de opstart van AOMedia, is de eerste versie vrijgegeven in maart 2018 waarbij het ook het eerste project van AOMedia was.
+\Gls{av1} is \gls{open-source} en royalty-free video \gls{codec} dat komaf maakt met de complexe en dure licenties verbonden aan andere video \glspl{codec} zoals \gls{h264-avc} en \gls{h265}. Het is ontwikkeld door AOMedia (Alliance for Open Media). Na een aankondiging in september 2015, samen met de opstart van AOMedia, is de eerste versie vrijgegeven in maart 2018, waarbij het ook het eerste project van AOMedia was.
 
-AOMedia is een bedrijf van Google, Amazon, Netflix, Microsoft, Mozilla, Intel en Cisco. Grote bedrijven die een oplossingen wouden bieden tegen de problemen met de licenties van de voorgaande besproken video \glspl{codec}. Hoewel AOMedia een non-profit is hebben deze bedrijven er financieel baat bij dat \gls{av1} doorgroeid naar de standaard voor \gls{videocompressie}. Op die manier doen ze een immense besparing op licenties.
+AOMedia is een bedrijf van Google, Amazon, Netflix, Microsoft, Mozilla, Intel en Cisco. Grote bedrijven die een oplossing wouden bieden voor de problemen met de licenties van de voorgaande besproken video \glspl{codec}. Hoewel AOMedia een non-profit is, hebben deze bedrijven er financieel baat bij dat \gls{av1} doorgroeit naar de standaard voor \gls{videocompressie}. Op die manier doen ze een immense besparing op licenties.
 
-\Gls{av1} is gebaseerd op VP9, wat op zijn beurt gebaseerd is op \gls{vp8} en wiens \gls{inter-frame} \gls{compressie-algoritme} de basis legde voor het \gls{webp} \gls{afbeeldingsformaat}. De \gls{codec} begon zjin ontwikkeling als VP10 maar Google besloot het project over te plaatsen naar een afzonderlijk non-profit bedrijf om de redenen die hierboven reeds beschreven zijn.
+\Gls{av1} is gebaseerd op VP9, wat op zijn beurt gebaseerd is op \gls{vp8} en wiens \gls{inter-frame} \gls{compressie-algoritme} de basis legde voor het \gls{webp} \gls{afbeeldingsformaat}. De \gls{codec} begon zjin ontwikkeling als VP10, maar Google besloot het project over te plaatsen naar een afzonderlijk non-profit bedrijf om de redenen die hierboven reeds beschreven zijn.
 
 Het vecht momenteel tegen \gls{h265} om de nieuwe standaard video \gls{codec} te worden.
 
 \subsubsection{AV1: voordelen}
 \label{sec:videocompressie-av1-voordelen}
 
-\Gls{av1} is een zeer belovende video \gls{codec} en bied tal van voordelen. De voornaamste zijn:
+\Gls{av1} is een veelbelovende video \gls{codec} en bied tal van voordelen. De voornaamste zijn:
 
 \begin{itemize}
 	
@@ -169,14 +169,14 @@ Het vecht momenteel tegen \gls{h265} om de nieuwe standaard video \gls{codec} te
 \subsubsection{AV1: nadelen}
 \label{sec:videocompressie-av1-nadelen}
 
-Ten opzichte van \gls{h265} heeft \gls{av1} maar één noemenswaardige nadeel buiten de ondersteuning die nog niet optimaal is doordat de \gls{codec} nog niet zo lang uit is. Het ondersteund nog geen realtime \gls{encoding} waardoor livesreaming met \gls{av1} op het moment van schrijven nog niet mogelijk is.
+Ten opzichte van \gls{h265} heeft \gls{av1} maar één noemenswaardig nadeel buiten de ondersteuning die nog niet optimaal is doordat de \gls{codec} nog niet zo lang uit is. Het ondersteunt nog geen realtime \gls{encoding} waardoor livestreaming met \gls{av1} op het moment van schrijven nog niet mogelijk is.
 
 \Gls{av1} heeft echter wel reeds een betere ondersteuning dan \gls{h265} (op vlak van internetbrowsers), heeft geen complexe licenties en heeft een gelijkaardige \gls{encoding} en \gls{decoding} tijd ten opzichte van \gls{h265}.  
 
 \section{De juiste keuze}
 \label{sec:videocompressie-keuze}
 
-De keuze voor een juiste video \gls{codec} is zeer \gls{use-case} gebonden en de juiste beslissing gaat gepaard met een goede keuze van de gebruikte audio \gls{codec} en \gls{container}. Verder onderzoek is hier dus aangeraden. De overzichten voor functionaliteit in deel \ref{sec:videocompressie-functies}, ondersteuning bij internetbrowsers in deel \ref{sec:videocompressie-ondersteuning} en op met betrekking tot licenties in deel \ref{sec:videocompressie-licentie} kunnen als startreferentie gebruikt worden.
+De keuze voor een juiste video \gls{codec} is zeer \gls{use-case} gebonden en de juiste beslissing gaat gepaard met een goede keuze van de gebruikte audio \gls{codec} en \gls{container}. Verder onderzoek is hier dus aangeraden. De overzichten voor functionaliteit in deel \ref{sec:videocompressie-functies}, ondersteuning bij internetbrowsers in deel \ref{sec:videocompressie-ondersteuning} en met betrekking tot licenties in deel \ref{sec:videocompressie-licentie} kunnen als startreferentie gebruikt worden.
 
 \subsection{Functievereisten}
 \label{sec:videocompressie-functies}
@@ -223,7 +223,7 @@ Een overzicht van de ondersteuning van de besproken video \glspl{codec} in de ge
 \subsection{Licenties}
 \label{sec:videocompressie-licentie}
 
-Op vlak van licenties is er maar één duidelijk winnaar: \gls{av1}. Deze \gls{codec} is \gls{open-source} en royalty-free waardoor de achterliggende code aangepast kan worden en gebruikt kan worden zonder een licentie te hoeven betalen. Een volledig overzicht van de licentievoorwaarden is te vinden op de website van AOMedia\urlcite{av1licenses}.
+Op vlak van licenties is er maar één duidelijke winnaar: \gls{av1}. Deze \gls{codec} is \gls{open-source} en royalty-free waardoor de achterliggende code aangepast kan worden en gebruikt kan worden zonder een licentie te hoeven betalen. Een volledig overzicht van de licentievoorwaarden is te vinden op de website van AOMedia\urlcite{av1licenses}.
 
 Licenties voor \gls{h264-avc}, \gls{h264-svc} en \gls{h265} zijn betalend en op aanvraag. Hoewel allen gratis zijn in gebruik onder een bepaalde grens is het aangeraden extra opzoekingswerk te verrichten voor de \gls{use-case} waarin deze \glspl{codec} zouden gebruikt worden.
 
