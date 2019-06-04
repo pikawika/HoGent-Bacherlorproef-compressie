@@ -1,4 +1,4 @@
-# Je kijkt ernaar maar ziet het niet; afbeelding-/videocompressie en compressie in het algemeen!
+# Je kijkt er naar, maar ziet het niet: datacompressie principes — ontstaan en uitdagingen — implementaties — afbeeldingscompressie: PNG | JPEG | JPEG2000 | WebP | HEIF — videocompressie: H.264-AVC | H.264-SVC | H.265/HEVC | AV1
 
 Dit is de GitHub repository voor de bachelorproef dat ik heb gemaakt in mijn laatste jaar Toegepaste Informatica te HoGent. 
 
@@ -6,38 +6,49 @@ Dit is de GitHub repository voor de bachelorproef dat ik heb gemaakt in mijn laa
 
 > - [Auteur](#auteur)
 > - [Voorstel](#voorstel)
-> - [PDFs](#pdfs)
-> - [Handleidingen](#handleidingen)
+> - [Bachelorproef](#bachelorproef)
+> - [Poster](#poster)
+> - [Presentatie](#presentatie)
 
 
 ## Auteur
 
 | Naam     | GitHub                        | E-mail                               |
 | :---     | :---                          | :---                                |
-| Bontinck Lennert | <https://github.com/pikawika> | [lennert.bontinck.y9785@student.hogent.be](mailto:lennert.bontinck.y9785@student.hogent.be) |
+| Bontinck Lennert | <https://github.com/pikawika> | [info@lennertbontinck.com](mailto:info@lennertbontinck.com) |
 
 ## Voorstel
 
-De eerste fase van de Bachelorproef bestaat er uit een goed voorstel in te dienen.
+De eerste fase van de bachelorproef bestaat er uit een goed voorstel in te dienen.
 
-U vindt de laatste versie van het voorstel in pdf formaat onder:
+U vindt de laatste versie van het voorstel in PDF formaat onder:
 > [PDFs](PDFs//bontinck_lennert_voorstel.pdf)
 
 U vindt de source code van Latex en JabRef onder:
 > [Voorstel](voorstel/)
  
-U vindt handleidingen omtrent dit deel onder:
-> [Handleidingen](handleidingen/voorstel)
+U vindt handleidingen omtrent de compilatie van dit deel onder:
+> [Handleidingen](handleidingen/voorstel/compileToPdf.md)
 
-## PDFs
+## Bachelorproef
 
-Indien u niet zelf de Latex bestanden wenst te compileren zijn er reeds gecompileerde PDF bestanden voorzien onder
-> [PDFs](PDFs/)
+U vindt de laatste versie van de bachelorproef in PDF formaat onder:
+> [PDFs](PDFs/bachelorproef_bontinck_lennert.pdf)
 
-Deze worden bij het voltooien van een feature geupdate naar de laatste versie.
+U vindt de source code van Latex en JabRef onder:
+> [Bachelorproef](bachelorproef/)
+ 
+U vindt handleidingen omtrent de compilatie van dit deel onder:
+> [Handleidingen](handleidingen/bachelorproef/compileToPdf.md)
 
-## Handleidingen
+## Poster
 
-U vindt alle handleidingen onder:
+U vindt de laatste versie van de poster in PNG formaat onder:
+> [PDFs](poster/poster.png)
 
-> [Handleidingen](handleidingen/)
+U vindt de source code van de poster onder:
+> [Poster](poster/)
+ 
+## Presentatie
+
+Coming soon!

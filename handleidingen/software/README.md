@@ -81,3 +81,9 @@ Volgende instellingen (onder Options > Configure TeXstudio) moeten zeker ingeste
 Bij het openen van de bibliografische databank zeker controleren dat u het volgende hebt gedaan:
 
 > File > Switch to BibLaTeXmode
+
+## Auteur
+
+| Naam     | GitHub                        | E-mail                               |
+| :---     | :---                          | :---                                |
+| Bontinck Lennert | <https://github.com/pikawika> | [info@lennertbontinck.com](mailto:info@lennertbontinck.com) |
