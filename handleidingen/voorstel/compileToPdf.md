@@ -21,4 +21,11 @@ Voor het compileren en bekijken van de Latex bronbestanden en de JabRef bibliogr
 
 
 ## Toch net niet duidelijk genoeg?
-Bij het afwerken van een feature wordt ook steeds de meest recente pdf voorzien onder [PDFs](../../PDFs).
+De volledige pdf is [hier](../../PDFs/bontinck_lennert_voorstel.pdf) voorzien.
+
+## Auteur
+
+| Naam     | GitHub                        | E-mail                               |
+| :---     | :---                          | :---                                |
+| Bontinck Lennert | <https://github.com/pikawika> | [info@lennertbontinck.com](mailto:info@lennertbontinck.com) |
+

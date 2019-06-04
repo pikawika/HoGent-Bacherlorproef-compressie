@@ -1,18 +1,19 @@
 # handleiding om .tex naar .pdf te compilen
 
-In deze handlieding vind u hoe u de latex broncode van het voorstel omzet naar een pdf bestand om het te kunnen lezen.
+In deze handlieding is gedocumenteerd hoe u de latex broncode van de bachelorproef omzet naar een PDF bestand om het te kunnen lezen.
 
 ## Nodige software installeren
 
-Voor het compileren en bekijken van de Latex bronbestanden en de JabRef bibliografische databank heb je de juiste software nodig. Een handleiding vind u onder:
+Voor het compileren en bekijken van de Latex bronbestanden en de JabRef bibliografische databank heb je de juiste software nodig. Een handleiding is te vinden onder:
 
-> [Handleiding te installeren software](../software/)
+> [Handleiding te installeren software](../software/README.md)
 
 ## Command line instructies
 
-**HOTFIX:** theme opgelegd door HoGent bevat een fout. Deze fout kan impact hebben vanaf stap 1 en/of na stap 6 en mogelijks bij eldere stappen. indien je errors krijgt bij compilen kan je best na elke stap volgende controleren: Ga naar de file bachelorproef_bontinck_lennert.gls en verwijder de regel   \setcounter{page}{df}
+**HOTFIX:** theme opgelegd door HoGent bevat een fout. Deze fout kan impact hebben vanaf stap 1 en/of na stap 6 en mogelijks bij eldere stappen. indien je errors krijgt bij compilen kan je best na elke stap volgende controleren: Ga naar de file bachelorproef\_bontinck\_lennert.gls en verwijder de regel
+> \setcounter{page}{df}
 
-Indien u een mac gebruiker bent kan u het generate.sh script gebruiken! Anders kan u volgend stappenplan gebruiken.
+Indien u een mac gebruiker bent kan u het generate.sh script gebruiken onder de bachelorproef folder! Anders kan u volgend stappenplan gebruiken.
 
 1. Clone de repository naar uw toestel.
 2. Open de terminal van uw toestel.
@@ -27,4 +28,11 @@ Na het runnen van het script of het uitvoeren van bovenstaande stappen kan u de 
 
 
 ## Toch net niet duidelijk genoeg?
-Bij het afwerken van een feature wordt ook steeds de meest recente pdf voorzien onder [PDFs](../../PDFs).
+De volledige pdf is [hier](../../PDFs/bachelorproef_bontinck_lennert.pdf) voorzien.
+
+## Auteur
+
+| Naam     | GitHub                        | E-mail                               |
+| :---     | :---                          | :---                                |
+| Bontinck Lennert | <https://github.com/pikawika> | [info@lennertbontinck.com](mailto:info@lennertbontinck.com) |
+
