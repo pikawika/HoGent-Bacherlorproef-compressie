@@ -51,4 +51,5 @@ U vindt de source code van de poster onder:
  
 ## Presentatie
 
-Coming soon!
+U vindt de presentatie onder:
+> [presentatie](presentatie/presentatie_bontinck_lennert.pptx)
